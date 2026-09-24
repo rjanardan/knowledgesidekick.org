@@ -25,7 +25,7 @@ This org site is the same ideas, open and not-for-profit: research, standards, a
 
 ## Author
 
-Janardan Revuru — M.Tech Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication; three patents; AI CoE 0→50 engineers / 15 models; organizer of Bengaluru JavaScript Meetup.
+Janardan Revuru — M.Tech Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication; three patents; AI CoE 0→50 engineers / 15 models; organizer of DARLing Meetup.
 
 Portfolio: https://janalogy.com
 Email: janardan.revuru@gmail.com

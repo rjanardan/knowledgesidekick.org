@@ -52,7 +52,7 @@ Same ideas as https://knowledgesidekick.com, open side.
 ## Author
 Janardan Revuru — M.Tech Data Science (BITS Pilani, 2024); PhD in progress on multi-agent
 communication (around 2028); three patents; AI CoE built 0->50 engineers and 15 models;
-organizer of Bengaluru JavaScript Meetup (https://meetup.com/javascriptmeetup).
+organizer of DARLing Meetup (https://meetup.com/darling-meetup).
 Portfolio: https://janalogy.com
 Email: janardan.revuru@gmail.com
 LinkedIn: https://www.linkedin.com/in/rjanardan

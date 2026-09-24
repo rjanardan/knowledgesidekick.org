@@ -19,7 +19,7 @@ identity:
     sameAs:
       - https://janalogy.com
       - https://www.linkedin.com/in/rjanardan
-      - https://meetup.com/javascriptmeetup
+      - https://meetup.com/darling-meetup
   email: mailto:janardan.revuru@gmail.com
   businessSide:
     name: Knowledge Sidekick (business)
