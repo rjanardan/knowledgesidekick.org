@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A2A — Knowledge Sidekick</title>
+<meta name="description" content="Agent-to-agent communication: how agents negotiate, share, and verify knowledge with other agents — standards, conventions, and the knowledge layer that makes A2A dependable.">
+<link rel="canonical" href="https://knowledgesidekick.org/a2a/">
+<meta property="og:title" content="A2A — Knowledge Sidekick">
+<meta property="og:description" content="Agent-to-agent communication — standards, conventions, and the knowledge layer that makes it dependable.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/a2a/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A2A — Knowledge Sidekick">
+<meta name="twitter:description" content="Agent-to-agent communication — standards and conventions for dependable knowledge exchange.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/a2a/">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/a2a/#page",
+      "url": "https://knowledgesidekick.org/a2a/",
+      "name": "A2A — Knowledge Sidekick",
+      "description": "Agent-to-agent communication — standards, conventions, and the knowledge layer that makes it dependable.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "about": { "@id": "https://knowledgesidekick.org/#topic-a2a" }
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knowledgesidekick.org/#topic-a2a",
+      "name": "Agent-to-agent communication (A2A)",
+      "description": "How agents negotiate, share, and verify knowledge with other agents — standards, conventions, and the knowledge layer that makes A2A dependable.",
+      "inScope": "https://knowledgesidekick.org/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://knowledgesidekick.org/#agentPlatform",
+      "name": "Knowledge Sidekick — agent platform (open standards)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://knowledgesidekick.org/",
+      "description": "Open standards and conventions for knowledge-first agentic AI — A2A, agents, and MCP knowledge resources.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "provider": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "APIReference",
+      "@id": "https://knowledgesidekick.org/#api-a2a",
+      "name": "A2A knowledge exchange — conventions",
+      "description": "Conventions for how agents negotiate, share, and verify knowledge with other agents.",
+      "provider": { "@id": "https://knowledgesidekick.org/#agentPlatform" },
+      "documentation": "https://knowledgesidekick.org/a2a/"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.org/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.org/about.html",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/javascriptmeetup"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.org/#website",
+      "url": "https://knowledgesidekick.org/",
+      "name": "Knowledge Sidekick — research · standards · adoption",
+      "description": "The not-for-profit arm of Knowledge Sidekick: research, open standards, and adoption of knowledge-first practice.",
+      "publisher": { "@id": "https://knowledgesidekick.org/#person" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://knowledgesidekick.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Agents · A2A</span>
+    <h1>Agent-to-agent communication</h1>
+    <p class="lede">How agents negotiate, share, and verify knowledge with other agents — the standards and conventions that make agent-to-agent knowledge exchange dependable, and the knowledge layer an agent needs before it can talk to another agent without lying, leaking, or guessing.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/agents/">Agents</a> · <a href="/mcp/">MCP</a> · <a href="/llms.txt">llms.txt</a> · <a href="/agents.md">agents.md</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is the A2A knowledge problem?</h3>
+    <p>When one agent talks to another, the question is not "can they exchange messages." The question is "can they exchange knowledge they can both trust." That means: what does each agent know, how current is it, who owns it, what is it permitted to share, and how does the receiving agent verify the basis before it acts on what the other agent said. A2A without a knowledge layer is just message passing; A2A with a knowledge layer is dependable knowledge exchange.</p>
+  </div>
+</section>
+
+<section id="why-a2a">
+  <h2>Why A2A is its own topic</h2>
+  <p>A2A is not a subfield of context engineering, and it is not a subfield of grounding. It is the point where two knowledge layers meet. Each agent arrives with its own picture of the world — its own currentness, ownership, permission, and grounding. The conversation is the place where those pictures have to be negotiated, shared selectively, and verified before either agent acts on what the other said.</p>
+  <p>This is why A2A fails in the same way single-agent systems fail — stale knowledge, unowned knowledge, weak grounding — but with a second agent in the loop, the failure is harder to see and more expensive when it shows up. Two agents can both be right about their own picture and still produce a wrong joint action, because the joint action is built on an unsafe merge of two partial pictures.</p>
+</section>
+
+<section id="what-an-agent-needs-to-share">
+  <h2>What an agent needs before it can share</h2>
+  <p>An agent that talks to another agent needs more than a message. It needs to know what it is sharing, in what shape, with what basis, and with what permission. The minimal set:</p>
+  <ul>
+    <li><strong>The knowledge, in a shareable shape.</strong> Not the raw internal representation, not a dump. A shareable shape the receiving agent can use — the same discipline as representation, but tuned for exchange rather than internal use.</li>
+    <li><strong>The basis.</strong> What the sharing agent used to form what it is saying — which knowledge, from where, at what version, with what permission. The receiving agent needs the basis to verify, not just the claim.</li>
+    <li><strong>The scope of sharing.</strong> What the sharing agent is allowed to share. The boundary between "I know this" and "I am allowed to tell you this" is the boundary that matters most in A2A — more than the message itself.</li>
+    <li><strong>The currentness.</strong> How current the shared knowledge is, and how the receiving agent can check it. A2A with stale knowledge is two agents confidently wrong together.</li>
+    <li><strong>The verification expectation.</strong> What the receiving agent is expected to do with the knowledge — trust it, verify it, cross-check it, or treat it as a lead rather than a fact. A2A is not a trust transfer; it is a trust negotiation.</li>
+  </ul>
+  <p>These are the same disciplines as the rest of the knowledge layer — representation, currentness, ownership, permission, grounding — but applied at the boundary between two agents rather than inside one.</p>
+</section>
+
+<section id="what-a2a-standards-cover">
+  <h2>What A2A standards cover</h2>
+  <p>A2A standards are not a transport protocol. They are the conventions that sit on top of whatever transport the agents use, and that make the exchange of knowledge dependable. They cover:</p>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Negotiation</span>
+      <h3>What each agent is willing to share</h3>
+      <p>The conventions for how agents state what they know, what they are permitted to share, and what they are not willing to share — before any knowledge moves. Negotiation is the first discipline, because the rest depends on knowing the scope of the exchange.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Sharing</span>
+      <h3>Knowledge in a shareable shape</h3>
+      <p>The conventions for how knowledge is shaped when it moves between agents — not as a raw internal representation, but as something the receiving agent can use, with the basis attached. Sharing is representation tuned for exchange.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Verification</span>
+      <h3>How the receiving agent checks the basis</h3>
+      <p>The conventions for how the receiving agent verifies what the sharing agent said — what to trust, what to cross-check, what to treat as a lead, and how to ask for the basis without turning every exchange into a forensic session.</p>
+    </div>
+  </div>
+  <p>The goal is not a universal protocol. The goal is a small set of conventions that make A2A dependable enough to use in real settings — not a research exercise, but a practical layer that sits on top of whatever the agents already do.</p>
+</section>
+
+<section id="a2a-and-the-knowledge-layer">
+  <h2>A2A and the knowledge layer</h2>
+  <p>A2A is the clearest demonstration that knowledge is a layer and not a module. A single agent with a weak knowledge layer can fail in private. Two agents with weak knowledge layers can fail in public — and the failure is harder to attribute, harder to fix, and more expensive when it touches a joint action.</p>
+  <p>The knowledge layer is what each agent brings to the conversation. A2A is what happens when those layers meet. The standards for A2A are the disciplines that make the meeting dependable: negotiation of scope, sharing in a usable shape, and verification of the basis before action.</p>
+  <p>This is also where the agent interface and the discoverability layer meet A2A. If an agent engine can discover another agent's knowledge surface — what it knows, what it is willing to share, how to ask — then A2A is not a custom integration every time. It is a convention applied to known surfaces.</p>
+</section>
+
+<section id="how-to-start">
+  <h2>Where to start</h2>
+  <p>If you are building agents that talk to other agents and you are wondering where to start with A2A, the usual sequence is:</p>
+  <ul>
+    <li>Pick one exchange — one thing one agent tells another, in one setting. Not the whole world of agent-to-agent communication. One exchange.</li>
+    <li>Put the basis on what is being shared — what knowledge, from where, at what version, with what permission. Not the message. The basis.</li>
+    <li>Negotiate scope before knowledge moves — what the sharing agent is willing and permitted to share, and what the receiving agent is expected to do with it.</li>
+    <li>Make the receiving agent verify before it acts — not on every exchange, but on the exchanges where the joint action is expensive or sensitive.</li>
+    <li>Expose a discoverable surface — what the agent knows, what it is willing to share, how to ask — so the next A2A exchange is not a custom integration.</li>
+  </ul>
+  <p>The goal is not to standardize all of A2A at once. The goal is to make one exchange dependable, in a way that the disciplines can be carried to the next exchange without starting over.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't A2A just a messaging protocol?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A messaging protocol is one layer. A2A is the layer on top of it — the conventions that make the exchange of knowledge dependable. A protocol can move a message. It cannot, by itself, tell the receiving agent whether the knowledge is current, owned, permitted, or grounded. That is the A2A layer: negotiation, sharing in a usable shape, and verification of the basis.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is A2A different from context engineering?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Context engineering is about what one agent sees. A2A is about what two agents exchange, and how each verifies the other's knowledge before acting on it. The disciplines overlap — representation, currentness, grounding — but A2A adds negotiation and verification across a boundary, and that boundary is where the new failure modes live.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What about MCP and agents?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>MCP is one way to expose knowledge to an agent — a knowledge server, a tool-backed resource, a documented surface the agent can read. A2A is what happens when two such surfaces meet. The standards for A2A sit on top of whatever the agents use to expose and consume knowledge — MCP, direct interfaces, or something else. The point is the dependable exchange, not the transport.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

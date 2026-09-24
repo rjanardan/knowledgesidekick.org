@@ -1,0 +1,68 @@
+# knowledgesidekick.org — agent index
+# Open, not-for-profit. Research, standards, adoption of knowledge-first practice
+# for agentic AI, LLMs, and personal assistants.
+# Updated: 2026-09-24.
+
+## What this site is
+A small, flat, not-for-profit site about knowledge as a first-class layer in agentic systems.
+Written for technical leaders funding or building agentic AI, LLMs, and personal assistants.
+Same ideas as https://knowledgesidekick.com, open side.
+
+## Top-level sections
+- Home: https://knowledgesidekick.org/
+- Why Knowledge: https://knowledgesidekick.org/why-knowledge.html
+- Research: https://knowledgesidekick.org/research.html
+- Standards: https://knowledgesidekick.org/standards.html
+- Adoption: https://knowledgesidekick.org/adoption.html
+- Blogs: https://knowledgesidekick.org/blogs.html
+- Community: https://knowledgesidekick.org/community.html
+- Internship: https://knowledgesidekick.org/internship.html
+- Training: https://knowledgesidekick.org/training.html
+- Free resources: https://knowledgesidekick.org/free-resources.html
+- About: https://knowledgesidekick.org/about.html
+- Contact: https://knowledgesidekick.org/contact.html
+
+## Agent-oriented pages (new)
+- A2A — agent-to-agent communication, standards, and knowledge exchange: https://knowledgesidekick.org/a2a/
+- Agents — knowledge layer for agentic systems: forms, lifecycle, grounding: https://knowledgesidekick.org/agents/
+- MCP — knowledge as a Model Context Protocol resource (knowledge servers, tool-backed knowledge): https://knowledgesidekick.org/mcp/
+- llms.txt — machine-readable site index for LLMs and agents: https://knowledgesidekick.org/llms.txt (this file)
+- agents.md — structured index for agent frameworks and crawlers: https://knowledgesidekick.org/agents.md
+
+## Research deep-dives
+- Why knowledge matters for agentic AI: https://knowledgesidekick.org/why-knowledge.html
+- Knowledge in enterprise context: https://knowledgesidekick.org/enterprise.html
+- Knowledge in personal assistant context: https://knowledgesidekick.org/personal-assistant.html
+- Context engineering: https://knowledgesidekick.org/context-engineering.html
+- Token savings & grounding: https://knowledgesidekick.org/token-savings.html
+
+## Blog (chronological, newest first)
+- 2026-09-22 Why knowledge fails first in agentic systems: https://knowledgesidekick.org/blogs/2026-09-22-why-knowledge-fails-first.html
+- 2026-09-18 Context is not a bucket — it is a delivery problem: https://knowledgesidekick.org/blogs/2026-09-18-context-is-not-a-bucket.html
+- 2026-09-14 Grounding is the flip side of token savings: https://knowledgesidekick.org/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html
+- 2026-09-10 What enterprise agents actually need from knowledge: https://knowledgesidekick.org/blogs/2026-09-10-what-enterprise-agents-actually-need.html
+
+## Standards and conventions covered
+- Knowledge representation (entities, facts, procedures, policies, relationships)
+- Knowledge lifecycle (creation, representation, extraction, updates, deprecation)
+- Grounding (claims tied to retrievable, current, permitted knowledge)
+- The agent interface (clean documented surface for agent engines)
+- Discoverability for agent engines (AEO / Agent Engine Optimization; llms.txt)
+
+## Author
+Janardan Revuru — M.Tech Data Science (BITS Pilani, 2024); PhD in progress on multi-agent
+communication (around 2028); three patents; AI CoE built 0->50 engineers and 15 models;
+organizer of Bengaluru JavaScript Meetup (https://meetup.com/javascriptmeetup).
+Portfolio: https://janalogy.com
+Email: janardan.revuru@gmail.com
+LinkedIn: https://www.linkedin.com/in/rjanardan
+
+## Business-facing side
+Advisory, training delivery, evaluations, audits:
+https://knowledgesidekick.com
+
+## Machine-readable formats provided
+- llms.txt (this file): https://knowledgesidekick.org/llms.txt
+- agents.md (extended machine index): https://knowledgesidekick.org/agents.md
+- Sitemap: https://knowledgesidekick.org/sitemap.xml
+- robots.txt: https://knowledgesidekick.org/robots.txt

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCP — Knowledge Sidekick</title>
+<meta name="description" content="Knowledge as a Model Context Protocol resource — knowledge servers, tool-backed knowledge, and the role of MCP in exposing dependable knowledge to agents.">
+<link rel="canonical" href="https://knowledgesidekick.org/mcp/">
+<meta property="og:title" content="MCP — Knowledge Sidekick">
+<meta property="og:description" content="Knowledge as a Model Context Protocol resource — knowledge servers and tool-backed knowledge for agents.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/mcp/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MCP — Knowledge Sidekick">
+<meta name="twitter:description" content="Knowledge as a Model Context Protocol resource — dependable knowledge exposure for agents.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/mcp/">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/mcp/#page",
+      "url": "https://knowledgesidekick.org/mcp/",
+      "name": "MCP — Knowledge Sidekick",
+      "description": "Knowledge as a Model Context Protocol resource — knowledge servers, tool-backed knowledge, and the role of MCP in exposing dependable knowledge to agents.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "about": { "@id": "https://knowledgesidekick.org/#topic-mcp" }
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knowledgesidekick.org/#topic-mcp",
+      "name": "Knowledge as a Model Context Protocol resource",
+      "description": "Knowledge servers, tool-backed knowledge, and the role of MCP in exposing dependable knowledge to agents.",
+      "inScope": "https://knowledgesidekick.org/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://knowledgesidekick.org/#agentPlatform",
+      "name": "Knowledge Sidekick — agent platform (open standards)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://knowledgesidekick.org/",
+      "description": "Open standards and conventions for knowledge-first agentic AI — A2A, agents, and MCP knowledge resources.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "provider": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "APIReference",
+      "@id": "https://knowledgesidekick.org/#api-mcp",
+      "name": "MCP knowledge resources — conventions",
+      "description": "Knowledge as a Model Context Protocol resource — knowledge servers, tool-backed knowledge, and dependable exposure to agents.",
+      "provider": { "@id": "https://knowledgesidekick.org/#agentPlatform" },
+      "documentation": "https://knowledgesidekick.org/mcp/"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.org/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.org/about.html",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/javascriptmeetup"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.org/#website",
+      "url": "https://knowledgesidekick.org/",
+      "name": "Knowledge Sidekick — research · standards · adoption",
+      "description": "The not-for-profit arm of Knowledge Sidekick: research, open standards, and adoption of knowledge-first practice.",
+      "publisher": { "@id": "https://knowledgesidekick.org/#person" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://knowledgesidekick.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Agents · MCP</span>
+    <h1>Knowledge as a Model Context Protocol resource</h1>
+    <p class="lede">How knowledge can be exposed to agents through MCP — knowledge servers, tool-backed knowledge, and the role of MCP in making the knowledge layer discoverable, usable, and dependable rather than just visible.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/a2a/">A2A</a> · <a href="/agents/">Agents</a> · <a href="/standards.html">Standards</a> · <a href="/llms.txt">llms.txt</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is MCP's role in the knowledge layer?</h3>
+    <p>MCP is one way to expose knowledge to an agent — as a knowledge server, as a tool-backed resource, as a documented surface the agent can read and act on. Its role in the knowledge layer is not to solve knowledge. Its role is to make knowledge discoverable and usable by agents in a disciplined way — with currentness, ownership, permission, and grounding carried as properties of what is exposed, not bolted on when the agent fails.</p>
+  </div>
+</section>
+
+<section id="what-mcp-is-for">
+  <h2>What MCP is for</h2>
+  <p>MCP is a way to give an agent a surface it can read — a server that says "here is knowledge, in this shape, with this basis, and here is how to ask for more." That is a useful thing, because the alternative is the bucket instinct — dump everything into the context and let the model sort it out. MCP is one disciplined answer to the question "how does the agent get the right knowledge at the right moment."</p>
+  <p>The knowledge layer is what makes that surface dependable. MCP is the exposure. The two are not the same, and the distinction matters: a knowledge server that exposes stale, unowned, ungrounded knowledge is a server that exposes the wrong thing in a disciplined way. The discipline is in the knowledge layer, not in the protocol.</p>
+</section>
+
+<section id="knowledge-servers">
+  <h2>Knowledge servers</h2>
+  <p>A knowledge server is an MCP server that exposes knowledge as its primary resource — not as a general tool, but as knowledge the agent can read, query, and act on, with the basis attached. The server says what knowledge is available, in what shape, with what currentness, with what permission, and how to ask for more.</p>
+  <p>The knowledge server is the point where the knowledge layer meets the agent. It is where representation, lifecycle, grounding, and the agent interface come together in a surface the agent can actually use. The server is not the knowledge layer; it is the exposure of the knowledge layer to an agent that needs to act.</p>
+  <p>A good knowledge server is not a big database with an MCP wrapper. It is a small, current, owned, grounded surface — the knowledge the agent needs, in the shape the agent can use, with the basis attached, and with the scope of sharing made explicit. The rest can wait.</p>
+</section>
+
+<section id="tool-backed-knowledge">
+  <h2>Tool-backed knowledge</h2>
+  <p>Not all knowledge is a document the agent reads. Some knowledge is a tool the agent calls — the current value, the current status, the current owner, the thing that is true only when the tool says it is true. Tool-backed knowledge is the knowledge that is true only at the moment of the call, and only if the call returns the right answer.</p>
+  <p>Tool-backed knowledge is the knowledge layer in action. It is the knowledge that is current by construction — because the tool is the source of truth, and the agent acts on what the tool returns. The discipline is still the same: the agent must know what tool to call, what the tool is authoritative for, what the return means, and what it is permitted to do with it.</p>
+  <p>The failure mode is not "the tool is wrong." The failure mode is "the agent called the wrong tool, or the right tool for the wrong thing, or treated a tool return as current when it was not, or acted on a tool return it was not permitted to act on." The knowledge layer is what keeps the tool-backed knowledge dependable.</p>
+</section>
+
+<section id="mcp-and-grounding">
+  <h2>MCP and grounding</h2>
+  <p>MCP is a natural place to carry grounding. When the agent reads from a knowledge server or calls a tool, the basis can be attached — what knowledge was used, from where, at what version, with what permission. The agent does not have to re-derive the basis; the basis comes with the resource, and the agent acts on it with the basis in view.</p>
+  <p>This is the same discipline as grounding everywhere else — the basis is carried with the action, not re-derived from scratch every time. MCP is one place where that discipline can be applied cleanly, because the server is the point of exposure and the point of grounding at the same time. The server says what it exposed, and the agent acts on what it exposed, with the basis attached.</p>
+</section>
+
+<section id="mcp-and-discoverability">
+  <h2>MCP and discoverability</h2>
+  <p>Discoverability is the discipline that makes knowledge usable by agents at a distance. If an agent engine cannot find a knowledge server, cannot tell what it exposes, cannot tell how to ask, then the knowledge is visible but not usable. MCP is one place where discoverability can be made explicit — the server exposes not just knowledge, but a surface the agent can discover and use.</p>
+  <p>This is where the agent interface and the discoverability layer from the standards page meet MCP. The knowledge server is the surface. The discoverability layer is what makes the surface findable. The agent interface is what makes the surface usable. The three are not the same, but they meet at the server, and the server is the point where knowledge becomes actable rather than merely visible.</p>
+</section>
+
+<section id="mcp-is-not-the-knowledge-layer">
+  <h2>MCP is not the knowledge layer</h2>
+  <p>It is worth saying plainly: MCP is not the knowledge layer. MCP is an exposure mechanism. The knowledge layer is the discipline that makes what is exposed dependable — current, owned, grounded, permitted. A knowledge server that exposes the wrong knowledge in a disciplined way is still exposing the wrong knowledge.</p>
+  <p>The same is true of RAG, of direct interfaces, of A2A, of any other mechanism an agent uses to get knowledge. The mechanism is not the discipline. The discipline is the knowledge layer: what is true, what is current, what is owned, what is permitted, what to do when the system does not know. The mechanism is how the agent gets it.</p>
+  <p>MCP is a good mechanism for exposure. It is not a substitute for the knowledge layer. The point of this page is to keep that distinction clear — because it is the distinction that keeps an agent from acting on a well-exposed wrong thing.</p>
+</section>
+
+<section id="how-to-start">
+  <h2>Where to start</h2>
+  <p>If you are exposing knowledge through MCP and you are wondering where to start, the usual sequence is:</p>
+  <ul>
+    <li>Pick one knowledge domain the agent will need — one procedure, one value, one owner, one permission. Not the whole company. One domain.</li>
+    <li>Expose it as a knowledge server, in the shape the agent can use, with the basis attached — what knowledge, from where, at what version, with what permission.</li>
+    <li>Put currentness, ownership, and permission on the exposed knowledge before the agent acts — not after. The basis is carried with the resource.</li>
+    <li>Make the surface discoverable — what it exposes, how to ask, what it is authoritative for, what it is not permitted to share. The agent interface is what makes the surface usable.</li>
+    <li>Put the lifecycle on the knowledge — creation, representation, extraction, updates, deprecation — so the surface does not age the moment it is exposed.</li>
+  </ul>
+  <p>The goal is not a general knowledge server for everything. The goal is a dependable exposure for the knowledge the agent needs — in a way that the disciplines can be carried to the next domain without starting over.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't MCP just another integration?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>MCP is a way to integrate an agent with a surface it can read. It is not a substitute for the knowledge layer that makes that surface dependable. The integration is the mechanism. The discipline is the knowledge: current, owned, grounded, permitted. A well-integrated wrong thing is still a wrong thing. The point of MCP is to make the exposure clean; the point of the knowledge layer is to make the exposure dependable.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is this different from the agent interface on the standards page?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The agent interface is the general discipline — what knowledge is exposed, in what shape, with what permissions, and how an agent asks for it. MCP is one mechanism for that interface. The standards page is the discipline; this page is one way to implement it. The point is the same: a clean, documented surface that an agent engine can rely on, rather than scraping whatever is easy.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What about A2A and MCP together?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A2A is what happens when two knowledge surfaces meet. MCP is one way to expose a knowledge surface. The two meet at the server: a knowledge server exposed through MCP is a surface another agent can discover and exchange with, if the A2A conventions for negotiation, sharing, and verification are applied. The point is the dependable exchange, not the transport. A2A is the layer on top of whatever exposure mechanism the agents use, including MCP.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

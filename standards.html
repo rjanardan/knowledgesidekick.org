@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standards — Knowledge Sidekick</title>
+<meta name="description" content="Open standards and conventions for knowledge-first agentic AI: representation, lifecycle, grounding, the agent interface, and the discoverability layer for agent engines.">
+<link rel="canonical" href="https://knowledgesidekick.org/standards.html">
+<meta property="og:title" content="Standards — Knowledge Sidekick">
+<meta property="og:description" content="Open standards and conventions for knowledge-first agentic AI — representation, lifecycle, grounding, and the agent interface.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/standards.html">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Standards — Knowledge Sidekick">
+<meta name="twitter:description" content="Open standards and conventions for knowledge-first agentic AI.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards.html",
+      "url": "https://knowledgesidekick.org/standards.html",
+      "name": "Standards — Knowledge Sidekick",
+      "description": "Open standards and conventions for knowledge-first agentic AI.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards pillar</span>
+    <h1>Conventions anyone can adopt</h1>
+    <p class="lede">Open standards and conventions for knowledge representation, lifecycle, grounding, the agent interface, and the discoverability layer that lets agent engines find and use knowledge reliably. The goal is a small, usable set of standards — not a catalogue.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/adoption.html">Adoption</a> · <a href="/free-resources.html">Free resources</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="position">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is this standards work for?</h3>
+    <p>Most agentic systems do not fail because there is no standard for knowledge. They fail because every team quietly builds its own, and then the knowledge is inconsistent across systems, stale in places, permissioned wrong, and impossible to ground a claim in. A small, usable set of open conventions is the difference between "everyone approximates" and "the knowledge layer is dependable enough to act on."</p>
+  </div>
+</section>
+
+<section id="principles">
+  <h2>Principles</h2>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Small</span>
+      <h3>A few standards, well-chosen</h3>
+      <p>A standard that no one adopts is not a standard. This work favors a small set of conventions that cover the actual failure modes: representation, lifecycle, grounding, the agent interface, and discoverability.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Open</span>
+      <h3>Open, not owned</h3>
+      <p>These conventions are meant to be usable by anyone — teams, open-source projects, non-profits, personal assistants — without a license gate. The org side of Knowledge Sidekick exists so this work has a home that is not tied to a commercial offering.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Usable first</span>
+      <h3>Usable before complete</h3>
+      <p>Standards are adopted when they reduce pain, not when they are philosophically complete. Each convention below is written to solve a real problem today, and to leave room to grow without collapsing under its own weight.</p>
+    </div>
+  </div>
+</section>
+
+<section id="standards-list">
+  <h2>The standards and conventions</h2>
+
+  <div class="pattern">
+    <h3>Knowledge representation</h3>
+    <p class="purpose">How knowledge is shaped so that agents can use it without re-deriving the structure every time.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>Knowledge lives in documents, tickets, chats, spreadsheets, heads, and tools. Each has its own shape. Agents that act on that knowledge need a consistent way to find, read, and trust it.</dd>
+      <dt>Convention</dt>
+      <dd>A small set of representation primitives — entities, facts, procedures, policies, and the relationships between them — with enough structure to be usable and enough flexibility to fit real content.</dd>
+      <dt>Status</dt>
+      <dd>Working draft; developed in the research pieces and refined through adoption.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Knowledge lifecycle</h3>
+    <p class="purpose">How knowledge is created, kept current, and retired — because knowledge that is not governed decays into confident error.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>Knowledge is created somewhere, updated somewhere else, and retired never. Agents that act on stale or retired knowledge are the most expensive kind of wrong.</dd>
+      <dt>Convention</dt>
+      <dd>A lifecycle model with clear ownership, update cadence, deprecation, and the idea that "current" is a property an agent can check, not an assumption it makes.</dd>
+      <dt>Status</dt>
+      <dd>Working draft; the lifecycle ideas are developed in the research pieces and shaped through adoption.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Grounding</h3>
+    <p class="purpose">How an agent ties what it says or does to knowledge it can point back to — so it is more dependable and more auditable.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>An agent that says something plausible but cannot show its basis is hard to trust in production. Grounding is the discipline of tying claims back to retrievable knowledge.</dd>
+      <dt>Convention</dt>
+      <dd>A grounding model where claims carry their basis: what knowledge was used, when it was current, and what the agent was allowed to do with it. The same discipline also reduces token cost by sending less of the right knowledge.</dd>
+      <dt>Status</dt>
+      <dd>Working draft; see the token savings and grounding research piece.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>The agent interface</h3>
+    <p class="purpose">A clean, documented surface that agent engines can rely on to find and use knowledge — as opposed to scraping whatever is easy.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>Agent engines today often have to guess how to get knowledge out of a site or system. A clean interface — a documented surface, a convention for what is available and how to ask — makes knowledge actable instead of merely visible.</dd>
+      <dt>Convention</dt>
+      <dd>A small agent interface convention: what knowledge is exposed, in what shape, with what permissions, and how an agent engine asks for it. This is where things like <code>llms.txt</code> and a documented agent surface fit.</dd>
+      <dt>Status</dt>
+      <dd>Working draft; see the free resources page for the discoverability layer.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Discoverability for agent engines</h3>
+    <p class="purpose">How knowledge is made findable by agent engines — the AEO / Agent Engine Optimization layer.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>If an agent engine cannot find your knowledge, it cannot act on it. Discoverability is the difference between knowledge that exists and knowledge that is usable at distance.</dd>
+      <dt>Convention</dt>
+      <dd>A discoverability layer — a documented surface, a file agents can read to understand what knowledge is available and how to ask for it. This is the org-side counterpart to the search and SEO work that already exists for human readers.</dd>
+      <dt>Status</dt>
+      <dd>Working draft; see the free resources page.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="how-to-use">
+  <h2>How to use these standards</h2>
+  <p>These conventions are not a checklist to implement all at once. They are a map of the failure modes and a set of starting points. Most teams will adopt one or two first — usually representation and lifecycle, because those are where the pain shows up first.</p>
+  <p>If you are adopting from zero, start here:</p>
+  <ul>
+    <li><a href="/free-resources.html">Free resources</a> — the public-facing starting points: llms.txt, the agent interface, and the discoverability layer.</li>
+    <li><a href="/adoption.html">Adoption</a> — how to put knowledge-first practice into place, including maturity evaluation and lifecycle adoption.</li>
+    <li><a href="/blogs.html">Blogs</a> — shorter, more current thinking on what is happening in the field and what it means for standards.</li>
+  </ul>
+  <p>The standards are developed openly and refined through adoption. If a convention does not work in practice, that is the feedback loop — not a reason to stop.</p>
+</section>
+
+<section id="for-agents" style="margin-top:24px">
+  <div class="callout" style="border-left-color:var(--accent);background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px 18px">
+    <span class="label" style="font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;display:block">For agents &amp; crawlers</span>
+    <p style="margin:0 0 8px;font-size:13.5px">Machine-readable indexes for this site: <a href="/agents.md">agents.md</a> (structured topic/form/convention index) · <a href="/llms.txt">llms.txt</a> (site index). Agent-oriented pages: <a href="/a2a/">A2A</a> · <a href="/agents/">Agents</a> · <a href="/mcp/">MCP</a>. Sitemap: <a href="/sitemap.xml">sitemap.xml</a>.</p>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

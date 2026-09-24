@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise — Knowledge Sidekick</title>
+<meta name="description" content="Knowledge in enterprise context: the hard part at organizational scale — collecting knowledge that lives in documents, tickets, chats, heads, and tools, and keeping it current enough that agents can trust it.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/enterprise.html">
+<meta property="og:title" content="Enterprise — Knowledge Sidekick">
+<meta property="og:description" content="Knowledge in enterprise context — collection and freshness at organizational scale.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/enterprise.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Enterprise — Knowledge Sidekick">
+<meta name="twitter:description" content="Knowledge in enterprise context — collection and freshness at organizational scale.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/enterprise.html",
+      "url": "https://knowledgesidekick.org/enterprise.html",
+      "name": "Knowledge in Enterprise Context — Knowledge Sidekick",
+      "description": "The hard part at organizational scale — collecting knowledge and keeping it current enough that agents can trust it.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-enterprise">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Enterprise context</span>
+    <h1>Knowledge in enterprise context</h1>
+    <p class="lede">The hard part at organizational scale: collecting knowledge that lives in documents, tickets, chats, heads, and tools, and keeping it current enough that agents can trust it. Not a data problem. A knowledge problem, dressed up as one.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/standards.html">Standards</a> · <a href="/adoption.html">Adoption</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is the enterprise knowledge problem?</h3>
+    <p>At enterprise scale, the knowledge problem is not ignorance — it is scatter, staleness, and ownership. The facts are in the building. They are in documents, tickets, chats, heads, and tools. The problem is that they are not assembled, not current, and not governed in a way an agent can safely act on. An enterprise agent fails less from not knowing enough than from acting on the wrong slice of what is known.</p>
+  </div>
+</section>
+
+<section id="the-scale-shift">
+  <h2>Why enterprise is different from personal</h2>
+  <p>A personal assistant knows one person's emails, calendar, messages, and habits. An enterprise agent is asked to know a company — its procedures, its products, its customers, its policies, its codebase, its history, its current state, and what it is allowed to do with all of it.</p>
+  <p>The personal problem is mostly one of control and privacy. The enterprise problem is mostly one of assembly and governance — and it is an order of magnitude harder, because the knowledge is not in one place, not in one shape, and not owned by one person.</p>
+  <p>This is why enterprise agents fail the way they do. They are not failing because the model cannot read. They are failing because the knowledge they are reading is scattered, stale, unowned, and not grounded in anything the company can point to.</p>
+</section>
+
+<section id="where-knowledge-lives">
+  <h2>Where enterprise knowledge actually lives</h2>
+  <p>The first step is to stop pretending knowledge lives in a knowledge base. It does not. It lives in the places people actually work, and those places are not designed for agents.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Where enterprise knowledge lives — and what that means for agents</caption>
+      <thead>
+        <tr>
+          <th style="width:26%">Place</th>
+          <th style="width:38%">What lives there</th>
+          <th>What it means for an agent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Documents</td>
+          <td>Procedures, policies, specifications, offers, manuals, the things that were written down because someone had to write them down.</td>
+          <td>Usually the closest thing to authoritative knowledge — but only if they are current, only if the right version is the one being read, and only if the agent can tell which version is current.</td>
+        </tr>
+        <tr>
+          <td>Tickets and issues</td>
+          <td>What went wrong, what was fixed, what the customer asked, what the internal debate was. The history of the organization's decisions.</td>
+          <td>A source of context and precedent, not of current truth. Easy to over-weight, because it is detailed and recent-sounding. Hard to under-weight, because it is where the real history lives.</td>
+        </tr>
+        <tr>
+          <td>Chats and messages</td>
+          <td>The decisions that were never written down, the clarifications, the side conversations, the knowledge that left no durable trace except in someone's head and someone else's inbox.</td>
+          <td>The hardest knowledge to assemble and the most dangerous to omit. Often the only place a decision actually exists. Also the least governed and the least current.</td>
+        </tr>
+        <tr>
+          <td>Heads</td>
+          <td>The knowledge that has never been written down: the old hand who knows why the procedure is the way it is, the person who knows which system is the real source of truth, the one who knows which rule to ignore on a Friday afternoon.</td>
+          <td>The most valuable knowledge and the least accessible to an agent. The whole point of a knowledge layer is to turn heads into something an agent can use without requiring the head to be present.</td>
+        </tr>
+        <tr>
+          <td>Tools and systems</td>
+          <td>The records, the dashboards, the source-of-truth systems, the data that is supposed to be authoritative. Also the systems that have silently become the real source of truth because everyone uses them, regardless of what the documentation says.</td>
+          <td>The obvious source of truth — and the obvious place to get it wrong. The agent must know which system is authoritative for which fact, and must know when the system it is reading is not the one anyone trusts anymore.</td>
+        </tr>
+        <tr>
+          <td>Spreadsheets</td>
+          <td>The knowledge that did not fit anywhere else: the list, the tracker, the thing someone made because the system could not do it. Often the real source of truth for something important, filed under a name nobody remembers.</td>
+          <td>The knowledge that is both indispensable and invisible. The agent that cannot see the spreadsheet does not know the fact; the agent that can see the spreadsheet but does not know it is the real source of truth acts on a fact it does not know is real.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The point of the table is not the list. The point is that enterprise knowledge is not in one place, not in one shape, and not owned by one person — and any agent that acts on enterprise knowledge is acting on an assembly of all of the above, whether the team designed for that or not.</p>
+</section>
+
+<section id="the-four-entprise-failures">
+  <h2>The four enterprise knowledge failures</h2>
+  <p>These are the ordinary ways the knowledge layer fails at enterprise scale. They are not exotic. They are the failures that show up in enough projects that they stop being surprises and start being a pattern.</p>
+
+  <div class="challenge">
+    <span class="tag">Stale</span>
+    <h3>The current version is not the one being read</h3>
+    <p>The procedure was updated last month. The agent is following the version from two versions ago. Nobody told the agent. Nobody told the document. The knowledge is not missing; it is just not current, and the agent is acting on the old version as if it were the new one. At enterprise scale, this is the most common failure and the hardest to spot, because the document exists and looks correct.</p>
+  </div>
+
+  <div class="challenge">
+    <span class="tag">Unowned</span>
+    <h3>Nobody owns the authoritative version</h3>
+    <p>The knowledge lives in a document, a ticket, a chat, a spreadsheet, a head. Nobody owns the version the agent should trust. The agent assembles its picture from whatever is easiest to reach. The result is not ignorance — it is confident action on an unowned assembly of half-truths.</p>
+  </div>
+
+  <div class="challenge">
+    <span class="tag">No deprecation</span>
+    <h3>Knowledge that is no longer true stays in place</h3>
+    <p>Knowledge that is retired, obsolete, or superseded is not marked, removed, or quarantined. It is left in place and silently trusted. This is the most expensive failure mode at enterprise scale, because it is the one that looks fine until it is not — and by then the agent has been acting on it for weeks.</p>
+  </div>
+
+  <div class="challenge">
+    <span class="tag">Weak grounding</span>
+    <h3>The agent cannot show its basis</h3>
+    <p>When the agent says or does something, there is no retrievable basis for the claim. Not because the model is lying, but because the knowledge layer does not carry the basis with it. The company cannot tell what knowledge the agent used, whether it was current, or whether it was permitted. This is the failure mode that hurts trust at the moment it matters most.</p>
+  </div>
+</section>
+
+<section id="what-enterprise-needs">
+  <h2>What enterprise agents actually need from knowledge</h2>
+  <p>A working enterprise knowledge layer is not a big database. It is a small set of disciplines, applied to the knowledge that is already in the building.</p>
+  <ul>
+    <li><strong>Assembly.</strong> The knowledge lives in documents, tickets, chats, heads, tools, and spreadsheets. The layer assembles it into a picture the agent can use — not by inventing new knowledge, but by finding what is already there and putting it in a shape the agent can read.</li>
+    <li><strong>Currentness.</strong> The agent must be able to tell what is current. Not by guessing, not by assuming the latest document is the latest truth, but by checking a property the layer carries — the update cadence, the version, the date, the owner who says this is the one.</li>
+    <li><strong>Ownership.</strong> Every piece of knowledge the agent acts on should have an owner — the person or system that is responsible for it being true. Ownership is what makes deprecation possible, and deprecation is what makes currentness credible.</li>
+    <li><strong>Deprecation.</strong> Knowledge that is no longer true must be retired, marked, and removed from the agent's usable picture. Not hidden, not overridden, not waited out. Retired, with a trail, so the agent does not act on it and so the company can tell when it did.</li>
+    <li><strong>Permission and scope.</strong> The agent must know what it is allowed to use and what it is not allowed to use. The boundary between "can see" and "can act on" must be explicit, because the enterprise is full of knowledge that is real and not for the agent.</li>
+    <li><strong>Grounding.</strong> When the agent acts, it must be able to show what knowledge it used — in what shape, from where, whether current, whether permitted. Grounding is what makes the agent auditable, and auditability is what makes the enterprise willing to let it act.</li>
+  </ul>
+  <p>These are not a checklist to implement all at once. They are the disciplines that make the knowledge layer dependable enough to act on. Most enterprises will feel the pain in one or two of them first — usually stale and unowned — and will adopt the rest as the agents they are building start to touch the parts of the business where those disciplines matter.</p>
+</section>
+
+<section id="how-to-start-enterprise">
+  <h2>Where to start in an enterprise</h2>
+  <p>If you are trying to put a knowledge layer in place in an enterprise and you do not know where to start, the usual sequence is:</p>
+  <ul>
+    <li>Find one agent that is already being built or planned, and one knowledge domain it will act on — a procedure, a product, a customer, a policy. Not the whole company. One domain.</li>
+    <li>Ask where the knowledge for that domain actually lives — documents, tickets, chats, heads, tools, spreadsheets. Not where the documentation says it lives. Where it actually lives.</li>
+    <li>Find the stale versions, the unowned pieces, the things that have no owner, the things that were retired but never marked. This is usually the work.</li>
+    <li>Put ownership and currentness on the one or two pieces that will make the agent fail first. Not the whole domain. The one or two pieces.</li>
+    <li>Make the basis retrievable for the actions the agent will take. Grounding is the last discipline in the list and the first one to feel like trust.</li>
+  </ul>
+  <p>The goal is not to build a knowledge base for the whole company. The goal is to make one agent dependable on one domain, in a way that the disciplines can be carried to the next domain without starting over.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't this just an enterprise search problem?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Search is one piece — finding the knowledge. But enterprise knowledge is not solved by search, because search returns documents, not current authoritative knowledge, and not ownership, and not permission, and not deprecation. A search engine can find the stale procedure as easily as the current one. The knowledge layer is what makes the result dependable enough to act on.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What about a knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A knowledge graph is one possible representation. It is a good one when the relationships are the point. It is not the point of this work. The point is dependable knowledge — current, owned, grounded, permitted — regardless of the representation. A graph is a means, not the goal. The goal is an agent that can act on the knowledge without the company needing to trust the model's fluency instead of the knowledge's truth.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is this different from data governance?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Data governance is one input — the data must be governed. But enterprise knowledge is broader than governed data. It is also about the procedure in the document, the decision in the chat, the precedent in the ticket, the practice in the head, and the fact that the agent must be able to tell which version is current and which is not. Data governance is necessary and not sufficient. The knowledge layer is what sits on top of governed data and makes it actable.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

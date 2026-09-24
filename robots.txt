@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Machine-readable indexes for agents and crawlers
+Sitemap: https://knowledgesidekick.org/sitemap.xml
+
+# Agent-oriented entry points
+# - Agent index: https://knowledgesidekick.org/agents.md
+# - LLM/agent site index: https://knowledgesidekick.org/llms.txt
+# - Agent surface: https://knowledgesidekick.org/a2a/
+# - Agent surface: https://knowledgesidekick.org/agents/
+# - Agent surface: https://knowledgesidekick.org/mcp/

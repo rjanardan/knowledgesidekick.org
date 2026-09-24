@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What enterprise agents actually need from knowledge — Knowledge Sidekick</title>
+<meta name="description" content="Enterprise agents fail less from not knowing enough than from acting on the wrong slice of what is known. A practical look at what 'good enough knowledge' means at organizational scale.">
+<link rel="canonical" href="https://knowledgesidekick.org/blogs/2026-09-10-what-enterprise-agents-actually-need.html">
+<meta property="og:title" content="What enterprise agents actually need from knowledge — Knowledge Sidekick">
+<meta property="og:description" content="Enterprise agents fail less from not knowing enough than from acting on the wrong slice of what is known.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/blogs/2026-09-10-what-enterprise-agents-actually-need.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What enterprise agents actually need from knowledge — Knowledge Sidekick">
+<meta name="twitter:description" content="Enterprise agents fail less from not knowing enough than from acting on the wrong slice of what is known.">
+<link rel="icon" type="image/svg+xml" href="../../logo.svg">
+<link rel="stylesheet" href="../../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.org/blogs/2026-09-10-what-enterprise-agents-actually-need.html",
+      "url": "https://knowledgesidekick.org/blogs/2026-09-10-what-enterprise-agents-actually-need.html",
+      "name": "What enterprise agents actually need from knowledge",
+      "description": "Enterprise agents fail less from not knowing enough than from acting on the wrong slice of what is known.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" },
+      "datePublished": "2026-09-10"
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-blogs">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="../../logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<div class="page blog-post">
+<div class="wrap">
+
+<div class="blog-head">
+  <div class="blog-date"><time datetime="2026-09-10">10 September 2026</time></div>
+  <span class="blog-tag">Enterprise · Research</span>
+  <h1>What enterprise agents actually need from knowledge</h1>
+</div>
+
+<div class="blog-body">
+
+<p>The question people ask about enterprise agents and knowledge is usually the wrong one. They ask "how much knowledge does the agent need?" as if the answer were a number, or a threshold, or a knowledge base big enough to be safe. The real question is narrower and more useful: what does the agent actually need from knowledge, in what shape, and how do we know it is the right knowledge.</p>
+
+<p>The answer, in the large, is that enterprise agents fail less from not knowing enough than from acting on the wrong slice of what is known. The knowledge is in the building. The problem is not ignorance. The problem is that the agent is acting on an assembly of stale, unowned, ungrounded knowledge and calling it truth.</p>
+
+<h2>The wrong question and the right one</h2>
+
+<p>The wrong question is "can the agent read our documents?" The agent can read the documents. The question is whether the agent is reading the current version, the version the company trusts, the version it is allowed to act on, and whether the company can tell what it read when the agent acts.</p>
+
+<p>The right question is "what does the agent need from knowledge in order to do the thing we are asking it to do — and how do we know it has the right knowledge for that thing, in the right shape, at the right moment." This is a smaller question and a harder one, because it is about the knowledge the agent will actually touch, not the knowledge the company has.</p>
+
+<h2>The knowledge enterprise agents actually need</h2>
+
+<p>For most enterprise agents, the knowledge they actually need is not the whole company. It is the specific knowledge for the specific thing they are doing — the current procedure, the current value, the current owner, the current permission. The rest is background, and background can wait until it is needed, or it can stay out of the context entirely.</p>
+
+<p>The knowledge they need has a few properties, and these are the properties that matter more than the volume:</p>
+
+<p><strong>Currentness.</strong> The agent must be able to tell what is current — not by guessing, not by assuming the latest document is the latest truth. The procedure was updated last month. The agent is following the version from two versions ago. Nobody told the agent. Nobody told the document. The knowledge is not missing; it is just not current, and the agent is acting on the old version as if it were the new one.</p>
+
+<p><strong>Ownership.</strong> The agent must be able to tell who owns the knowledge it is acting on — the person or system responsible for it being true. Without ownership, the agent is acting on an unowned assembly of half-truths, and the company has no one to ask when it goes wrong. Ownership is what makes deprecation possible, and deprecation is what makes currentness credible.</p>
+
+<p><strong>Deprecation.</strong> The knowledge that is no longer true must be retired, marked, and removed from the agent's usable picture. This is the most expensive failure mode at enterprise scale, because it is the one that looks fine until it is not — and by then the agent has been acting on it for weeks. The agent that cannot tell the retired version from the current one is the agent that acts on the retired version as if it were current.</p>
+
+<p><strong>Permission.</strong> The agent must know what it is allowed to use and what it is not allowed to use. The boundary between "can see" and "can act on" must be explicit, because the enterprise is full of knowledge that is real and not for the agent. The agent that can see the salary but cannot act on it is the agent that is useful without being a liability.</p>
+
+<p><strong>Grounding.</strong> When the agent says or does something, it must be able to show what knowledge it used — in what shape, from where, at what version, with what permission. Grounding is what makes the agent auditable, and auditability is what makes the enterprise willing to let it act.</p>
+
+<h2>The shape matters as much as the content</h2>
+
+<p>The shape of the knowledge matters as much as the content, because the shape is what the agent pays to re-derive if it is not already in the right shape. Send the agent the whole document and the agent pays to find the procedure in it. Send the agent the procedure in the shape the agent can use, and the agent pays for the procedure, not for the extraction.</p>
+
+<p>This is the same discipline as the token-savings argument — send less of the right knowledge, in the right shape — and it is the same discipline as the grounding argument — make the basis retrievable, with the currentness and permission attached. The shape is the bridge between cost and trust. The wrong shape costs more and trusts less. The right shape costs less and trusts more.</p>
+
+<h2>What "good enough" means</h2>
+
+<p>Good enough does not mean the whole company. It means the knowledge the agent needs for the thing it is doing — current, owned, retired when it is no longer true, permitted, and groundable. It means the agent can show its basis when asked, and the company can tell whether that basis was the right one.</p>
+
+<p>Good enough is a smaller bar than the company's knowledge. It is a higher bar than the knowledge the agent happens to be reading. The gap between the two is where most enterprise agents fail — not from not knowing enough, but from acting on the wrong slice of what is known.</p>
+
+<p>The practical takeaway is not "build a knowledge base for the whole company." The practical takeaway is to find the one or two knowledge domains the agent will act on, and to put currentness, ownership, deprecation, permission, and grounding on the knowledge for those domains before the agent is asked to act on them at scale. The rest can wait. The one or two domains cannot.</p>
+
+</div>
+
+<div class="blog-foot" style="margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)">
+  <p><a href="/blogs.html">Back to blogs</a> · <a href="/enterprise.html">Enterprise</a> · <a href="/research.html">Research</a></p>
+  <p>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="../../nav.js"></script>
+</body>
+</html>

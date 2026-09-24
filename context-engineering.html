@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Context Engineering — Knowledge Sidekick</title>
+<meta name="description" content="Context engineering: context windows as a knowledge-delivery problem. This page treats context as something you design for, not something you hope the model will make sense of.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/context-engineering.html">
+<meta property="og:title" content="Context Engineering — Knowledge Sidekick">
+<meta property="og:description" content="Context windows as a knowledge-delivery problem — something you design for, not something you hope the model will make sense of.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/context-engineering.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Context Engineering — Knowledge Sidekick">
+<meta name="twitter:description" content="Context windows as a knowledge-delivery problem.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/context-engineering.html",
+      "url": "https://knowledgesidekick.org/context-engineering.html",
+      "name": "Context Engineering — Knowledge Sidekick",
+      "description": "Context windows as a knowledge-delivery problem.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-context">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Context engineering</span>
+    <h1>Context engineering</h1>
+    <p class="lede">A context window is not a brain. It is a delivery mechanism for the right knowledge at the right moment. This page treats context as something you design for — not something you hope the model will make sense of.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/standards.html">Standards</a> · <a href="/blogs/2026-09-18-context-is-not-a-bucket.html">Blog: Context is not a bucket</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is context engineering?</h3>
+    <p>Context engineering is the discipline of designing what an agent sees, in what shape, at what moment — so that the agent can act on the right knowledge without being buried in the wrong knowledge. It is the applied form of the knowledge-layer argument. The context window is not a storage surface; it is a delivery surface, and it should be engineered like one.</p>
+  </div>
+</section>
+
+<section id="the-shift">
+  <h2>From prompt to context</h2>
+  <p>The old framing was "prompt engineering" — write the right words and the model will do the right thing. The new framing is "context engineering" — design the knowledge the agent sees, because the agent's behavior is mostly determined by the knowledge it has in front of it, not by the words you use to ask it to do something.</p>
+  <p>This is not a change in vocabulary for its own sake. It is a change in where the leverage is. The leverage is no longer in the prompt. It is in the knowledge that the prompt is acting on. A perfect prompt on top of the wrong knowledge is still wrong. A mediocre prompt on top of the right knowledge, in the right shape, at the right moment, is often enough.</p>
+  <p>Context engineering is the discipline that turns "the model is smart" into "the model has the right knowledge in front of it."</p>
+</section>
+
+<section id="what-context-is">
+  <h2>What a context window actually is</h2>
+  <p>A context window is a limited, ordered, retrievable surface. It is not a working memory in the human sense. It is not a place where the model thinks. It is the knowledge the model has in front of it at the moment it acts.</p>
+  <p>That is a delivery problem, not a storage problem. The question is not "how much can we fit" but "what does the agent need at this moment, in what shape, and how do we get it there without also sending the wrong knowledge."</p>
+  <p>This sounds obvious. It is still the most common mistake. The instinct is to pack the context with everything the agent might need and let the model sort it out. The model can sort. It cannot be charged for sorting the wrong thing, and it cannot be trusted to find the current authoritative version of something buried in a bucket of other things.</p>
+</section>
+
+<section id="the-patterns">
+  <h2>The patterns</h2>
+  <p>Context engineering is a set of patterns for packing the right knowledge at the right moment. These are not tricks. They are the applied form of the knowledge-layer disciplines.</p>
+
+  <div class="pattern">
+    <h3>Send less of the right knowledge</h3>
+    <p class="purpose">The cheapest context is the one that does not carry knowledge the agent will not use.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>The bucket instinct — dump everything in and let the model sort it out — is the cheapest way to make an agent both more expensive and less dependable.</dd>
+      <dt>Pattern</dt>
+      <dd>For each action the agent might take, decide what knowledge it actually needs, in what shape, and pack only that. Not the whole document. The procedure, the current value, the permission. The rest can wait until it is needed, or it can stay out of the context entirely.</dd>
+      <dt>Trade-off</dt>
+      <dd>More design work up front. Less cost and less confused behavior at runtime. The trade-off is usually worth it the moment the agent is doing something expensive or sensitive.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Make currentness explicit</h3>
+    <p class="purpose">The agent must be able to tell what is current — not by guessing, not by assuming the latest document is the latest truth.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>A context packed from documents does not carry currentness with it. The agent reads the procedure and has no way to tell whether it is the current one, the retired one, or the draft.</dd>
+      <dt>Pattern</dt>
+      <dd>Carry currentness as a property of the knowledge in the context — the version, the date, the owner who says this is the one, the explicit statement that this supersedes the previous version. Make the agent able to check, not assume.</dd>
+      <dt>Trade-off</dt>
+      <dd>A little more structure in the knowledge layer. A lot more credibility in the agent's actions. This is the discipline that turns "the agent read the document" into "the agent read the current document."</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Separate what the agent can see from what it can act on</h3>
+    <p class="purpose">The boundary between visibility and action must be explicit — especially in enterprise and personal settings.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>An agent that can see a piece of knowledge is not the same as an agent that can act on it. The knowledge may be real, may be current, may be in the context — and still not be something the agent is allowed to act on.</dd>
+      <dt>Pattern</dt>
+      <dd>Carry permission and scope as a property of the knowledge in the context. The agent should be able to see the knowledge it needs to reason about, and should be blocked from acting on the knowledge it is not allowed to act on. The two are not the same, and the context should not blur them.</dd>
+      <dt>Trade-off</dt>
+      <dd>More discipline in the knowledge layer, and more explicitness about the boundary. The payoff is an agent that can reason over what it sees without being trusted to act on what it should not.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Make the basis retrievable</h3>
+    <p class="purpose">When the agent acts, it should be able to show what knowledge it used — and whether it was current and permitted.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>An agent that acts on a context it cannot reconstruct later is not auditable. The company cannot tell what knowledge the agent used, whether it was current, or whether it was permitted. This is the failure mode that hurts trust at the moment it matters most.</dd>
+      <dt>Pattern</dt>
+      <dd>Carry the basis with the action — what knowledge was used, from where, in what shape, at what version, with what permission. Not as a separate forensic step. As part of the action itself. The same discipline that makes the agent auditable also makes it cheaper, because it stops the agent from re-reading the same knowledge again and again.</dd>
+      <dt>Trade-off</dt>
+      <dd>A little more structure in the action. A lot more trust. Grounding and token savings are the same discipline seen from two sides.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Stage the context for the action</h3>
+    <p class="purpose">Context is not one thing. It is a sequence of surfaces, each tuned for the action the agent is about to take.</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>A single context for the whole conversation is the bucket instinct again — everything in one place, nothing tuned for the action. The agent pays for the whole conversation every time it acts, and it acts on whatever is in front of it at the moment.</dd>
+      <dt>Pattern</dt>
+      <dd>Stage the context for the action. The agent's first look is a small, current, permitted surface — enough to decide what to do next. The deeper knowledge is brought in only when the agent is about to act on it, and only the knowledge it needs for that action. The rest of the conversation is still there, but it is not in the way.</dd>
+      <dt>Trade-off</dt>
+      <dd>More design work, more explicitness about what the agent needs at each stage. The payoff is an agent that is cheaper to run and less likely to act on the wrong thing.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="what-context-engineering-is-not">
+  <h2>What context engineering is not</h2>
+  <ul>
+    <li>It is not prompt engineering. Prompts still matter, but the leverage is in the knowledge, not the words.</li>
+    <li>It is not stuffing the context with more of everything. That is the bucket instinct, and it is the cheapest way to make the agent worse.</li>
+    <li>It is not a model trick. It is a knowledge discipline, applied to the surface the model sees.</li>
+    <li>It is not a separate layer from the rest of the knowledge work. It is the point where the knowledge layer meets the agent — where representation, currentness, ownership, deprecation, permission, and grounding all come together in the shape the agent actually reads.</li>
+  </ul>
+</section>
+
+<section id="how-to-start">
+  <h2>Where to start</h2>
+  <p>If you are building an agent and you are wondering how to engineer its context, the usual sequence is:</p>
+  <ul>
+    <li>Pick one action the agent will take — not the whole conversation. One action.</li>
+    <li>List the knowledge that action actually needs — not everything it might need, the knowledge it needs for that action.</li>
+    <li>Put currentness, ownership, and permission on that knowledge before it goes into the context. Not after. Before.</li>
+    <li>Pack only that knowledge, in the shape the agent can use, with the basis attached.</li>
+    <li>Make the rest of the conversation available but not in the way — staged, not dumped.</li>
+  </ul>
+  <p>The goal is not a perfect context. The goal is a context that delivers the right knowledge at the right moment, in a shape the agent can use, without the wrong knowledge in the way. The patterns above are the starting points. The rest is the specific knowledge your agent is acting on.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't this just RAG?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>RAG is one way to get knowledge into a context. It is not the whole of context engineering. Context engineering is the discipline of what the agent sees, in what shape, at what moment — retrieval is one part of that, and a part that is often done badly when the only question is "what does the agent need to read." The knowledge layer is what makes retrieval dependable: current, owned, grounded, permitted. Retrieval without that layer is just search with an agent attached.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What about long contexts? Does this still matter?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Longer contexts make the bucket instinct cheaper, not better. The more context you have, the more important it is to know what is current, what is owned, what is permitted, and what the agent actually needs at this moment. A long context full of the wrong knowledge is a more expensive version of the same problem. The discipline does not go away when the context gets longer; it gets more important.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is this only for agents?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The discipline is clearest for agents, because agents act and the cost of wrong knowledge is an action, not a sentence. But the same discipline applies wherever a model is given a context and asked to do something with it. The context window is always a knowledge-delivery surface. Designing it as one is the point.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

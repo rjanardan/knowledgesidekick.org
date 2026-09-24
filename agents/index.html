@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agents — Knowledge Sidekick</title>
+<meta name="description" content="The knowledge layer for agentic systems — forms, lifecycle, grounding, and the disciplines an agent needs to act dependably on knowledge rather than on the model's fluency.">
+<link rel="canonical" href="https://knowledgesidekick.org/agents/">
+<meta property="og:title" content="Agents — Knowledge Sidekick">
+<meta property="og:description" content="The knowledge layer for agentic systems — forms, lifecycle, grounding, and the disciplines for dependable action.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/agents/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Agents — Knowledge Sidekick">
+<meta name="twitter:description" content="The knowledge layer for agentic systems — dependable action, not fluent guessing.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/agents/">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/agents/#page",
+      "url": "https://knowledgesidekick.org/agents/",
+      "name": "Agents — Knowledge Sidekick",
+      "description": "The knowledge layer for agentic systems — forms, lifecycle, grounding, and the disciplines for dependable action.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "about": { "@id": "https://knowledgesidekick.org/#topic-agents" }
+    },
+    {
+      "@type": "Thing",
+      "@id": "https://knowledgesidekick.org/#topic-agents",
+      "name": "Knowledge layer for agentic systems",
+      "description": "The disciplines an agent needs to act dependably on knowledge: forms, lifecycle, grounding, currentness, ownership, permission.",
+      "inScope": "https://knowledgesidekick.org/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://knowledgesidekick.org/#agentPlatform",
+      "name": "Knowledge Sidekick — agent platform (open standards)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://knowledgesidekick.org/",
+      "description": "Open standards and conventions for knowledge-first agentic AI — A2A, agents, and MCP knowledge resources.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "provider": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "APIReference",
+      "@id": "https://knowledgesidekick.org/#api-agents",
+      "name": "Agents knowledge layer — conventions",
+      "description": "The knowledge layer an agentic system needs to act dependably: forms, lifecycle, grounding, currentness, ownership, permission.",
+      "provider": { "@id": "https://knowledgesidekick.org/#agentPlatform" },
+      "documentation": "https://knowledgesidekick.org/agents/"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.org/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.org/about.html",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/javascriptmeetup"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.org/#website",
+      "url": "https://knowledgesidekick.org/",
+      "name": "Knowledge Sidekick — research · standards · adoption",
+      "description": "The not-for-profit arm of Knowledge Sidekick: research, open standards, and adoption of knowledge-first practice.",
+      "publisher": { "@id": "https://knowledgesidekick.org/#person" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://knowledgesidekick.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Agents · Knowledge layer</span>
+    <h1>The knowledge layer for agentic systems</h1>
+    <p class="lede">What an agentic system needs from knowledge to act dependably — the forms knowledge takes, the lifecycle that keeps it current, the grounding that makes action auditable, and the disciplines that keep an agent from acting on the wrong slice of what it knows.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/a2a/">A2A</a> · <a href="/mcp/">MCP</a> · <a href="/why-knowledge.html">Why Knowledge</a> · <a href="/context-engineering.html">Context Engineering</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What does an agentic system need from knowledge?</h3>
+    <p>An agentic system needs knowledge in forms it can act on, kept current by a lifecycle it can trust, and grounded enough that its actions are auditable. It does not need a bigger model. It needs a knowledge layer that says what is true, what is current, what is owned, what is permitted, and what to do when it does not know. The rest is model fluency on top of a picture that may or may not be dependable.</p>
+  </div>
+</section>
+
+<section id="the-agent-knowledge-layer">
+  <h2>The agent knowledge layer</h2>
+  <p>An agent is not a model. An agent is a system that acts on what it knows — plans, calls tools, remembers, grounds its answers, and sometimes does real things in the world. That is why the knowledge layer is the part that matters most, and why the model is the part that is easiest to over-invest in.</p>
+  <p>The agent knowledge layer is the set of disciplines that make an agent's action dependable. They are the same disciplines as the rest of this site — representation, lifecycle, grounding, currentness, ownership, permission — but applied to the agent's own picture of the world, the one it acts on.</p>
+</section>
+
+<section id="forms-of-knowledge">
+  <h2>The forms knowledge takes for an agent</h2>
+  <p>Knowledge is not one thing for an agent. It takes several forms, and each form has its own failure mode.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Forms of knowledge an agent acts on</caption>
+      <thead>
+        <tr>
+          <th style="width:24%">Form</th>
+          <th style="width:38%">What it is</th>
+          <th>The failure mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Facts</td>
+          <td>The things that are true right now — the current value, the current owner, the current status, the current procedure.</td>
+          <td>Staleness. The fact was true, then it was not, and the agent did not know. The most common failure, and the hardest to spot when the fact looks correct.</td>
+        </tr>
+        <tr>
+          <td>Procedures</td>
+          <td>The things the agent is supposed to do — the steps, the order, the exceptions, the things that are not allowed.</td>
+          <td>Wrong version, missing exception, no owner. The agent follows the procedure it has, not the one it should have, and the procedure does not know it is outdated.</td>
+        </tr>
+        <tr>
+          <td>Policies</td>
+          <td>The things the agent is not allowed to do — scope, permission, compliance, the boundaries around action.</td>
+          <td>Weak enforcement. The agent can see the policy but cannot act on the boundary. The agent does the thing the policy was meant to prevent.</td>
+        </tr>
+        <tr>
+          <td>Context</td>
+          <td>The knowledge the agent has in front of it at the moment it acts — the delivery surface, not the storage surface.</td>
+          <td>The bucket instinct. Too much knowledge, the wrong knowledge, the wrong shape. The agent pays for what it does not use and acts on what it should not.</td>
+        </tr>
+        <tr>
+          <td>Memory</td>
+          <td>What the agent retains across the conversation and across conversations — short, medium, and long term.</td>
+          <td>The wrong retention. The agent remembers the wrong thing, forgets the right thing, or keeps something it should have retired. Memory without lifecycle is a liability.</td>
+        </tr>
+        <tr>
+          <td>Basis</td>
+          <td>The knowledge the agent used to form what it said or did — the retrievable basis for grounding.</td>
+          <td>Missing basis. The agent acts on something it cannot show, and the company cannot tell what it used. The trust failure that shows up at the moment it matters most.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The point of the table is not the list. The point is that an agent's knowledge layer is not a single thing — it is a set of forms, each with its own discipline, and the agent fails when any one of them is weak.</p>
+</section>
+
+<section id="lifecycle-for-agents">
+  <h2>Lifecycle for agents</h2>
+  <p>Knowledge for an agent is not static. It is created, updated, used, and retired — and the lifecycle is what keeps the agent's picture current enough to act on. The lifecycle disciplines are the same as everywhere else, but they matter more for an agent, because the agent acts on its picture and acts fast.</p>
+  <ul>
+    <li><strong>Creation.</strong> How new knowledge enters the agent's picture — not just into some document, but into the shape the agent can use, with an owner, with a currentness the agent can check.</li>
+    <li><strong>Representation.</strong> How the knowledge is shaped for the agent — not raw, not re-derived by the model every time, but in the shape the agent can act on, with the basis attached.</li>
+    <li><strong>Extraction.</strong> How knowledge gets out of the places it actually lives — documents, tickets, chats, heads, tools, spreadsheets — and into the agent's picture, in a shape the agent can use.</li>
+    <li><strong>Updates.</strong> How the agent's picture stays current — the update cadence, the version, the owner who says this is the one, the explicit statement that this supersedes the previous version.</li>
+    <li><strong>Deprecation.</strong> How knowledge that is no longer true is retired, marked, and removed from the agent's usable picture — not hidden, not overridden, not waited out. Retired, with a trail.</li>
+  </ul>
+  <p>The lifecycle is the discipline that turns "the agent knows" into "the agent knows what is current." Without it, the agent's picture is a snapshot that ages the moment it is formed.</p>
+</section>
+
+<section id="grounding-for-agents">
+  <h2>Grounding for agents</h2>
+  <p>Grounding is what makes an agent's actions auditable. When the agent says something or does something, grounding is what lets the company ask "what knowledge did you use, was it current, was it permitted" — and get an answer that is more than "the model said so."</p>
+  <p>Grounding is not a separate thing from the rest of the knowledge layer. It is the discipline that ties the agent's action to the knowledge it used, with the basis attached. The same discipline that makes the agent auditable also makes it cheaper, because it stops the agent from re-reading the same knowledge again and again — the basis is carried with the action, not re-derived from scratch every time.</p>
+  <p>Grounding and token savings are the same discipline seen from two sides. The cheaper run is the more dependable run, when the knowledge layer is taken seriously at the point where it meets the agent.</p>
+</section>
+
+<section id="what-agents-do-not-need">
+  <h2>What agents do not need</h2>
+  <p>It is worth saying what agents do not need, because the field is full of things that are sold as if they were the knowledge layer.</p>
+  <ul>
+    <li>Agents do not need a bigger context. They need the right knowledge in the right shape at the right moment. A bigger context full of the wrong knowledge is a more expensive version of the same problem.</li>
+    <li>Agents do not need more knowledge. They need the knowledge they act on to be current, owned, permitted, and grounded. More knowledge without those properties is more confidence on top of a weak picture.</li>
+    <li>Agents do not need to reason their way out of a weak knowledge layer. The model can reason over what it is given. It cannot reliably invent the current authoritative procedure, the private scope boundary, or the fact that a record was deprecated last week — not without a knowledge layer that says so.</li>
+    <li>Agents do not need a knowledge base as large as the company. They need the knowledge they act on to be dependable. The rest can wait.</li>
+  </ul>
+  <p>The list is not a critique of models. It is a reminder that the leverage is in the knowledge layer, not in the model. The model is still doing the reasoning. The knowledge layer is doing the rest.</p>
+</section>
+
+<section id="how-to-start">
+  <h2>Where to start</h2>
+  <p>If you are building an agentic system and you are wondering how to put a knowledge layer in place, the usual sequence is:</p>
+  <ul>
+    <li>Pick one action the agent will take — not the whole system. One action, one knowledge domain.</li>
+    <li>Put the knowledge the action needs into a form the agent can use — not raw, not re-derived every time, but in the shape the agent can act on, with the basis attached.</li>
+    <li>Put currentness, ownership, and permission on that knowledge before the agent acts — not after. The basis is carried with the action.</li>
+    <li>Make the basis retrievable — what knowledge, from where, at what version, with what permission. Grounding is the discipline that makes the cheaper run also the more dependable run.</li>
+    <li>Put the lifecycle on the knowledge — creation, representation, extraction, updates, deprecation — so the agent's picture does not age the moment it is formed.</li>
+  </ul>
+  <p>The goal is not a perfect knowledge layer. The goal is a dependable one for the action the agent is about to take — in a way that the disciplines can be carried to the next action without starting over.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't this just prompt engineering?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Prompt engineering is one piece — the words you use to ask the agent to do something. The knowledge layer is the bigger piece — the knowledge the agent has in front of it when it acts. A perfect prompt on top of the wrong knowledge is still wrong. The leverage is in the knowledge, not the words. Context engineering is the discipline that turns that reminder into a practice.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What about RAG?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>RAG is one way to get knowledge into an agent's context. It is not the whole of the knowledge layer. The knowledge layer is what makes the retrieval dependable: current, owned, grounded, permitted. Retrieval without that layer is just search with an agent attached. The discipline is the same whether the agent gets its knowledge from RAG, from a direct interface, from MCP, or from a2a — the knowledge must be dependable before the agent acts on it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the first discipline to fix?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The first discipline is usually the knowledge the agent is paying for but not using — the whole-document dumps, the re-reads every turn, the raw shapes the model has to re-derive. That is the cheapest cost to remove and the easiest to see. Grounding comes next, because it is the discipline that makes the cheaper run also the more dependable run — and because it is the thing the business asks for first when trust is the pressure.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

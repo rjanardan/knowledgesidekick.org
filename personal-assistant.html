@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Assistant — Knowledge Sidekick</title>
+<meta name="description" content="Knowledge in personal assistant context: the hard part at human scale — a personal assistant that knows your emails, calendar, messages, and habits raises privacy, control, and legal questions under regimes such as the DPDP Act in India and the GDPR in Europe.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/personal-assistant.html">
+<meta property="og:title" content="Personal Assistant — Knowledge Sidekick">
+<meta property="og:description" content="Knowledge in personal assistant context — privacy, control, DPDP, GDPR, and the personal-knowledge problem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/personal-assistant.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Personal Assistant — Knowledge Sidekick">
+<meta name="twitter:description" content="Knowledge in personal assistant context — privacy, control, and the personal-knowledge problem.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/personal-assistant.html",
+      "url": "https://knowledgesidekick.org/personal-assistant.html",
+      "name": "Knowledge in Personal Assistant Context — Knowledge Sidekick",
+      "description": "The hard part at human scale — privacy, control, DPDP, GDPR, and the personal-knowledge problem.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-personal">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Personal assistant context</span>
+    <h1>Knowledge in personal assistant context</h1>
+    <p class="lede">The hard part at human scale: a personal assistant that knows your emails, calendar, messages, and habits raises privacy, control, and legal questions under regimes such as the DPDP Act in India and the GDPR in Europe. Memory is useful. Memory without control is a liability.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/standards.html">Standards</a> · <a href="/adoption.html">Adoption</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is the personal-knowledge problem?</h3>
+    <p>A personal assistant is only useful if it knows you — your emails, your calendar, your messages, your habits, your preferences, your history. The moment it does, the questions become: who else can see that knowledge, who controls it, how long it lasts, and what legal regime it falls under. Memory across short, medium, and long term is useful. Memory without control and compliance is a liability.</p>
+  </div>
+</section>
+
+<section id="the-personal-shift">
+  <h2>The personal shift</h2>
+  <p>The shift from enterprise knowledge to personal knowledge is not a change of scale. It is a change of stakes. Enterprise knowledge is about assembly and governance — the knowledge is in the building and the problem is to assemble and govern it. Personal knowledge is about control and trust — the knowledge is about one person, and the problem is to make the assistant useful without making it a liability.</p>
+  <p>The personal assistant is the most intimate knowledge layer an agent can hold. It is also the one where the cost of wrong knowledge is most personal — not operational, not financial in the company sense, but private, embarrassing, and sometimes legal. A personal assistant that acts on the wrong knowledge is not just wrong; it is wrong about you, in a way that touches the things you did not want it to touch.</p>
+  <p>This is why the personal-knowledge problem is its own thing, and not just the enterprise problem with fewer people.</p>
+</section>
+
+<section id="what-personal-assistants-know">
+  <h2>What personal assistants know</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>What a personal assistant knows — and what it means for the knowledge layer</caption>
+      <thead>
+        <tr>
+          <th style="width:26%">Thing</th>
+          <th style="width:38%">What it is</th>
+          <th>What it means for the knowledge layer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Emails</td>
+          <td>The messages you send and receive — the commitments, the plans, the personal things, the things you would rather not have summarized in a sentence someone else can read.</td>
+          <td>The assistant must know enough to be useful — the current commitment, the next step, the thing that needs a reply — without becoming a system that re-surfaces the private things at the wrong moment. The boundary between "the assistant can see it" and "the assistant can act on it" is the boundary that matters most here.</td>
+        </tr>
+        <tr>
+          <td>Calendar</td>
+          <td>The meetings, the appointments, the gaps, the things you have committed to and the things you have not. The structure of your time.</td>
+          <td>The assistant must know what is current — which meeting is still on, which one was moved, which one was cancelled — and must know what it is allowed to do with that knowledge. A calendar is useful; a calendar that the assistant acts on without knowing whether the meeting is still on is a source of embarrassment and wasted time.</td>
+        </tr>
+        <tr>
+          <td>Messages</td>
+          <td>The chats, the DMs, the things said in private channels. The knowledge that is the most useful and the most sensitive — the thing you would tell a friend and would not want the assistant to repeat.</td>
+          <td>The assistant must be able to use the useful part of the message — the plan, the date, the commitment — without becoming a system that can repeat the private part at the wrong moment. This is the hardest boundary to get right, because the useful part and the private part are often in the same message.</td>
+        </tr>
+        <tr>
+          <td>Habits</td>
+          <td>The patterns — when you work, when you rest, what you prefer, the things you do without thinking about them. The knowledge that makes the assistant feel like it knows you.</td>
+          <td>Habits are the knowledge that makes the assistant useful over time. They are also the knowledge that makes it feel intrusive if it acts on them in the wrong way, at the wrong moment, or in front of the wrong person. The knowledge must be there, and it must be under your control.</td>
+        </tr>
+        <tr>
+          <td>History</td>
+          <td>The long memory — what happened last month, last year, the thing you did and the thing you decided and the thing you changed your mind about. The knowledge that makes the assistant more useful the longer you use it.</td>
+          <td>Long memory is the most valuable knowledge and the hardest to govern. It is the knowledge that accumulates trust over time — and the knowledge that accumulates risk over time, if it is not controlled, if it is not possible to forget, if it is not possible to say "this no longer applies."</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="the-three-memory-levels">
+  <h2>The three memory levels</h2>
+  <p>A useful personal assistant has memory at three levels, and each level has its own knowledge question.</p>
+
+  <div class="challenge">
+    <span class="tag">Short term</span>
+    <h3>What is happening now</h3>
+    <p>The current turn, the current message, the current meeting, the thing the assistant is acting on right now. Short-term memory is the easiest to get right and the easiest to get wrong — because if the assistant does not remember what it just saw, it is not a useful assistant, and if it remembers the wrong thing, it is an embarrassing one.</p>
+  </div>
+
+  <div class="challenge">
+    <span class="tag">Medium term</span>
+    <h3>What has happened recently</h3>
+    <p>The last few days, the last few weeks, the thread of what is going on. Medium-term memory is the knowledge that makes the assistant feel like it is keeping up — the thing you mentioned last week is still in mind this week. The knowledge question here is currentness: which of these is still true, which has changed, which has ended.</p>
+  </div>
+
+  <div class="challenge">
+    <span class="tag">Long term</span>
+    <h3>What you are like</h3>
+    <p>The habits, the preferences, the history, the things that do not change often and that make the assistant more useful the longer you use it. Long-term memory is the most valuable knowledge and the hardest to govern — because it is the knowledge that accumulates over time, and the knowledge that is hardest to forget, to correct, to say "this no longer applies."</p>
+  </div>
+</section>
+
+<section id="privacy-control-compliance">
+  <h2>Privacy, control, and compliance</h2>
+  <p>The personal-knowledge problem is not only a technical problem. It is also a legal and ethical one, and the legal regime depends on where the person is and where the knowledge goes.</p>
+  <ul>
+    <li><strong>DPDP Act, India.</strong> The Digital Personal Data Protection Act governs personal data in India. A personal assistant that knows your emails, calendar, messages, and habits is handling personal data — and the questions of consent, purpose, storage, and deletion are real ones, not abstractions.</li>
+    <li><strong>GDPR, Europe.</strong> The General Data Protection Regulation governs personal data in the EU. The same questions — consent, purpose, storage, deletion, the right to be forgotten — are real ones, and the threshold is higher.</li>
+    <li><strong>The rest.</strong> Other regimes apply in other places. The point is not the list. The point is that a personal assistant that knows you is handling personal data, and the legal questions are real ones, not things to solve after the assistant is built.</li>
+  </ul>
+  <p>The technical side and the legal side are not separate. They are the same problem, seen from two angles: how do you make the assistant useful without making it a liability. The answer is the same in both: control. The knowledge must be under the person's control — what it knows, how long it keeps it, who else can see it, when it forgets, and how the person can tell it to forget.</p>
+</section>
+
+<section id="control">
+  <h2>Control</h2>
+  <p>Control is the discipline that makes personal knowledge useful. Without control, the knowledge is a liability, and the assistant is a risk, not a help. With control, the knowledge is a help, and the assistant is a sidekick — something that knows you and works for you, not something that knows you and works for someone else.</p>
+  <p>The controls that matter are the ordinary ones, done well:</p>
+  <ul>
+    <li><strong>What it knows.</strong> The person must be able to tell what the assistant knows about them — not in a forensic dump, but in a form they can understand and act on.</li>
+    <li><strong>How long it keeps it.</strong> The person must be able to tell how long the assistant keeps each thing — the short-term thing, the medium-term thing, the long-term thing — and must be able to shorten that time.</li>
+    <li><strong>Who else can see it.</strong> The person must be able to tell who else can see the knowledge — which is the most important control and the one that is most often missing.</li>
+    <li><strong>When it forgets.</strong> The person must be able to tell the assistant to forget — a thing, a period, a subject — and the assistant must actually forget, not just bury it.</li>
+    <li><strong>How to correct it.</strong> The person must be able to correct the knowledge — this is not my habit, this meeting is still on, this is not what I said — and the correction must stick, not be worn down by the next re-read.</li>
+  </ul>
+  <p>These are not exotic controls. They are the ordinary controls, done well, in a system that is designed for them from the start, not bolted on when the person asks.</p>
+</section>
+
+<section id="how-to-start">
+  <h2>Where to start</h2>
+  <p>If you are building a personal assistant and you are wondering how to handle the knowledge layer, the usual sequence is:</p>
+  <ul>
+    <li>Pick one thing the assistant will know — one email stream, one calendar, one message thread — and design the knowledge layer for that thing before you add the next.</li>
+    <li>Put control on that knowledge from the start — what it knows, how long it keeps it, who else can see it, when it forgets, how to correct it. Not as a feature to add later. As a property of the knowledge, from the start.</li>
+    <li>Make the boundary between "can see" and "can act on" explicit for that knowledge. The assistant can see the message to extract the plan; it cannot act on the private part at the wrong moment.</li>
+    <li>Make the basis retrievable for the actions the assistant takes — what it used, whether it was current, whether it was permitted. Grounding is the same discipline here as anywhere else, and the stakes are more personal.</li>
+  </ul>
+  <p>The goal is not a perfect memory. The goal is a useful one — one that knows you, works for you, and is under your control, in a way that survives the person who built it.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't this a product decision, not a knowledge decision?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is both. The product decision is what the assistant does. The knowledge decision is what it knows, how long it keeps it, who else can see it, and how it forgets. The two are not separable, because the product cannot deliver on its promise without the knowledge, and the knowledge cannot be useful without the control. The knowledge layer is where the product promise meets the privacy risk.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What about on-device and local models?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>On-device and local models change the control picture — less data leaves the device, more control stays with the person. That is a real improvement, and it is not the whole story. The assistant still needs to know the right thing, in the right shape, at the right moment, with the right controls. On-device is one way to improve the control side; it does not replace the knowledge discipline.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is this different from the enterprise page?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The enterprise page is about assembly and governance — the knowledge is in the building, and the problem is to assemble and govern it. The personal page is about control and trust — the knowledge is about one person, and the problem is to make the assistant useful without making it a liability. The disciplines overlap — currentness, ownership, deprecation, grounding — but the stakes and the legal regime are different, and the controls that matter are different.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

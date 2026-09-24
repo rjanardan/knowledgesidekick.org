@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Knowledge Sidekick</title>
+<meta name="description" content="Research positions on knowledge as a first-class layer in agentic AI: why it matters, how it behaves in enterprise and personal contexts, why context windows are a knowledge-delivery problem, and where token cost and grounding really come from.">
+<link rel="canonical" href="https://knowledgesidekick.org/research.html">
+<meta property="og:title" content="Research — Knowledge Sidekick">
+<meta property="og:description" content="Research positions on knowledge as a first-class layer in agentic AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/research.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Research — Knowledge Sidekick">
+<meta name="twitter:description" content="Research positions on knowledge as a first-class layer in agentic AI.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/research.html",
+      "url": "https://knowledgesidekick.org/research.html",
+      "name": "Research — Knowledge Sidekick",
+      "description": "Research positions on knowledge as a first-class layer in agentic AI: why it matters, how it behaves in enterprise and personal contexts, why context windows are a knowledge-delivery problem, and where token cost and grounding really come from.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.org/#website",
+      "url": "https://knowledgesidekick.org/",
+      "name": "Knowledge Sidekick — research · standards · adoption",
+      "description": "The not-for-profit arm of Knowledge Sidekick: research, open standards, and adoption of knowledge-first practice.",
+      "publisher": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.org/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.org/about.html",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/javascriptmeetup"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-research">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research pillar</span>
+    <h1>Where the ideas are developed</h1>
+    <p class="lede">Short, self-contained position pieces on why knowledge is a cross-cutting layer in agentic systems, why it tends to fail first, and what it means to engineer for it. Written to be read by a technical leader who is funding or building agentic work.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/standards.html">Standards</a> · <a href="/adoption.html">Adoption</a> · <a href="/blogs.html">Blogs</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="position">
+  <div class="callout">
+    <span class="label">How to read this page</span>
+    <h3>One idea, several angles</h3>
+    <p>The flagship argument — that knowledge is a layer, not a module — is developed across a small set of topics. Each one below opens with the direct answer to why it matters, then goes into enough substance to be useful on its own. They are not marketing copy and they are not a textbook. They are meant to be read by a technical leader who wants a clearer vocabulary for the knowledge layer.</p>
+  </div>
+</section>
+
+<section id="for-agents" style="margin-top:24px">
+  <div class="callout" style="border-left-color:var(--accent);background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px 18px">
+    <span class="label" style="font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;display:block">For agents &amp; crawlers</span>
+    <p style="margin:0 0 8px;font-size:13.5px">Machine-readable indexes for this site: <a href="/agents.md">agents.md</a> (structured topic/form/convention index) · <a href="/llms.txt">llms.txt</a> (site index). Agent-oriented pages: <a href="/a2a/">A2A</a> · <a href="/agents/">Agents</a> · <a href="/mcp/">MCP</a>. Sitemap: <a href="/sitemap.xml">sitemap.xml</a>.</p>
+  </div>
+</section>
+
+<section id="topics">
+  <h2>Research topics</h2>
+
+  <div class="pattern">
+    <h3>Why Knowledge for Agentic AI</h3>
+    <p class="purpose">The core argument: knowledge is a cross-cutting layer in agentic systems, not a single module.</p>
+    <dl>
+      <dt>Direct answer</dt>
+      <dd>Because agents act on what they know. A chatbot can be wrong in a sentence; an agent can be wrong in a decision, an API call, a record change, or a plan that keeps going because nothing told it to stop.</dd>
+      <dt>Why it matters</dt>
+      <dd>The knowledge layer is what says what is true, what is current, what the system is allowed to do, and what to do when it does not know. Neglect that layer and the model's fluency turns into confident action on bad information.</dd>
+      <dt>Read</dt>
+      <dd><a href="/why-knowledge.html">Why Knowledge — full position piece</a></dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Knowledge in Enterprise Context</h3>
+    <p class="purpose">The hard part at organizational scale: collecting knowledge that lives in documents, tickets, chats, heads, and tools, and keeping it current enough that agents can trust it.</p>
+    <dl>
+      <dt>Direct answer</dt>
+      <dd>At enterprise scale, the knowledge problem is not ignorance — it is scatter, staleness, and ownership. The facts are in the building; they are just not assembled, current, or governed in a way an agent can safely act on.</dd>
+      <dt>Why it matters</dt>
+      <dd>Enterprise agents fail less from not knowing enough than from acting on the wrong slice of what is known: stale procedure, unowned data, mixed permissions, no deprecation. The work is assembly and governance, not invention.</dd>
+      <dt>Read</dt>
+      <dd><a href="/enterprise.html">Knowledge in Enterprise Context</a></dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Knowledge in Personal Assistant Context</h3>
+    <p class="purpose">The hard part at human scale: a personal assistant that knows your emails, calendar, messages, and habits raises privacy, control, and legal questions.</p>
+    <dl>
+      <dt>Direct answer</dt>
+      <dd>A personal assistant is only useful if it knows you. The moment it does, the questions become: who else can see that knowledge, who controls it, how long it lasts, and what legal regime it falls under — DPDP in India, GDPR in Europe, and the rest.</dd>
+      <dt>Why it matters</dt>
+      <dd>Personal knowledge is the most valuable and the most sensitive knowledge an agent can hold. Memory across short, medium, and long term is useful; memory without control and compliance is a liability.</dd>
+      <dt>Read</dt>
+      <dd><a href="/personal-assistant.html">Knowledge in Personal Assistant Context</a></dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Context Engineering</h3>
+    <p class="purpose">Context windows are a knowledge-delivery problem. This page treats context as something you design for, not something you hope the model will make sense of.</p>
+    <dl>
+      <dt>Direct answer</dt>
+      <dd>A context window is not a brain. It is a delivery mechanism for the right knowledge at the right moment. Treating it as one big bucket of text is the most common way to make an agent both more expensive and less dependable.</dd>
+      <dt>Why it matters</dt>
+      <dd>How you pack context determines what the agent can do, what it cannot do, how much it costs, and how often it acts on the wrong thing. Context engineering is the applied form of the knowledge-layer argument.</dd>
+      <dt>Read</dt>
+      <dd><a href="/context-engineering.html">Context Engineering — full position piece</a></dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Token Savings &amp; Grounding</h3>
+    <p class="purpose">Where token cost actually comes from in agentic systems, and how grounding claims in retrievable knowledge reduces both cost and the kind of confident error that hurts trust.</p>
+    <dl>
+      <dt>Direct answer</dt>
+      <dd>Token cost in agentic systems is not primarily a model-cost problem. It is a knowledge problem: moving the wrong knowledge, re-reading it, and grounding nothing in anything you can point back to.</dd>
+      <dt>Why it matters</dt>
+      <dd>The same discipline that makes an agent cheaper — sending less of the right knowledge — also makes it more dependable. Grounding is the flip side of token savings: both are ways of taking knowledge seriously.</dd>
+      <dt>Read</dt>
+      <dd><a href="/token-savings.html">Token Savings &amp; Grounding — full position piece</a></dd>
+    </dl>
+  </div>
+</section>
+
+<section id="how-to-use">
+  <h2>How to use this research</h2>
+  <p>If you are picking up this site for the first time, start with <a href="/why-knowledge.html">Why Knowledge</a>. It is the flagship argument and the vocabulary the rest of the site builds on.</p>
+  <p>If you are working in a specific context, go straight to the piece that matches it:</p>
+  <ul>
+    <li><a href="/why-knowledge.html">Why Knowledge</a> — the core argument and the vocabulary.</li>
+    <li><a href="/enterprise.html">Enterprise</a> — if your agents act on organizational knowledge.</li>
+    <li><a href="/personal-assistant.html">Personal Assistant</a> — if your agents act on personal knowledge.</li>
+    <li><a href="/context-engineering.html">Context Engineering</a> — if you are designing how context is packed and delivered.</li>
+    <li><a href="/token-savings.html">Token Savings &amp; Grounding</a> — if cost and trust are the pressure you feel right now.</li>
+  </ul>
+  <p>Each piece is written to stand alone. You do not have to read them in order, though the argument builds.</p>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

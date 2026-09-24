@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Savings & Grounding — Knowledge Sidekick</title>
+<meta name="description" content="Where token cost really comes from in agentic systems, and how grounding claims in retrievable knowledge reduces both cost and the kind of confident error that hurts trust.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/token-savings.html">
+<meta property="og:title" content="Token Savings & Grounding — Knowledge Sidekick">
+<meta property="og:description" content="Where token cost really comes from in agentic systems — and how grounding reduces both cost and confident error.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/token-savings.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Token Savings & Grounding — Knowledge Sidekick">
+<meta name="twitter:description" content="Where token cost really comes from — and how grounding reduces both cost and confident error.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/token-savings.html",
+      "url": "https://knowledgesidekick.org/token-savings.html",
+      "name": "Token Savings & Grounding — Knowledge Sidekick",
+      "description": "Where token cost really comes from in agentic systems — and how grounding reduces both cost and confident error.",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-token">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>research · standards · adoption</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Token savings & grounding</span>
+    <h1>Cheaper runs and more dependable runs are the same discipline</h1>
+    <p class="lede">Token cost in agentic systems is not primarily a model-cost problem. It is a knowledge problem: moving the wrong knowledge, re-reading it, and grounding nothing in anything you can point back to. The same discipline that makes an agent cheaper also makes it more dependable.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/context-engineering.html">Context Engineering</a> · <a href="/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html">Blog: Grounding is the flip side of savings</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>Where does token cost really come from?</h3>
+    <p>From moving knowledge the agent does not need, re-reading knowledge it already had, and sending knowledge in a shape the agent has to re-derive before it can use it. The model is not the main cost. The knowledge layer is. Send less of the right knowledge, in the right shape, only when the agent needs it, and the cost comes down — and the agent becomes more dependable at the same time, because grounding is the same discipline seen from the other side.</p>
+  </div>
+</section>
+
+<section id="the-cost-misconception">
+  <h2>The cost misconception</h2>
+  <p>Most conversations about token cost in agentic systems start with the model — the price per token, the context budget, the choice of model. That is not where the cost actually comes from in a working system.</p>
+  <p>The cost comes from the knowledge layer: moving the wrong knowledge, re-reading it, and sending it in a shape the agent has to re-derive before it can act. A system that sends the whole document every time pays for the whole document every time, even if the agent only needs the one procedure, the one value, the one permission. A system that re-reads the same knowledge every turn pays for it every turn. A system that sends knowledge in a raw shape pays the model to do the work of turning it into something usable.</p>
+  <p>The model cost is real. It is not the main cost in a working agentic system, and fixing it by choosing a cheaper model does not fix the underlying problem, which is that the agent is paying for knowledge it should not be paying for.</p>
+</section>
+
+<section id="the-four-costs">
+  <h2>The four token costs</h2>
+  <p>These are the ordinary places token cost comes from in an agentic system. They are not exotic. They are the costs that show up when the knowledge layer is weak and the context is a bucket.</p>
+
+  <div class="cost-table" style="border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden;box-shadow:var(--shadow)">
+    <table style="border-collapse:collapse;width:100%">
+      <caption style="caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line)">Where token cost actually comes from</caption>
+      <thead>
+        <tr style="background:var(--panel-2)">
+          <th style="text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;width:30%">Cost</th>
+          <th style="text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600">What it is</th>
+          <th style="text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600">The knowledge fix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top">Moving the wrong knowledge</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Sending the whole document when the agent needs the procedure. Sending the whole conversation when the agent needs the current value. Paying for knowledge the agent will not use.</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Send less of the right knowledge. Pack the context for the action, not for the conversation. The discipline from context engineering: the agent's first look is the smallest surface that lets it decide what to do next.</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top">Re-reading the same knowledge</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Every turn re-reads the knowledge the agent already had. The same procedure, the same value, the same policy, re-read because nothing in the system said "you already know this."</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Carry the knowledge forward only as long as it is still current and still needed. Make the agent able to say "I already have this" and mean it. The basis stays with the action, not re-read from scratch every time.</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top">Re-deriving the shape</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Sending knowledge in a raw shape and paying the model to turn it into something usable. The procedure is there, but the agent pays to extract the steps. The value is there, but the agent pays to find it in the document.</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Send knowledge in the shape the agent can use. Representation is not a knowledge-base problem; it is a cost problem. The right shape costs less than the wrong shape, because the model does not have to do the work of turning it into something usable.</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);font-weight:600;vertical-align:top">Acting on the wrong knowledge</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">The agent pays for the knowledge and then acts on the wrong version of it — stale, unowned, not current. The token cost is the least of it; the real cost is the action on the wrong knowledge.</td>
+          <td style="padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top">Grounding. The agent shows what knowledge it used, whether it was current, whether it was permitted. Grounding is the discipline that makes the cheaper run also the more dependable run — the same discipline seen from the other side.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="grounding">
+  <h2>Grounding</h2>
+  <p>Grounding is the discipline of tying an agent's claims and actions to knowledge it can point back to. When the agent says something or does something, grounding is what lets the company ask "what knowledge did you use, was it current, was it permitted" — and get an answer that is more than "the model said so."</p>
+  <p>Grounding is not a separate thing from token savings. It is the same discipline seen from the other side. The cheapest action is the one the agent does not have to re-read to justify. The most dependable action is the one the agent can show its basis for. The two are the same action, designed with the knowledge layer in mind.</p>
+  <p>The usual grounding mistakes are the same as the usual token mistakes, turned around:</p>
+  <ul>
+    <li>The agent acts on a context it cannot reconstruct later — so when asked for the basis, it has nothing to show.</li>
+    <li>The agent acts on a version it cannot prove is current — so the basis is there, but the company cannot tell whether it was the right version.</li>
+    <li>The agent acts on knowledge it could see but was not permitted to act on — so the basis is there, but the company cannot tell whether the agent was allowed to use it.</li>
+    <li>The agent acts on a shape it had to re-derive — so the basis is there, but the company cannot tell whether the agent derived it correctly, because the derivation happened inside the model, not in the knowledge layer.</li>
+  </ul>
+  <p>Grounding is what makes the agent auditable. Auditability is what makes the enterprise willing to let it act. The cheaper run and the more dependable run are the same run, designed with the knowledge layer in mind.</p>
+</section>
+
+<section id="the-relationship">
+  <h2>The relationship</h2>
+  <p>The short version: token savings and grounding are the same discipline. Sending less of the right knowledge makes the agent cheaper. Making the basis retrievable makes the agent more dependable. Doing both is the same design decision — take the knowledge layer seriously at the point where it meets the agent.</p>
+  <p>This is the reason the token-savings and grounding argument is usually the one that lands first in a business setting. It is the argument that speaks the language the business already uses — cost and trust — and it is the argument that points back to the same source: the knowledge layer, designed as a delivery surface, with currentness, ownership, permission, deprecation, and grounding carried as properties of the knowledge, not as afterthoughts bolted on when the agent fails.</p>
+  <p>The model is still doing the reasoning. The knowledge layer is doing the rest. The cost and the trust both come from how seriously the knowledge layer is taken at the point where it meets the agent.</p>
+</section>
+
+<section id="how-to-start">
+  <h2>Where to start</h2>
+  <p>If you are under pressure on cost and trust at the same time — which is the usual pressure in a working agentic system — the usual sequence is:</p>
+  <ul>
+    <li>Find the knowledge the agent is paying for but not using. The whole-document dumps, the re-reads every turn, the raw shapes the model has to re-derive. This is usually the biggest cost and the easiest to fix.</li>
+    <li>Put currentness, ownership, and permission on the knowledge before it goes into the context. This is the fix that pays for itself in both cost and trust.</li>
+    <li>Make the basis retrievable for the actions the agent takes. Grounding is the discipline that turns "cheaper" into "cheaper and more dependable."</li>
+    <li>Stage the context for the action, not for the conversation. The agent's first look is the smallest surface that lets it decide what to do next. The rest comes in only when it is needed.</li>
+  </ul>
+  <p>The goal is not to make the agent cheap. The goal is to make the agent cheap and dependable for the same reason — because the knowledge layer is taken seriously at the point where it meets the agent.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Isn't token cost just a model choice?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Model choice is one lever. It is not the main lever in a working agentic system, because the main cost is usually the knowledge the agent is moving, re-reading, and re-deriving — not the model's price per token. Choosing a cheaper model on top of a knowledge layer that is paying for the wrong knowledge is a smaller win than fixing the knowledge layer. The two are not in conflict; the knowledge fix is usually the bigger one.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does grounding add cost?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Grounding done badly can add cost — if it means re-reading the knowledge every time to produce the basis. Grounding done well reduces cost — because the same discipline that makes the basis retrievable also makes the agent stop re-reading the same knowledge. The basis is carried with the action, not re-derived from scratch every time. The discipline is one; the cost and the trust are two sides of the same win.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the first thing to fix?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The first thing to fix is usually the knowledge the agent is paying for but not using. The whole-document dumps, the re-reads, the raw shapes. That is the cheapest cost to remove and the easiest to see. Grounding comes next, because it is the discipline that makes the cheaper run also the more dependable run — and because it is the thing the business asks for first when trust is the pressure.</p></div>
+  </div>
+</section>
+
+<section id="about-author" class="bio-card" style="margin-top:34px">
+  <h2>About the author</h2>
+  <p>Knowledge Sidekick is written by <a href="/about.html">Janardan Revuru</a>. Background relevant to this topic: M.Tech in Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028); three patents; an AI Centre of Excellence built and scaled from zero to roughly 50 engineers and 15 models; and organizer of the Bengaluru JavaScript Meetup.</p>
+  <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · Email: <a href="mailto:janardan.revuru@gmail.com">janardan.revuru@gmail.com</a> · <a href="https://www.linkedin.com/in/rjanardan">LinkedIn</a></p>
+</div>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/javascriptmeetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>
