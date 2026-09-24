@@ -3,8 +3,10 @@
 
   // ============================================================
   // knowledgesidekick.org — shared nav builder
-  // Not-for-profit: research, standards, adoption, community.
-  // Same nav system as .com, different groups and tone.
+  // Six top-level items: Knowledge, Research, Standards, Adoption,
+  // Learn (dropdowns) and Contact (plain link).
+  // Long groups carry .grp-label subheadings; an entry with only a
+  // `sub` key renders as a heading, not a link.
   // ============================================================
 
   const NAV = {
@@ -13,22 +15,74 @@
     logoText: { name: 'Knowledge Sidekick', tag: 'Knowledge for Agentic AI' },
     groups: [
       {
-        label: 'Agents',
-        open: false,
-        items: [
-          { label: 'A2A', href: '/a2a/' },
-          { label: 'Agents', href: '/agents/' },
-          { label: 'MCP', href: '/mcp/' }
-        ]
-      },
-      {
         label: 'Knowledge',
         open: false,
         items: [
-          { label: 'Why Knowledge?', href: '/why-knowledge.html' },
-          { label: 'Research', href: '/research.html' },
-          { label: 'Standards', href: '/standards.html' },
-          { label: 'Adoption', href: '/adoption.html' }
+          { label: 'Why knowledge?', href: '/why-knowledge.html' },
+          { label: 'DIKW', href: '/knowledge/dikw/' },
+          { label: 'Context engineering', href: '/context-engineering.html' },
+          { label: 'Knowledge bundles', href: '/knowledge/knowledge-bundles/' },
+          { label: 'Knowledge formats', href: '/knowledge/knowledge-formats/' },
+          { label: 'Taxonomies', href: '/knowledge/taxonomies/' },
+          { label: 'Ontologies', href: '/knowledge/ontologies/' },
+          { label: 'Knowledge graphs', href: '/knowledge/knowledge-graphs/' }
+        ]
+      },
+      {
+        label: 'Research',
+        open: false,
+        items: [
+          { label: 'Research at a glance', href: '/research.html' },
+          { sub: 'Agent systems' },
+          { label: 'AI agents', href: '/agents/' },
+          { label: 'A2A communication', href: '/a2a/' },
+          { label: 'MCP', href: '/mcp/' },
+          { sub: 'Knowledge at work' },
+          { label: 'Enterprise knowledge', href: '/enterprise.html' },
+          { label: 'Memory', href: '/research/memory/' },
+          { label: 'Personal assistants', href: '/personal-assistant.html' },
+          { label: 'Context engineering', href: '/context-engineering.html' },
+          { sub: 'Frontier' },
+          { label: 'Agentic AI', href: '/research/agentic-ai/' },
+          { label: 'Semantic communication', href: '/research/semcom/' }
+        ]
+      },
+      {
+        label: 'Standards',
+        open: false,
+        items: [
+          { label: 'Standards at a glance', href: '/standards.html' },
+          { sub: 'Discovery' },
+          { label: 'llms.txt', href: '/standards/llms-txt/' },
+          { sub: 'Knowledge organization' },
+          { label: 'W3C SKOS', href: '/standards/skos/' },
+          { label: 'ISO 25964', href: '/standards/iso-25964/' },
+          { sub: 'Data model' },
+          { label: 'RDF', href: '/standards/rdf/' },
+          { label: 'RDFS', href: '/standards/rdfs/' },
+          { label: 'OWL', href: '/standards/owl/' },
+          { sub: 'Serialisation' },
+          { label: 'Turtle', href: '/standards/turtle/' },
+          { label: 'JSON-LD', href: '/standards/json-ld/' },
+          { label: 'HDT', href: '/standards/hdt/' },
+          { sub: 'Query' },
+          { label: 'SPARQL', href: '/standards/sparql/' },
+          { label: 'GraphQL-LD', href: '/standards/graphql-ld/' },
+          { sub: 'Provenance and persistence' },
+          { label: 'PROV-O', href: '/standards/prov-o/' },
+          { label: 'Mementos', href: '/standards/mementos/' }
+        ]
+      },
+      {
+        label: 'Adoption',
+        open: false,
+        items: [
+          { label: 'Adoption at a glance', href: '/adoption.html' },
+          { sub: 'Start here' },
+          { label: 'llms.txt', href: '/standards/llms-txt/' },
+          { label: 'A2A communication', href: '/a2a/' },
+          { sub: 'Evidence' },
+          { label: 'Companies ahead in the game', href: '/adoption/companies-ahead/' }
         ]
       },
       {
@@ -36,17 +90,19 @@
         open: false,
         items: [
           { label: 'Blogs', href: '/blogs.html' },
+          { label: 'Glossary', href: '/learn/glossary/' },
+          { label: 'Token savings', href: '/token-savings.html' },
           { label: 'Community', href: '/community.html' },
           { label: 'Internship', href: '/internship.html' },
           { label: 'Training', href: '/training.html' },
-          { label: 'Free resources', href: '/free-resources.html' }
+          { label: 'Free resources', href: '/free-resources.html' },
+          { label: 'About', href: '/about.html' }
         ]
       },
-      { label: 'About', href: '/about.html', plain: true, local: true }
+      { label: 'Contact', href: '/contact.html', plain: true, local: true }
     ]
   };
 
-  const p = document.createElement('p');
   const escAttr = s => {
     if (typeof s !== 'string') return '';
     return s.replace(/[&>"']/g, ch => ({ '&': '&amp;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -61,7 +117,12 @@
   function dropdownHTML(group) {
     const id = 'nav-dropdown-' + group.label.replace(/\s+/g, '-');
     let rows = '';
-    group.items.forEach((it, i) => {
+    group.items.forEach(it => {
+      // a heading, not a link
+      if (it.sub) {
+        rows += `<div class="grp-label" role="presentation">${escAttr(it.sub)}</div>`;
+        return;
+      }
       const target = it.target || '';
       const ext = it.local === false ? ' class="nav-ext"' : '';
       const tAttr = target ? ` target="${escAttr(target)}" rel="noopener"` : '';
@@ -103,9 +164,6 @@
 
   function highlightCurrent() {
     const pathname = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
-    const map = new Map();
-    NAV.groups.forEach(g => (g.items || []).forEach(it => { if (it.local) map.set(it.href.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/', it.label); }));
-    map.set('/', 'Home');
     document.querySelectorAll('.nav-dropdown a, .nav-link').forEach(a => {
       const href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
       a.classList.toggle('current', href === pathname);

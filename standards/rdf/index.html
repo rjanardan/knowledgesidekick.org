@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RDF — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/rdf/">
+<meta name="description" content="RDF is the data model underneath the semantic web: statements as subject-predicate-object triples, IRIs as names, blank nodes, named graphs, and the separation of model from serialisation.">
+<meta property="og:title" content="RDF — Knowledge Sidekick">
+<meta property="og:description" content="The data model underneath the semantic web: subject-predicate-object triples, IRIs, blank nodes, named graphs, and serialisations.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/rdf/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RDF — Knowledge Sidekick">
+<meta name="twitter:description" content="The data model underneath the semantic web: subject-predicate-object triples, IRIs, blank nodes, named graphs, and serialisations.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/rdf/",
+      "url": "https://knowledgesidekick.org/standards/rdf/",
+      "name": "RDF — Knowledge Sidekick",
+      "description": "RDF is the data model underneath the semantic web: statements as subject-predicate-object triples, IRIs as names, blank nodes, named graphs, and the separation of model from serialisation.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/rdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is RDF a file format?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RDF is an abstract data model: a set of statements, each with a subject, a predicate and an object. Turtle, JSON-LD and RDF/XML serialise it without changing its meaning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a blank node for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A blank node stands for something with properties in the graph but no name, such as an unnamed address or an intermediate step in a process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do named graphs add?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They let a set of triples be grouped and identified as a unit, so a store can hold several graphs side by side and a query can say which one it means."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use RDF instead of JSON records?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because statements can be added without agreeing on a document shape: two sources can contribute facts about the same subject and the result is one graph."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Data model</span>
+    <h1>RDF</h1>
+    <p class="lede">RDF is the data model underneath the semantic web: everything is a statement with a subject, a predicate and an object, and every name is an IRI.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/rdfs/">RDFS</a> · <a href="/standards/owl/">OWL</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>RDF — the Resource Description Framework — is a data model in which knowledge is written as triples: a subject, a predicate and an object. Names are IRIs, so a predicate is an identified term rather than a string; where a thing has properties but no name, RDF uses a blank node. Named graphs let a set of triples be grouped and addressed as a unit.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives the knowledge layer a representation that merges by default: facts from different sources can be added to the same graph without a schema agreement, producing one connected picture rather than records to reconcile.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The model is defined in <a href="https://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a>, a W3C Recommendation specifying triples, IRIs, literals, blank nodes, datasets and named graphs; the semantics are in <a href="https://www.w3.org/TR/rdf11-mt/">RDF 1.1 Semantics</a>, which defines what follows from a set of triples. Serialisations such as <a href="/standards/turtle/">Turtle</a> and <a href="/standards/json-ld/">JSON-LD</a> are specified separately.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>RDF gives no schema and no vocabulary: it says how to state something, not what may be stated, and nothing in the model rejects a triple that uses a predicate nonsensically. <a href="/standards/rdfs/">RDFS</a> adds classes, subclasses, properties and domain and range; <a href="/standards/owl/">OWL</a> adds formal semantics and reasoning.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is RDF a file format?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. RDF is an abstract data model: a set of statements, each with a subject, a predicate and an object. Turtle, JSON-LD and RDF/XML serialise it without changing its meaning.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is a blank node for?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A blank node stands for something with properties in the graph but no name, such as an unnamed address or an intermediate step in a process.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What do named graphs add?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They let a set of triples be grouped and identified as a unit, so a store can hold several graphs side by side and a query can say which one it means.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why use RDF instead of JSON records?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because statements can be added without agreeing on a document shape: two sources can contribute facts about the same subject and the result is one graph.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a> — W3C Recommendation defining triples, IRIs, literals, blank nodes, datasets and named graphs.</li>
+    <li><a href="https://www.w3.org/TR/rdf11-mt/">RDF 1.1 Semantics</a> — W3C Recommendation defining entailment and the interpretation of RDF graphs.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

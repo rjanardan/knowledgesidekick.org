@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OWL 2 — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/owl/">
+<meta name="description" content="OWL 2 is the ontology language for the semantic web: expressivity beyond RDFS, profiles EL, QL and RL, and the trade-off between reasoning power and decidability.">
+<meta property="og:title" content="OWL 2 — Knowledge Sidekick">
+<meta property="og:description" content="The ontology language for the semantic web: expressivity beyond RDFS, the EL/QL/RL profiles, and the reasoning trade-off.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/owl/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OWL 2 — Knowledge Sidekick">
+<meta name="twitter:description" content="The ontology language for the semantic web: expressivity beyond RDFS, the EL/QL/RL profiles, and the reasoning trade-off.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/owl/",
+      "url": "https://knowledgesidekick.org/standards/owl/",
+      "name": "OWL 2 — Knowledge Sidekick",
+      "description": "OWL 2 is the ontology language for the semantic web: expressivity beyond RDFS, profiles EL, QL and RL, and the trade-off between reasoning power and decidability.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/owl/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need OWL to use RDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RDF needs no schema, and RDFS covers light typing and hierarchies. OWL is for when the requirement is more than description: restrictions, cardinality, disjointness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the OWL 2 profiles for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They trade expressivity for predictable computation: EL for large ontologies where classification must stay fast, QL for query answering over large data, RL for rule-based reasoning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does OWL reason over my instance data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can: an ontology plus individuals lets a reasoner derive new memberships and detect inconsistencies, depending on the profile and the engine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is an OWL ontology a knowledge graph?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ontology is the schema half of it. A knowledge graph is the ontology together with the instance data that uses its terms, which is why the ontology limits what can be asked."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Data model</span>
+    <h1>OWL 2</h1>
+    <p class="lede">OWL 2 is the ontology language for the semantic web: a vocabulary for class expressions, restrictions and formal semantics, with profiles that trade expressivity for reasoning that stays computable.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/rdfs/">RDFS</a> · <a href="/knowledge/ontologies/">Ontologies</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>OWL 2 is an ontology language built on RDF, with a formal semantics rather than only a naming convention. Where RDFS lets a graph name classes and properties, OWL lets it state how classes are defined — as unions, complements, or restrictions on their members. Three profiles restrict the language: EL for large ontologies where classification must stay fast, QL for query answering over large data, and RL for rule-based reasoning.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives the knowledge layer a schema that can be checked, not merely published: a reasoner can classify a graph, derive memberships that were never asserted, and detect inconsistencies between an ontology and its data. The profiles make that decidability trade-off explicit and selectable.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The language is introduced in the <a href="https://www.w3.org/TR/owl2-overview/">OWL 2 Document Overview</a>, which maps the specification set — structural specification, profiles, mapping to RDF graphs, conformance and test cases. The <a href="https://www.w3.org/TR/owl2-primer/">OWL 2 Primer</a> is the working introduction.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Formal semantics do not make content current or correct: an ontology can be internally consistent and still describe a domain that changed last quarter. Reasoning cost also rises with expressivity, which is why the profiles exist. And a schema says what terms mean, not where a claim came from — that is <a href="/standards/prov-o/">PROV-O</a>.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do I need OWL to use RDF?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. RDF needs no schema, and RDFS covers light typing and hierarchies. OWL is for when the requirement is more than description: restrictions, cardinality, disjointness.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What are the OWL 2 profiles for?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They trade expressivity for predictable computation: EL for large ontologies where classification must stay fast, QL for query answering over large data, RL for rule-based reasoning.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does OWL reason over my instance data?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It can: an ontology plus individuals lets a reasoner derive new memberships and detect inconsistencies, depending on the profile and the engine.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is an OWL ontology a knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The ontology is the schema half of it. A knowledge graph is the ontology together with the instance data that uses its terms, which is why the ontology limits what can be asked.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/owl2-overview/">OWL 2 Web Ontology Language Document Overview</a> — W3C Recommendation; the map of the OWL 2 specification set.</li>
+    <li><a href="https://www.w3.org/TR/owl2-primer/">OWL 2 Web Ontology Language Primer</a> — W3C Recommendation; the working introduction to OWL 2 constructs.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

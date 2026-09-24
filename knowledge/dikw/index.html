@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIKW as an audit ladder — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/knowledge/dikw/">
+<meta name="description" content="The DIKW hierarchy — data, information, knowledge, wisdom — is the oldest framing of why data alone is not knowledge. For agentic systems it works as an audit ladder.">
+<meta property="og:title" content="DIKW as an audit ladder — Knowledge Sidekick">
+<meta property="og:description" content="Data alone is not knowledge. Reading the DIKW hierarchy top-down gives a practical audit for what an agent actually rests on before it acts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/knowledge/dikw/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DIKW as an audit ladder — Knowledge Sidekick">
+<meta name="twitter:description" content="Data alone is not knowledge. Reading the DIKW hierarchy top-down gives a practical audit for what an agent actually rests on before it acts.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/knowledge/dikw/",
+      "url": "https://knowledgesidekick.org/knowledge/dikw/",
+      "name": "DIKW as an audit ladder — Knowledge Sidekick",
+      "description": "The DIKW hierarchy — data, information, knowledge, wisdom — read as an audit ladder for agentic systems.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/knowledge/dikw/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is DIKW an empirical model?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It is a heuristic. Ackoff proposed it in 1989 as a way of ordering the layers, and Rowley's 2007 review found that the literature does not agree on where the boundaries between them lie." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use a hierarchy whose boundaries are contested?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because as an audit ladder it still does useful work. The questions it forces — which layer a capability rests on, and what is missing there — are the same questions a knowledge-first review asks anyway." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does DIKW replace a knowledge graph or an ontology?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. DIKW orders layers of derivation and says nothing about representation, provenance, or currency. Graph and vocabulary work is what makes the knowledge layer usable in practice." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does \"I do not know\" fit in DIKW?",
+          "acceptedAnswer": { "@type": "Answer", "text": "With judgement, at the top. Abstaining is a decision about whether the knowledge available is good enough to act on, which is not something the data and information layers can answer on their own." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Knowledge foundations</span>
+    <h1>The DIKW hierarchy, read as an audit ladder</h1>
+    <p class="lede">The DIKW hierarchy is the oldest framing of why data alone is not knowledge. For agentic systems it is useful in one specific way: as an audit ladder. You can feed an agent data and information; acting depends on the knowledge and judgement layers above them.</p>
+    <p class="meta"><a href="/why-knowledge.html">Why knowledge</a> · <a href="/knowledge/knowledge-formats/">Knowledge formats</a> · <a href="/context-engineering.html">Context engineering</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What DIKW is</h2>
+  <p>DIKW is a four-layer hierarchy — data, information, knowledge, wisdom — that orders how raw signals become something worth acting on. Ackoff proposed it in 1989 in "From Data to Wisdom" (Journal of Applied Systems Analysis 16: 3-9). Rowley's 2007 review, "The wisdom hierarchy: representations of the DIKW hierarchy" (Journal of Information Science 33(2)), traced how those layers have been described since.</p>
+  <p>The layers are usually defined by what you can do with them. Data is uninterpreted: a reading, a timestamp, a record. Information is data with meaning attached — who, what, when, where. Knowledge is information organised into a working picture of the world: patterns, relationships, procedures, and the expectation that if one thing holds, another follows. Wisdom sits above it and is about judgement — which knowledge applies here, whether it should be used at all, and what the consequences are likely to be.</p>
+  <p>The ordering is directional. Each layer is derived from the one below it, and the effort required to produce it rises as you climb.</p>
+</section>
+
+<section id="what-it-gets-right">
+  <h2>What it gets right for agentic systems</h2>
+  <p>Its contribution is separating what a system has from what it may do, because those two things carry very different costs.</p>
+  <p>Data and information are cheap to supply: a retrieval layer can hand an agent records, documents, and extracted facts, and a context window can hold a great deal of them. What the lower layers cannot supply is the part that decides. Whether a procedure is current, whether a record may be acted on, whether a passage is authoritative or a draft — these are properties of the knowledge layer, not the information layer. Judgement sits above that again: choosing between two defensible courses of action, or declining to act.</p>
+  <p>Read this way, the hierarchy describes a familiar failure. Retrieval and context supply data and information at scale, and the agent acts anyway, because the knowledge and judgement layers were never treated as inputs. The material was provided; the rest was left to the model to supply from its own disposition.</p>
+</section>
+
+<section id="where-it-breaks">
+  <h2>Where the hierarchy breaks down</h2>
+  <p>DIKW is a heuristic, not an empirical model, and it should not be asked to carry more weight than that. Ackoff offered it as a conceptual ordering, and Rowley's review showed that the literature does not agree on where one layer ends and the next begins.</p>
+  <p>That disagreement shows up in three ways. The layers are not cleanly separable: the same artifact can be data to one consumer and knowledge to another, depending on what it is used for. The hierarchy implies a single ladder, but knowledge does not only refine out of information — it can also be asserted or taught from outside the data. And the top layer is the least defined: wisdom is described as judgement, but judgement is not something a system derives from the layers below, and the review literature treats it as the weakest link in the chain.</p>
+  <p>DIKW also says nothing about representation, provenance, or currency — the questions that decide whether an agent can use knowledge reliably. It is a vocabulary for ordering, not a model for engineering.</p>
+</section>
+
+<section id="audit-ladder">
+  <h2>Using DIKW as an audit ladder</h2>
+  <p>Used as an audit ladder, DIKW is read top-down. For each capability an agent has, ask which layer it actually rests on.</p>
+  <ul>
+    <li><strong>Judgement.</strong> When the agent must choose between defensible options, or decide not to act, is there a stated rule, or is the choice left to the model's disposition?</li>
+    <li><strong>Knowledge.</strong> For every fact the action depends on, is there an authoritative source, an owner, and a way to check whether it is current?</li>
+    <li><strong>Information.</strong> Is the material the agent retrieves labelled with what it means and where it came from, or is it undifferentiated text?</li>
+    <li><strong>Data.</strong> Is the underlying record correct, complete, and reachable by the agent at the moment it acts?</li>
+  </ul>
+  <p>The audit usually surfaces mismatches rather than gaps. A capability may behave as though it rests on knowledge — the agent states a procedure confidently — while the ladder shows it rests on retrieved text with no currency check behind it. The point is not to label the knowledge but to find the layer where a capability is thinner than its behaviour implies.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is DIKW an empirical model?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a heuristic. Ackoff proposed it in 1989 as a way of ordering the layers, and Rowley's 2007 review found that the literature does not agree on where the boundaries between them lie.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why use a hierarchy whose boundaries are contested?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because as an audit ladder it still does useful work. The questions it forces — which layer a capability rests on, and what is missing there — are the same questions a knowledge-first review asks anyway.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does DIKW replace a knowledge graph or an ontology?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. DIKW orders layers of derivation and says nothing about representation, provenance, or currency. Graph and vocabulary work is what makes the knowledge layer usable in practice.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Where does "I do not know" fit in DIKW?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>With judgement, at the top. Abstaining is a decision about whether the knowledge available is good enough to act on, which is not something the data and information layers can answer on their own.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>Ackoff, R. L. (1989). "From Data to Wisdom". Journal of Applied Systems Analysis 16: 3-9. Print; no stable open URL.</li>
+    <li>Rowley, J. (2007). "The wisdom hierarchy: representations of the DIKW hierarchy". Journal of Information Science 33(2). Print; no stable open URL.</li>
+    <li><a href="https://en.wikipedia.org/wiki/DIKW_pyramid">DIKW pyramid</a> — Wikipedia, for the standard layered description.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

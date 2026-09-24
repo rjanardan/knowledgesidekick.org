@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge formats — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/knowledge/knowledge-formats/">
+<meta name="description" content="Format is the question of how knowledge is written down so both a person and a machine can use it. Choosing a format is choosing what the knowledge layer can do with it.">
+<meta property="og:title" content="Knowledge formats — Knowledge Sidekick">
+<meta property="og:description" content="Prose markdown, structured data, graph serialisations, and compressed forms: what each is good at, what each costs, and how to choose one.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/knowledge/knowledge-formats/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge formats — Knowledge Sidekick">
+<meta name="twitter:description" content="Prose markdown, structured data, graph serialisations, and compressed forms: what each is good at, what each costs, and how to choose one.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/knowledge/knowledge-formats/",
+      "url": "https://knowledgesidekick.org/knowledge/knowledge-formats/",
+      "name": "Knowledge formats — Knowledge Sidekick",
+      "description": "How knowledge is written down so both a person and a machine can use it, and what each format choice costs.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/knowledge/knowledge-formats/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is markdown a knowledge format or just documentation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both, depending on the conventions around it. Once concepts carry types, links state their kind, and claims carry sources, the same markdown is traversable structure rather than a document." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should a corpus use one format or several?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A corpus usually has one authoring format and one or more derived forms. Writing in markdown and generating JSON-LD or Turtle from it keeps the authoring cost low while giving machines an explicit structure to read." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does HDT fit if the corpus is small?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It does not, at first. HDT is a compressed RDF form built for storage and query over large graphs; below that scale the conversion and tooling cost is not repaid." }
+        },
+        {
+          "@type": "Question",
+          "name": "What decides the choice more than anything else?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Who has to review it. A format that a domain expert will not read does not get corrected, and knowledge that does not get corrected decays regardless of how expressive its serialisation is." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Knowledge foundations</span>
+    <h1>Choosing a knowledge format is choosing what the knowledge layer can do</h1>
+    <p class="lede">Format is the question of how knowledge is written down so that both a person and a machine can use it. The choice is not cosmetic: it decides what the knowledge layer can do with the content afterwards, and what it costs to keep that content correct.</p>
+    <p class="meta"><a href="/knowledge/knowledge-bundles/">Knowledge bundles</a> · <a href="/standards.html">Standards</a> · <a href="/context-engineering.html">Context engineering</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-format-decides">
+  <h2>What a format decides</h2>
+  <p>A format decides who can read the knowledge, what a tool can do with it without guessing, and how much effort each correction costs.</p>
+  <p>Every format sits somewhere between two audiences. Written only for people, it is comfortable to author and expensive to query. Written only for machines, it is precise and queryable and almost nobody will volunteer to maintain it. The formats worth using hold both — readable enough that a domain expert will correct a mistake, structured enough that an agent engine can retrieve and traverse without a human in the loop.</p>
+  <p>So the honest framing is not which format is best, but which format lets this corpus do what it needs to do at the cost we are prepared to pay.</p>
+</section>
+
+<section id="four-families">
+  <h2>Four families of knowledge format</h2>
+
+  <h3>Prose markdown</h3>
+  <p>Markdown is plain text with light structure, and it is the cheapest format to author and review. It diffs line by line, needs no runtime, and is readable by every model and tool in common use. With conventions on top — a type per file, links that state their kind in prose — it becomes traversable structure as well as readable text, which is the idea behind a <a href="/knowledge/knowledge-bundles/">knowledge bundle</a>. Its limit is expressiveness: markdown carries no semantics of its own, so anything a machine needs beyond the words has to come from convention.</p>
+
+  <h3>Structured data in JSON-LD</h3>
+  <p><a href="/standards/json-ld/">JSON-LD</a> expresses knowledge as subject–predicate–object statements inside ordinary JSON, which makes it directly consumable by web tooling without a special graph database. It is the practical route to publishing knowledge as linked data, and it is what search engines and many agents already read. The cost is authoring and review: a statement graph is harder for a domain expert to read than a paragraph, so it usually works best as a derived form rather than the place people write first.</p>
+
+  <h3>Graph serialisations in Turtle</h3>
+  <p><a href="/standards/turtle/">Turtle</a> is a compact, human-readable syntax for RDF. It keeps the full expressiveness of a statement graph while staying legible: prefixes shorten identifiers and the notation reads close to English. Where the knowledge genuinely is a graph — relationships between entities rather than documents about them — Turtle is the clearest way to write it down. The cost is tooling and skills: it assumes an RDF stack on both ends, and it tends to be maintained by a smaller group than the one that reads it.</p>
+
+  <h3>Compact and compressed forms in HDT</h3>
+  <p><a href="/standards/hdt/">HDT</a> is a binary format for RDF that compresses a graph for storage and query without decompressing it into triples first. It is built for scale — large graphs that must be shipped, loaded, and queried efficiently. It is not an authoring format: nobody writes knowledge in HDT, and the tooling around it assumes the graph already exists in a normal RDF form. It is the last step in a pipeline, not the first.</p>
+</section>
+
+<section id="what-each-costs">
+  <h2>What each format costs</h2>
+  <p>The costs move in opposite directions, which is what makes the choice a trade rather than a ranking.</p>
+  <ul>
+    <li><strong>Authoring effort.</strong> Lowest in prose markdown, highest in Turtle and statement graphs, where every relationship has to be named explicitly as a predicate.</li>
+    <li><strong>Tooling.</strong> Markdown needs a text editor. JSON-LD needs a consumer that understands context. Turtle needs a parser and usually a store. HDT needs the conversion pipeline that produces it and a reader for the compressed form.</li>
+    <li><strong>Expressiveness.</strong> Markdown carries no semantics by itself; JSON-LD and Turtle carry full statement-level meaning; HDT carries whatever RDF it was built from.</li>
+    <li><strong>Reviewability.</strong> Highest in markdown, where a domain expert can read a diff and object. Lower in any statement graph, where a correction requires the reviewer to understand the structure as well as the content.</li>
+  </ul>
+</section>
+
+<section id="how-to-choose">
+  <h2>How to choose</h2>
+  <p>Start from the audience that has to keep the knowledge correct, then add structure only where something downstream genuinely needs it.</p>
+  <p>If the corpus is documents that people read and agents retrieve, prose markdown with conventions is usually the right starting point, because the corrections happen and the graph is recoverable. If a downstream system has to query relationships rather than fetch passages, the corpus needs an explicit statement form, and JSON-LD or Turtle becomes worth the authoring cost. If the graph is large enough that storage and load time dominate, a compressed form like HDT belongs at the end of the pipeline rather than the start.</p>
+  <p>Most working corpora end up with more than one of these at once: markdown where people write, a generated statement form where machines query, and a compact form where the graph is shipped. That layering only holds together if the underlying concepts keep the same meaning across the forms — which is a convention problem, not a format problem.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is markdown a knowledge format or just documentation?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Both, depending on the conventions around it. Once concepts carry types, links state their kind, and claims carry sources, the same markdown is traversable structure rather than a document.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Should a corpus use one format or several?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A corpus usually has one authoring format and one or more derived forms. Writing in markdown and generating JSON-LD or Turtle from it keeps the authoring cost low while giving machines an explicit structure to read.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Where does HDT fit if the corpus is small?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It does not, at first. HDT is a compressed RDF form built for storage and query over large graphs; below that scale the conversion and tooling cost is not repaid.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What decides the choice more than anything else?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Who has to review it. A format that a domain expert will not read does not get corrected, and knowledge that does not get corrected decays regardless of how expressive its serialisation is.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/turtle/">RDF 1.1 Turtle</a> — W3C Recommendation, the compact serialisation for RDF.</li>
+    <li><a href="https://www.w3.org/TR/json-ld11/">JSON-LD 1.1</a> — W3C Recommendation, statement graphs in JSON.</li>
+    <li><a href="https://www.w3.org/Submission/HDT/">HDT: Header-Dictionary-Triples</a> — W3C Member Submission, compressed RDF for storage and query.</li>
+    <li><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md">Open Knowledge Format specification</a> — Google Cloud Platform, typed concept bundles in markdown.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

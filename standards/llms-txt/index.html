@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llms.txt — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/llms-txt/">
+<meta name="description" content="llms.txt is a markdown file at a site root that gives a language model a short, curated map of the site instead of making it infer structure from HTML.">
+<meta property="og:title" content="llms.txt — Knowledge Sidekick">
+<meta property="og:description" content="A markdown file at /llms.txt that gives a language model a curated map of a site rather than making it guess from HTML.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/llms-txt/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="llms.txt — Knowledge Sidekick">
+<meta name="twitter:description" content="A markdown file at /llms.txt that gives a language model a curated map of a site rather than making it guess from HTML.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/llms-txt/",
+      "url": "https://knowledgesidekick.org/standards/llms-txt/",
+      "name": "llms.txt — Knowledge Sidekick",
+      "description": "llms.txt is a markdown file at a site root that gives a language model a short, curated map of the site instead of making it infer structure from HTML.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/llms-txt/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is llms.txt a standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a convention, not a standard: no standards body owns it, there is no conformance clause, and no validator will tell you whether a file is correct."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does llms.txt replace a sitemap or robots.txt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A sitemap enumerates URLs for crawlers and robots.txt states access rules; llms.txt is a curated summary of what the site contains and which parts matter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does llms.txt help the knowledge layer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It gives an agent engine a small, stable entry point that names the knowledge a site exposes and links to the pages themselves, making the site's own account the starting point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does llms.txt not guarantee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nothing enforces freshness, so a file accurate at publication can drift. It does not make the underlying pages correct, and it does not replace them."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Discovery</span>
+    <h1>llms.txt</h1>
+    <p class="lede">A markdown file at a site's root that gives a language model a short, curated map of the site instead of leaving it to infer structure from rendered HTML.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/free-resources.html">Free resources</a> · <a href="/research.html">Research</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>llms.txt is a plain markdown file served at <code>/llms.txt</code>: the site's name, a one-line summary, then the pages worth reading, each with a link and a short description. HTML is written for browsers, so a model reading it must guess which content matters.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives an agent engine a small, stable entry point and an account, written by the site itself, of the knowledge it exposes. An engine meeting an unfamiliar domain can read one file and learn which pages exist, instead of crawling the site and reconstructing its shape.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The convention is documented at <a href="https://llmstxt.org/">llmstxt.org</a>, which states the file's purpose, its placement at the site root, and a suggested structure: an H1 with the project name, a blockquote summary, then markdown links with brief descriptions. This site publishes its own example at <a href="/llms.txt">/llms.txt</a>.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>It is a convention, not a standard with a validator: nothing checks that a file is well formed and nothing enforces that it is current. It is also not a substitute for the pages themselves — the index says where knowledge lives, not whether it is any good.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is llms.txt a standard?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is a convention, not a standard: no standards body owns it, there is no conformance clause, and no validator will tell you whether a file is correct.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does llms.txt replace a sitemap or robots.txt?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A sitemap enumerates URLs for crawlers and robots.txt states access rules; llms.txt is a curated summary of what the site contains and which parts matter.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does llms.txt help the knowledge layer?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It gives an agent engine a small, stable entry point that names the knowledge a site exposes and links to the pages themselves, making the site's own account the starting point.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does llms.txt not guarantee?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Nothing enforces freshness, so a file accurate at publication can drift. It does not make the underlying pages correct, and it does not replace them.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://llmstxt.org/">llmstxt.org</a> — the convention's own description: purpose, placement at the site root, and suggested structure.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

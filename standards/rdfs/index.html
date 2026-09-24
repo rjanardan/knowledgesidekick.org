@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RDFS — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/rdfs/">
+<meta name="description" content="RDFS is the schema vocabulary for RDF: classes, subclasses, properties, domain and range, with simple entailment rather than validation.">
+<meta property="og:title" content="RDFS — Knowledge Sidekick">
+<meta property="og:description" content="The schema vocabulary for RDF: classes, subclasses, properties and domain/range, with simple entailment rather than validation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/rdfs/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RDFS — Knowledge Sidekick">
+<meta name="twitter:description" content="The schema vocabulary for RDF: classes, subclasses, properties and domain/range, with simple entailment rather than validation.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/rdfs/",
+      "url": "https://knowledgesidekick.org/standards/rdfs/",
+      "name": "RDFS — Knowledge Sidekick",
+      "description": "RDFS is the schema vocabulary for RDF: classes, subclasses, properties, domain and range, with simple entailment rather than validation.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/rdfs/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does RDFS validate data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RDFS produces inferences, not error reports. It will accept a triple that looks wrong to a human and use it to derive further statements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does subClassOf actually do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It states that every instance of one class is an instance of another, letting a processor derive the second membership from the first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If domain and range are not constraints, what are they?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inferences. Saying that a property has a domain asserts that anything used as its subject is a member of the class named; data that breaks the schema makes the processor conclude something extra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is RDFS enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When the need is naming and a light hierarchy: terms, classes, parent-child relations and enough typing for a query to traverse. For cardinality or disjointness, the work moves up to OWL."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Data model</span>
+    <h1>RDFS</h1>
+    <p class="lede">RDFS is the schema vocabulary that sits on top of RDF: classes and subclasses, properties and their domain and range, with simple entailment rather than validation.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/rdf/">RDF</a> · <a href="/standards/owl/">OWL</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>RDFS — the RDF Schema vocabulary — adds terms that let an RDF graph describe itself: <code>rdfs:Class</code> and <code>rdf:type</code> group things, <code>rdfs:subClassOf</code> places a class under another, and <code>rdf:Property</code>, <code>rdfs:domain</code> and <code>rdfs:range</code> describe predicates and what they connect. RDFS entailment says what follows from a graph that uses these terms.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives a graph a vocabulary for its own terms at low cost: a team can publish classes, a hierarchy and property definitions without adopting a reasoning-heavy ontology, and a processor can derive type memberships that were never stated.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The vocabulary is defined in <a href="https://www.w3.org/TR/rdf-schema/">RDF Schema 1.1</a>, a W3C Recommendation listing the classes and properties and what each means. The entailment rules are part of <a href="https://www.w3.org/TR/rdf11-mt/">RDF 1.1 Semantics</a>: the schema document says what terms exist, the semantics document what a processor may derive.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Domain and range are not constraints but inferences: saying that a property has a domain asserts that anything used as its subject is a member of that class, and does not reject a triple that looks wrong. A graph containing a mistake is used to derive further statements, so RDFS will not keep bad data out. Cardinality and disjointness are what <a href="/standards/owl/">OWL</a> addresses.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does RDFS validate data?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. RDFS produces inferences, not error reports. It will accept a triple that looks wrong to a human and use it to derive further statements.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does subClassOf actually do?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It states that every instance of one class is an instance of another, letting a processor derive the second membership from the first.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>If domain and range are not constraints, what are they?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Inferences. Saying that a property has a domain asserts that anything used as its subject is a member of the class named; data that breaks the schema makes the processor conclude something extra.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>When is RDFS enough?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>When the need is naming and a light hierarchy: terms, classes, parent-child relations and enough typing for a query to traverse. For cardinality or disjointness, the work moves up to OWL.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/rdf-schema/">RDF Schema 1.1</a> — W3C Recommendation defining the RDFS classes and properties.</li>
+    <li><a href="https://www.w3.org/TR/rdf11-mt/">RDF 1.1 Semantics</a> — W3C Recommendation defining RDFS entailment and the other interpretation regimes for RDF graphs.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

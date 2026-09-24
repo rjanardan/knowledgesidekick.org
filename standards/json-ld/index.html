@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JSON-LD — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/json-ld/">
+<meta name="description" content="JSON-LD is JSON with a context: ordinary web developers can carry linked-data meaning in the format their systems already use, with @context, @id and @type.">
+<meta property="og:title" content="JSON-LD — Knowledge Sidekick">
+<meta property="og:description" content="JSON-LD adds a context to ordinary JSON, so documents an application already exchanges can carry linked-data meaning.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/json-ld/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSON-LD — Knowledge Sidekick">
+<meta name="twitter:description" content="JSON-LD adds a context to ordinary JSON, so documents an application already exchanges can carry linked-data meaning.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/json-ld/",
+      "url": "https://knowledgesidekick.org/standards/json-ld/",
+      "name": "JSON-LD — Knowledge Sidekick",
+      "description": "JSON-LD is JSON with a context: ordinary web developers can carry linked-data meaning in the format their systems already use, with @context, @id and @type.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/json-ld/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between JSON and JSON-LD?",
+          "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD is JSON plus a context. The context connects a term such as name to the IRI it stands for; without it the keys are just strings two systems may read differently." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do compaction, flattening and framing do?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They transform between document forms: compaction shortens IRIs against a context, flattening lifts embedded nodes out and replaces them with references, and framing reshapes the result against an example frame." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the context matter so much?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because it is the only thing tying a term to an IRI. Change it and the meaning of every document using it changes too; a remote context can change without the documents changing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is JSON-LD a replacement for Turtle?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They serialise the same RDF graph and suit different hands: JSON-LD where the pipeline already speaks JSON, Turtle where a person authors and reviews the model. Neither changes what the triples mean." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Serialisation</span>
+    <h1>JSON-LD: linked data in the format developers already use</h1>
+    <p class="lede">JSON-LD adds a context to ordinary JSON, so documents an application already exchanges can carry linked-data meaning without a new parser or pipeline.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/turtle/">Turtle</a> · <a href="/standards/graphql-ld/">GraphQL-LD</a> · <a href="/knowledge/knowledge-formats/">Knowledge formats</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>JSON-LD is a JSON-based format for serialising linked data: it keeps JSON's syntax and adds a few keywords that say what the keys mean. The context maps each term to an IRI, <code>@id</code> identifies a node, and <code>@type</code> states what it is.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives the knowledge layer a way to reach systems whose owners will not adopt a triple syntax. The meaning travels inside the payload, so an API already returning JSON can return linked data, and one stored graph can be served in the shape each client expects.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>JSON-LD 1.1 is a W3C Recommendation published in July 2020, one of three documents: the syntax, the Processing Algorithms and API, and Framing. The graph it serialises is defined by RDF 1.1 Concepts, the model behind <a href="/standards/turtle/">Turtle</a> and the target of <a href="/standards/sparql/">SPARQL</a>.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>The context is the whole game. A term means whatever the context binds it to, so a wrong or drifting context silently changes the meaning of every document using it, and a remote context can change without those documents changing. Protected term definitions reduce that risk; they do not remove it.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the difference between JSON and JSON-LD?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>JSON-LD is JSON plus a context. The context connects a term such as <code>name</code> to the IRI it stands for; without it the keys are just strings two systems may read differently.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What do compaction, flattening and framing do?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They transform between document forms: compaction shortens IRIs against a context, flattening lifts embedded nodes out and replaces them with references, and framing reshapes the result against an example frame.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does the context matter so much?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because it is the only thing tying a term to an IRI. Change it and the meaning of every document using it changes too; a remote context can change without the documents changing.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is JSON-LD a replacement for Turtle?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They serialise the same RDF graph and suit different hands: JSON-LD where the pipeline already speaks JSON, <a href="/standards/turtle/">Turtle</a> where a person authors and reviews the model. Neither changes what the triples mean.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/json-ld11/">JSON-LD 1.1 — A JSON-based Serialization for Linked Data</a> (W3C Recommendation, 2020)</li>
+    <li><a href="https://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a> (W3C Recommendation)</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

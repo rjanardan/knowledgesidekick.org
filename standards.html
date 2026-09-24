@@ -11,13 +11,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://knowledgesidekick.org/standards.html">
 <meta name="robots" content="index, follow">
-<link rel="alternate" type="text/markdown" href="agents.md" title="agents.md (machine index)">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
 <meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Standards — Knowledge Sidekick">
 <meta name="twitter:description" content="Open standards and conventions for knowledge-first agentic AI.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -180,6 +180,59 @@
 </div>
 </div>
 
+<section id="in-this-section">
+  <h2>In this section</h2>
+  <div class="pattern">
+    <h3>Discovery</h3>
+    <p class="purpose">Telling a machine what a site contains before it starts guessing.</p>
+    <ul>
+      <li><a href="/standards/llms-txt/">llms.txt</a> — a short markdown map of a site, at a known path.</li>
+    </ul>
+  </div>
+  <div class="pattern">
+    <h3>Knowledge organization</h3>
+    <p class="purpose">Controlled vocabularies and their relations, so two teams stop naming the same thing twice.</p>
+    <ul>
+      <li><a href="/standards/skos/">W3C SKOS</a> — concept schemes, labels, and broader/narrower/related relations.</li>
+      <li><a href="/standards/iso-25964/">ISO 25964</a> — the thesaurus standard, and interoperability between vocabularies.</li>
+    </ul>
+  </div>
+  <div class="pattern">
+    <h3>Data model</h3>
+    <p class="purpose">The layers that give statements structure and meaning.</p>
+    <ul>
+      <li><a href="/standards/rdf/">RDF</a> — the triple model underneath everything else on this list.</li>
+      <li><a href="/standards/rdfs/">RDFS</a> — classes and properties, with inference rather than constraint.</li>
+      <li><a href="/standards/owl/">OWL</a> — formal ontology, its profiles, and the cost of reasoning.</li>
+    </ul>
+  </div>
+  <div class="pattern">
+    <h3>Serialisation</h3>
+    <p class="purpose">How the model is written down, for people and for machines.</p>
+    <ul>
+      <li><a href="/standards/turtle/">Turtle</a> — the compact RDF syntax people actually write.</li>
+      <li><a href="/standards/json-ld/">JSON-LD</a> — linked data in the format web developers already use.</li>
+      <li><a href="/standards/hdt/">HDT</a> — compressed RDF for publishing and archiving at size.</li>
+    </ul>
+  </div>
+  <div class="pattern">
+    <h3>Query</h3>
+    <p class="purpose">Asking a graph a question, and getting an answer you can check.</p>
+    <ul>
+      <li><a href="/standards/sparql/">SPARQL</a> — graph patterns, federation, and update for RDF.</li>
+      <li><a href="/standards/graphql-ld/">GraphQL-LD</a> — querying linked data with GraphQL, translated to SPARQL.</li>
+    </ul>
+  </div>
+  <div class="pattern">
+    <h3>Provenance and persistence</h3>
+    <p class="purpose">Where a claim came from, and what the source said before it changed.</p>
+    <ul>
+      <li><a href="/standards/prov-o/">PROV-O</a> — the provenance ontology: entities, activities, agents.</li>
+      <li><a href="/standards/mementos/">Mementos</a> — RFC 7089, and the web's own answer to "what did this say last week".</li>
+    </ul>
+  </div>
+</section>
+
 </main>
 <footer class="site-footer">
   <div class="wrap">
@@ -191,6 +244,6 @@
     </div>
   </div>
 </footer>
-<script src="nav.js"></script>
+<script src="/nav.js"></script>
 </body>
 </html>

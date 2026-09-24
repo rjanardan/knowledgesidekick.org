@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turtle — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/turtle/">
+<meta name="description" content="Turtle is a compact, human-writable syntax for RDF: prefixes, semicolons and commas cut repetition while the triples stay exactly RDF's triples.">
+<meta property="og:title" content="Turtle — Knowledge Sidekick">
+<meta property="og:description" content="Turtle is the text syntax most RDF is authored in: the same triples, written compactly enough to review by hand.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/turtle/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Turtle — Knowledge Sidekick">
+<meta name="twitter:description" content="Turtle is the text syntax most RDF is authored in: the same triples, written compactly enough to review by hand.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/turtle/",
+      "url": "https://knowledgesidekick.org/standards/turtle/",
+      "name": "Turtle — Knowledge Sidekick",
+      "description": "Turtle is a compact, human-writable syntax for RDF: prefixes, semicolons and commas cut repetition while the triples stay exactly RDF's triples.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/turtle/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Turtle a different data model from RDF?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Turtle is a concrete syntax for the RDF graph model defined by RDF 1.1 Concepts and Abstract Syntax. It fixes only how those triples are written as text." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do prefixes in Turtle create namespaces?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A prefix is a shorthand bound inside the document. The triple contains the expanded IRI; the prefix is notation, not a thing in the graph." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can one Turtle file hold a whole knowledge graph?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Turtle document represents one RDF graph, so one file holds one graph. Large graphs are split across files, or published in a format built for distribution size, such as HDT." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Turtle related to N-Triples and SPARQL?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The recommendation states that Turtle is compatible with N-Triples and with the triple pattern syntax of SPARQL, which is why the same statement shapes recur across the three." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Serialisation</span>
+    <h1>Turtle: RDF written in a form people can read</h1>
+    <p class="lede">Turtle is the text syntax most RDF is authored in: the same triples, written compactly enough to review by hand.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/json-ld/">JSON-LD</a> · <a href="/standards/sparql/">SPARQL</a> · <a href="/knowledge/knowledge-formats/">Knowledge formats</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Turtle is a concrete syntax for RDF: it writes a graph as compact, readable text. A statement is a subject, predicate and object ended by a period, with prefixes, semicolons and commas cutting the repetition of long IRIs, and a base declaration letting relative IRIs resolve against a document location.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives the knowledge layer a source of truth a person can review. A Turtle file is plain text with a published grammar, so a change to the model is a diff — a reviewer sees a property renamed or a class added, as in code. Hand-authored vocabularies stay cheap to write.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The syntax is W3C RDF 1.1 Turtle, a Recommendation published in 2014; the graph it writes is defined by RDF 1.1 Concepts and Abstract Syntax. Parsers exist in most RDF libraries, and a loaded document can be queried with <a href="/standards/sparql/">SPARQL</a>.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Turtle does not change what a triple means. It is a serialisation: it fixes how RDF is written down, not which terms to use, what they denote, or whether the facts are current. And a syntax error loses the whole file, not the offending line — the document fails to parse and anything reading it stops.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Turtle a different data model from RDF?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Turtle is a concrete syntax for the RDF graph model defined by RDF 1.1 Concepts and Abstract Syntax. It fixes only how those triples are written as text.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do prefixes in Turtle create namespaces?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A prefix is a shorthand bound inside the document. The triple contains the expanded IRI; the prefix is notation, not a thing in the graph.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can one Turtle file hold a whole knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A Turtle document represents one RDF graph, so one file holds one graph. Large graphs are split across files, or published in a format built for distribution size, such as <a href="/standards/hdt/">HDT</a>.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is Turtle related to N-Triples and SPARQL?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The recommendation states that Turtle is compatible with N-Triples and with the triple pattern syntax of SPARQL, which is why the same statement shapes recur across the three.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/turtle/">RDF 1.1 Turtle — Terse RDF Triple Language</a> (W3C Recommendation, 2014)</li>
+    <li><a href="https://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a> (W3C Recommendation)</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

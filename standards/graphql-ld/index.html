@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphQL-LD — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/graphql-ld/">
+<meta name="description" content="GraphQL-LD queries linked data with GraphQL queries plus a JSON-LD context, translated into SPARQL so developers who know GraphQL can query RDF.">
+<meta property="og:title" content="GraphQL-LD — Knowledge Sidekick">
+<meta property="og:description" content="GraphQL-LD translates a GraphQL query and a JSON-LD context into SPARQL, so developers who know GraphQL can query RDF.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/graphql-ld/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GraphQL-LD — Knowledge Sidekick">
+<meta name="twitter:description" content="GraphQL-LD translates a GraphQL query and a JSON-LD context into SPARQL, so developers who know GraphQL can query RDF.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/graphql-ld/",
+      "url": "https://knowledgesidekick.org/standards/graphql-ld/",
+      "name": "GraphQL-LD — Knowledge Sidekick",
+      "description": "GraphQL-LD queries linked data with GraphQL queries plus a JSON-LD context, translated into SPARQL so developers who know GraphQL can query RDF.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/graphql-ld/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is GraphQL-LD a ratified standard?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. GraphQL-LD is a research approach documented in an ISWC 2018 demo paper, with an open-source implementation and no W3C Recommendation to conform to. SPARQL and JSON-LD are the standards underneath it." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a GraphQL-LD query become results?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The query and the JSON-LD context are converted into SPARQL, the SPARQL is executed against a local engine or a remote endpoint, and the results are converted back into a tree." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can GraphQL-LD express everything SPARQL can?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, and the authors say so: GraphQL queries represent trees rather than full graphs, making the approach less expressive than SPARQL while still covering many typical retrieval tasks." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a developer need to write a GraphQL-LD query?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A GraphQL query and a JSON-LD context mapping the terms used in the query to IRIs. The paper notes the context can come from external domain experts." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Query</span>
+    <h1>GraphQL-LD: GraphQL queries over linked data</h1>
+    <p class="lede">GraphQL-LD translates a GraphQL query plus a JSON-LD context into SPARQL, so a developer who already knows GraphQL can query RDF without learning triple patterns.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/sparql/">SPARQL</a> · <a href="/standards/json-ld/">JSON-LD</a> · <a href="/why-knowledge.html">Why knowledge</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>GraphQL-LD is an approach for querying linked data with GraphQL queries and a JSON-LD context. The query states the shape of the answer, the context maps terms to IRIs, and a translation step turns the pair into SPARQL; results return as the tree the query described.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives the knowledge layer a lower entry cost for application teams. The paper argues that most application developers are not experienced with RDF triples and are better equipped to handle nested objects, and that GraphQL is tightly integrated into the frameworks they already use.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>There is no W3C specification. The approach is documented in an ISWC 2018 poster and demo paper by Taelman, Vander Sande and Verborgh, and implemented in GraphQL-LD.js, which converts the query, executes the SPARQL against a local or remote engine, and converts results into a tree. It rests on <a href="/standards/sparql/">SPARQL</a> and <a href="/standards/json-ld/">JSON-LD 1.1</a>.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>It is deliberately less expressive than SPARQL: the authors state that GraphQL queries represent trees rather than full graphs, so GraphQL-LD covers many typical retrieval tasks but not the whole language. It is also a research-and-tooling approach rather than a ratified standard, and the paper lists formalising the conversion algorithm as future work.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is GraphQL-LD a ratified standard?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. GraphQL-LD is a research approach documented in an ISWC 2018 demo paper, with an open-source implementation and no W3C Recommendation to conform to. SPARQL and JSON-LD are the standards underneath it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does a GraphQL-LD query become results?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The query and the JSON-LD context are converted into SPARQL, the SPARQL is executed against a local engine or a remote endpoint, and the results are converted back into a tree.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can GraphQL-LD express everything SPARQL can?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No, and the authors say so: GraphQL queries represent trees rather than full graphs, making the approach less expressive than SPARQL while still covering many typical retrieval tasks.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does a developer need to write a GraphQL-LD query?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A GraphQL query and a <a href="/standards/json-ld/">JSON-LD context</a> mapping the terms used in the query to IRIs. The paper notes the context can come from external domain experts.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://comunica.github.io/Article-ISWC2018-Demo-GraphQlLD/">GraphQL-LD: Linked Data Querying with GraphQL</a> — Taelman, Vander Sande, Verborgh (ISWC 2018 poster and demo)</li>
+    <li><a href="https://github.com/rubensworks/GraphQL-LD.js">GraphQL-LD.js</a> — open-source implementation</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

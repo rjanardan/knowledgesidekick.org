@@ -1,7 +1,7 @@
 # knowledgesidekick.org — agent index
 # Open, not-for-profit. Research, standards, adoption of knowledge-first practice
 # for agentic AI, LLMs, and personal assistants.
-# Updated: 2026-09-24.
+# Updated: 2026-09-25.
 
 ## What this site is
 A small, flat, not-for-profit site about knowledge as a first-class layer in agentic systems.
@@ -28,6 +28,37 @@ Same ideas as https://knowledgesidekick.com, open side.
 - MCP — knowledge as a Model Context Protocol resource (knowledge servers, tool-backed knowledge): https://knowledgesidekick.org/mcp/
 - llms.txt — machine-readable site index for LLMs and agents: https://knowledgesidekick.org/llms.txt (this file)
 - agents.md — structured index for agent frameworks and crawlers: https://knowledgesidekick.org/agents.md
+
+## By section
+### Knowledge
+- DIKW — data, information, knowledge, wisdom as an audit ladder: https://knowledgesidekick.org/knowledge/dikw/
+- Knowledge bundles — typed, cited markdown traversed as a graph: https://knowledgesidekick.org/knowledge/knowledge-bundles/
+- Knowledge formats — prose, structured data, graph serialisations, compressed forms: https://knowledgesidekick.org/knowledge/knowledge-formats/
+- Taxonomies — controlled vocabularies, thesaurus relations, SKOS: https://knowledgesidekick.org/knowledge/taxonomies/
+- Ontologies — formal concepts and relations, OWL, reasoning: https://knowledgesidekick.org/knowledge/ontologies/
+- Knowledge graphs — entities, typed relations, RDF versus property graphs: https://knowledgesidekick.org/knowledge/knowledge-graphs/
+### Research
+- Memory — working, session and durable memory; write policies and their failures: https://knowledgesidekick.org/research/memory/
+- Agentic AI — planning and acting, permissions, blast radius, verification: https://knowledgesidekick.org/research/agentic-ai/
+- Semantic communication — meaning over bits; research, not deployed practice: https://knowledgesidekick.org/research/semcom/
+### Standards
+- llms.txt — a markdown map of a site at a known path: https://knowledgesidekick.org/standards/llms-txt/
+- W3C SKOS — concept schemes, labels, broader/narrower/related: https://knowledgesidekick.org/standards/skos/
+- ISO 25964 — thesauri and interoperability between vocabularies: https://knowledgesidekick.org/standards/iso-25964/
+- RDF — triples, IRIs, named graphs: https://knowledgesidekick.org/standards/rdf/
+- RDFS — classes, properties, entailment: https://knowledgesidekick.org/standards/rdfs/
+- OWL 2 — ontology language, profiles, reasoning trade-offs: https://knowledgesidekick.org/standards/owl/
+- Turtle — the compact RDF syntax: https://knowledgesidekick.org/standards/turtle/
+- JSON-LD — linked data in JSON, and why the context is the whole game: https://knowledgesidekick.org/standards/json-ld/
+- HDT — compressed RDF for publishing and archiving: https://knowledgesidekick.org/standards/hdt/
+- SPARQL 1.1 — graph patterns, federation, update: https://knowledgesidekick.org/standards/sparql/
+- GraphQL-LD — GraphQL queries over linked data, translated to SPARQL: https://knowledgesidekick.org/standards/graphql-ld/
+- PROV-O — the provenance ontology: https://knowledgesidekick.org/standards/prov-o/
+- Mementos — RFC 7089, versioning and deprecation for web resources: https://knowledgesidekick.org/standards/mementos/
+### Adoption
+- Companies ahead in the game — knowledge infrastructure, from cited sources: https://knowledgesidekick.org/adoption/companies-ahead/
+### Learn
+- Glossary — the site's terms in one place, each linked to the page that develops it: https://knowledgesidekick.org/learn/glossary/
 
 ## Research deep-dives
 - Why knowledge matters for agentic AI: https://knowledgesidekick.org/why-knowledge.html

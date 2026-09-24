@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/learn/glossary/">
+<meta name="description" content="Definitions for the vocabulary of a knowledge layer: data to wisdom, representation and formats, provenance and currentness, agents and protocols, context and token cost. Each term links to the page that develops it.">
+<meta property="og:title" content="Glossary — Knowledge Sidekick">
+<meta property="og:description" content="Short definitions for the vocabulary of a knowledge layer — foundations, representation, lifecycle, agents, and cost.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/learn/glossary/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Glossary — Knowledge Sidekick">
+<meta name="twitter:description" content="Short definitions for the vocabulary of a knowledge layer.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/learn/glossary/",
+      "url": "https://knowledgesidekick.org/learn/glossary/",
+      "name": "Glossary — Knowledge Sidekick",
+      "description": "Short definitions for the vocabulary of a knowledge layer: foundations, representation, lifecycle and trust, agent systems, delivery and cost.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/learn/glossary/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which of these terms are defined by a published standard?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Triple, concept scheme, ontology and provenance have published definitions behind them in RDF, SKOS, OWL and PROV-O. Terms such as knowledge layer, currentness and deprecation are the working vocabulary this site develops in its research and standards pages." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does every entry link somewhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because a glossary entry is a pointer rather than an argument. The definition here is one or two sentences; the page it links to is where the term is used, qualified and argued." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there one vocabulary underneath all of this?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. There is not one vocabulary underneath all of it: representation terms come from RDF and SKOS, lifecycle terms from provenance and versioning work, and the agent terms from protocol specifications. The glossary exists to keep the three groups from being confused for one another." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should a reader start?",
+          "acceptedAnswer": { "@type": "Answer", "text": "With the foundations group, because the distinction between data, information and knowledge is the one that most often collapses in practice. Representation comes second, since it determines what an agent can use rather than only read." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-learn">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Reference</span>
+    <h1>Glossary</h1>
+    <p class="lede">Short definitions for the vocabulary this site uses. Each entry links to the page where the term is developed rather than only named.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/why-knowledge.html">Why Knowledge</a> · <a href="/standards.html">Standards</a> · <a href="/research.html">Research</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="terms">
+  <h2>Terms</h2>
+
+  <h3>Foundations</h3>
+  <dl>
+    <dt>Data</dt>
+    <dd>Values recorded without interpretation applied to them. On its own it answers no question. See <a href="/knowledge/dikw/">DIKW</a>.</dd>
+    <dt>Information</dt>
+    <dd>Data with context or structure attached, enough to answer a question but not yet enough to act on. See <a href="/knowledge/dikw/">DIKW</a>.</dd>
+    <dt>Knowledge</dt>
+    <dd>Information that is current, scoped, attributable and usable for a decision or an action. See <a href="/knowledge/dikw/">DIKW</a>.</dd>
+    <dt>Wisdom</dt>
+    <dd>Judgement about when to apply knowledge, and when to abstain from applying it. See <a href="/knowledge/dikw/">DIKW</a>.</dd>
+    <dt>DIKW</dt>
+    <dd>The ladder from data to information to knowledge to wisdom, used here as a reminder that each step adds a property the step below does not have. See <a href="/knowledge/dikw/">DIKW</a>.</dd>
+    <dt>Knowledge layer</dt>
+    <dd>The part of an agentic system that states what is true, what is current, what the system is allowed to use, and what to do when it does not know. See <a href="/why-knowledge.html">Why Knowledge</a>.</dd>
+    <dt>Grounding</dt>
+    <dd>Tying what an agent says or does back to knowledge it can point at, so the result is auditable rather than merely fluent. See <a href="/standards.html">Standards</a>.</dd>
+    <dt>Currentness</dt>
+    <dd>Whether a statement is still the operative one — a property an agent checks rather than assumes. See <a href="/standards/mementos/">Mementos</a>.</dd>
+    <dt>Deprecation</dt>
+    <dd>Retiring knowledge that is no longer true so it leaves the usable picture instead of lingering in it. See <a href="/adoption.html">Adoption</a>.</dd>
+  </dl>
+
+  <h3>Representation</h3>
+  <dl>
+    <dt>Knowledge bundle</dt>
+    <dd>A directory of concept files carrying typed relations between them and a source for each claim, checked by a conformance linter. See <a href="/knowledge/knowledge-bundles/">Knowledge bundles</a>.</dd>
+    <dt>Knowledge format</dt>
+    <dd>The serialisation a knowledge layer reads and writes — a graph syntax, a JSON-LD document, or a bundle of files. See <a href="/knowledge/knowledge-formats/">Knowledge formats</a>.</dd>
+    <dt>Taxonomy</dt>
+    <dd>A hierarchy of categories used to classify content, usually without the formal constraints an ontology carries. See <a href="/knowledge/taxonomies/">Taxonomies</a>.</dd>
+    <dt>Ontology</dt>
+    <dd>A formal description of the classes, properties and relations in a domain, written so that the structure is machine-checkable. See <a href="/knowledge/ontologies/">Ontologies</a>.</dd>
+    <dt>Knowledge graph</dt>
+    <dd>Entities and typed relations stored as a graph, so a question can be answered by traversing relations rather than by scanning documents. See <a href="/knowledge/knowledge-graphs/">Knowledge graphs</a>.</dd>
+    <dt>Triple</dt>
+    <dd>A single statement in subject–predicate–object form: the smallest unit of a graph. See <a href="/standards/rdf/">RDF</a>.</dd>
+    <dt>Concept scheme</dt>
+    <dd>A set of concepts with labels and relations between them — the unit of vocabulary a taxonomy or thesaurus is published as. See <a href="/standards/skos/">SKOS</a>.</dd>
+  </dl>
+
+  <h3>Lifecycle and trust</h3>
+  <dl>
+    <dt>Provenance</dt>
+    <dd>The record of where a statement came from and what produced it. See <a href="/standards/prov-o/">PROV-O</a>.</dd>
+    <dt>Memento</dt>
+    <dd>A resource that encapsulates a frozen prior state of another resource, retrievable by datetime. See <a href="/standards/mementos/">Mementos</a>.</dd>
+    <dt>Entity resolution</dt>
+    <dd>Deciding when two records refer to the same thing, so that facts about it are not split across duplicates. See <a href="/knowledge/knowledge-graphs/">Knowledge graphs</a>.</dd>
+    <dt>Retrieval</dt>
+    <dd>Selecting, out of everything the system holds, the knowledge an agent is given for a task. See <a href="/token-savings.html">Token savings</a>.</dd>
+  </dl>
+
+  <h3>Agent systems</h3>
+  <dl>
+    <dt>Agent</dt>
+    <dd>A model that takes actions in a loop against tools and an environment rather than answering once. See <a href="/agents/">Agents</a>.</dd>
+    <dt>Agentic AI</dt>
+    <dd>The domain in which actions, tool use and multi-step execution are the product, rather than a single response. See <a href="/research/agentic-ai/">Agentic AI</a>.</dd>
+    <dt>A2A</dt>
+    <dd>Agent-to-agent communication: how one agent negotiates, shares and verifies knowledge with another. See <a href="/a2a/">A2A</a>.</dd>
+    <dt>MCP</dt>
+    <dd>The Model Context Protocol, an open standard that connects assistants to tools and data through hosts, clients and servers. See <a href="/mcp/">MCP</a>.</dd>
+    <dt>Semantic communication</dt>
+    <dd>Exchanging meaning rather than bytes — sending the assertion and its qualifications instead of a document to be reinterpreted. See <a href="/research/semcom/">Semantic communication</a>.</dd>
+  </dl>
+
+  <h3>Delivery and cost</h3>
+  <dl>
+    <dt>Context window</dt>
+    <dd>The amount of text a model can hold at once, which sets a hard ceiling on how much knowledge can arrive with a request. See <a href="/context-engineering.html">Context engineering</a>.</dd>
+    <dt>Context engineering</dt>
+    <dd>Deciding what knowledge enters the window, in what shape, and what is left out. See <a href="/context-engineering.html">Context engineering</a>.</dd>
+    <dt>Token savings</dt>
+    <dd>The reduction in tokens moved and re-read when the right knowledge is sent in the right shape, instead of a larger volume of the wrong kind. See <a href="/token-savings.html">Token savings</a>.</dd>
+  </dl>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Which of these terms are defined by a published standard?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Triple, concept scheme, ontology and provenance have published definitions behind them in RDF, SKOS, OWL and PROV-O. Terms such as knowledge layer, currentness and deprecation are the working vocabulary this site develops in its research and standards pages.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does every entry link somewhere?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because a glossary entry is a pointer rather than an argument. The definition here is one or two sentences; the page it links to is where the term is used, qualified and argued.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is there one vocabulary underneath all of this?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. There is not one vocabulary underneath all of it: representation terms come from RDF and SKOS, lifecycle terms from provenance and versioning work, and the agent terms from protocol specifications. The glossary exists to keep the three groups from being confused for one another.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Where should a reader start?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>With the foundations group, because the distinction between data, information and knowledge is the one that most often collapses in practice. Representation comes second, since it determines what an agent can use rather than only read.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md">Open Knowledge Format (OKF) specification, version 0.2</a></li>
+    <li><a href="https://www.w3.org/TR/skos-reference/">W3C, &ldquo;SKOS Simple Knowledge Organization System Reference&rdquo;</a></li>
+    <li><a href="https://modelcontextprotocol.io/">Model Context Protocol documentation</a></li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

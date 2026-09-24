@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic AI — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/research/agentic-ai/">
+<meta name="description" content="An agentic system plans and acts rather than answers. When a model gets tools and side effects, the cost of being wrong changes — and permissions, verification and abstention become design work.">
+<meta property="og:title" content="Agentic AI — Knowledge Sidekick">
+<meta property="og:description" content="What changes when a model gets tools and side effects: blast radius, verification, abstention, and why knowledge failures compound across steps.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/research/agentic-ai/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Agentic AI — Knowledge Sidekick">
+<meta name="twitter:description" content="What changes when a model gets tools and side effects: blast radius, verification, abstention, and why knowledge failures compound across steps.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/research/agentic-ai/",
+      "url": "https://knowledgesidekick.org/research/agentic-ai/",
+      "name": "Agentic AI — Knowledge Sidekick",
+      "description": "An agentic system plans and acts rather than answers. When a model gets tools and side effects, the cost of being wrong changes.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/research/agentic-ai/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is every LLM application an agent?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The distinction is whether the system plans and acts, or only answers. A system that produces text for a human to review has no blast radius; one that selects its own next step and calls tools does." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is a wrong action worse than a wrong answer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because an answer is reviewed before it has consequences and an action already has them. A wrong answer costs a correction; a wrong action costs a record change, a sent message, or a downstream decision other systems have already consumed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should an agent always try to complete the task?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Abstaining is a designed behaviour, not a failure. If the knowledge needed is missing, stale, or outside the agent's permission, stopping and asking is cheaper. An agent that cannot abstain substitutes a plausible guess, and then acts on it." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do agent protocols change the picture?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Protocols such as A2A and MCP standardise how agents and tools are reached, which makes integration easier and the blast radius larger: an agent that can delegate has more surfaces through which a wrong decision can be executed. A protocol governs reach, not judgement." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-research">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Agentic AI</span>
+    <h1>An agentic system plans and acts, and that changes the cost of being wrong</h1>
+    <p class="lede">The line that matters is not how capable the model is. It is whether the system can act without a human in the loop. Once it can, permissions, verification and the option to stop become part of the design rather than afterthoughts.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/agents/">Agents</a> · <a href="/a2a/">A2A</a> · <a href="/mcp/">MCP</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What makes a system agentic?</h3>
+    <p>It selects its own next step and executes it. A model that answers produces text for a human to review; a model with tools produces effects in other systems. The freedom to decide what to do next is what makes an agent useful, and also what makes a wrong decision expensive, because nothing between the decision and the effect is checking it.</p>
+  </div>
+</section>
+
+<section id="shift">
+  <h2>From answering to acting</h2>
+  <p>The shift is not a change of model quality. It is a change in what the output is attached to.</p>
+  <p>An answering system produces a claim. An acting system produces a claim, chooses a tool, supplies arguments, observes a result, and repeats. ReAct is the clearest published statement of that pattern: reasoning traces interleaved with task-specific actions, so a model can plan, handle exceptions, and query an external source to gather information it lacks.</p>
+  <p>That is why knowledge failures behave differently here. In one response a bad fact affects a sentence; in a loop it becomes an input to the next decision, and the system has no reason to revisit it.</p>
+</section>
+
+<section id="blast-radius">
+  <h2>Permissions and blast radius</h2>
+  <p>A wrong answer is cheap because a person reviews it before anything happens. A wrong action is not, because by the time it is reviewed the effect exists.</p>
+  <p>The useful way to reason about this is blast radius: the set of things that can change if the agent is wrong.</p>
+  <ul>
+    <li><strong>What may it read?</strong> The scope of knowledge an agent can consult sets the ceiling on how wrong it can be.</li>
+    <li><strong>What may it write?</strong> Reads are recoverable; writes are not. The distance between "the agent can see this" and "the agent can change this" is the most valuable boundary to draw explicitly.</li>
+    <li><strong>What may it call?</strong> Tools extend an agent beyond its own boundary — into mail, calendars, payments, infrastructure. Each adds a surface through which a wrong decision becomes an executed one.</li>
+  </ul>
+  <p>The instinct is to grant enough permission to succeed; the safer default is the narrowest permission that completes the task, with escalation as an explicit step. <a href="/enterprise.html">Enterprise knowledge work</a> faces the same governance problem at organisational scale.</p>
+</section>
+
+<section id="verification">
+  <h2>Verification and the abstain option</h2>
+  <p>An agent needs a way to check itself, and a way to stop. Both are design decisions.</p>
+  <p>Verification means the agent's claim about the world is checkable against something it can retrieve — what it used, whether that was current, and whether it was permitted. An agent that cannot show its basis is not verifiable, whatever its accuracy. This is the grounding discipline that makes an action auditable after the fact.</p>
+  <p>Abstention is the harder half. An agent that must complete a task will complete it, substituting a plausible guess for a missing fact and then acting on the guess. Abstaining has to be available, permitted, and cheaper than guessing: the agent can stop and ask, the interface lets it decline, and evaluation does not punish stopping. Where memory is what the agent draws on, the same discipline applies to what was written down — see <a href="/research/memory/">memory for assistants and agents</a>.</p>
+</section>
+
+<section id="compounding">
+  <h2>Compounding failures, and what is established</h2>
+  <p>Knowledge failures compound because each step consumes the previous step's output. A retrieval miss in step one becomes a wrong argument in step two and an executed tool call in step three. No step is designed to notice, because each looks locally reasonable.</p>
+  <p>Protocols address the mechanics of reaching things. <a href="/mcp/">MCP</a> standardises how an application exposes tools, resources and prompts to a model, so an agent needs no bespoke integration per tool. <a href="/a2a/">A2A</a> covers the case where the thing being reached is another agent, defining how independent agents describe themselves and delegate work. The <a href="/agents/">agents</a> page covers that surface in more detail. Both reduce integration cost; neither reduces judgement risk, and both enlarge the blast radius by making more surfaces reachable.</p>
+  <p>Be plain about which claims rest on published work. The reason-and-act loop, its reduction of hallucination and error propagation through querying an external source, and its advantage over chain-of-thought alone on question answering and decision-making benchmarks are documented in the ReAct paper below. The protocol layer is real and adopted, but much said around it — that agents are production-ready, that multi-agent architectures outperform single agents — is vendor framing.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is every LLM application an agent?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The distinction is whether the system plans and acts, or only answers. A system that produces text for a human to review has no blast radius; one that selects its own next step and calls tools does.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why is a wrong action worse than a wrong answer?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because an answer is reviewed before it has consequences and an action already has them. A wrong answer costs a correction; a wrong action costs a record change, a sent message, or a downstream decision other systems have already consumed.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Should an agent always try to complete the task?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Abstaining is a designed behaviour, not a failure. If the knowledge needed is missing, stale, or outside the agent's permission, stopping and asking is cheaper. An agent that cannot abstain substitutes a plausible guess, and then acts on it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How do agent protocols change the picture?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Protocols such as A2A and MCP standardise how agents and tools are reached, which makes integration easier and the blast radius larger: an agent that can delegate has more surfaces through which a wrong decision can be executed. A protocol governs reach, not judgement.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>Yao et al., <em>ReAct: Synergizing Reasoning and Acting in Language Models</em> — <a href="https://arxiv.org/abs/2210.03629">arxiv.org/abs/2210.03629</a>. Reasoning traces interleaved with task-specific actions; querying an external source reduces hallucination and error propagation relative to chain-of-thought alone.</li>
+    <li><em>Agent2Agent (A2A) Protocol</em> — <a href="https://a2a-protocol.org/">a2a-protocol.org</a>. A protocol for how independent agents describe themselves and delegate tasks to one another.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

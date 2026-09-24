@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISO 25964 — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/iso-25964/">
+<meta name="description" content="ISO 25964 is the ISO standard for thesauri and interoperability with other vocabularies, published in two parts: ISO 25964-1:2011 and ISO 25964-2:2013.">
+<meta property="og:title" content="ISO 25964 — Knowledge Sidekick">
+<meta property="og:description" content="The ISO standard for thesauri and interoperability with other vocabularies, in two parts: ISO 25964-1:2011 and ISO 25964-2:2013.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/iso-25964/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ISO 25964 — Knowledge Sidekick">
+<meta name="twitter:description" content="The ISO standard for thesauri and interoperability with other vocabularies, in two parts: ISO 25964-1:2011 and ISO 25964-2:2013.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/iso-25964/",
+      "url": "https://knowledgesidekick.org/standards/iso-25964/",
+      "name": "ISO 25964 — Knowledge Sidekick",
+      "description": "ISO 25964 is the ISO standard for thesauri and interoperability with other vocabularies, published in two parts: ISO 25964-1:2011 and ISO 25964-2:2013.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/iso-25964/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is ISO 25964 cited by number rather than linked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because iso.org blocks automated clients: a request from a script or crawler typically receives HTTP 403, so this note cites it by parts and years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ISO 25964 relate to SKOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They address overlapping ground: ISO 25964 governs how a thesaurus is built and how vocabularies are mapped; SKOS expresses the result in RDF for machine use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is in part 1 and what is in part 2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ISO 25964-1:2011 covers thesauri for information retrieval: how concepts, terms and relationships are defined. ISO 25964-2:2013 covers interoperability with other vocabularies and the rules for mapping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do agents need a thesaurus at all?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They need controlled vocabulary more than a printed thesaurus: query expansion, synonym resolution and category traversal are the operations a thesaurus defines the terms for."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Knowledge organization</span>
+    <h1>ISO 25964</h1>
+    <p class="lede">ISO 25964 is the ISO standard for thesauri and for interoperability with other vocabularies, in two parts: ISO 25964-1:2011 for thesauri for information retrieval, and ISO 25964-2:2013 for interoperability.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/skos/">W3C SKOS</a> · <a href="/knowledge/taxonomies/">Taxonomies</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>ISO 25964 is the international standard for thesauri and their interoperability with other vocabularies. ISO 25964-1:2011 covers thesauri for information retrieval — how concepts, terms and relationships are defined and presented. ISO 25964-2:2013 covers interoperability with other vocabularies and the rules for mapping between them. iso.org blocks automated clients, so scripted requests typically receive HTTP 403, and the standard is cited by number.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives vocabulary work a stable, vendor-neutral reference: term selection, synonyms, hierarchical and associative relationships. The interoperability part turns "these terms are roughly the same" into a stated relation with a defined strength.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The standard is published as ISO 25964-1:2011 and ISO 25964-2:2013. Because automated clients are blocked at iso.org, the accessible web counterpart is the <a href="https://www.w3.org/TR/skos-reference/">SKOS Reference</a>, which expresses thesaurus-style vocabularies in RDF for machine use.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>The standard governs the vocabulary, not the content: a well-formed thesaurus says which term is preferred and how concepts relate, and nothing about whether the records labelled with them are current. It also does not make the vocabulary machine-readable on its own.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why is ISO 25964 cited by number rather than linked?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because iso.org blocks automated clients: a request from a script or crawler typically receives HTTP 403, so this note cites it by parts and years.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does ISO 25964 relate to SKOS?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They address overlapping ground: ISO 25964 governs how a thesaurus is built and how vocabularies are mapped; SKOS expresses the result in RDF for machine use.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is in part 1 and what is in part 2?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>ISO 25964-1:2011 covers thesauri for information retrieval: how concepts, terms and relationships are defined. ISO 25964-2:2013 covers interoperability with other vocabularies and the rules for mapping.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do agents need a thesaurus at all?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They need controlled vocabulary more than a printed thesaurus: query expansion, synonym resolution and category traversal are the operations a thesaurus defines the terms for.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/skos-reference/">SKOS Simple Knowledge Organization System Reference</a> — the accessible web counterpart to the thesaurus model, in RDF for machine use.</li>
+    <li><a href="https://www.iso.org/standard/53657.html">ISO 25964 catalogue entry (may not load for automated clients)</a> — iso.org returns HTTP 403 to scripted requests, so ISO 25964 is cited by number and year.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

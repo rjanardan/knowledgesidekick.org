@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory for Assistants and Agents — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/research/memory/">
+<meta name="description" content="Memory is the part of the knowledge layer that the system writes itself. Most memory failures are write-policy failures: what gets stored, what expires, and who can correct or delete it.">
+<meta property="og:title" content="Memory for Assistants and Agents — Knowledge Sidekick">
+<meta property="og:description" content="Memory in agentic systems: write policies, the three horizons of memory, and why memory without control is a liability.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/research/memory/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Memory for Assistants and Agents — Knowledge Sidekick">
+<meta name="twitter:description" content="Memory in agentic systems: write policies, the three horizons of memory, and why memory without control is a liability.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/research/memory/",
+      "url": "https://knowledgesidekick.org/research/memory/",
+      "name": "Memory for Assistants and Agents — Knowledge Sidekick",
+      "description": "Memory is the part of the knowledge layer that the system writes itself. Most memory failures are write-policy failures.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/research/memory/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is memory just retrieval with extra steps?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Retrieval searches knowledge someone else owns; memory creates a record that did not exist before. A retrieval miss is a gap, but a bad write is a durable claim the system keeps making." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who should decide what gets written to memory?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It should be a deliberate decision: what is worth remembering, what carries an expiry, what records its source, who may correct or delete it. Where a person is the subject of a memory, they need a way to see it, correct it, and have it forgotten." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a longer context window remove the need for memory?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It changes the economics, not the design question. MemGPT's virtual context management moves information between a limited in-context working set and external storage. A window still cannot decide what deserves keeping, what has expired, or who may correct it." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this relate to the personal assistant page?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is the same argument at human scale: the memory concerns one person, the cost is private, and the controls that matter are the ones the person can exercise directly." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-research">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Memory</span>
+    <h1>Memory is the part of the knowledge layer the system writes itself</h1>
+    <p class="lede">Every other part of the knowledge layer is written by someone — a policy owner, a document author, a schema designer. Memory is the part the system writes on its own, which makes the question not how well it searches but what it was allowed to write down.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/personal-assistant.html">Personal assistant</a> · <a href="/standards.html">Standards</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>Why do memory systems fail?</h3>
+    <p>They fail at the write, not the read. A retrieval miss is a gap; a bad write is a durable claim the system keeps making — the wrong fact, under the wrong attribution, with no expiry and no way to correct it. Retrieval quality is a measurable engineering problem. Write policy is a design decision most teams never make explicitly, so the system makes it by default.</p>
+  </div>
+</section>
+
+<section id="horizons">
+  <h2>Short term, medium term, durable</h2>
+  <p>The first split is by horizon: each fails differently and answers to a different owner.</p>
+  <div class="challenge">
+    <span class="tag">Short term</span>
+    <h3>Working context</h3>
+    <p>The current turn and the material assembled for it. Cheapest to get right, easiest to lose — a system that forgets what it just saw is not usable.</p>
+  </div>
+  <div class="challenge">
+    <span class="tag">Medium term</span>
+    <h3>Session state</h3>
+    <p>The last few days or weeks, the thread of what is going on. The question is currentness: which of these is still true, which has changed, which has ended. Stale facts look recent, which makes them costly.</p>
+  </div>
+  <div class="challenge">
+    <span class="tag">Long term</span>
+    <h3>Durable memory</h3>
+    <p>Preferences, history, standing facts about a person or a project. The most valuable kind and the hardest to govern, because it is what the system keeps when nobody is watching the write.</p>
+  </div>
+  <p>Working context is also a delivery problem. What gets assembled into the window is <a href="/context-engineering.html">context engineering</a>; what that costs is <a href="/token-savings.html">token savings</a>. Memory decides what is available — those two decide what is spent.</p>
+</section>
+
+<section id="kinds">
+  <h2>Episodic, semantic, procedural</h2>
+  <p>The second split is by kind: the three need different rules about expiry and correction.</p>
+  <ul>
+    <li><strong>Episodic</strong> — what happened, when, and with whom. Mostly append-only, and mostly what a person wants to be able to delete.</li>
+    <li><strong>Semantic</strong> — what is true: a preference, an address, a standing fact. This is the kind that goes stale, and the kind that should carry a source and a date.</li>
+    <li><strong>Procedural</strong> — how the system does things for this person: which format, which tone. It changes rarely and quietly, which makes a wrong procedural memory the hardest kind to notice.</li>
+  </ul>
+  <p></p>
+</section>
+
+<section id="write-policies">
+  <h2>Write policies</h2>
+  <p>A write policy answers four questions. A system that does not answer them answers by default.</p>
+  <ul>
+    <li><strong>What is worth remembering.</strong> The fact that will still matter tomorrow. A message is not a memory; the commitment inside it might be.</li>
+    <li><strong>What must expire.</strong> Anything with a shelf life — a status, a plan, a temporary preference. Expiry belongs on the record, as a property an agent can check, not in a cleanup nobody runs.</li>
+    <li><strong>Who can correct it.</strong> The person the memory is about, and anyone accountable for it. A correction must stick, not be re-learned from the same source on the next pass.</li>
+    <li><strong>Who can delete it.</strong> Consent, correction and deletion are duties, not features. A system that can remember but cannot forget is not a memory system; it is a record.</li>
+  </ul>
+  <p>Recording is increasingly standardised. The <a href="https://modelcontextprotocol.io/">Model Context Protocol</a> defines a common way to expose tools, resources and prompts to a model — which is also how a system writes something down and reads it back. No protocol decides whether the write should have happened.</p>
+</section>
+
+<section id="liability">
+  <h2>Memory without control is a liability</h2>
+  <p>Memory is useful in proportion to how much of it there is, and dangerous in the same proportion.</p>
+  <ul>
+    <li><strong>Stale facts.</strong> A preference the person changed, a status that ended, a plan that was cancelled. The system has no reason to doubt it, because it wrote it down itself.</li>
+    <li><strong>Wrong attribution.</strong> Something said by one person, in one context, retained as a fact about another — or a fact about the user that the user never stated.</li>
+    <li><strong>Records the user never agreed to.</strong> Nothing was wrong at the moment of writing. The problem is that a record exists at all.</li>
+  </ul>
+  <p>The controls are ordinary: what the system knows, how long it keeps it, who else can see it, when it forgets, how it is corrected. That is the argument the <a href="/personal-assistant.html">personal assistant page</a> makes at human scale, where the cost is private rather than operational. Attribution is provenance too — where a memory came from, and when, is what makes it correctable, the discipline <a href="/standards/prov-o/">PROV-O</a> formalises for data generally. These failures compound once the system acts; see <a href="/research/agentic-ai/">agentic AI</a>.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is memory just retrieval with extra steps?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Retrieval searches knowledge someone else owns; memory creates a record that did not exist before. A retrieval miss is a gap, but a bad write is a durable claim the system keeps making.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Who should decide what gets written to memory?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It should be a deliberate decision: what is worth remembering, what carries an expiry, what records its source, who may correct or delete it. Where a person is the subject of a memory, they need a way to see it, correct it, and have it forgotten.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does a longer context window remove the need for memory?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It changes the economics, not the design question. MemGPT's virtual context management moves information between a limited in-context working set and external storage. A window still cannot decide what deserves keeping, what has expired, or who may correct it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does this relate to the personal assistant page?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is the same argument at human scale: the memory concerns one person, the cost is private, and the controls that matter are the ones the person can exercise directly.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>Packer et al., <em>MemGPT: Towards LLMs as Operating Systems</em> — <a href="https://arxiv.org/abs/2310.08560">arxiv.org/abs/2310.08560</a>. Virtual context management, a memory hierarchy of main and external context, and self-directed editing of memory through function calls.</li>
+    <li><em>Model Context Protocol</em> — <a href="https://modelcontextprotocol.io/">modelcontextprotocol.io</a>. An open protocol for exposing tools, resources and prompts to models, and for letting a model read and write external state.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

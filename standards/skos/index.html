@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>W3C SKOS — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/skos/">
+<meta name="description" content="SKOS is a W3C model for concept schemes, expressed in RDF, with preferred, alternate and hidden labels, broader/narrower/related relations, and mapping properties between schemes.">
+<meta property="og:title" content="W3C SKOS — Knowledge Sidekick">
+<meta property="og:description" content="A W3C model for concept schemes in RDF: labels, broader/narrower/related relations, and mappings between vocabularies.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/skos/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="W3C SKOS — Knowledge Sidekick">
+<meta name="twitter:description" content="A W3C model for concept schemes in RDF: labels, broader/narrower/related relations, and mappings between vocabularies.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/skos/",
+      "url": "https://knowledgesidekick.org/standards/skos/",
+      "name": "W3C SKOS — Knowledge Sidekick",
+      "description": "SKOS is a W3C model for concept schemes, expressed in RDF, with preferred, alternate and hidden labels, broader/narrower/related relations, and mapping properties between schemes.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/skos/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is SKOS the same as an ontology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. SKOS describes concepts and the relations between them: labels, broader, narrower and related links, and mappings to other schemes. It does not describe the things those concepts name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the hidden label do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A hidden label is a lexical form a search or indexing system should match but that is not appropriate to display, such as a misspelling or an internal shorthand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do mapping properties matter for agent systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They let two vocabularies be related without merging them: each scheme keeps its own labels and owners, and an agent can traverse from a term it holds to a term another system uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SKOS guarantee anything about the data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It gives structure and labels, not validation of facts. A scheme can be internally tidy and still describe a domain wrongly, and the relations carry no reasoning."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Knowledge organization</span>
+    <h1>W3C SKOS</h1>
+    <p class="lede">SKOS is a W3C model for concept schemes, expressed in RDF, that gives a controlled vocabulary labels and relations without turning it into an ontology.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/knowledge/taxonomies/">Taxonomies</a> · <a href="/knowledge/ontologies/">Ontologies</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>SKOS — Simple Knowledge Organization System — is a W3C Recommendation for representing concept schemes such as thesauri, taxonomies and subject heading lists in RDF. Concepts carry <code>skos:prefLabel</code>, <code>skos:altLabel</code> and <code>skos:hiddenLabel</code>, and relate through <code>skos:broader</code>, <code>skos:narrower</code> and <code>skos:related</code>; mapping properties such as <code>skos:exactMatch</code> connect concepts across schemes.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives an organisation's vocabulary a machine-readable home: terms become identified concepts with labels, synonyms and a place in a hierarchy, so an agent can expand a query without a bespoke lookup table. Mapping properties let two taxonomies be connected rather than merged.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The normative document is the <a href="https://www.w3.org/TR/skos-reference/">SKOS Reference</a>, a W3C Recommendation defining the classes, properties and semantics. W3C also maintains a <a href="https://www.w3.org/2001/sw/wiki/SKOS">SKOS wiki page</a> with background and implementation pointers — the accessible counterpart to the ISO work at <a href="/standards/iso-25964/">ISO 25964</a>.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>SKOS describes concepts and their relations, not the facts about the things those concepts name: a product category carries labels and a place in a hierarchy, not a price. It is deliberately not an ontology language, so it carries none of the class axioms or entailment that OWL does — that is <a href="/knowledge/ontologies/">ontology</a> work.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is SKOS the same as an ontology?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. SKOS describes concepts and the relations between them: labels, broader, narrower and related links, and mappings to other schemes. It does not describe the things those concepts name.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does the hidden label do?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A hidden label is a lexical form a search or indexing system should match but that is not appropriate to display, such as a misspelling or an internal shorthand.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why do mapping properties matter for agent systems?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They let two vocabularies be related without merging them: each scheme keeps its own labels and owners, and an agent can traverse from a term it holds to a term another system uses.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does SKOS guarantee anything about the data?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It gives structure and labels, not validation of facts. A scheme can be internally tidy and still describe a domain wrongly, and the relations carry no reasoning.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/skos-reference/">SKOS Simple Knowledge Organization System Reference</a> — W3C Recommendation; the normative definition of SKOS classes, label properties, semantic relations and mapping properties.</li>
+    <li><a href="https://www.w3.org/2001/sw/wiki/SKOS">SKOS — W3C Semantic Web wiki</a> — background, scope and implementation pointers for the model.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

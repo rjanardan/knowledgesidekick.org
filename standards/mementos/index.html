@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memento — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/mementos/">
+<meta name="description" content="Memento (RFC 7089) is the HTTP framework for time-based access to resource states: datetime negotiation through Accept-Datetime, and TimeMaps of a resource's prior versions.">
+<meta property="og:title" content="Memento — Knowledge Sidekick">
+<meta property="og:description" content="RFC 7089: datetime negotiation and TimeMaps, the web's own answer to what a page said last week.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/mementos/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Memento — Knowledge Sidekick">
+<meta name="twitter:description" content="RFC 7089: datetime negotiation and TimeMaps for retrieving a resource's prior states.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/mementos/",
+      "url": "https://knowledgesidekick.org/standards/mementos/",
+      "name": "Memento — Knowledge Sidekick",
+      "description": "RFC 7089: datetime negotiation and TimeMaps for retrieving a resource's prior states.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/mementos/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What problem does Memento solve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A URL returns whatever the resource says now. Memento lets a client ask for a representation as of a chosen datetime, so a reader can retrieve the state a claim was based on." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a TimeMap?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A TimeMap is a resource from which a list of URIs of Mementos of an original resource can be obtained — the versions that exist, with their datetimes. It is how a client discovers what prior states are available before asking for one." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Memento preserve old versions automatically?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It is a protocol for requesting and identifying prior states. If nobody archived them, there is nothing to negotiate for." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Memento relate to provenance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They answer different questions. Provenance records where a statement came from and what produced it; Memento makes the specific prior state of a URL retrievable." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards reference</span>
+    <h1>Memento, and time-based access to a resource</h1>
+    <p class="lede">Memento is the HTTP framework that lets a client ask a URL for the representation it had at a chosen datetime. It is the versioning and deprecation layer for anything an agent reads.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/standards.html">Standards</a> · <a href="/standards/prov-o/">PROV-O</a> · <a href="/research/memory/">Memory</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Memento is an HTTP framework, published as RFC 7089 by Herbert Van de Sompel, Michael Nelson and Robert Sanderson, for obtaining representations of prior states of a given resource. It introduces two mechanisms. <strong>Datetime negotiation</strong> is a variation on content negotiation that uses the resource's URI and the client's preferred datetime, carried in an <code>Accept-Datetime</code> request header; the response is a representation of the resource as it stood then, with a <code>Memento-Datetime</code> header stating which state was returned. <strong>TimeMaps</strong> are lists that enumerate the URIs of resources encapsulating prior states of the original resource.</p>
+  <p>The vocabulary is small and worth knowing. An <em>Original Resource</em> is the resource in its current form. A <em>Memento</em> is a resource that encapsulates a frozen prior state of it. A <em>TimeGate</em> is a resource that resolves a datetime to the appropriate Memento, and a <em>TimeMap</em> is the resource that lists them.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>A URL points at whatever the resource says now. For an agent reading a page — or an internal knowledge base served over HTTP — that is a silent failure mode: the answer is fetched today, the claim was written at some other time, and nothing in the response says so.</p>
+  <p>Memento makes the version addressable. This is the web's own answer to "what did this page say last week", and it is therefore the versioning and deprecation layer for anything an agent reads: a citation can carry the datetime at which it was true, and a reader can re-fetch that state rather than the current one. It also composes with provenance — <a href="/standards/prov-o/">PROV-O</a> records what a claim was derived from, and Memento is what makes the derived-from state retrievable.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The specification is RFC 7089, published by the RFC Editor at <a href="https://www.rfc-editor.org/rfc/rfc7089">rfc-editor.org/rfc/rfc7089</a>. The framework's project home, with the terminology and the deployment record, is <a href="https://mementoweb.org/">mementoweb.org</a>.</p>
+  <p>The RFC is useful beyond the headers because it describes four deployment patterns — the original resource acting as its own TimeGate, a remote resource acting as a TimeGate, an original resource that is fixed, and Mementos without a TimeGate — which is a practical map of how much version support a given server actually has.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>It only helps if someone kept the earlier versions. An unarchived page still has no past: the protocol can negotiate for a prior state, but a server that never stored one has nothing to return. An empty TimeMap is an honest answer rather than a fixed one.</p>
+  <p>Nor does it say which version is authoritative, or that the newest state is the right one to act on. That is a policy decision, and a currentness rule the knowledge layer has to state for itself — see <a href="/adoption.html">Adoption</a> for how that rule is put into practice.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What problem does Memento solve?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A URL returns whatever the resource says now. Memento lets a client ask for a representation as of a chosen datetime, so a reader can retrieve the state a claim was based on.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is a TimeMap?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A TimeMap is a resource from which a list of URIs of Mementos of an original resource can be obtained — the versions that exist, with their datetimes. It is how a client discovers what prior states are available before asking for one.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Memento preserve old versions automatically?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a protocol for requesting and identifying prior states. If nobody archived them, there is nothing to negotiate for.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does Memento relate to provenance?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>They answer different questions. Provenance records where a statement came from and what produced it; Memento makes the specific prior state of a URL retrievable.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc7089">H. Van de Sompel, M. Nelson, R. Sanderson, &ldquo;HTTP Framework for Time-Based Access to Resource States — Memento&rdquo;, RFC 7089, December 2013</a></li>
+    <li><a href="https://mementoweb.org/">MementoWeb — the framework's project home</a></li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

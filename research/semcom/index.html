@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic Communication — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/research/semcom/">
+<meta name="description" content="Semantic communication asks whether a sender and receiver who share a model of meaning need to transmit as much as they do. A research direction, not deployed practice.">
+<meta property="og:title" content="Semantic Communication — Knowledge Sidekick">
+<meta property="og:description" content="The channel-layer version of the argument this site makes about context: shared knowledge reduces what must be sent.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/research/semcom/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Semantic Communication — Knowledge Sidekick">
+<meta name="twitter:description" content="The channel-layer version of the argument this site makes about context: shared knowledge reduces what must be sent.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/research/semcom/",
+      "url": "https://knowledgesidekick.org/research/semcom/",
+      "name": "Semantic Communication — Knowledge Sidekick",
+      "description": "Semantic communication asks whether a sender and receiver who share a model of meaning need to transmit as much as they do.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/research/semcom/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is semantic communication the same as compression?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Compression removes redundancy while keeping the ability to reconstruct the original symbols. Semantic communication gives up faithful reconstruction and aims at the receiver recovering the intended meaning. That is a different objective, and it requires sender and receiver to share how meaning is represented." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work in production today?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not in the general case. The directions described here come from survey papers and simulation-based research. Treat semantic communication as an active research programme, not a deployed capability." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does shared knowledge have to do with transmitting less?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A message only needs to carry what the receiver cannot already derive. If both sides hold a compatible model of the domain, the sender can transmit a reference, a correction, or a task rather than a full description, and the receiver regenerates the rest." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this relate to context engineering?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is the same argument at a different layer. Context engineering asks what must be assembled into a model's window; semantic communication asks what must cross a channel at all when both ends share a model of meaning. The unit of accounting differs; the reasoning is the same." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-research">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · Semantic communication</span>
+    <h1>Semantic communication asks whether a shared model of meaning lets a sender transmit less</h1>
+    <p class="lede">This is the channel-layer version of the argument this site makes about context. If both ends of a link already share a model of what the message is about, most of the message does not need to be sent. The idea is coherent, the results are promising, and the practice is still research.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/context-engineering.html">Context engineering</a> · <a href="/token-savings.html">Token savings</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is semantic communication?</h3>
+    <p>It is the question of whether a sender and a receiver that share a model of meaning need to transmit as much as they currently do. Classical communication engineering is judged on how faithfully symbols arrive. Semantic communication proposes a different objective: the receiver recovers what the sender meant, and the bits describing what both sides already understand are never sent. This is a research programme, not a deployed practice.</p>
+  </div>
+</section>
+
+<section id="shannon">
+  <h2>Faithful symbols and conveyed meaning</h2>
+  <p>The distinction is one of objective, not technique.</p>
+  <p>Classical information theory treats communication as the problem of reproducing a message at a destination with acceptable fidelity, and sets meaning outside the engineering problem. That choice is what made the field tractable: capacity, noise and error correction can be defined without asking what a message is about. A channel is good if the symbols arrive intact.</p>
+  <p>Semantic communication reopens the part that was set aside. It accepts that the symbols may arrive imperfectly, or not at all, provided the receiver reconstructs the intended meaning — which means sender and receiver must agree on something about how that meaning is represented. Once that agreement exists, it is a resource: knowledge both ends hold, which does not have to be paid for again on every transmission.</p>
+</section>
+
+<section id="directions">
+  <h2>The three research directions</h2>
+  <p>A contemporary survey identifies three leading directions, which is a useful map of where the work actually is.</p>
+  <ul>
+    <li><strong>Theory-of-mind-based.</strong> Work that models what the receiver is likely to know, intend, or misunderstand, and shapes the transmission around that estimate rather than the raw content.</li>
+    <li><strong>Generative-AI-driven.</strong> Work in which a generative model reconstructs content at the receiver from a compact representation rather than reproducing the original signal. An ICASSP special session overview frames the challenge as extracting semantic information from complex content and regenerating semantically consistent data, robust to channel corruption.</li>
+    <li><strong>Deep joint source-channel coding.</strong> Work that learns the source encoding and the channel encoding together, in one model, instead of treating compression and transmission as separate stages.</li>
+  </ul>
+  <p>What the three share is the premise that the receiver is not a passive destination. It is a system with its own model, and that model carries part of the load.</p>
+</section>
+
+<section id="shared-knowledge">
+  <h2>Why shared knowledge reduces what must be sent</h2>
+  <p>Because a message only has to carry what the receiver cannot already derive.</p>
+  <p>If both ends hold a compatible model of the domain, the sender can transmit a reference, a correction, or a task rather than a full description, and the receiver regenerates the rest. This is the same economy that makes context engineering work: a well-assembled context spends tokens on the difference between what the model knows and what the task requires. The <a href="/context-engineering.html">context engineering</a> page develops that argument for model windows, and <a href="/token-savings.html">token savings</a> covers what it costs. Semantic communication makes the same case for a physical channel, where the shared model is what shrinks the message.</p>
+  <p>There is an obvious dependency. The economy holds only while the shared model is actually shared. A receiver whose model has drifted will reconstruct a different meaning from the same transmission, and do so confidently. Shared knowledge buys the reduction; maintaining it is what the reduction costs.</p>
+</section>
+
+<section id="speculative">
+  <h2>What is speculative</h2>
+  <p>Most of it, in the sense that matters to anyone building a system today.</p>
+  <p>The surveys describe a research programme: theory, architectures and simulation-based evaluation, largely in wireless and network settings. They do not describe a capability a team can adopt this quarter. Reported gains should be read against their experimental setup — what channel model, what baseline, what task — because the results are conditional on those choices in a way headline numbers do not convey. This page makes no performance claim, and neither should a procurement decision.</p>
+  <p>What is worth taking is the framing rather than the numbers. If a receiver has a model of meaning, the sender can send less — and if that model has drifted, the sender has sent less and communicated the wrong thing. That is the trade the agentic side of this site makes. See <a href="/research/agentic-ai/">agentic AI</a> for what happens when inferences become actions, and <a href="/a2a/">A2A</a> for how agents that must agree on meaning describe themselves.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is semantic communication the same as compression?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Compression removes redundancy while keeping the ability to reconstruct the original symbols. Semantic communication gives up faithful reconstruction and aims at the receiver recovering the intended meaning. That is a different objective, and it requires sender and receiver to share how meaning is represented.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does this work in production today?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Not in the general case. The directions described here come from survey papers and simulation-based research. Treat semantic communication as an active research programme, not a deployed capability.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does shared knowledge have to do with transmitting less?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A message only needs to carry what the receiver cannot already derive. If both sides hold a compatible model of the domain, the sender can transmit a reference, a correction, or a task rather than a full description, and the receiver regenerates the rest.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does this relate to context engineering?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is the same argument at a different layer. Context engineering asks what must be assembled into a model's window; semantic communication asks what must cross a channel at all when both ends share a model of meaning. The unit of accounting differs; the reasoning is the same.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>Nguyen et al., <em>A Contemporary Survey on Semantic Communications: Theory of Mind, Generative AI, and Deep Joint Source-Channel Coding</em> — <a href="https://arxiv.org/abs/2502.16468">arxiv.org/abs/2502.16468</a>. Names and explains the three leading directions in the field.</li>
+    <li>Grassucci et al., <em>Enhancing Semantic Communication with Deep Generative Models — An ICASSP Special Session Overview</em> — <a href="https://arxiv.org/abs/2309.02478">arxiv.org/abs/2309.02478</a>. Extracting semantic information from complex content and regenerating semantically consistent data at the receiver, robust to channel corruption.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROV-O — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/prov-o/">
+<meta name="description" content="PROV-O is the W3C ontology for provenance: the entities, activities and agents behind a statement, and the relations between them. What it gives a knowledge layer, and what it does not solve.">
+<meta property="og:title" content="PROV-O — Knowledge Sidekick">
+<meta property="og:description" content="The W3C provenance ontology, and what it gives a knowledge layer: traceable origin for a claim, but not truth and not currentness.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/prov-o/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PROV-O — Knowledge Sidekick">
+<meta name="twitter:description" content="The W3C provenance ontology: traceable origin for a claim, but not truth and not currentness.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/prov-o/",
+      "url": "https://knowledgesidekick.org/standards/prov-o/",
+      "name": "PROV-O — Knowledge Sidekick",
+      "description": "The W3C provenance ontology, and what it gives a knowledge layer: traceable origin for a claim, but not truth and not currentness.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/prov-o/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does PROV-O describe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It describes provenance: the entities, activities and agents involved in producing something, and the relations between them. The vocabulary is written as an OWL 2 ontology for use with RDF." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a PROV-O record prove a claim is true?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It records where the claim came from and what produced it. Whether the source was right is a separate question that the provenance graph does not answer." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PROV-O only for documents?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. An entity may be physical, digital or conceptual, an activity is any process over a period of time, and an agent may be a person, an organisation or a software agent." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need PROV-O if we already store a source URL with each fact?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A source URL is one edge of what PROV-O describes. It does not say which process produced the fact, when, from which version of the source, or on whose behalf — and those are the fields an audit asks for." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards reference</span>
+    <h1>PROV-O, the W3C provenance ontology</h1>
+    <p class="lede">PROV-O is the vocabulary for recording where a statement came from and what produced it. It is the part of a knowledge layer that lets an agent say where a claim came from, and lets a reviewer check that answer.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/standards.html">Standards</a> · <a href="/standards/mementos/">Mementos</a> · <a href="/knowledge/knowledge-graphs/">Knowledge graphs</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>PROV-O is the PROV Ontology: a W3C Recommendation, published 30 April 2013, that expresses the PROV data model as an OWL 2 ontology. It provides the classes, properties and restrictions needed to represent and interchange provenance information produced by different systems in different contexts. Every term sits in a single namespace, <code>http://www.w3.org/ns/prov#</code>.</p>
+  <p>Three classes carry the model. An <code>prov:Entity</code> is a thing with some fixed aspects — physical, digital or conceptual. An <code>prov:Activity</code> is something that occurs over a period of time and acts upon or with entities, consuming, processing or generating them. An <code>prov:Agent</code> is something that bears some form of responsibility for an activity, for the existence of an entity, or for another agent's activity.</p>
+  <p>The relations between them are the ones an audit asks about: <code>prov:wasGeneratedBy</code> (which activity produced this), <code>prov:used</code> (what an activity drew on), <code>prov:wasDerivedFrom</code> (what this came out of), <code>prov:wasAttributedTo</code> (who it is credited to), and <code>prov:actedOnBehalfOf</code> (on whose behalf an agent acted).</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>Provenance is the record of where a statement came from and what produced it. In a knowledge layer, that record is what makes a claim auditable: an agent can return a structured answer to "where did this come from" instead of a sentence, and a reviewer can walk the chain back to a source and a process.</p>
+  <p>It also gives the consuming side something to filter on. A system can require that a claim derive from an approved source, refuse a claim whose attribution is unknown, or show the derivation when a user asks why an answer looks the way it does. Without that record, grounding is a promise rather than a property.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where the spec lives</h2>
+  <p>The specification is published by the W3C at <a href="https://www.w3.org/TR/prov-o/">w3.org/TR/prov-o</a>, alongside the other documents in the PROV family: the data model (PROV-DM), the notation (PROV-N) and a primer.</p>
+  <p>PROV-O is an RDF vocabulary, so it is read together with RDF 1.1 Concepts and Abstract Syntax, which defines the graph model and the terms — IRIs, blank nodes, literals — that the ontology is written in.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Provenance records origin, not truth. A carefully described derivation from a wrong source is still wrong, and PROV-O will describe it faithfully.</p>
+  <p>Nor does it record currentness. A provenance graph can tell you which version of a document a claim was derived from; it does not tell you whether a newer version exists or whether the one you hold has been superseded. Versioning and deprecation are separate layers — see <a href="/standards/mementos/">Mementos</a> for the retrieval of prior states, and <a href="/knowledge/knowledge-graphs/">knowledge graphs</a> for the shape the claims themselves live in.</p>
+  <p>Permissions are also outside the model. PROV-O can record who asserted something and on whose behalf; it cannot record whether the reader was allowed to see it.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does PROV-O describe?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It describes provenance: the entities, activities and agents involved in producing something, and the relations between them. The vocabulary is written as an OWL 2 ontology for use with RDF.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does a PROV-O record prove a claim is true?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It records where the claim came from and what produced it. Whether the source was right is a separate question that the provenance graph does not answer.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is PROV-O only for documents?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. An entity may be physical, digital or conceptual, an activity is any process over a period of time, and an agent may be a person, an organisation or a software agent.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do we need PROV-O if we already store a source URL with each fact?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A source URL is one edge of what PROV-O describes. It does not say which process produced the fact, when, from which version of the source, or on whose behalf — and those are the fields an audit asks for.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/prov-o/">W3C, &ldquo;PROV-O: The PROV Ontology&rdquo;, W3C Recommendation, 30 April 2013</a></li>
+    <li><a href="https://www.w3.org/TR/rdf11-concepts/">W3C, &ldquo;RDF 1.1 Concepts and Abstract Syntax&rdquo;</a></li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge bundles — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/knowledge/knowledge-bundles/">
+<meta name="description" content="A knowledge bundle is a directory of typed markdown concepts meant to be traversed as a graph, not read front to back. The bundle is the graph, so edge and citation hygiene are the deliverable.">
+<meta property="og:title" content="Knowledge bundles — Knowledge Sidekick">
+<meta property="og:description" content="A knowledge bundle is a directory of typed markdown concepts meant to be traversed as a graph. Edge hygiene and citation hygiene are the whole deliverable.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/knowledge/knowledge-bundles/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge bundles — Knowledge Sidekick">
+<meta name="twitter:description" content="A knowledge bundle is a directory of typed markdown concepts meant to be traversed as a graph. Edge hygiene and citation hygiene are the whole deliverable.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/knowledge/knowledge-bundles/",
+      "url": "https://knowledgesidekick.org/knowledge/knowledge-bundles/",
+      "name": "Knowledge bundles — Knowledge Sidekick",
+      "description": "A directory of typed markdown concepts meant to be traversed as a graph rather than read front to back.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/knowledge/knowledge-bundles/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a knowledge bundle just a folder of notes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A folder of notes is read as a sequence of documents. A bundle is traversed: every concept carries a type, and the links between concepts are the structure that gets used." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why not start with RDF or a triple store?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because most corpora fail on authoring and reviewability before they fail on query power. Markdown needs no runtime and diffs cleanly; RDF can be derived from it later when the graph is worth querying." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when two concepts are the same thing?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You get two nodes and a graph that silently splits. The convention that prevents it is aliases: one concept file lists the other spellings, so a spelling never becomes a second identity." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a bundle need a schema?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It needs a small, frozen convention set: a type on every concept, links that state their kind in prose, per-claim sources, aliases for alternative spellings, and reserved index and log files. That is enough structure to traverse; more is a separate decision." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Knowledge foundations</span>
+    <h1>Knowledge bundles: a graph you traverse, not a book you read</h1>
+    <p class="lede">A knowledge bundle is a directory of typed markdown concepts built to be traversed as a graph rather than read front to back. The bundle is the graph, which makes edge hygiene and citation hygiene the whole deliverable.</p>
+    <p class="meta"><a href="/knowledge/knowledge-formats/">Knowledge formats</a> · <a href="/why-knowledge.html">Why knowledge</a> · <a href="/research.html">Research</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What a knowledge bundle is</h2>
+  <p>A knowledge bundle is a directory of markdown files, one concept per file, designed to be walked as a graph rather than read as a document. Each concept carries a type — a person, a system, a procedure, a policy, a decision — and links to other concepts in the bundle. A person enters at whatever node is relevant and follows the links outwards. An agent does the same thing mechanically: it retrieves a concept and its neighbours instead of an entire document.</p>
+  <p>The defining property is that there is no reading order. A bundle has no first page and no ending, and no single file that contains the whole picture. Navigation happens through relationships, so the relationships are the content. That is why the quality of a bundle is decided by its edges and its citations rather than by the fluency of any single concept.</p>
+</section>
+
+<section id="why-markdown">
+  <h2>Why plain markdown and conventions are enough</h2>
+  <p>Because the parts of a knowledge base that usually break are not the storage format. Markdown is readable by people and by every model and tool in common use, it diffs cleanly under version control, and it needs no runtime to open. Those are the properties that decide whether a corpus gets maintained.</p>
+  <p>What a bundle adds on top is a small set of conventions that turn a pile of notes into a graph. The Google Open Knowledge Format specification sets out this approach: a bundle of typed concept files with links between them, readable as prose and parseable as structure at the same time. The conventions are deliberately few, so that a person can hold them in their head and an agent engine can rely on them without a separate schema layer.</p>
+</section>
+
+<section id="what-must-hold">
+  <h2>What has to be true for a bundle to work</h2>
+  <p>A bundle works when a handful of small disciplines are followed consistently across every file.</p>
+  <ul>
+    <li><strong>A type on every concept.</strong> Without a type, a concept is just a note, and a traversing agent cannot tell a procedure from a person or a policy from a product. The type is the cheapest structural fact in the bundle and the one that carries the most weight.</li>
+    <li><strong>Untyped links as edges, with the kind stated in prose.</strong> A markdown link carries no relationship kind. The convention is to state the kind in the surrounding sentence — "replaced by", "owned by", "supersedes" — so a person reads the relationship and a machine can recover it from the sentence.</li>
+    <li><strong>Per-claim sources.</strong> Every load-bearing claim in a concept points at something external and checkable. Without them, a bundle is a graph of assertions with no way to tell which still hold.</li>
+    <li><strong>Frozen conventions.</strong> Once the type vocabulary and the linking rules are set, they stop moving. A convention that changes every month produces a corpus where half the edges mean something slightly different from the other half.</li>
+    <li><strong>Aliases.</strong> Alternative spellings, former names, and abbreviations are recorded on the concept they belong to, so two spellings of one thing do not become two nodes and silently split the graph.</li>
+    <li><strong>Reserved index and log files.</strong> A bundle keeps a few predetermined files for entry points and for the record of what changed, which keeps the concept namespace clean and gives an agent a known place to start.</li>
+  </ul>
+  <p>None of these is expensive on its own. Together they keep a corpus a graph as it grows, rather than letting it decay into a folder of documents that only a human can navigate.</p>
+</section>
+
+<section id="relation-to-rdf">
+  <h2>How a bundle relates to RDF and JSON-LD</h2>
+  <p>A bundle is a graph written in a form that is easy to author and review. <a href="/standards/rdf/">RDF</a> is the model it approximates: subjects, predicates, and objects, with an edge between two things as first-class as the things themselves. The difference is where the structure lives — in a bundle it lives in the prose and the conventions; in RDF it lives in the serialisation, where a machine reads it directly.</p>
+  <p>That difference is a trade, not a defect. A bundle is fast to write, easy to review in a pull request, and readable by a model without a parsing step. RDF is explicit, queryable, and composable across sources, but it raises the authoring cost and the tooling requirement from the first file.</p>
+  <p><a href="/standards/json-ld/">JSON-LD</a> is the bridge. It expresses the same subject–predicate–object structure in a form web tooling and search engines already consume, so a bundle can be published as linked data when the graph is worth querying, without giving up the markdown that made it writable.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is a knowledge bundle just a folder of notes?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A folder of notes is read as a sequence of documents. A bundle is traversed: every concept carries a type, and the links between concepts are the structure that gets used.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why not start with RDF or a triple store?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because most corpora fail on authoring and reviewability before they fail on query power. Markdown needs no runtime and diffs cleanly; RDF can be derived from it later when the graph is worth querying.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What happens when two concepts are the same thing?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>You get two nodes and a graph that silently splits. The convention that prevents it is aliases: one concept file lists the other spellings, so a spelling never becomes a second identity.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does a bundle need a schema?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It needs a small, frozen convention set: a type on every concept, links that state their kind in prose, per-claim sources, aliases for alternative spellings, and reserved index and log files. That is enough structure to traverse; more is a separate decision.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md">Open Knowledge Format specification</a> — Google Cloud Platform, knowledge-catalog: bundles of typed concept files with links between them.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

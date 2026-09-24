@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taxonomies — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/knowledge/taxonomies/">
+<meta name="description" content="A taxonomy is a controlled vocabulary arranged into a hierarchy — the cheapest structure that makes an agent's knowledge navigable. The hard part is keeping labels, identifiers and aliases stable.">
+<meta property="og:title" content="Taxonomies — Knowledge Sidekick">
+<meta property="og:description" content="Controlled vocabularies, polyhierarchy, thesaurus relations, and the standards that hold them together: SKOS and ISO 25964.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/knowledge/taxonomies/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Taxonomies — Knowledge Sidekick">
+<meta name="twitter:description" content="Controlled vocabularies, polyhierarchy, thesaurus relations, and the standards that hold them together: SKOS and ISO 25964.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/knowledge/taxonomies/",
+      "url": "https://knowledgesidekick.org/knowledge/taxonomies/",
+      "name": "Taxonomies — Knowledge Sidekick",
+      "description": "A taxonomy is a controlled vocabulary arranged into a hierarchy — the cheapest structure that makes an agent's knowledge navigable.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/knowledge/taxonomies/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a taxonomy and a thesaurus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A thesaurus is a taxonomy that also records equivalence and association, not only hierarchy. It adds the non-preferred synonyms of each concept, the related terms, and a qualification of the hierarchy as generic, partitive or instance. SKOS expresses both." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many levels should a taxonomy have?",
+          "acceptedAnswer": { "@type": "Answer", "text": "As few as will carry the distinctions you actually retrieve on. Depth is not the point; consistent naming and a stable identifier per concept are. A vocabulary two levels deep that the whole team uses retrieves better than a five-level tree half of them ignore." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do alternate labels belong in the taxonomy or in the search index?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In the taxonomy. Abbreviations, former product names and common misspellings belong to the concept, so every system that reads the vocabulary inherits the same aliases. Keeping them only in a search index traps that knowledge inside one application." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a concept sit under two broader concepts?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, and usually it should. A strict tree forces false choices onto real content. Polyhierarchy allows several broader concepts, and both SKOS and ISO 25964 support it." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Knowledge structure</span>
+    <h1>Taxonomies and controlled vocabulary</h1>
+    <p class="lede">A taxonomy is a controlled vocabulary arranged into a hierarchy, and it is the cheapest structure that makes an agent's knowledge navigable. Building one is not the difficult part. Keeping its labels, identifiers and aliases stable is.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/research.html">Research</a> · <a href="/standards.html">Standards</a> · <a href="/knowledge/ontologies/">Ontologies</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is a taxonomy?</h3>
+    <p>A taxonomy is a controlled vocabulary arranged into a hierarchy. The controlled vocabulary is a fixed set of terms — one preferred label per concept, plus the alternate labels people actually use — and the taxonomy adds the arrangement, so a reader or an agent can move from a general category to a specific one. The word is also used loosely for any scheme that groups things. The useful sense is the narrow one, because the discipline lives in the vocabulary, not in the tree.</p>
+  </div>
+</section>
+
+<section id="free-text">
+  <h2>Why free-text retrieval fails</h2>
+  <p>Free text fails retrieval for two reasons that have nothing to do with the quality of the search engine. The same thing is written many ways — abbreviations, plurals, product names, internal jargon, misspellings — and the same string means different things in different places. A system that matches strings has to bridge both gaps by guesswork, which is what an agent acting on the result cannot afford.</p>
+  <p>A controlled vocabulary fixes the vocabulary end of that problem rather than the search end. Each concept gets one preferred label and one identifier; everything else becomes an alternate label pointing at the same concept. The identifier is the part that lasts: labels get corrected, translated and retired while it stays put, so links, queries and annotations keep pointing at the same concept as the words change above it. That separation is also the economic argument for doing this first — a taxonomy needs no logic, no reasoner and no query engine, only agreement on names and a place to keep them.</p>
+</section>
+
+<section id="structure">
+  <h2>Trees, polyhierarchy, and the relations a thesaurus records</h2>
+  <p>A strict tree gives every concept exactly one broader concept. It is easy to reason about, but it forces false choices onto real content: a medical device that is both a clinical item and a regulated product has to be filed under one of them, and either choice is wrong for half the queries. Vocabularies that survive contact with use are usually polyhierarchies, in which a concept may sit under more than one broader concept.</p>
+  <p>Thesaurus practice names the relations instead of leaving them implied. Broader and narrower carry the hierarchy in both directions; preferred and alternate labels separate the term to use from the equivalents that should lead to it; related links concepts that belong near each other without either containing the other. The kind of hierarchy is recorded too — generic, partitive or instance — because the three behave differently when queried. Treating them as one kind of edge is a common way to build a vocabulary that looks tidy and retrieves badly.</p>
+  <p>The hard part is not the shape of the tree. It is holding identifiers steady while labels move, and keeping the alias set complete enough that a query written by someone who does not know the vocabulary still lands on the right concept.</p>
+</section>
+
+<section id="skos-iso">
+  <h2>SKOS on the web, ISO 25964 in library practice</h2>
+  <p>SKOS, the Simple Knowledge Organization System, is the W3C vocabulary for expressing these schemes on the web. It gives named terms for the pieces a taxonomy already has — a concept, a concept scheme, preferred and alternate labels, a hidden label for system-only terms, broader, narrower and related relations — alongside documentation properties such as definitions and scope notes, and mapping properties for linking vocabularies. Each concept is identified by a resolvable IRI, which is what lets a published vocabulary be linked from outside and reused by systems that did not build it. See <a href="/standards/skos/">SKOS</a> for the standard itself.</p>
+  <p>ISO 25964 is the library and information science standard for thesauri and their interoperability. ISO 25964-1:2011 covers thesauri for information retrieval; ISO 25964-2:2013 covers interoperability with other vocabularies. Both are published by ISO and are not freely available online, so this page cites them by number and year rather than linking them. The two bodies of work are complementary: ISO 25964 carries the construction and interoperability guidance, SKOS the web expression that most modern tools read.</p>
+</section>
+
+<section id="vs-ontology">
+  <h2>How a taxonomy differs from an ontology</h2>
+  <p>A taxonomy organises labels into a hierarchy and carries no formal meaning. Nothing in it tells a machine that two concepts are disjoint, or that a property holds a single value, or that one fact follows from another. An <a href="/knowledge/ontologies/">ontology</a> adds that layer, expressing classes, properties and individuals in a logic a reasoner can compute over.</p>
+  <p>The choice is not a matter of maturity. A taxonomy is enough when the job is finding content; an ontology earns its cost when the job includes checking, deducing or merging across sources. In practice the two stack, and once the vocabulary is populated with instances and queried by traversal rather than lookup, what you have is a <a href="/knowledge/knowledge-graphs/">knowledge graph</a>.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the difference between a taxonomy and a thesaurus?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A thesaurus is a taxonomy that also records equivalence and association, not only hierarchy. It adds the non-preferred synonyms of each concept, the related terms, and a qualification of the hierarchy as generic, partitive or instance. SKOS expresses both.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How many levels should a taxonomy have?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>As few as will carry the distinctions you actually retrieve on. Depth is not the point; consistent naming and a stable identifier per concept are. A vocabulary two levels deep that the whole team uses retrieves better than a five-level tree half of them ignore.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do alternate labels belong in the taxonomy or in the search index?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>In the taxonomy. Abbreviations, former product names and common misspellings belong to the concept, so every system that reads the vocabulary inherits the same aliases. Keeping them only in a search index traps that knowledge inside one application.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can a concept sit under two broader concepts?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Yes, and usually it should. A strict tree forces false choices onto real content. Polyhierarchy allows several broader concepts, and both SKOS and ISO 25964 support it.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/skos-reference/">SKOS Simple Knowledge Organization System Reference</a> — W3C Recommendation. Verified 200. Source for the SKOS terms named above.</li>
+    <li><a href="https://www.w3.org/2001/sw/wiki/SKOS">SKOS — W3C Semantic Web wiki</a>. Verified 200.</li>
+    <li>ISO 25964-1:2011, <em>Information and documentation — Thesauri and interoperability with other vocabularies — Part 1: Thesauri for information retrieval</em>. Cited by number and year; not linked.</li>
+    <li>ISO 25964-2:2013, <em>Information and documentation — Thesauri and interoperability with other vocabularies — Part 2: Interoperability with other vocabularies</em>. Cited by number and year; not linked.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

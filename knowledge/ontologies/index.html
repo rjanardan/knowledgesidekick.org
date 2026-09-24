@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontologies — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/knowledge/ontologies/">
+<meta name="description" content="An ontology is a formal specification of the concepts and relations in a domain, written so a machine can reason over them. It buys inference and consistency, and it costs the discipline of formal modelling.">
+<meta property="og:title" content="Ontologies — Knowledge Sidekick">
+<meta property="og:description" content="What an ontology adds beyond a taxonomy: classes, properties, entailment, OWL 2 profiles, and the entity-resolution problem.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/knowledge/ontologies/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ontologies — Knowledge Sidekick">
+<meta name="twitter:description" content="What an ontology adds beyond a taxonomy: classes, properties, entailment, OWL 2 profiles, and the entity-resolution problem.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/knowledge/ontologies/",
+      "url": "https://knowledgesidekick.org/knowledge/ontologies/",
+      "name": "Ontologies — Knowledge Sidekick",
+      "description": "An ontology is a formal specification of the concepts and relations in a domain, written so a machine can reason over them.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/knowledge/ontologies/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is an ontology just a more detailed taxonomy?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A taxonomy arranges labels into a hierarchy and carries no formal meaning. An ontology states axioms in a logic: that two classes are disjoint, that a property has a domain and a range, that a relation is transitive. Those statements let a reasoner derive facts never written down and detect sets of statements that cannot all be true." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a reasoner to get value from an ontology?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not for the first value. Declared domains, ranges and disjointness give you validation, better queries and cleaner merging before any reasoner runs. The reasoner turns the model into inference and consistency checking, but the discipline of writing the model down pays off on its own." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which OWL 2 profile should I choose?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The least expressive one that says what you need. OWL 2 EL, QL and RL each trade expressive power for reasoning cost, and OWL 2 DL is the most expressive of the decidable options. Start in the profile your tooling handles well and move up only when a modelling need cannot be stated in it." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I do when two sources use different names for the same thing?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Give the thing one identifier and record the other names as labels, or as mapping statements to the other vocabulary. Deciding that two records describe the same real-world thing is a judgement someone makes and the model records, not something string matching can settle." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Knowledge structure</span>
+    <h1>Ontologies and formal models of a domain</h1>
+    <p class="lede">An ontology is a formal specification of the concepts and relations in a domain, written so a machine can reason over them. It buys inference and consistency, and it costs the discipline of formal modelling. The question is not whether ontologies are good, but whether a given domain is worth that cost.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/standards.html">Standards</a> · <a href="/knowledge/taxonomies/">Taxonomies</a> · <a href="/knowledge/knowledge-graphs/">Knowledge graphs</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is an ontology?</h3>
+    <p>An ontology is an explicit, formal description of the concepts in a domain and the relations between them, written in a logic rather than in prose. The definition most often quoted is Thomas Gruber's, from 1993: an ontology is a specification of a conceptualization. The operative words are formal and specification. A glossary describes terms for people; an ontology states what follows from what, so software can draw conclusions the author never wrote down and detect statements that cannot all be true.</p>
+  </div>
+</section>
+
+<section id="beyond-taxonomy">
+  <h2>What an ontology adds beyond a taxonomy</h2>
+  <p>A <a href="/knowledge/taxonomies/">taxonomy</a> arranges labels into a hierarchy and stops there. It says that one term is broader than another and nothing more. It cannot tell a machine that a concept has a required property, that two concepts exclude each other, or that a relation carries a direction that matters.</p>
+  <p>An ontology states those things with a small vocabulary: classes for kinds of thing, properties for relations between things and between things and values, and individuals for the specific things described. What makes it an ontology rather than a schema is that its statements are axioms — they constrain what can be true, and a reasoner can compute their consequences. A declared domain and range pushes anything asserted with a property into the right class; disjointness means nothing can be in both. A taxonomy classifies; an ontology constrains.</p>
+</section>
+
+<section id="dl-entailment">
+  <h2>Classes, properties, individuals and entailment</h2>
+  <p>The description-logic view is that an ontology describes individuals and the classes they belong to, and that every statement has logical consequences. Entailment is the name for those consequences: what must be true given the axioms and assertions, whether or not anyone wrote it down. Subclass relations compose, so an individual belongs to every class above its own; transitive, symmetric and inverse properties propagate assertions along the graph.</p>
+  <p>Two consequences matter for agentic systems. A reasoner can detect inconsistency: an individual asserted into two classes declared disjoint is a contradiction, and the model is unsound until it is resolved — a validation service prose documentation cannot provide. And ontologies are open-world by default, so a missing statement means unknown, not false. Agents and databases are usually built closed-world, and the difference catches teams out, because "there is no record, therefore the fact is false" is not available under the standard semantics without saying so explicitly.</p>
+  <p>RDF Schema is the lighter layer of the same idea: classes, subclass and subproperty relations, and domain and range, which is enough for typed graphs and simple inference without a full description logic. It is where most teams start, and <a href="/standards/rdfs/">RDFS</a> covers it in detail.</p>
+</section>
+
+<section id="owl-profiles">
+  <h2>OWL, its profiles, and the decidability trade-off</h2>
+  <p>OWL is the Web Ontology Language, and OWL 2 is the version in current use. Its overview describes three ways of using it. OWL 2 DL is the description-logic version and is decidable, so a reasoner can always answer whether a conclusion follows. OWL 2 Full keeps RDF's flexibility but is undecidable, so a reasoner may not terminate on some queries. The OWL 2 profiles restrict the language to keep reasoning tractable for particular purposes.</p>
+  <p>The profiles are the practical answer to the trade-off: each is designed for a different balance of expressive power and reasoning cost, giving up some of what full OWL can say in exchange for guarantees about how expensive reasoning will be. The engineering consequence is plain — the more an ontology can say, the harder it is to answer questions over it, so choosing a profile is choosing how much inference you will pay for. See <a href="/standards/owl/">OWL</a> for the standard and its tooling.</p>
+</section>
+
+<section id="when-worth-it">
+  <h2>When an ontology is worth its cost</h2>
+  <p>It is worth building when the domain has rules a machine must check or apply, when several sources must be merged under one set of meanings, or when questions involve combination rather than lookup. Regulated domains, engineering models, scientific data and cross-organisation exchange are the familiar cases.</p>
+  <p>It is not worth building when the work is retrieval. If the requirement is to find the right document or record, a taxonomy with disciplined naming, a stable identifier per concept and a complete alias set does more per unit of effort, and it creates no modelling obligation to maintain for years. Formal models decay faster than vocabularies when nobody owns them, because a wrong axiom is worse than a missing label.</p>
+  <p>Entity resolution is usually what forces the decision. Two sources name the same thing differently, or one name covers two things. An ontology gives the resolution somewhere to live — one identifier, with the other names kept as labels and mapping statements — but the resolution itself is a judgement a person makes and the model records. Matching tools propose candidates; they cannot decide that two records describe the same real-world thing. That decision, made once and written down, is most of what an ontology contributes to merging.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is an ontology just a more detailed taxonomy?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A taxonomy arranges labels into a hierarchy and carries no formal meaning. An ontology states axioms in a logic: that two classes are disjoint, that a property has a domain and a range, that a relation is transitive. Those statements let a reasoner derive facts never written down and detect sets of statements that cannot all be true.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do I need a reasoner to get value from an ontology?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Not for the first value. Declared domains, ranges and disjointness give you validation, better queries and cleaner merging before any reasoner runs. The reasoner turns the model into inference and consistency checking, but the discipline of writing the model down pays off on its own.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Which OWL 2 profile should I choose?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The least expressive one that says what you need. OWL 2 EL, QL and RL each trade expressive power for reasoning cost, and OWL 2 DL is the most expressive of the decidable options. Start in the profile your tooling handles well and move up only when a modelling need cannot be stated in it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What do I do when two sources use different names for the same thing?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Give the thing one identifier and record the other names as labels, or as mapping statements to the other vocabulary. Deciding that two records describe the same real-world thing is a judgement someone makes and the model records, not something string matching can settle.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.w3.org/TR/owl2-overview/">OWL 2 Web Ontology Language Document Overview</a> — W3C Recommendation. Verified 200. Source for OWL 2 DL, OWL 2 Full, the OWL 2 profiles, and the decidability and tractability trade-off.</li>
+    <li><a href="https://www.w3.org/TR/owl2-primer/">OWL 2 Web Ontology Language Primer</a> — W3C Recommendation. Verified 200. Source for the description-logic treatment of classes, properties, individuals and entailment.</li>
+    <li><a href="https://www.w3.org/TR/rdf-schema/">RDF Schema 1.1</a> — W3C Recommendation. Verified 200. Source for classes, subclasses, properties, and domain and range declarations.</li>
+    <li>Thomas R. Gruber, <em>A translation approach to portable ontology specifications</em>, Knowledge Acquisition, 1993. Source of the definition quoted above. Cited as text; not linked.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

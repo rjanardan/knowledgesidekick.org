@@ -86,7 +86,7 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 /* arrow always points down — menu opens downward */
 .nav-dropdown{
   position:absolute;top:calc(100% + 6px);left:0;
-  min-width:230px;max-width:290px;
+  min-width:250px;max-width:330px;
   background:var(--panel);
   border:none;border-radius:0;
   padding:5px 0;z-index:40;
@@ -199,6 +199,8 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 .pattern dl{margin:0}
 .pattern dt{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;margin-top:8px}
 .pattern dd{margin:0 0 4px;font-size:14px}
+.pattern ul{margin:0;padding-left:18px}
+.pattern li{font-size:14px;line-height:1.5;margin:0 0 5px}
 
 /* ---------- Research note table ---------- */
 .research-note{font-size:14.5px}
@@ -294,6 +296,8 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 
 /* ---------- Per-page accent overrides ---------- */
 body.page-home{--accent:#1e6f5c;--accent-ink:#145247}
+body.page-knowledge{--accent:#1e6f5c;--accent-ink:#145247}
+body.page-learn{--accent:#0f6b6b;--accent-ink:#0b4d4d}
 body.page-why-knowledge{--accent:#1e6f5c;--accent-ink:#145247}
 body.page-research{--accent:#5b3a8e;--accent-ink:#472c73}
 body.page-standards{--accent:#0f6b6b;--accent-ink:#0b4d4d}

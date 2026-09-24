@@ -53,6 +53,40 @@ research:
   contextEngineering: https://knowledgesidekick.org/context-engineering.html
   tokenSavings: https://knowledgesidekick.org/token-savings.html
 
+knowledgePages:
+  knowledge-dikw: https://knowledgesidekick.org/knowledge/dikw/
+  knowledge-knowledge-bundles: https://knowledgesidekick.org/knowledge/knowledge-bundles/
+  knowledge-knowledge-formats: https://knowledgesidekick.org/knowledge/knowledge-formats/
+  knowledge-taxonomies: https://knowledgesidekick.org/knowledge/taxonomies/
+  knowledge-ontologies: https://knowledgesidekick.org/knowledge/ontologies/
+  knowledge-knowledge-graphs: https://knowledgesidekick.org/knowledge/knowledge-graphs/
+
+researchPages:
+  research-memory: https://knowledgesidekick.org/research/memory/
+  research-agentic-ai: https://knowledgesidekick.org/research/agentic-ai/
+  research-semcom: https://knowledgesidekick.org/research/semcom/
+
+standardsPages:
+  standards-llms-txt: https://knowledgesidekick.org/standards/llms-txt/
+  standards-skos: https://knowledgesidekick.org/standards/skos/
+  standards-iso-25964: https://knowledgesidekick.org/standards/iso-25964/
+  standards-rdf: https://knowledgesidekick.org/standards/rdf/
+  standards-rdfs: https://knowledgesidekick.org/standards/rdfs/
+  standards-owl: https://knowledgesidekick.org/standards/owl/
+  standards-turtle: https://knowledgesidekick.org/standards/turtle/
+  standards-json-ld: https://knowledgesidekick.org/standards/json-ld/
+  standards-hdt: https://knowledgesidekick.org/standards/hdt/
+  standards-sparql: https://knowledgesidekick.org/standards/sparql/
+  standards-graphql-ld: https://knowledgesidekick.org/standards/graphql-ld/
+  standards-prov-o: https://knowledgesidekick.org/standards/prov-o/
+  standards-mementos: https://knowledgesidekick.org/standards/mementos/
+
+adoptionPages:
+  adoption-companies-ahead: https://knowledgesidekick.org/adoption/companies-ahead/
+
+learnPages:
+  learn-glossary: https://knowledgesidekick.org/learn/glossary/
+
 blogs:
   - date: 2026-09-22
     title: Why knowledge fails first in agentic systems

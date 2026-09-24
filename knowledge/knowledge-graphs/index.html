@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge graphs — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/knowledge/knowledge-graphs/">
+<meta name="description" content="A knowledge graph is a graph of entities and typed relations, and it is the form in which an agent can retrieve a fact with its context rather than a passage with a guess.">
+<meta property="og:title" content="Knowledge graphs — Knowledge Sidekick">
+<meta property="og:description" content="Entities, typed relations, identity, multi-hop retrieval — and what a graph does not fix: knowledge that is no longer current.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/knowledge/knowledge-graphs/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge graphs — Knowledge Sidekick">
+<meta name="twitter:description" content="Entities, typed relations, identity, multi-hop retrieval — and what a graph does not fix: knowledge that is no longer current.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/knowledge/knowledge-graphs/",
+      "url": "https://knowledgesidekick.org/knowledge/knowledge-graphs/",
+      "name": "Knowledge graphs — Knowledge Sidekick",
+      "description": "A knowledge graph is a graph of entities and typed relations, and it is the form in which an agent can retrieve a fact with its context rather than a passage with a guess.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/knowledge/knowledge-graphs/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a knowledge graph and a graph database?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A graph database is storage that traverses connected records well. A knowledge graph is a claim about content: entities of interest, typed relations between them, and the intent that the graph accumulate knowledge of a domain rather than merely hold records. You can build one in a graph database, a relational database or a triple store." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need RDF to build a knowledge graph?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, but the choice has consequences. RDF gives global identifiers, a standard model and a standard query, which is what makes graphs from different sources mergeable. Labelled property graphs give attributes on nodes and edges and a query style many developers find quicker to work with. They differ in how much of the identity and merging work the standard does for you." }
+        },
+        {
+          "@type": "Question",
+          "name": "How large does a knowledge graph need to be before it is useful?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Size is the wrong measure. Coverage of the questions you actually ask and stability of the identifiers matter far more than node count. A small graph with unambiguous identities answers more useful questions than a large one in which the same entity appears three times under three names." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a knowledge graph make an agent's knowledge current?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A graph is a representation, and a graph of stale facts is still stale. Currency comes from the processes that write to it, from recorded provenance about where each fact came from, and from identifiers that resolve to the version that applied at a given time." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Knowledge structure</span>
+    <h1>Knowledge graphs and multi-hop retrieval</h1>
+    <p class="lede">A knowledge graph is a graph of entities and typed relations, and it is the form in which an agent can retrieve a fact with its context rather than a passage with a guess. It is also the form in which teams most often assume a currency problem is solved when it has only been restated.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/standards.html">Standards</a> · <a href="/knowledge/ontologies/">Ontologies</a> · <a href="/knowledge/taxonomies/">Taxonomies</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is a knowledge graph?</h3>
+    <p>A knowledge graph is a graph of data intended to accumulate and convey knowledge of the real world, in which nodes represent entities of interest and edges represent relations between them. That is the formulation used by the Hogan et al. survey published in ACM Computing Surveys in 2021. The important part is the intent: knowledge about things rather than stored records, queried for what is true of an entity rather than for rows that match a key.</p>
+  </div>
+</section>
+
+<section id="graph-vs-database">
+  <h2>What makes it a knowledge graph rather than a database</h2>
+  <p>Three properties distinguish the two, and none is about the storage engine. Entities and relations are typed — a node is a customer, a component or a policy; an edge is an ownership, a dependency or a supersession — and the type is part of the data, not an application convention. Entities have identifiers that mean something beyond the system that issued them, so two graphs can be merged. And the schema is open, so sources can add relations without a migration that stops the world.</p>
+  <p>Those properties make a graph answerable in ways a record store is not. A relational schema is designed around the questions someone anticipated; a knowledge graph is designed around the entities, and the questions arrive later. That is the trade: give up a fixed schema, gain the ability to ask questions nobody modelled.</p>
+</section>
+
+<section id="rdf-vs-lpg">
+  <h2>RDF triples and labelled property graphs</h2>
+  <p>The two families in common use differ in where identity lives. RDF models everything as triples — subject, predicate, object — with subjects and predicates identified by IRIs and objects that are IRIs or literals, so a graph is a set of such statements. Because those identifiers are global, two RDF graphs using the same IRI for the same thing merge without a mapping table, and the standard query language works over patterns of triples. The <a href="/standards/rdf/">RDF</a> and <a href="/standards/sparql/">SPARQL</a> pages cover both.</p>
+  <p>Labelled property graphs take the other approach: nodes and edges carry a label and key-value properties, and identity is local to the database. That suits application data and graphs that live inside one system; the cost appears at the boundary, where combining two such graphs means mapping their notions of the same entity by hand. Neither choice is wrong. A graph that lives inside one application is fine as a labelled property graph; one meant to accumulate knowledge from several sources is better served by RDF, where identity is the point.</p>
+</section>
+
+<section id="identity">
+  <h2>Identity: IRIs, aliases and entity resolution</h2>
+  <p>Every graph of any size acquires the same defect: one entity under several names, and one name over several entities. A knowledge graph handles it by making identity explicit — one identifier per entity, the other names attached to it as labels, and any equivalence between two vocabularies recorded as a statement in the graph rather than kept in a mapping document.</p>
+  <p>This is the same problem an <a href="/knowledge/ontologies/">ontology</a> addresses: matching tools can propose that two records are the same entity, but someone decides and the graph records it. An alias list that is not maintained is worse than none, because it makes a graph look complete while quietly splitting one entity in two.</p>
+</section>
+
+<section id="why-agents">
+  <h2>Why graphs help agents</h2>
+  <p>An agent working over documents retrieves passages and guesses which applies. An agent working over a graph retrieves the entity and walks. A question spanning several relations — which systems depend on the component this supplier provides — is a path in the graph and a set of similarity scores in a passage index. The graph returns the fact with the relations connecting it to the question, which is the context an agent needs in order to act rather than summarise.</p>
+  <p>Three consequences follow. Multi-hop questions become answerable without the agent inventing intermediate steps, because the steps are edges. Types and constraints become checkable, because the graph states them. And the answer carries its basis: the triples that produced it are the citation, which is what makes an agent's output auditable.</p>
+</section>
+
+<section id="what-graphs-dont-solve">
+  <h2>What a graph does not solve</h2>
+  <p>A graph does not make knowledge current. It is a representation, and a graph of stale facts is still stale. If the source that knows the supplier changed last month never writes to the graph, the graph answers confidently with last month's supplier and cites itself for it. Structure is not currency.</p>
+  <p>What a graph does provide is somewhere for currency to be recorded. Provenance statements let each fact carry where it came from and when it was asserted, so an agent can tell a fact written yesterday from one written in a migration three years ago — the subject of <a href="/standards/prov-o/">PROV-O</a>. Persistent identifiers and archived versions let one identifier resolve to what was true at a given time, not only now — the subject of <a href="/standards/mementos/">Mementos</a>. And a <a href="/knowledge/taxonomies/">taxonomy</a> or <a href="/knowledge/ontologies/">ontology</a> keeps the types from proliferating.</p>
+  <p>A graph does not solve coverage either. It answers well about what has been modelled and says nothing about what has not, and the gap is invisible from outside: an agent that queries a graph and gets no result cannot tell whether the fact is false or merely absent. That distinction has to be designed into the query, the model, or the agent's instructions.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the difference between a knowledge graph and a graph database?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A graph database is storage that traverses connected records well. A knowledge graph is a claim about content: entities of interest, typed relations between them, and the intent to accumulate knowledge of a domain rather than merely hold records. You can build one in a graph database, a relational database or a triple store.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do I need RDF to build a knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No, but the choice has consequences. RDF gives global identifiers, a standard model and a standard query, which is what makes graphs from different sources mergeable. Labelled property graphs give attributes on nodes and edges and a query style many developers find quicker to work with. They differ in how much of the identity and merging work the standard does for you.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How large does a knowledge graph need to be before it is useful?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Size is the wrong measure. Coverage of the questions you actually ask and stability of the identifiers matter far more than node count. A small graph with unambiguous identities answers more useful questions than a large one in which the same entity appears three times under three names.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does a knowledge graph make an agent's knowledge current?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A graph is a representation, and a graph of stale facts is still stale. Currency comes from the processes that write to it, from recorded provenance about where each fact came from, and from identifiers that resolve to the version that applied at a given time.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://arxiv.org/abs/2003.02320">Hogan et al., <em>Knowledge Graphs</em></a>, ACM Computing Surveys, 2021. Verified 200. Source for the definition of a knowledge graph quoted above, and for the survey treatment of graph models and the field.</li>
+    <li><a href="https://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a> — W3C Recommendation. Verified 200. Source for the triple model: IRIs as subject and predicate, IRIs or literals as object, graphs as sets of triples.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit. No ads, no tracking.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>
