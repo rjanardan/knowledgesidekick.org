@@ -103,6 +103,11 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 .nav-dropdown a:hover{background:var(--panel-2);text-decoration:none;color:var(--accent-ink)}
 .nav-dropdown .grp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 12px 2px;font-weight:600}
 .nav-ext{font-size:12px;color:var(--muted);padding:4px 12px 8px}
+.nav-link{
+  display:inline-flex;align-items:center;padding:7px 11px;border-radius:7px;
+  font-size:14px;color:var(--ink-soft);font-weight:550;white-space:nowrap;text-decoration:none;
+}
+.nav-link:hover{background:var(--panel-2);color:var(--ink);text-decoration:none}
 
 .menu-toggle{
   display:none;background:transparent;border:1px solid var(--line-2);
@@ -128,6 +133,7 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
   .site-bar{padding:0 16px}
   .wrap{padding:0 16px}
   .nav-toggle{padding:8px 11px}
+  .nav-link{display:block;padding:8px 11px}
 }
 @media (max-width:640px){
   .site-bar{gap:10px;padding:0 12px}

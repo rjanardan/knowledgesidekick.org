@@ -42,14 +42,7 @@
           { label: 'Free resources', href: '/free-resources.html' }
         ]
       },
-      {
-        label: 'About',
-        open: false,
-        items: [
-          { label: 'Who we are', href: '/about.html' },
-          { label: 'Contact', href: '/contact.html' }
-        ]
-      }
+      { label: 'About', href: '/about.html', plain: true, local: true }
     ]
   };
 
@@ -82,6 +75,10 @@
     if (!nav) return;
     let html = '';
     NAV.groups.forEach(g => {
+      if (g.plain) {
+        html += `<a class="nav-link" href="${escAttr(g.href)}">${escAttr(g.label)}</a>`;
+        return;
+      }
       html += `<div class="nav-group">${navToggleHTML(g)}${dropdownHTML(g)}</div>`;
     });
     nav.innerHTML = html;
@@ -107,9 +104,9 @@
   function highlightCurrent() {
     const pathname = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
     const map = new Map();
-    NAV.groups.forEach(g => g.items.forEach(it => { if (it.local) map.set(it.href.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/', it.label); }));
+    NAV.groups.forEach(g => (g.items || []).forEach(it => { if (it.local) map.set(it.href.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/', it.label); }));
     map.set('/', 'Home');
-    document.querySelectorAll('.nav-dropdown a').forEach(a => {
+    document.querySelectorAll('.nav-dropdown a, .nav-link').forEach(a => {
       const href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
       a.classList.toggle('current', href === pathname);
     });
