@@ -14,7 +14,7 @@
     groups: [
       {
         label: 'Agents',
-        open: true,
+        open: false,
         items: [
           { label: 'A2A', href: '/a2a/' },
           { label: 'Agents', href: '/agents/' },
@@ -23,7 +23,7 @@
       },
       {
         label: 'Knowledge',
-        open: true,
+        open: false,
         items: [
           { label: 'Why Knowledge?', href: '/why-knowledge.html' },
           { label: 'Research', href: '/research.html' },
@@ -33,7 +33,7 @@
       },
       {
         label: 'Learn',
-        open: true,
+        open: false,
         items: [
           { label: 'Blogs', href: '/blogs.html' },
           { label: 'Community', href: '/community.html' },
@@ -69,7 +69,6 @@
     const id = 'nav-dropdown-' + group.label.replace(/\s+/g, '-');
     let rows = '';
     group.items.forEach((it, i) => {
-      if (i > 0 && i % 4 === 0) rows += '<div class="sep" role="presentation"></div>';
       const target = it.target || '';
       const ext = it.local === false ? ' class="nav-ext"' : '';
       const tAttr = target ? ` target="${escAttr(target)}" rel="noopener"` : '';
