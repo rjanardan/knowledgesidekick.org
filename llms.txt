@@ -53,7 +53,7 @@ elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
 - Memory — working, session and durable memory; write policies and their failures: https://knowledgesidekick.org/research/memory/
 - Agentic AI — planning and acting, permissions, blast radius, verification: https://knowledgesidekick.org/research/agentic-ai/
 - Semantic communication — meaning over bits; research, not deployed practice: https://knowledgesidekick.org/research/semcom/
-- Doctoral research (A2A) — the semantic layer of agent-to-agent communication: design space, proposed architecture, benchmarking plan: https://knowledgesidekick.org/phd/
+- Doctoral research (A2A) — the semantic layer of agent-to-agent communication: design space, proposed architecture, benchmarking plan: https://knowledgesidekick.org/phd/submission-1.html
 ### Standards
 - llms.txt — a markdown map of a site at a known path: https://knowledgesidekick.org/standards/llms-txt/
 - W3C SKOS — concept schemes, labels, broader/narrower/related: https://knowledgesidekick.org/standards/skos/
