@@ -1,13 +1,13 @@
 # agents.md — machine index for agent frameworks and crawlers
-# knowledgesidekick.org — open, not-for-profit.
+# knowledgesidekick.org — not-for-profit, no-fee, no-ads, free to read.
 # Companion to llms.txt. Preferred entry for agent-side indexing.
 
 site:
   name: Knowledge Sidekick
   url: https://knowledgesidekick.org/
   description: >
-    Open, not-for-profit site about knowledge as a first-class layer in agentic AI,
-    LLMs, and personal assistants. Research, open standards, and adoption practice.
+    Not-for-profit, free-to-read site about knowledge as a first-class layer in agentic AI,
+    LLMs, and personal assistants. Research, standards, and adoption practice, and courses.
   canonical: https://knowledgesidekick.org/
   language: en
   charset: utf-8
