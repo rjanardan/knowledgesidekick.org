@@ -1,7 +1,7 @@
 # knowledgesidekick.org — agent index
 # Not-for-profit, no-fee, no-ads, free to read — forever. Research, standards, adoption.
 # for Agentic AI, LLMs, and personal assistants.
-# Updated: 2026-09-25.
+# Updated: 2026-09-26.
 
 ## What this site is
 A small, flat, not-for-profit site about knowledge as a first-class layer in agentic systems.
@@ -31,6 +31,7 @@ elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
 - Free resources: https://knowledgesidekick.org/free-resources.html
 - Disclosure: https://knowledgesidekick.org/disclaimer.html
 - Learn: https://knowledgesidekick.org/learn/
+- Site map — every page and every internal link, as one figure and one list: https://knowledgesidekick.org/map/
 - About: https://knowledgesidekick.org/about.html
 - Contact: https://knowledgesidekick.org/contact.html
 

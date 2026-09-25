@@ -37,6 +37,7 @@ sections:
   training: https://knowledgesidekick.org/training.html
   freeResources: https://knowledgesidekick.org/free-resources.html
   learn: https://knowledgesidekick.org/learn/
+  siteMap: https://knowledgesidekick.org/map/
   about: https://knowledgesidekick.org/about.html
   contact: https://knowledgesidekick.org/contact.html
 
