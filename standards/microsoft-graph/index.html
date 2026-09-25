@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microsoft Graph — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/microsoft-graph/">
+<meta name="description" content="Microsoft Graph is a vendor-controlled, proprietary API surface over Microsoft 365. It is the substrate most enterprise agents read, and it carries the tenant's permission model with it.">
+<meta property="og:title" content="Microsoft Graph — Knowledge Sidekick">
+<meta property="og:description" content="A proprietary, permission-aware API over Microsoft 365 content: the de facto knowledge interface in Microsoft estates, exposing Microsoft's model of the tenant, not your domain.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/microsoft-graph/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Microsoft Graph — Knowledge Sidekick">
+<meta name="twitter:description" content="A proprietary, permission-aware API over Microsoft 365 content: the de facto knowledge interface in Microsoft estates, exposing Microsoft's model of the tenant, not your domain.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/microsoft-graph/",
+      "url": "https://knowledgesidekick.org/standards/microsoft-graph/",
+      "name": "Microsoft Graph — Knowledge Sidekick",
+      "description": "Microsoft Graph is a vendor-controlled, proprietary API surface over Microsoft 365. It is the substrate most enterprise agents read, and it carries the tenant's permission model with it.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/microsoft-graph/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Microsoft Graph open-source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a proprietary, vendor-controlled API surface over Microsoft cloud services. Its documentation is public and its APIs are available to developers, but the interface and its behaviour are set by Microsoft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the permission model give an agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An access model it does not have to build. A delegated call acts for a signed-in user and cannot reach beyond that user's own access, while an application call acts with its own identity; role-based access control in services such as Microsoft Entra can apply on top of both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Microsoft Graph supply a domain vocabulary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It names users, files, messages and events in Microsoft's terms. It gives no concept scheme for your domain, no definitions of your entities and no statement of how their relationships are meant to be read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What stays the organisation's problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entity identity across systems, currency and provenance, and anything held outside the Microsoft estate. Graph returns a file or a message with its access controls attached; deciding what it means in your domain, and whether it is still current, remains your work."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Proprietary platforms</span>
+    <h1>Microsoft Graph</h1>
+    <p class="lede">Microsoft Graph is a vendor-controlled, proprietary API surface over Microsoft 365 and adjacent Microsoft cloud services, documented publicly and reachable by any developer with a tenant.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/agents/">Agents</a> · <a href="/enterprise.html">Enterprise</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Microsoft Graph is a proprietary, vendor-controlled API surface over Microsoft 365 and the surrounding Microsoft cloud services. It exposes a single endpoint, <code>graph.microsoft.com</code>, with REST APIs and client libraries covering users, mail, calendars, files in OneDrive and SharePoint, Teams, Excel, Planner and contacts, alongside identity and device services such as Microsoft Entra and Intune. Two services extend its reach in different directions: Microsoft 365 Copilot connectors bring data from outside the Microsoft cloud in, and Data Connect exports Graph data to Azure stores. Connectors are published for commonly used external sources, including Box, Google Drive, Jira and Salesforce.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It gives a uniform, permission-aware API over an organisation's content: retrieval with an access model already attached. Permissions are either delegated, where the application calls on behalf of a signed-in user and cannot reach beyond what that user can reach, or application-level, where the application calls with its own identity. Role-based access control in services such as Microsoft Entra can apply on top, so some requests need both. For an agent this means the tenant's own access rules do the filtering, and no parallel permission layer has to be maintained beside the content store.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>Microsoft documents the surface in the <a href="https://learn.microsoft.com/en-us/graph/overview">Microsoft Graph overview</a>, the access model in <a href="https://learn.microsoft.com/en-us/graph/permissions-overview">Overview of Microsoft Graph permissions</a>, and the request mechanics and SDKs in <a href="https://learn.microsoft.com/en-us/graph/use-the-api">Use the Microsoft Graph API</a>. The documentation is public; access to the data is not.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>It exposes Microsoft's model of the tenant and its permission semantics, not your domain knowledge. A file, a message and a calendar entry arrive with identity and access attached; they do not arrive with a definition, with a relation to your other entities, or with any indication of whether they are still current. Entity identity across systems, the vocabulary those entities belong to — the work a scheme like <a href="/standards/skos/">SKOS</a> covers — and provenance stay your responsibility. Content not held in the Microsoft estate is absent unless someone connects it, and the connectors that would do so are Microsoft's, administered in Microsoft's terms. The access semantics carry a consequence of their own: because a delegated call is bounded by the signed-in user and some requests also depend on role-based access control, the same query returns different answers for different callers. That is the correct behaviour for access control and an awkward one for knowledge, which wants one agreed statement rather than a per-caller view.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Microsoft Graph open-source?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a proprietary, vendor-controlled API surface over Microsoft cloud services. Its documentation is public and its APIs are available to developers, but the interface and its behaviour are set by Microsoft.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does the permission model give an agent?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>An access model it does not have to build. A delegated call acts for a signed-in user and cannot reach beyond that user's own access, while an application call acts with its own identity; role-based access control in services such as Microsoft Entra can apply on top of both.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Microsoft Graph supply a domain vocabulary?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It names users, files, messages and events in Microsoft's terms. It gives no concept scheme for your domain, no definitions of your entities and no statement of how their relationships are meant to be read.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What stays the organisation's problem?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Entity identity across systems, currency and provenance, and anything held outside the Microsoft estate. Graph returns a file or a message with its access controls attached; deciding what it means in your domain, and whether it is still current, remains your work.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://learn.microsoft.com/en-us/graph/overview">Microsoft Graph overview</a> — the services the API covers, the single endpoint, Copilot connectors and Data Connect.</li>
+    <li><a href="https://learn.microsoft.com/en-us/graph/permissions-overview">Overview of Microsoft Graph permissions</a> — delegated and application access, delegated versus application permissions, and the role-based access control that can apply alongside them.</li>
+    <li><a href="https://learn.microsoft.com/en-us/graph/use-the-api">Use the Microsoft Graph API</a> — request mechanics, authentication and SDKs for calling the API.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

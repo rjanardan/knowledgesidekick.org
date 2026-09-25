@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Databricks — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/databricks/">
+<meta name="description" content="Databricks is a proprietary commercial data platform built around open formats, with Unity Catalog as its governance and catalogue surface over tables, files and models.">
+<meta property="og:title" content="Databricks — Knowledge Sidekick">
+<meta property="og:description" content="A proprietary lakehouse platform built on open formats, with Unity Catalog as the catalogue where assets are registered and permissions applied.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/databricks/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Databricks — Knowledge Sidekick">
+<meta name="twitter:description" content="A proprietary lakehouse platform built on open formats, with Unity Catalog as the catalogue where assets are registered and permissions applied.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/databricks/",
+      "url": "https://knowledgesidekick.org/standards/databricks/",
+      "name": "Databricks — Knowledge Sidekick",
+      "description": "Databricks is a proprietary commercial data platform built around open formats, with Unity Catalog as its governance and catalogue surface over tables, files and models.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/databricks/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Databricks open source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The platform is a proprietary, vendor-controlled service. It is built on open formats and the vendor publishes an open-source implementation of Unity Catalog, but the service itself is not open source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Unity Catalog do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the governance layer built into Databricks. It enforces access control on data and AI assets, tracks lineage as those assets are used, logs activity for audit, and registers assets in a three-level namespace of catalog, schema and object."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a catalogue the same as a knowledge graph?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A catalogue is a registry of assets with permissions and lineage. It records what exists and who may use it, not what the assets mean or how the concepts they describe relate to one another."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the governance metadata be moved to another platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The data files are readable elsewhere when they use open formats, but permissions, lineage and audit records are Unity Catalog state. They are not carried by the files."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Commercial and proprietary</span>
+    <h1>Databricks</h1>
+    <p class="lede">Databricks is a proprietary, vendor-controlled commercial data platform — a lakehouse built around open formats — with Unity Catalog as its governance and catalogue surface.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/delta-lake/">Delta Lake</a> · <a href="/enterprise.html">Enterprise</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Databricks is a proprietary, vendor-controlled commercial platform, sold as a managed service and documented by its vendor; it is not an open-source project, even though it is built around open formats such as <a href="/standards/parquet/">Parquet</a>, <a href="/standards/delta-lake/">Delta Lake</a> and <a href="/standards/iceberg/">Iceberg</a>. The vendor's documentation describes Unity Catalog as the unified governance layer for data and AI built into Databricks: when enabled for a workspace it enforces access control when a table is queried or a model is called, tracks lineage as assets are used, and logs activity for audit. Assets are modelled as securable objects in a three-level namespace, <code>catalog.schema.object</code>, covering tables, views, volumes, functions, models and services. The vendor also publishes an open-source implementation of Unity Catalog; the platform itself remains proprietary.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>A catalogue is where an agent learns what exists and who may read it. Before choosing a table, an agent needs a directory of registered assets and a statement of what it is allowed to touch; Unity Catalog supplies both, with discovery through Catalog Explorer, an object hierarchy that gives every asset a stable address, lineage as assets are used, and audit logging. Volumes extend the same governance to files that are not tables, which matters because much enterprise knowledge sits in unstructured documents rather than rows.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>The vendor's documentation is the source of record: <a href="https://docs.databricks.com/en/data-governance/unity-catalog/index.html">What is Unity Catalog?</a> sets out the object model, access control, discovery, lineage and audit behaviour, and the product pages for <a href="https://www.databricks.com/product/unity-catalog">Unity Catalog</a> and the <a href="https://www.databricks.com/product/data-lakehouse">data lakehouse</a> describe the positioning. Documentation is versioned per cloud — AWS, Azure and Google Cloud — and revised continuously. There is no specification to read against: the interface is the product.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>The governance metadata is a platform artefact. Permissions, lineage and audit records are held in the vendor's catalogue, and the work modelled there — a curated table, a registered model, a set of tags — does not leave in a portable form; the open formats underneath carry data, not the catalogue's decisions about it. Nor does a catalogue answer what data means. Unity Catalog can state that a table exists, who may read it and what it came from; it cannot say that two tables describe the same customer, or that a column name means something different from the same name elsewhere. Semantic agreement is work above the platform, in <a href="/knowledge/ontologies/">ontologies</a> and <a href="/knowledge/taxonomies/">taxonomies</a>, and it has to be re-established wherever the data is copied.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Databricks open source?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The platform is a proprietary, vendor-controlled service. It is built on open formats and the vendor publishes an open-source implementation of Unity Catalog, but the service itself is not open source.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does Unity Catalog do?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is the governance layer built into Databricks. It enforces access control on data and AI assets, tracks lineage as those assets are used, logs activity for audit, and registers assets in a three-level namespace of catalog, schema and object.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is a catalogue the same as a knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A catalogue is a registry of assets with permissions and lineage. It records what exists and who may use it, not what the assets mean or how the concepts they describe relate to one another.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can the governance metadata be moved to another platform?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The data files are readable elsewhere when they use open formats, but permissions, lineage and audit records are Unity Catalog state. They are not carried by the files.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://docs.databricks.com/en/data-governance/unity-catalog/index.html">What is Unity Catalog? — Databricks documentation</a> — the governance layer, securable objects, three-level namespace, access control, lineage and audit.</li>
+    <li><a href="https://www.databricks.com/product/unity-catalog">Unity Catalog — Databricks</a> — the vendor's product description of the catalogue and governance surface.</li>
+    <li><a href="https://www.databricks.com/product/data-lakehouse">Data lakehouse — Databricks</a> — the vendor's description of the platform's architecture and its use of open formats.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

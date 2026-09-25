@@ -70,7 +70,18 @@
           { label: 'GraphQL-LD', href: '/standards/graphql-ld/' },
           { sub: 'Provenance and persistence' },
           { label: 'PROV-O', href: '/standards/prov-o/' },
-          { label: 'Mementos', href: '/standards/mementos/' }
+          { label: 'Mementos (RFC 7089)', href: '/standards/mementos/' },
+          { sub: 'Commercial and proprietary' },
+          { label: 'Parquet', href: '/standards/parquet/' },
+          { label: 'Delta Lake', href: '/standards/delta-lake/' },
+          { label: 'Iceberg', href: '/standards/iceberg/' },
+          { label: 'Snowflake', href: '/standards/snowflake/' },
+          { label: 'Databricks', href: '/standards/databricks/' },
+          { label: 'Palantir', href: '/standards/palantir/' },
+          { label: 'ServiceNow', href: '/standards/servicenow/' },
+          { label: 'Salesforce', href: '/standards/salesforce/' },
+          { label: 'Microsoft Graph', href: '/standards/microsoft-graph/' },
+          { label: 'Neo4j', href: '/standards/neo4j/' }
         ]
       },
       {
@@ -95,6 +106,7 @@
           { label: 'Community', href: '/community.html' },
           { label: 'Internship', href: '/internship.html' },
           { label: 'Training', href: '/training.html' },
+          { label: 'Courses', href: '/learn/courses/' },
           { label: 'Free resources', href: '/free-resources.html' },
           { label: 'About', href: '/about.html' }
         ]

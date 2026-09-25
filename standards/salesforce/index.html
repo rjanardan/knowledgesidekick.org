@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salesforce Platform and Data Cloud — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/salesforce/">
+<meta name="description" content="Salesforce is a vendor-controlled, proprietary platform. Its object model is the schema of record for customer knowledge, and its permission model is where agent access is enforced.">
+<meta property="og:title" content="Salesforce Platform and Data Cloud — Knowledge Sidekick">
+<meta property="og:description" content="A proprietary object model and Data Cloud: authoritative inside the org, not portable, with access enforced by the platform's own sharing model.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/salesforce/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Salesforce Platform and Data Cloud — Knowledge Sidekick">
+<meta name="twitter:description" content="A proprietary object model and Data Cloud: authoritative inside the org, not portable, with access enforced by the platform's own sharing model.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/salesforce/",
+      "url": "https://knowledgesidekick.org/standards/salesforce/",
+      "name": "Salesforce Platform and Data Cloud — Knowledge Sidekick",
+      "description": "Salesforce is a vendor-controlled, proprietary platform. Its object model is the schema of record for customer knowledge, and its permission model is where agent access is enforced.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/salesforce/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the Salesforce data model open?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The object model, the field definitions and the sharing model are vendor-defined and proprietary. They are documented publicly, but they are not published as an open specification that another system can implement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is agent access enforced on Salesforce data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the platform's permission model. Object, field and record access is granted through profiles, permission sets, role hierarchies and sharing rules, so an agent's reach is set by the org's sharing configuration rather than by the agent's own code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a Salesforce schema be reused as a shared vocabulary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not directly. It is authoritative inside the org, but it is not portable: other systems and other organisations do not share those identifiers, and mappings between the schema and an external vocabulary have to be built and maintained by hand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Data Cloud make the data portable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It consolidates and unifies data from many sources into profiles held inside Salesforce, which changes what the platform can answer, not what other systems can read. Portability still depends on the connectors and exports an organisation configures."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Proprietary platforms</span>
+    <h1>Salesforce Platform and Data Cloud</h1>
+    <p class="lede">Salesforce is a vendor-controlled, proprietary platform whose object model and Data Cloud product are documented publicly but owned and governed by the vendor.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/skos/">SKOS</a> · <a href="/enterprise.html">Enterprise</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Salesforce is a vendor-controlled, proprietary platform; its object model and its Data Cloud product — now presented as Data 360 — are documented publicly but are not open-source and not portable. Objects and fields structure data the way tables and columns do: standard objects that Salesforce defines, custom objects that an organisation adds, and records as rows within them. Data 360 brings data in from other systems and unifies it into customer profiles held inside the Salesforce platform.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>For a large number of enterprises it supplies the schema of record for customer knowledge. Account, contact, opportunity and case objects are frequently where the authoritative version of a customer fact lives, so agents answering customer questions end up reading through that model whether or not it was designed for retrieval. The permission model is the other half of the offer: access to objects, fields and records is granted through profiles, permission sets, role hierarchies and sharing rules, which makes the platform — not the agent — the place where access is decided. Data Cloud extends the reach beyond CRM records: it ingests data from external sources and unifies it into profiles, so some questions are answered from data the platform did not originate.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>Salesforce documents the model in the Trailhead module <a href="https://trailhead.salesforce.com/content/learn/modules/data_modeling">Data Modeling: Objects, Fields, Relationships</a>, and the access model in <a href="https://trailhead.salesforce.com/content/learn/modules/data_security">Data Security: Best Practices &amp; Access Control</a>. The <a href="https://www.salesforce.com/data/">Data 360 product page</a> covers what the platform brings together and records the change of name from Data Cloud. API-level reference material sits on a separate developer site that blocks automated clients, so it is not linked from here.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>It models CRM and the domains adjacent to it, not your domain. The schema is authoritative inside an org and is not a shared vocabulary: it cannot be handed to another organisation as a concept scheme, and it does not map itself to one. A vocabulary such as <a href="/standards/skos/">SKOS</a> travels between systems because it is expressed in <a href="/standards/rdf/">RDF</a>; a Salesforce object travels as a deployment inside a single org. Meaning, definitions and provenance stay vendor-bound, so an agent that reads labels straight from the schema inherits whatever local naming an administrator chose. Access configuration shapes the answer as well: two users querying the same object see different records, so the platform returns a permitted view of the customer rather than a single agreed one. Supplying that agreed meaning is work the platform does not do for you.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is the Salesforce data model open?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The object model, the field definitions and the sharing model are vendor-defined and proprietary. They are documented publicly, but they are not published as an open specification that another system can implement.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Where is agent access enforced on Salesforce data?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>In the platform's permission model. Object, field and record access is granted through profiles, permission sets, role hierarchies and sharing rules, so an agent's reach is set by the org's sharing configuration rather than by the agent's own code.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can a Salesforce schema be reused as a shared vocabulary?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Not directly. It is authoritative inside the org, but it is not portable: other systems and other organisations do not share those identifiers, and mappings between the schema and an external vocabulary have to be built and maintained by hand.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Data Cloud make the data portable?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It consolidates and unifies data from many sources into profiles held inside Salesforce, which changes what the platform can answer, not what other systems can read. Portability still depends on the connectors and exports an organisation configures.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://trailhead.salesforce.com/content/learn/modules/data_modeling">Data Modeling: Objects, Fields, Relationships</a> — Salesforce Trailhead module on standard and custom objects, fields, object relationships and Schema Builder.</li>
+    <li><a href="https://trailhead.salesforce.com/content/learn/modules/data_security">Data Security: Best Practices &amp; Access Control</a> — Salesforce Trailhead module covering access to objects, fields and records, role hierarchies and sharing rules.</li>
+    <li><a href="https://www.salesforce.com/data/">Data 360 (Formerly Data Cloud)</a> — Salesforce product page describing what the platform brings together from external sources and recording the change of name from Data Cloud.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

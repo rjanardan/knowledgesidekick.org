@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delta Lake — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/delta-lake/">
+<meta name="description" content="Delta Lake is an open-source storage framework under the Linux Foundation that adds ACID transactions, schema enforcement and time travel to tables of Parquet files, so a table has a versioned history an engine can re-read.">
+<meta property="og:title" content="Delta Lake — Knowledge Sidekick">
+<meta property="og:description" content="An open-source transaction log over Parquet files: versioned tables, serializable isolation, and time-travelled reads.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/delta-lake/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Delta Lake — Knowledge Sidekick">
+<meta name="twitter:description" content="An open-source transaction log over Parquet files: versioned tables, serializable isolation, and time-travelled reads.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/delta-lake/",
+      "url": "https://knowledgesidekick.org/standards/delta-lake/",
+      "name": "Delta Lake — Knowledge Sidekick",
+      "description": "Delta Lake is an open-source storage framework under the Linux Foundation that adds ACID transactions, schema enforcement and time travel to tables of Parquet files, so a table has a versioned history an engine can re-read.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/delta-lake/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Delta Lake proprietary to Databricks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It originated at Databricks and is now an open-source project governed under Linux Foundation Projects, with a published protocol specification and more than one engine implementation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a Delta table version the same as a web memento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Both make an earlier state addressable, but a memento is a representation of a resource negotiated over HTTP with its own URI, while a Delta version is a commit in a transaction log, readable only through an engine that understands the log."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does time travel give reproducible answers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the data, yes. A version can be re-read, which supports audits, rollbacks and repeatable analysis. It does not freeze the definitions, code or permissions that were in force at that time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Delta Lake control who can read a table?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The transaction log carries no model of access. Permissions come from the catalogue or compute engine in front of the files, so the same table can be open in one workspace and restricted in another."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Data formats</span>
+    <h1>Delta Lake</h1>
+    <p class="lede">Delta Lake is an open-source storage framework, originating at Databricks and now governed under the Linux Foundation, that adds transactional guarantees and versioned reads to tables of Parquet files.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/parquet/">Parquet</a> · <a href="/standards/mementos/">Mementos</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Delta Lake is an open-source project rather than a vendor product, although it originated at Databricks: the project site presents it as an open-source storage framework and its governance sits under Linux Foundation Projects. It works by placing a transaction log beside a directory of data files. The protocol specification defines a <code>_delta_log</code> of JSON commits over Parquet data files, and the log is what turns a folder of files into a table with a defined current state. On that base the documentation lists ACID transactions with serializable isolation, schema enforcement that rejects bad records at ingest, time travel to earlier versions, and merge, update and delete. Delta Universal Format lets Iceberg and Hudi clients read the same tables.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>A table becomes something an agent can reason about over time. A point-in-time read asks what the table said at a given commit and returns an answer that can be reproduced later, which is the storage-layer analogue of a <a href="/standards/mementos/">memento</a>: both make an earlier state addressable by a stable reference. The parallel is not an equivalence. A memento is a representation of a resource, negotiated over HTTP and addressed by its own URI; a Delta version is a commit in a transaction log, readable only through an engine that understands the log. Schema enforcement and evolution add a second axis: the table's shape is versioned alongside its rows, so a change of column can be dated.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>The project site is <a href="https://delta.io/">delta.io</a>. The <a href="https://docs.delta.io/latest/delta-intro.html">Delta Lake documentation</a> states the guarantees directly — ACID transactions, scalable metadata handling, schema enforcement, time travel, upserts and deletes. The <a href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Delta protocol specification</a> defines the log format, the data-file layout and the mapping of Delta types to Parquet types; that is the document a second implementation has to satisfy, and therefore the one to read when interoperability is the requirement.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Versioned storage does not make the meaning current. A time-travelled read of a customer table returns those rows as of that commit; it says nothing about whether the definition of an active customer changed in the same period, and the log records change to the data, not to the vocabulary describing it. Delta Lake also decides nothing about permissions: the transaction log has no model of who may read a table. Access control is imposed by whatever catalogue or engine sits above the files.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Delta Lake proprietary to Databricks?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It originated at Databricks and is now an open-source project governed under Linux Foundation Projects, with a published protocol specification and more than one engine implementation.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is a Delta table version the same as a web memento?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Both make an earlier state addressable, but a memento is a representation of a resource negotiated over HTTP with its own URI, while a Delta version is a commit in a transaction log, readable only through an engine that understands the log.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does time travel give reproducible answers?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>For the data, yes. A version can be re-read, which supports audits, rollbacks and repeatable analysis. It does not freeze the definitions, code or permissions that were in force at that time.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Delta Lake control who can read a table?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The transaction log carries no model of access. Permissions come from the catalogue or compute engine in front of the files, so the same table can be open in one workspace and restricted in another.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://delta.io/">Delta Lake</a> — project site; describes Delta Lake as an open-source storage framework and lists its key guarantees.</li>
+    <li><a href="https://docs.delta.io/latest/delta-intro.html">Delta Lake documentation — introduction</a> — ACID transactions, schema enforcement, time travel, upserts and deletes.</li>
+    <li><a href="https://github.com/delta-io/delta/blob/master/PROTOCOL.md">Delta Transaction Log Protocol</a> — the log format, data-file layout and Delta-to-Parquet type mappings that a conforming implementation must follow.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

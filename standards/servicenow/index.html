@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServiceNow CSDM and CMDB — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/servicenow/">
+<meta name="description" content="ServiceNow is a proprietary platform whose Common Service Data Model is published by the vendor. It is a governance model that forces consistency on how configuration items and services relate, not a portable domain ontology.">
+<meta property="og:title" content="ServiceNow CSDM and CMDB — Knowledge Sidekick">
+<meta property="og:description" content="A vendor-published data model that imposes a taxonomy and relationships on operational records. Public, detailed and prescriptive — and confined to service management.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/servicenow/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ServiceNow CSDM and CMDB — Knowledge Sidekick">
+<meta name="twitter:description" content="A vendor-published data model that imposes a taxonomy and relationships on operational records. Public, detailed and prescriptive — and confined to service management.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/servicenow/",
+      "url": "https://knowledgesidekick.org/standards/servicenow/",
+      "name": "ServiceNow CSDM and CMDB — Knowledge Sidekick",
+      "description": "ServiceNow is a proprietary platform whose Common Service Data Model is published by the vendor. It is a governance model that forces consistency on how configuration items and services relate, not a portable domain ontology.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/servicenow/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the Common Service Data Model an open standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is published by ServiceNow for its own platform. The documentation is public, but the model is defined and revised by the vendor, not by a standards body or a community."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the CMDB and the CSDM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The CMDB holds the records: configuration items and their relationships. The CSDM prescribes the structure those records are expected to take, which item types exist and how items and services relate. One is a store, the other is the model imposed on it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it as the ontology for my domain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not outside service management. Its entities are the ones a service organisation operates and its relations describe composition and ownership. A domain model for products, customers or research objects has to be built separately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does adopting it make operational knowledge portable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It makes knowledge consistent inside the platform. The model is not published in a form another system can interpret, so adoption does not produce a portable vocabulary and set of relations you can carry elsewhere."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Commercial and proprietary</span>
+    <h1>ServiceNow CSDM and CMDB</h1>
+    <p class="lede">ServiceNow is a proprietary, vendor-controlled platform, and its Common Service Data Model is a vendor-published data model — public and prescriptive, yet agreed by one company rather than by a community.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/knowledge/taxonomies/">Taxonomies</a> · <a href="/standards/snowflake/">Snowflake</a> · <a href="/standards/palantir/">Palantir</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>The Common Service Data Model is proprietary and vendor-controlled: ServiceNow publishes it for its own platform, and the model is revised by the vendor rather than by a standards body or a community. The configuration management database holds configuration items, and the CSDM prescribes how those items and the services built from them relate, so adopting organisations take the definitions and relationships as given.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It is an unusual object to find in a batch about proprietary platforms: a data model that is public, detailed and prescriptive at once. Because the vendor publishes it and keeps it current, the same categories and relations appear in every organisation that adopts it, and operational knowledge — what a service is composed of, which item accounts for which part of it — is recorded in a structure rather than in prose. For an agent, the practical benefit is that the entities and their relations are already named and constrained: the model supplies a vocabulary and a shape, so retrieval can follow relationships that exist by design instead of being inferred from text. That is a taxonomy and a provenance trail for operational knowledge, imposed from the top down, and the reason it belongs in this batch is that imposing a model is often what makes an agent usable at all.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where it is documented</h2>
+  <p>The model is documented in ServiceNow's own product documentation at <a href="https://www.servicenow.com/docs/">servicenow.com/docs</a>, beside the rest of the platform's reference material. Two practical notes for anyone trying to read it: the documentation is delivered by a JavaScript application, so a plain HTTP client cannot retrieve the text of a page, and there is no published specification of the kind a standards body issues. The vendor's own account of the model is therefore the only authoritative description of it, and it is revised at the vendor's discretion.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Its scope is service management. The model describes the things a service organisation operates and the services those things deliver; it says little about products, customers, contracts, research objects or any other domain a business might want modelled, and it does not give you a portable domain ontology. Adopting it also means accepting the vendor's definitions rather than negotiating them, so the model's meaning is a property of the platform. Move the records to another system and the structure does not travel with them; what remains is a description of how one vendor's records relate. A domain ontology in the sense used elsewhere on this site is a model published so that others may implement it — the CSDM is a model published so that customers may comply with it.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is the Common Service Data Model an open standard?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is published by ServiceNow for its own platform. The documentation is public, but the model is defined and revised by the vendor, not by a standards body or a community.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the difference between the CMDB and the CSDM?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The CMDB holds the records: configuration items and their relationships. The CSDM prescribes the structure those records are expected to take, which item types exist and how items and services relate. One is a store, the other is the model imposed on it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can I use it as the ontology for my domain?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Not outside service management. Its entities are the ones a service organisation operates and its relations describe composition and ownership. A domain model for products, customers or research objects has to be built separately.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does adopting it make operational knowledge portable?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It makes knowledge consistent inside the platform. The model is not published in a form another system can interpret, so adoption does not produce a portable vocabulary and set of relations you can carry elsewhere.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.servicenow.com/docs/">ServiceNow product documentation</a> — the vendor's documentation portal, where the platform's reference material is published, including the material on the Common Service Data Model and the configuration management database. The portal renders its content in the browser and does not serve page text to plain HTTP clients.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

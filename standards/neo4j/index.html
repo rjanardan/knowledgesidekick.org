@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neo4j — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/neo4j/">
+<meta name="description" content="Neo4j is a native graph database with an open-source community edition and a proprietary enterprise edition, storing labelled property graphs and queried with Cypher.">
+<meta property="og:title" content="Neo4j — Knowledge Sidekick">
+<meta property="og:description" content="A labelled property graph database queried with Cypher: strong on traversal and edge properties, with no vocabulary, provenance or currentness of its own.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/neo4j/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Neo4j — Knowledge Sidekick">
+<meta name="twitter:description" content="A labelled property graph database queried with Cypher: strong on traversal and edge properties, with no vocabulary, provenance or currentness of its own.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/neo4j/",
+      "url": "https://knowledgesidekick.org/standards/neo4j/",
+      "name": "Neo4j — Knowledge Sidekick",
+      "description": "Neo4j is a native graph database with an open-source community edition and a proprietary enterprise edition, storing labelled property graphs and queried with Cypher.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/neo4j/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Neo4j open source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is both. The community edition is an open-source product, and the enterprise edition includes closed-source components that are not in the community repository, so a deployment can be open-source or proprietary depending on the edition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a property graph differ from RDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A property graph stores nodes with labels and key-value properties, joined by typed directed relationships that carry properties of their own. RDF states subject, predicate and object triples over IRIs. Neither is a superset of the other, and a graph built in one does not become the other without deliberate conversion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use a graph database for agent retrieval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because traversal and path questions are natural to it. A pattern match expresses multi-hop retrieval, including variable-length and shortest paths, in one query, and properties stored on relationships can carry the weight, source or confidence an agent needs at traversal time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Neo4j give you provenance or currency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It stores whatever properties you put on nodes and relationships and returns them unchanged. It does not define where a statement came from, when it was true or whether a relationship still holds, and it does not tell you what a relationship type is supposed to mean."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Graph databases</span>
+    <h1>Neo4j</h1>
+    <p class="lede">Neo4j is a native graph database offered as an open-source community edition and a proprietary enterprise edition, storing data as a labelled property graph and queried with Cypher.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/knowledge/knowledge-graphs/">Knowledge graphs</a> · <a href="/standards/rdf/">RDF</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Neo4j is a native graph database, and it is unusual in this group in being both open-source and proprietary: the community edition is an open-source product, while the enterprise edition adds closed-source components that are not in the community repository. Data is stored as a labelled property graph — nodes carry labels and key-value properties, and typed, directed relationships connect them and can hold properties of their own — and it is queried with Cypher, Neo4j's declarative graph query language. The model is not RDF: there are no triples and no IRIs, which makes Neo4j the commercial counterpart to <a href="/standards/rdf/">RDF</a> work rather than an implementation of it.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>Property graphs suit traversal and path questions. Which suppliers link to this component within three hops is a pattern match, and Cypher expresses variable-length and shortest paths directly. Properties on relationships matter for retrieval more than they first appear: a weight, a confidence, a source or a timestamp can sit on the edge itself, where RDF needs reification or an intermediate node to say the same thing. For an agent doing multi-hop retrieval over a graph of entities, that is a shorter distance from question to answer, and it is the strongest argument for the model rather than a claim that it supersedes anything.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>Neo4j documents the database at <a href="https://neo4j.com/docs/">neo4j.com/docs</a>. The data model is set out in <a href="https://neo4j.com/docs/getting-started/graph-database/">What is a graph database</a> and the query language in the <a href="https://neo4j.com/docs/cypher-manual/current/">Cypher Manual</a>; the <a href="https://github.com/neo4j/neo4j">community repository</a> states the split between the editions. That same documentation index lists RDF and Linked Data tooling of its own, including Neosemantics, which is the route an RDF-shaped vocabulary would take into these graphs.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>The database gives you no vocabulary, no provenance and no currentness. Graph describes a structure, not a meaning: two models can both use a PART_OF relationship and disagree about what part-of allows, and nothing in the store will notice. Constraints and indexes enforce structure rather than semantics, and a stored edge says nothing about when it was true or whether it still holds. If the graph has to be exchanged with other systems, the property-graph model is not the RDF stack, so mapping it to a shared vocabulary such as <a href="/standards/skos/">SKOS</a> is deliberate design work rather than a configuration step.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Neo4j open source?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is both. The community edition is an open-source product, and the enterprise edition includes closed-source components that are not in the community repository, so a deployment can be open-source or proprietary depending on the edition.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does a property graph differ from RDF?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>A property graph stores nodes with labels and key-value properties, joined by typed directed relationships that carry properties of their own. RDF states subject, predicate and object triples over IRIs. Neither is a superset of the other, and a graph built in one does not become the other without deliberate conversion.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why use a graph database for agent retrieval?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because traversal and path questions are natural to it. A pattern match expresses multi-hop retrieval, including variable-length and shortest paths, in one query, and properties stored on relationships can carry the weight, source or confidence an agent needs at traversal time.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Neo4j give you provenance or currency?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It stores whatever properties you put on nodes and relationships and returns them unchanged. It does not define where a statement came from, when it was true or whether a relationship still holds, and it does not tell you what a relationship type is supposed to mean.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://neo4j.com/docs/">Neo4j documentation</a> — the documentation index, including the RDF and Linked Data tooling (Neosemantics, RDFLib-Neo4j) listed alongside the core database and Cypher.</li>
+    <li><a href="https://neo4j.com/docs/getting-started/graph-database/">What is a graph database</a> — nodes, relationships and properties, labels, indexes and constraints, and Cypher pattern matching.</li>
+    <li><a href="https://neo4j.com/docs/cypher-manual/current/">Cypher Manual</a> — Cypher as a declarative graph query language, its pattern syntax, and variable-length and shortest path queries.</li>
+    <li><a href="https://github.com/neo4j/neo4j">neo4j/neo4j on GitHub</a> — the community repository, whose licensing note distinguishes the open-source community edition from the enterprise edition with closed-source components.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

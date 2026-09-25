@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apache Iceberg — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/iceberg/">
+<meta name="description" content="Apache Iceberg is an Apache-licensed open table format originating at Netflix, with hidden partitioning, schema evolution and snapshot isolation across engines, adopted by competing commercial platforms.">
+<meta property="og:title" content="Apache Iceberg — Knowledge Sidekick">
+<meta property="og:description" content="An open table format: tables defined in metadata, hidden partitioning, schema evolution, and catalogues that hold table identity.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/iceberg/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Apache Iceberg — Knowledge Sidekick">
+<meta name="twitter:description" content="An open table format: tables defined in metadata, hidden partitioning, schema evolution, and catalogues that hold table identity.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/iceberg/",
+      "url": "https://knowledgesidekick.org/standards/iceberg/",
+      "name": "Apache Iceberg — Knowledge Sidekick",
+      "description": "Apache Iceberg is an Apache-licensed open table format originating at Netflix, with hidden partitioning, schema evolution and snapshot isolation across engines, adopted by competing commercial platforms.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/iceberg/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Iceberg proprietary to any vendor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is an Apache-licensed open-source project. The commercial platforms that read Iceberg tables do so through their own implementations of the open specification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does hidden partitioning change for a reader?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nothing visible. A query filters on an ordinary column and the engine derives the partition value, so callers do not need to know how the table is physically laid out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a catalogue make Iceberg metadata portable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The table format is open and any conforming engine can read it, but identity and access rules live in whichever catalogue registered the table, and catalogues are separate systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Iceberg give data a shared meaning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It gives tables a defined structure and history. Definitions, synonyms and mappings between systems belong to the vocabularies layered above the table."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Data formats</span>
+    <h1>Apache Iceberg</h1>
+    <p class="lede">Apache Iceberg is an Apache-licensed open table format, created at Netflix and now adopted by competing commercial platforms, that separates a table's definition from the engines that read it.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/standards/parquet/">Parquet</a> · <a href="/knowledge/knowledge-formats/">Knowledge formats</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Iceberg is an open-source table format, licensed by the Apache Software Foundation and governed as an Apache project; it is not a vendor product, though the commercial platforms that read it standardised on it rather than replacing it. It originated at Netflix as a rethinking of how Hive tables were partitioned and tracked, and the specification, implementations and catalogue integrations are published openly. A table's definition lives in metadata rather than in a directory layout: hidden partitioning, partition evolution, serializable isolation, branching and tagging, and advanced filtering are properties of the table itself. Several engines read the same table without conversion, and the project lists integrations across Spark, Flink, Trino and a long tail of other systems.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>Three things a knowledge layer usually has to build itself come with the format. Hidden partitioning means a query filters on an ordinary business column and the engine derives the partition value, so a reader does not need to know the physical layout; partitioning can later change without rewriting the table. Schema evolution lets columns be added, dropped, renamed or reordered as metadata changes, and the same machinery applies to partitioning. Snapshot isolation keeps concurrent writers from seeing each other's partial state. Table identity, however, lives in a catalogue — the documentation treats catalogues as a required component — which makes the catalogue an entity-resolution problem in miniature: the same logical table can be registered in two catalogues under two names.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>The project site is <a href="https://iceberg.apache.org/">iceberg.apache.org</a>. The <a href="https://iceberg.apache.org/docs/latest/">latest documentation</a> carries the introduction, concepts, catalogue properties and engine integrations; <a href="https://iceberg.apache.org/docs/latest/evolution/">evolution</a> and <a href="https://iceberg.apache.org/docs/latest/partitioning/">partitioning</a> document how a table's shape is defined and changed, <a href="https://iceberg.apache.org/docs/latest/schemas/">schemas</a> covers column types and identifiers, and <a href="https://iceberg.apache.org/docs/latest/reliability/">reliability</a> explains atomic commits of table metadata. The normative <a href="https://iceberg.apache.org/spec/">table specification</a> is published separately and is what a new implementation must satisfy.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Iceberg governs a table's structure and history, not what the table means. Column names remain local, no term carries a definition, and nothing in the format maps an Iceberg column to a concept in an <a href="/knowledge/ontologies/">ontology</a> or a term in a <a href="/knowledge/taxonomies/">taxonomy</a>. Versioned snapshots fix what the data said at a point in time; they say nothing about whether the vocabulary describing it is still current. Catalogues add identity and, in some implementations, access control, but a catalogue is a registry of tables rather than a model of the domain: it can tell an agent that a table exists, not what its rows refer to.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Iceberg proprietary to any vendor?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is an Apache-licensed open-source project. The commercial platforms that read Iceberg tables do so through their own implementations of the open specification.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does hidden partitioning change for a reader?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Nothing visible. A query filters on an ordinary column and the engine derives the partition value, so callers do not need to know how the table is physically laid out.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does a catalogue make Iceberg metadata portable?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>The table format is open and any conforming engine can read it, but identity and access rules live in whichever catalogue registered the table, and catalogues are separate systems.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Iceberg give data a shared meaning?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It gives tables a defined structure and history. Definitions, synonyms and mappings between systems belong to the vocabularies layered above the table.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://iceberg.apache.org/docs/latest/">Apache Iceberg documentation</a> — introduction, concepts, catalogue properties and the list of engine and tool integrations.</li>
+    <li><a href="https://iceberg.apache.org/docs/latest/evolution/">Evolution — Apache Iceberg</a> — schema evolution, hidden partitioning and partition evolution.</li>
+    <li><a href="https://iceberg.apache.org/docs/latest/partitioning/">Partitioning — Apache Iceberg</a> — how partitioning is expressed and changed without rewriting the table.</li>
+    <li><a href="https://iceberg.apache.org/docs/latest/reliability/">Reliability and performance — Apache Iceberg</a> — atomic commit of table metadata and isolation between concurrent writers.</li>
+    <li><a href="https://iceberg.apache.org/spec/">Apache Iceberg table specification</a> — the normative definition of the table format and its metadata.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

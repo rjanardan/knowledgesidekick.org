@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palantir Foundry Ontology — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/palantir/">
+<meta name="description" content="Palantir Foundry is a proprietary platform and its Ontology is a platform artefact, not a portable standard. It models objects and links between them and defines actions over them, so an agent can act on entities rather than on text.">
+<meta property="og:title" content="Palantir Foundry Ontology — Knowledge Sidekick">
+<meta property="og:description" content="The closest commercial analogue to an ontology-based knowledge layer: objects, links and actions over them — held inside the vendor's platform, not published as a standard.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/palantir/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Palantir Foundry Ontology — Knowledge Sidekick">
+<meta name="twitter:description" content="The closest commercial analogue to an ontology-based knowledge layer: objects, links and actions over them — held inside the vendor's platform, not published as a standard.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/palantir/",
+      "url": "https://knowledgesidekick.org/standards/palantir/",
+      "name": "Palantir Foundry Ontology — Knowledge Sidekick",
+      "description": "Palantir Foundry is a proprietary platform and its Ontology is a platform artefact, not a portable standard. It models objects and links between them and defines actions over them, so an agent can act on entities rather than on text.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/palantir/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the Palantir Ontology an open standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a proprietary artefact of the Foundry platform. The documentation is publicly readable, but the model is defined, hosted and revised by the vendor, and no other system implements it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it differ from RDF and OWL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RDF and OWL are W3C Recommendations: a data model and an ontology language that any system may implement and exchange. The Foundry Ontology is a product feature tied to Foundry's own data assets and applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an agent act through the ontology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Action types define the changes that may be applied to objects, property values and links, with parameters, rules and validation, so an agent can be constrained to permitted transactions on modelled entities rather than to free-form edits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If objects and links are modelled, is it a knowledge graph?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a graph-shaped entity model, and the documentation uses objects, properties and links as its vocabulary. What it does not provide is a graph serialisation or query language an unrelated system can consume, so the shape is a description rather than an interchange format."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Commercial and proprietary</span>
+    <h1>Palantir Foundry Ontology</h1>
+    <p class="lede">Palantir Foundry is a proprietary, vendor-controlled platform, and its Ontology is the closest commercial analogue to an ontology-based knowledge layer — objects, links between them, and actions over them — held firmly inside the vendor's product rather than published as a standard.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/knowledge/ontologies/">Ontologies</a> · <a href="/knowledge/knowledge-graphs/">Knowledge graphs</a> · <a href="/standards/snowflake/">Snowflake</a> · <a href="/standards/servicenow/">ServiceNow</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>The Foundry Ontology is a proprietary, vendor-controlled artefact: it is defined, hosted and revised by Palantir, and no other vendor implements it. Palantir's documentation describes it as an operational layer sitting on top of the digital assets integrated into the platform — datasets, virtual tables and models — and connecting them to their counterparts in the world, from plants and equipment to customer orders and financial transactions.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>Of the commercial platforms on this site, this is the nearest thing to a working ontology layer, because it carries structure and the ability to act on it. The documentation separates the semantic elements — object types, properties and links — from the kinetic ones: action types and functions. An object type is the schema definition of a real-world entity, an object is a single instance of it, and links relate instances. An action type defines the set of changes a user may apply to objects, property values and links at once, with parameters, rules and validation attached, so an agent can be handed a modelled entity and a permitted transaction over it instead of a passage of text. Interfaces describe the shape of an object type so that several types sharing that shape can be treated alike, which is how a capability is written once and applied across entity types.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where it is documented</h2>
+  <p>Palantir documents the Ontology on its own site at <a href="https://www.palantir.com/docs/">palantir.com/docs</a>, under an Ontology building section with separate pages for object and link types, action types and functions, interfaces, and design guidance. The pages are publicly readable and written by the vendor. There is no equivalent of a W3C Recommendation here: no normative document, no implementation report, and no route for an outside party to propose a change to the model.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>You cannot take the ontology with you. Its definitions live inside Foundry and are read back through Foundry's tools and applications, so the meaning of the model is held by the platform rather than by a document you own — a deliberate contrast with <a href="/standards/rdf/">RDF</a>, a vendor-neutral data model, and <a href="/standards/owl/">OWL</a>, an ontology language, both specified so that any system may implement them. A model built in Foundry is not portable, not inspectable by an unrelated tool, and not comparable with a model of the same domain built elsewhere. The platform gives you a strong place to work with modelled meaning; it does not give you a way to hand that meaning to someone who does not buy the platform.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is the Palantir Ontology an open standard?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a proprietary artefact of the Foundry platform. The documentation is publicly readable, but the model is defined, hosted and revised by the vendor, and no other system implements it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does it differ from RDF and OWL?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>RDF and OWL are W3C Recommendations: a data model and an ontology language that any system may implement and exchange. The Foundry Ontology is a product feature tied to Foundry's own data assets and applications.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can an agent act through the ontology?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Yes. Action types define the changes that may be applied to objects, property values and links, with parameters, rules and validation, so an agent can be constrained to permitted transactions on modelled entities rather than to free-form edits.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>If objects and links are modelled, is it a knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is a graph-shaped entity model, and the documentation uses objects, properties and links as its vocabulary. What it does not provide is a graph serialisation or query language an unrelated system can consume, so the shape is a description rather than an interchange format.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://www.palantir.com/docs/foundry/ontology/overview/">Palantir documentation — Ontology, overview</a> — the Ontology as an operational layer over datasets, virtual tables and models; semantic elements (object types, properties, links) and kinetic elements (action types, functions); interfaces.</li>
+    <li><a href="https://palantir.com/docs/foundry/action-types/overview">Palantir documentation — Action types, overview</a> — an action type as the definition of the changes that may be applied to objects, property values and links at once, including parameters, rules, validation and side effects.</li>
+    <li><a href="https://www.palantir.com/docs/">Palantir documentation</a> — the vendor's documentation portal, covering the Ontology building section and the rest of the platform's reference material.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snowflake — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/snowflake/">
+<meta name="description" content="Snowflake is a proprietary, vendor-controlled cloud data platform. Its knowledge angle is governance: sharing is a unit of exposure, access is enforced through roles, and a semantic layer binds business terms to governed tables.">
+<meta property="og:title" content="Snowflake — Knowledge Sidekick">
+<meta property="og:description" content="A proprietary cloud data platform: the place where permission on data is enforced, and where a semantic layer is bound to tables rather than to a portable model.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/snowflake/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Snowflake — Knowledge Sidekick">
+<meta name="twitter:description" content="A proprietary cloud data platform: the place where permission on data is enforced, and where a semantic layer is bound to tables rather than to a portable model.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/snowflake/",
+      "url": "https://knowledgesidekick.org/standards/snowflake/",
+      "name": "Snowflake — Knowledge Sidekick",
+      "description": "Snowflake is a proprietary, vendor-controlled cloud data platform. Its knowledge angle is governance: sharing is a unit of exposure, access is enforced through roles, and a semantic layer binds business terms to governed tables.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/snowflake/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Snowflake open-source?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a proprietary, vendor-controlled platform. The documentation is public and the technical concepts are described in detail, but the software and the commercial terms behind it belong to the vendor rather than to a community."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is data sharing a knowledge-sharing standard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The documentation states that data sharing is only supported between Snowflake accounts, so it is a mechanism inside one vendor's account model, not a protocol another platform implements. Its knowledge angle is that a share is a governance decision: the provider chooses the unit of exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it hold an ontology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not in any portable sense. The platform has a semantic layer, and its semantic views define metrics, dimensions and facts over tables, but that is a definition bound to the platform's own objects rather than an ontology language such as OWL or RDF that another system could implement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do access decisions really get made?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the platform, at the object, through roles. Privileges are assigned to roles and roles are assigned to users, so an agent acting through a Snowflake credential inherits exactly the platform's decisions and nothing more."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Commercial and proprietary</span>
+    <h1>Snowflake</h1>
+    <p class="lede">Snowflake is a proprietary, vendor-controlled cloud data platform, and its knowledge contribution is not a model but an enforcement point: the place where permission on data is decided, recorded and applied.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/enterprise.html">Enterprise knowledge</a> · <a href="/standards/palantir/">Palantir</a> · <a href="/standards/servicenow/">ServiceNow</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Snowflake is proprietary software: the product, the service and the terms it runs under are controlled by the vendor, and no open specification sits behind it. Architecturally it separates storage from compute, and it governs everything through privileges granted to roles. Its documentation states that sharing is only supported between Snowflake accounts, and that no data is copied or exchanged between provider and consumer.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>It is where permission on knowledge is actually enforced. A share is a governance decision with a concrete unit — the provider chooses which objects another account may read — and the consumer sees only that. Access is expressed as privileges assigned to roles, which are in turn assigned to users, so the answer to who may read something is a platform artifact rather than a policy document. Metadata can be bound to objects by tagging, where a tag is a schema-level object carrying a string value that may be attached to many kinds of object at once. A semantic view goes further: it defines metrics, dimensions and facts over tables, so a business term such as total revenue has a definition the platform stores and evaluates.</p>
+</section>
+
+<section id="where-the-spec-lives">
+  <h2>Where it is documented</h2>
+  <p>The only reference is the vendor's own product documentation at <a href="https://docs.snowflake.com/">docs.snowflake.com</a>, which covers data sharing, access control, object tagging and semantic views, and is published in several languages. It is a product manual, not a specification: maintained by the vendor, revised at the vendor's discretion, with no committee or community able to amend it, and no normative document that independent implementations are measured against.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>A warehouse is a system of record, not a knowledge layer. It stores values and enforces who may read them; it does not say what they mean, where they came from across systems, or how they relate to anything outside its own objects. Meaning that is modelled inside the platform — in a share, a tag or a semantic view — stays inside it, with no portable form another vendor's system can read. Provenance across sources and the portability of a domain model remain outside its remit. The open counterparts are elsewhere on this site: <a href="/standards/rdf/">RDF</a> for a vendor-neutral data model and <a href="/standards/owl/">OWL</a> for a language in which a model can be published.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Snowflake open-source?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a proprietary, vendor-controlled platform. The documentation is public and the technical concepts are described in detail, but the software and the commercial terms behind it belong to the vendor rather than to a community.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is data sharing a knowledge-sharing standard?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The documentation states that data sharing is only supported between Snowflake accounts, so it is a mechanism inside one vendor's account model, not a protocol another platform implements. Its knowledge angle is that a share is a governance decision: the provider chooses the unit of exposure.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can it hold an ontology?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Not in any portable sense. The platform has a semantic layer, and its semantic views define metrics, dimensions and facts over tables, but that is a definition bound to the platform's own objects rather than an ontology language such as OWL or RDF that another system could implement.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Where do access decisions really get made?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>In the platform, at the object, through roles. Privileges are assigned to roles and roles are assigned to users, so an agent acting through a Snowflake credential inherits exactly the platform's decisions and nothing more.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://docs.snowflake.com/">Snowflake Documentation</a> — the vendor's product documentation portal; the only authoritative description of the platform's features and behaviour.</li>
+    <li><a href="https://docs.snowflake.com/en/user-guide/data-sharing-intro">About Secure Data Sharing</a> — states that sharing is only supported between Snowflake accounts, that no data is copied or exchanged, and how providers and consumers are arranged.</li>
+    <li><a href="https://docs.snowflake.com/en/user-guide/security-access-control-overview">Access control in Snowflake</a> — role-based access control: privileges assigned to roles, roles assigned to users, and the securable object hierarchy.</li>
+    <li><a href="https://docs.snowflake.com/en/user-guide/views-semantic/overview">Overview of semantic views</a> — the semantic layer: metrics, dimensions and facts defined over tables, and the privileges required to use it.</li>
+    <li><a href="https://docs.snowflake.com/en/user-guide/object-tagging/introduction">Introduction to object tagging</a> — a tag is a schema-level object assigned to another object with a string value, held as a key-value pair.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

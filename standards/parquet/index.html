@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apache Parquet — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/standards/parquet/">
+<meta name="description" content="Apache Parquet is an open-source, column-oriented file format under the Apache licence, used as the default storage format across commercial data platforms. Its embedded schema is a physical type system, not a shared vocabulary.">
+<meta property="og:title" content="Apache Parquet — Knowledge Sidekick">
+<meta property="og:description" content="An Apache-licensed columnar file format: typed schema, cheap column scans, and the storage layer enterprise data literally sits in.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/standards/parquet/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Apache Parquet — Knowledge Sidekick">
+<meta name="twitter:description" content="An Apache-licensed columnar file format: typed schema, cheap column scans, and the storage layer enterprise data literally sits in.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/standards/parquet/",
+      "url": "https://knowledgesidekick.org/standards/parquet/",
+      "name": "Apache Parquet — Knowledge Sidekick",
+      "description": "Apache Parquet is an open-source, column-oriented file format under the Apache licence, used as the default storage format across commercial data platforms. Its embedded schema is a physical type system, not a shared vocabulary.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/standards/parquet/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Parquet a database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a file format. A Parquet file is a self-contained binary file with an embedded schema, read by a client library rather than a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the embedded schema give a shared vocabulary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a physical type system: column names and primitive or logical types. It carries no concept identifiers, no definitions and no mappings to another system's terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can two Parquet files disagree about the same thing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and routinely. Column names, units, nullability and identifier formats are local to each file, and the format has no mechanism to compare two files' schemas for meaning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Parquet record where the data came from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Files carry metadata about layout and statistics, not lineage, ownership or currency. Provenance has to be recorded alongside the data by whatever writes it."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-standards">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Standards · Data formats</span>
+    <h1>Apache Parquet</h1>
+    <p class="lede">Apache Parquet is an open-source, column-oriented data file format, licensed under the Apache License, and the storage format that commercial analytics platforms read and write by default.</p>
+    <p class="meta"><a href="/standards.html">Standards</a> · <a href="/knowledge/knowledge-formats/">Knowledge formats</a> · <a href="/standards/iceberg/">Iceberg</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What it is</h2>
+  <p>Parquet is open source and Apache-licensed, maintained as an Apache Software Foundation project: it is not a database, a service or a vendor product. A Parquet file is a self-contained binary file that any conforming reader can open. The project describes it as an open-source, column-oriented data file format designed for efficient data storage and retrieval, with compression and encoding schemes for bulk data. It keeps the format specification separate from the Java implementation, which is why a second implementation can exist at all.</p>
+</section>
+
+<section id="what-it-gives">
+  <h2>What it gives the knowledge layer</h2>
+  <p>Structure travels with the data. Every file carries its own schema — physical types, logical types such as dates and decimals, nested groups, and column-level statistics — so a reader reconstructs the layout without consulting an external registry. Columnar storage means a query that needs three columns out of two hundred reads three, and column statistics let an engine skip row groups rather than scan them. This is the layer enterprise data actually sits in, and a column scan is the cheapest way to ground an answer in it. The schema is a type system, not a vocabulary: it says a field is a string of a given length, not that it holds a customer identifier.</p>
+</section>
+
+<section id="where-it-is-documented">
+  <h2>Where it is documented</h2>
+  <p>The format is documented at <a href="https://parquet.apache.org/">parquet.apache.org</a>. The <a href="https://parquet.apache.org/docs/overview/">overview</a> states the design and lists implementations across languages and tools; <a href="https://parquet.apache.org/docs/file-format/">file format</a> and <a href="https://parquet.apache.org/docs/file-format/metadata/">metadata</a> document the file structure and the schema and statistics a file carries. The site notes that the ecosystem is varied and that not every implementation supports the same features, so format conformance across writers and readers is not uniform — a detail that matters when two platforms claim to exchange Parquet.</p>
+</section>
+
+<section id="what-it-does-not-solve">
+  <h2>What it does not solve</h2>
+  <p>Parquet solves storage, not meaning. Two Parquet files can describe the same customer differently — different column names, units and identifier schemes — and neither file can detect the disagreement. The format carries no shared vocabulary, no entity identity that survives across files, no provenance, and no statement of who wrote a value or whether it is still current. A schema is enforced within a file, not between files. Reconciling names to concepts is work above the storage layer, in <a href="/knowledge/ontologies/">ontologies</a>, <a href="/knowledge/taxonomies/">taxonomies</a> and provenance models such as <a href="/standards/prov-o/">PROV-O</a>.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is Parquet a database?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a file format. A Parquet file is a self-contained binary file with an embedded schema, read by a client library rather than a server.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does the embedded schema give a shared vocabulary?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is a physical type system: column names and primitive or logical types. It carries no concept identifiers, no definitions and no mappings to another system's terms.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Can two Parquet files disagree about the same thing?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Yes, and routinely. Column names, units, nullability and identifier formats are local to each file, and the format has no mechanism to compare two files' schemas for meaning.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does Parquet record where the data came from?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Files carry metadata about layout and statistics, not lineage, ownership or currency. Provenance has to be recorded alongside the data by whatever writes it.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://parquet.apache.org/">Apache Parquet</a> — project site; licence, sub-projects and the list of language and tool implementations.</li>
+    <li><a href="https://parquet.apache.org/docs/overview/">Overview — Parquet</a> — defines Parquet as an open-source, column-oriented data file format and describes the specification repository.</li>
+    <li><a href="https://parquet.apache.org/docs/file-format/">File format — Parquet</a> — structure of the file format and its encoding, compression and page-level organisation.</li>
+    <li><a href="https://parquet.apache.org/docs/file-format/metadata/">Metadata — Parquet</a> — the embedded schema, logical types and column statistics a file carries.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>
