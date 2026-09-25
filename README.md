@@ -19,7 +19,6 @@ Not-for-profit, no-fee, no-ads, free-to-read side of Knowledge Sidekick: researc
 
 ## How this relates to the .com
 
-The business-facing side lives at https://knowledgesidekick.com — advisory, training delivery, evaluations, audits.
 
 This org site is the same ideas, not-for-profit and free to read: research, standards, adoption, community, internship, training description, and free resources.
 

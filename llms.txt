@@ -6,7 +6,7 @@
 ## What this site is
 A small, flat, not-for-profit site about knowledge as a first-class layer in agentic systems.
 Written for technical leaders funding or building agentic AI, LLMs, and personal assistants.
-Same ideas as https://knowledgesidekick.com, the free-to-read side. Anything paid — courses included — lives there.
+Related site: https://knowledgesidekick.com
 
 ## Top-level sections
 - Home: https://knowledgesidekick.org/
@@ -88,8 +88,7 @@ Portfolio: https://janalogy.com
 Email: janardan.revuru@gmail.com
 LinkedIn: https://www.linkedin.com/in/rjanardan
 
-## Business-facing side
-Advisory, training delivery, evaluations, audits:
+## Related site
 https://knowledgesidekick.com
 
 ## Machine-readable formats provided

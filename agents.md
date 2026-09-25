@@ -21,8 +21,8 @@ identity:
       - https://www.linkedin.com/in/rjanardan
       - https://meetup.com/darling-meetup
   email: mailto:janardan.revuru@gmail.com
-  businessSide:
-    name: Knowledge Sidekick (business)
+  relatedSite:
+    name: Knowledge Sidekick (.com)
     url: https://knowledgesidekick.com
 
 sections:
