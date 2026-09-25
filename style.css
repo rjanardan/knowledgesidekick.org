@@ -336,3 +336,16 @@ body.page-contact{--accent:#1f1d1a;--accent-ink:#1f1d1a}
 .src-line{margin:18px 0 0;font-size:12.5px;color:#5b6663}
 .src-line time{font-variant-numeric:tabular-nums}
 .asof{color:#5b6663;font-size:.92em;white-space:nowrap}
+
+/* ---------- Homepage evidence blocks, limits, sources ---------- */
+.rests-on{margin-top:14px;padding:13px 15px;border-left:3px solid var(--ks-color,#1e6f5c);background:#f7faf9;font-size:13.5px;line-height:1.55}
+.rests-on b{display:block;margin-bottom:6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#1e6f5c}
+.rests-on ul{margin:0;padding-left:18px}
+.rests-on li{margin:5px 0}
+.limits{border:1px solid #e2e6e4;border-radius:10px;padding:16px 18px;background:#fcfdfd}
+.limits h3{margin-top:0}
+.srclist{font-size:13.5px;line-height:1.6}
+.srclist li{margin:7px 0}
+.archbar{background:#6b7d78;color:#fff;font-size:12.5px;letter-spacing:.04em;padding:7px 0}
+.archbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.archbar a{color:#fff}
