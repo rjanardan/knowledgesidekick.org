@@ -161,6 +161,12 @@
   </figure>
 
 
+
+
+
+
+
+
 </section>
 
 
@@ -200,7 +206,18 @@
     <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
   </div>
 </footer>
-<script src="/nav.js"></script>
+<script>
+document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
 <script src="/nav.js"></script>
 </body>
 </html>
