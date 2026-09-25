@@ -32,7 +32,6 @@ sections:
   standards: https://knowledgesidekick.org/standards.html
   adoption: https://knowledgesidekick.org/adoption.html
   blogs: https://knowledgesidekick.org/blogs.html
-  community: https://knowledgesidekick.org/community.html
   internship: https://knowledgesidekick.org/internship.html
   training: https://knowledgesidekick.org/training.html
   freeResources: https://knowledgesidekick.org/free-resources.html

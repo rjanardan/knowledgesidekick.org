@@ -15,7 +15,6 @@ Related site: https://knowledgesidekick.com
 - Standards: https://knowledgesidekick.org/standards.html
 - Adoption: https://knowledgesidekick.org/adoption.html
 - Blogs: https://knowledgesidekick.org/blogs.html
-- Community: https://knowledgesidekick.org/community.html
 - Internship: https://knowledgesidekick.org/internship.html
 - Training: https://knowledgesidekick.org/training.html
 - Free resources: https://knowledgesidekick.org/free-resources.html

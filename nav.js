@@ -12,7 +12,7 @@
   const NAV = {
     logoHref: '/',
     logoSvg: 'logo.svg',
-    logoText: { name: 'Knowledge Sidekick', tag: 'Knowledge for Agentic AI' },
+    logoText: { name: 'Knowledge Sidekick', tag: 'Knowledge Engineering for the AI-Native Organisation' },
     groups: [
       {
         label: 'Knowledge',
@@ -104,7 +104,6 @@
           { label: 'Blogs', href: '/blogs.html' },
           { label: 'Glossary', href: '/learn/glossary/' },
           { label: 'Token savings', href: '/token-savings.html' },
-          { label: 'Community', href: '/community.html' },
           { label: 'Internship', href: '/internship.html' },
           { label: 'Training', href: '/training.html' },
           { label: 'Courses', href: '/learn/courses/' },
