@@ -331,3 +331,8 @@ body.page-contact{--accent:#1f1d1a;--accent-ink:#1f1d1a}
 .chip{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;font-weight:600;
       letter-spacing:.02em;padding:3px 8px;border-radius:999px;margin-left:9px;align-self:center;
       color:var(--ks-color);background:#e6f2ef;border:1px solid rgba(30,111,92,.34);white-space:nowrap}
+
+/* ---------- Provenance line (sources checked / page updated) ---------- */
+.src-line{margin:18px 0 0;font-size:12.5px;color:#5b6663}
+.src-line time{font-variant-numeric:tabular-nums}
+.asof{color:#5b6663;font-size:.92em;white-space:nowrap}
