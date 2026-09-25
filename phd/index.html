@@ -243,11 +243,6 @@
   <figcaption>The axes are the organising device for the design-space objective. They are orthogonal by construction: typing a message does not by itself ground its terms, and grounding its terms does not make its commitments checkable.</figcaption>
 </figure>
 
-  <figure class="fig-img" data-fig="stack">
-  <img src="/phd/images/semantic-layer-in-the-stack.png" alt="Four bands: application and orchestration, the proposed semantic layer, transport and syntax, and models." loading="lazy">
-  <figcaption>The gap this research addresses is between coordination and transport. The bands below it are standardised and widely deployed; the band in purple has no implementation in any current protocol.</figcaption>
-</figure>
-
 </section>
 
 <section id="questions">
@@ -274,6 +269,36 @@
   <p><strong>Problem identification.</strong> As agents become autonomous and take over a high number of activities performed by humans, communication has to be more than message exchange and action invocation. There are many failure modes that follow from misalignment.</p>
   <p><strong>Problem definition.</strong> Agents may be built from LLMs and from other variants — small models, action models, reasoning models. Not all of these are capable at the same level, and they were not trained on the same data to share a common understanding of the world. How can the semantic layer be made robust across that spread?</p>
   <p><strong>Problem statement.</strong> How can agent-to-agent communication be made more efficient, robust, safe and reliable?</p>
+</section>
+
+<section id="method">
+  <h2>Method</h2>
+  <p>Five phases. The dependencies between them are the substance here: phase 1 fixes the vocabulary, phase 2 builds against it, and phase 3 is where the architecture has to survive a benchmark rather than an argument.</p>
+
+  <h3>Phase 0 — Research consolidation and prior-art differentiation</h3>
+  <p>Systematic PRISMA-style literature mapping across ACM Digital Library, IEEE Xplore and arXiv, with full reading and a differentiation memo against the most closely related papers, plus a deep dive through research-gap findings, experimentation, and empirical validation.</p>
+  <p class="small">Output: annotated bibliography of 20–30 papers, differentiation memo, modelling and experimentation results.</p>
+
+  <h3>Phase 1 — Design space categorization (objective 1)</h3>
+  <p>A formal, empirically validated taxonomy of A2A communication architectures along five orthogonal axes: mental-state model depth, communicative force typing, conceptual grounding richness, interpretation mechanism, and verifiability strength. A Chomsky-hierarchy-based compute-class separation of agents is started alongside it.</p>
+  <p class="small">Output: characterization paper submission.</p>
+
+  <h3>Phase 2 — A2A architecture design (objective 2)</h3>
+  <p>Formalize the architecture specification: a BDI goal-object schema in JSON-LD with BDI type annotations, a speech-act message envelope grammar, an ontology negotiation handshake protocol (SL-HELLO, SL-SELECT, SL-LOCK, adapted for BDI-typed contexts from the L9 handshake), and a neuro-symbolic verification pipeline pairing an LLM grounding step with a Prolog symbolic constraint checker. Design choices are evaluated against the white-space regions identified in phase 1.</p>
+  <p class="small">Output: formal architecture specification document, architecture design paper.</p>
+  <figure class="fig-img" data-fig="stack">
+  <img src="/phd/images/semantic-layer-in-the-stack.png" alt="Four bands: application and orchestration, the proposed semantic layer, transport and syntax, and models." loading="lazy">
+  <figcaption>The gap this research addresses is between coordination and transport. The bands below it are standardised and widely deployed; the band in purple has no implementation in any current protocol.</figcaption>
+</figure>
+
+
+  <h3>Phase 3 — Prototype development and empirical benchmarking (objective 3)</h3>
+  <p>Implement the architecture as a working semantic middleware layer over AutoGen or LangGraph, in Python and Node.js. Develop a benchmark task suite across three domains — information retrieval, multi-step reasoning, and enterprise workflow coordination. Measure semantic fidelity, commitment honour rate, ontology alignment convergence, and verification overhead, comparing against untyped baselines with paired statistical tests (Wilcoxon signed rank). The code is released as an open-source repository.</p>
+  <p class="small">Output: benchmarking paper submission, public GitHub repository.</p>
+
+  <h3>Phase 4 — Synthesis, thesis writing, and dissemination</h3>
+  <p>Integrate the findings from all three objectives into the thesis, consolidate papers into chapters, address committee feedback, submit, and defend at viva voce.</p>
+  <p class="small">Output: submitted thesis, conference presentation, at least two peer-reviewed publications.</p>
 </section>
 
 <section id="outcomes">
