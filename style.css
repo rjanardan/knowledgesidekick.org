@@ -360,3 +360,14 @@ figure.ks-figure figcaption{margin-top:9px;font-size:12.5px;color:#5b6663;line-h
 figure.fig-img{margin:24px 0 0}
 figure.fig-img img{display:block;width:100%;height:auto;border:1px solid #e8ecea;border-radius:10px;background:#fff}
 figure.fig-img figcaption{margin-top:9px;font-size:12.5px;color:#5b6663;line-height:1.5}
+
+/* ---------- map page: zoom and pan, driven by the SVG viewBox ---------- */
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px}
+.controls button{font:inherit;font-size:13px;min-height:32px;min-width:44px;padding:7px 13px;color:var(--ink);background:var(--panel);border:1px solid var(--line-2);border-radius:8px;cursor:pointer}
+.controls button:hover{border-color:var(--accent);color:var(--accent-ink)}
+.controls button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.controls .hint{font-size:12.5px;color:var(--muted)}
+.controls kbd{font-size:11.5px;border:1px solid var(--line-2);border-radius:4px;padding:1px 5px;background:var(--panel-2)}
+figure#sitemap svg{cursor:grab}
+figure#sitemap svg:active{cursor:grabbing}
+figure#sitemap:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}

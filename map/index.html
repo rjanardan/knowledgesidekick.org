@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site map — every page and every internal link</title>
+<meta name="description" content="Every page on this site and every internal link between them, as one figure and as a list: which section each page belongs to and how many pages link to it.">
+<link rel="canonical" href="https://knowledgesidekick.org/map/">
+<meta property="og:title" content="Site map — every page and every internal link">
+<meta property="og:description" content="Every page on this site and every internal link between them, as one figure and as a list: which section each page belongs to and how many pages link to it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/map/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Site map — every page and every internal link">
+<meta name="twitter:description" content="Every page on this site and every internal link between them, as one figure and as a list: which section each page belongs to and how many pages link to it.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "dateModified": "2026-09-26",
+      "@id": "https://knowledgesidekick.org/map/",
+      "url": "https://knowledgesidekick.org/map/",
+      "name": "Site map \u2014 every page and every internal link",
+      "description": "Every page on this site and every internal link between them, as one figure and as a list: which section each page belongs to and how many pages link to it.",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/map/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does this figure show?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every page on this site and every internal link between pages, grouped by the section each page belongs to. The list underneath carries the same information, with a link and an inbound count for every page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the layout grouped by section?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the first question a map answers is where a page sits. A layout driven by link strength alone interleaves the sections and the grouping stops being readable, so each section is placed as its own region. The trade is that position shows section, not closeness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the figure need JavaScript?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The whole figure is inline SVG and renders with no script at all; the script on this page only adds zoom and pan. Every page in the figure is also a plain link in the list below, so the information survives if the figure is not readable at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do some labels look dimmer than others?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Marks that carry more links in this figure are labelled at full strength and the rest are dimmed, rather than removed. The names stay in the file, so a crawler, a screen reader and a print engine still get every label."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-map">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Site map</span>
+    <h1>Every page here, and every link between them</h1>
+    <p class="lede">The whole site as one figure: each page a mark, each internal link a line, grouped by the section the page belongs to. The same information follows as a list, so nothing here depends on reading a picture.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/knowledge/">Knowledge</a> · <a href="/research.html">Research</a> · <a href="/standards.html">Standards</a> · <a href="/adoption.html">Adoption</a> · <a href="/learn/">Learn</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="how-to-read">
+  <div class="callout">
+    <span class="label">How to read this page</span>
+    <h3>One dataset, two forms</h3>
+    <p>The figure is the shape of the site. The list below it is the same dataset in the form an agent, a screen reader or a small screen can use directly: every page, the section it belongs to, and how many pages link to it. Nothing in the figure is missing from the list, and both are generated from the same pass over the site's files.</p>
+  </div>
+</section>
+
+<section id="for-agents" style="margin-top:24px">
+  <div class="callout" style="border-left-color:var(--accent);background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px 18px">
+    <span class="label" style="font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;display:block">For agents &amp; crawlers</span>
+    <p style="margin:0 0 8px;font-size:13.5px">This page is the site's own index of itself. The list below is plain HTML with real links and no script; the figure above is inline SVG, so its labels are text. Machine-readable indexes: <a href="/agents.md">agents.md</a> · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a>.</p>
+  </div>
+</section>
+
+<section id="the-map">
+  <h2>The site as a graph</h2>
+  <p class="lead">Every page on the site is a mark and every internal link between pages is a line. Each cluster is one section, named in its own colour.</p>
+  <div class="controls" role="group" aria-label="Zoom and pan the map">
+    <button type="button" data-zoom="in">Zoom in</button>
+    <button type="button" data-zoom="out">Zoom out</button>
+    <button type="button" data-zoom="fit">Fit</button>
+    <span class="hint">Wheel to zoom, drag to pan. Keyboard: <kbd>+</kbd> <kbd>&minus;</kbd> <kbd>0</kbd> and the arrow keys.</span>
+  </div>
+  <figure class="ks-figure" id="sitemap" tabindex="0" aria-label="The site as a graph. Zoom and pan with the buttons above.">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1240 760" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Every page on this site and every internal link between them</title><desc>Pages grouped into clusters by section; every mark is a page and every line an internal link between two pages.</desc>
+<rect width="1240" height="760" rx="12" fill="#ffffff"/>
+<g class="hulls">
+<path d="M 877.6,489.3 L 892.4,424.5 L 952.3,395.6 L 1012.1,424.5 L 1026.9,489.3 L 985.5,541.2 L 919.0,541.2 Z" fill="#2f6f8f" fill-opacity="0.10" stroke="#2f6f8f" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 535.1,591.6 L 598.8,545.3 L 662.5,591.6 L 638.2,666.5 L 559.4,666.5 Z" fill="#6b5b95" fill-opacity="0.10" stroke="#6b5b95" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 405.2,245.2 L 410.6,204.3 L 426.4,166.1 L 451.5,133.3 L 484.3,108.2 L 522.4,92.4 L 563.4,87.0 L 604.3,92.4 L 642.5,108.2 L 675.3,133.3 L 700.4,166.1 L 716.2,204.3 L 721.6,245.2 L 716.2,286.1 L 700.4,324.3 L 675.3,357.1 L 642.5,382.2 L 604.3,398.0 L 563.4,403.4 L 522.4,398.0 L 484.3,382.2 L 451.5,357.1 L 426.4,324.3 L 410.6,286.1 Z" fill="#1e6f5c" fill-opacity="0.10" stroke="#1e6f5c" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 216.8,463.5 L 267.0,376.5 L 317.2,463.5 Z" fill="#8a4f7d" fill-opacity="0.10" stroke="#8a4f7d" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 769.7,539.5 L 833.4,493.2 L 897.1,539.5 L 872.8,614.4 L 794.0,614.4 Z" fill="#b06a2c" fill-opacity="0.10" stroke="#b06a2c" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 302.0,560.2 L 364.2,498.0 L 426.4,560.2 L 364.2,622.4 Z" fill="#0f6b6b" fill-opacity="0.10" stroke="#0f6b6b" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M 724.0,290.4 L 727.7,246.4 L 745.4,205.9 L 775.3,173.4 L 814.2,152.4 L 857.8,145.1 L 901.3,152.4 L 940.2,173.4 L 970.1,205.9 L 987.9,246.4 L 991.5,290.4 L 980.7,333.2 L 956.5,370.2 L 921.6,397.4 L 879.9,411.7 L 835.7,411.7 L 793.9,397.4 L 759.0,370.2 L 734.9,333.2 Z" fill="#6b7d78" fill-opacity="0.10" stroke="#6b7d78" stroke-opacity="0.35" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+<g class="edges">
+<line x1="353.6" y1="288.0" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="864.8" y2="550.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="810.1" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="687.6" y2="245.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="670.9" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="651.2" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="443.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="531.2" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="353.6" y1="288.0" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="267.0" y1="410.5" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="267.0" y1="410.5" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="267.0" y1="410.5" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="267.0" y1="410.5" x2="757.9" y2="287.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="857.8" y1="179.1" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="857.8" y1="179.1" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="857.8" y1="179.1" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="857.8" y1="179.1" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="857.8" y1="179.1" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="857.8" y1="179.1" x2="757.9" y2="287.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="864.8" y2="550.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="852.8" y2="586.9" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="814.0" y2="586.9" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="802.0" y2="550.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="670.9" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="773.9" y2="224.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="833.4" y1="527.2" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="864.8" y1="550.0" x2="670.9" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="852.8" y1="586.9" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="852.8" y1="586.9" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="852.8" y1="586.9" x2="814.0" y2="586.9" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="852.8" y1="586.9" x2="802.0" y2="550.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="852.8" y1="586.9" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="852.8" y1="586.9" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="814.0" y1="586.9" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="814.0" y1="586.9" x2="852.8" y2="586.9" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="814.0" y1="586.9" x2="802.0" y2="550.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="814.0" y1="586.9" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="814.0" y1="586.9" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="802.0" y1="550.0" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="802.0" y1="550.0" x2="852.8" y2="586.9" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="802.0" y1="550.0" x2="687.6" y2="245.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="802.0" y1="550.0" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="287.8" y1="446.5" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="287.8" y1="446.5" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="287.8" y1="446.5" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="287.8" y1="446.5" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="287.8" y1="446.5" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="919.3" y2="200.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="941.6" y2="224.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="954.9" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="957.6" y2="287.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="890.3" y1="184.6" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.3" y1="200.3" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.3" y1="200.3" x2="919.3" y2="200.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.3" y1="200.3" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.3" y1="200.3" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="941.6" y1="224.5" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="941.6" y1="224.5" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="941.6" y1="224.5" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="954.9" y1="254.7" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="954.9" y1="254.7" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="954.9" y1="254.7" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="957.6" y1="287.6" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="957.6" y1="287.6" x2="957.6" y2="287.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="957.6" y1="287.6" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="957.6" y1="287.6" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="949.5" y1="319.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="949.5" y1="319.6" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="949.5" y1="319.6" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="949.5" y1="319.6" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="949.5" y1="319.6" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="949.5" y1="319.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="931.5" y1="347.2" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="931.5" y1="347.2" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="931.5" y1="347.2" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="931.5" y1="347.2" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="905.5" y1="367.5" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="905.5" y1="367.5" x2="954.9" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="905.5" y1="367.5" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="905.5" y1="367.5" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="874.3" y1="378.2" x2="857.8" y2="179.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="874.3" y1="378.2" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="874.3" y1="378.2" x2="874.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="841.3" y1="378.2" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="841.3" y1="378.2" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="841.3" y1="378.2" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="841.3" y1="378.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="784.0" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="773.9" y2="224.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="810.1" y1="367.5" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="784.0" y1="347.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="985.6" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="993.8" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="952.3" y1="429.6" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="985.6" y1="445.7" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="985.6" y1="445.7" x2="952.3" y2="429.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="985.6" y1="445.7" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="985.6" y1="445.7" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="993.8" y1="481.7" x2="952.3" y2="429.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="993.8" y1="481.7" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="993.8" y1="481.7" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="993.8" y1="481.7" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="993.8" y1="481.7" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="993.8" y1="481.7" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="952.3" y2="429.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="993.8" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="567.4" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="670.9" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="970.7" y1="510.6" x2="531.2" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="952.3" y2="429.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="651.2" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="933.8" y1="510.6" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="952.3" y2="429.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="910.7" y1="481.7" x2="443.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="952.3" y2="429.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="919.0" y1="445.7" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="810.1" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="392.4" y2="560.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="364.2" y2="588.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="336.0" y2="560.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="532.0" x2="773.9" y2="224.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="864.8" y2="550.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="810.1" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="784.0" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="985.6" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="993.8" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="364.2" y2="532.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="364.2" y2="588.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="336.0" y2="560.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="766.0" y2="319.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="392.4" y1="560.2" x2="773.9" y2="224.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="588.4" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="588.4" x2="364.2" y2="532.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="364.2" y1="588.4" x2="392.4" y2="560.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="985.6" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="993.8" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="364.2" y2="532.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="766.0" y2="319.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="630.2" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="579.4" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="567.4" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="651.2" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="336.0" y1="560.2" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="246.2" y1="446.5" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="246.2" y1="446.5" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="246.2" y1="446.5" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="246.2" y1="446.5" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="766.0" y1="319.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="766.0" y1="319.6" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="766.0" y1="319.6" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="766.0" y1="319.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="757.9" y1="287.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="757.9" y1="287.6" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="757.9" y1="287.6" x2="857.8" y2="179.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="757.9" y1="287.6" x2="579.4" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="766.0" y2="319.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="630.2" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="618.2" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="579.4" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="567.4" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="598.8" y1="579.3" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="630.2" y1="602.1" x2="618.2" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="766.0" y2="319.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="630.2" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="618.2" y1="639.0" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="579.4" y1="639.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="579.4" y1="639.0" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="579.4" y1="639.0" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="579.4" y1="639.0" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="579.4" y1="639.0" x2="630.2" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="579.4" y1="639.0" x2="760.6" y2="254.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="567.4" y1="602.1" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="567.4" y1="602.1" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="567.4" y1="602.1" x2="630.2" y2="602.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="567.4" y1="602.1" x2="579.4" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="810.1" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="595.5" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="625.5" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="651.2" y2="157.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="670.9" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="683.4" y2="213.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="687.6" y2="245.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="670.9" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="651.2" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="625.5" y2="352.8" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="595.5" y2="365.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="531.2" y2="365.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="501.3" y2="352.8" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="443.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="439.2" y2="245.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="443.4" y2="213.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="475.6" y2="157.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="121.0" x2="531.2" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="595.5" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="625.5" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="683.4" y2="213.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="125.2" x2="501.3" y2="352.8" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="137.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="137.6" x2="651.2" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="137.6" x2="501.3" y2="352.8" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="157.4" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="157.4" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="157.4" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="157.4" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="183.1" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="183.1" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="183.1" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="183.1" x2="531.2" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="213.1" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="213.1" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="213.1" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="213.1" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="213.1" x2="501.3" y2="352.8" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="687.6" y1="245.2" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="687.6" y1="245.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="687.6" y1="245.2" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="277.3" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="277.3" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="277.3" x2="651.2" y2="157.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="277.3" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="683.4" y1="277.3" x2="531.2" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="307.3" x2="810.1" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="307.3" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="670.9" y1="307.3" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="333.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="333.0" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="333.0" x2="618.2" y2="639.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="333.0" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="651.2" y1="333.0" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="352.8" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="352.8" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="352.8" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="352.8" x2="625.5" y2="352.8" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="625.5" y1="352.8" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="365.2" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="365.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="365.2" x2="595.5" y2="365.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="365.2" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="595.5" y1="365.2" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="369.4" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="369.4" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="369.4" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="563.4" y1="369.4" x2="443.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="443.4" y2="213.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="365.2" x2="475.6" y2="157.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="352.8" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="352.8" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="352.8" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="352.8" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="352.8" x2="683.4" y2="213.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="352.8" x2="475.6" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="333.0" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="333.0" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="333.0" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="333.0" x2="651.2" y2="333.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="307.3" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="307.3" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="307.3" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="307.3" x2="443.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="307.3" x2="531.2" y2="125.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="277.3" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="277.3" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="277.3" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="439.2" y1="245.2" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="439.2" y1="245.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="439.2" y1="245.2" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="439.2" y1="245.2" x2="439.2" y2="245.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="439.2" y1="245.2" x2="455.8" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="213.1" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="213.1" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="213.1" x2="531.2" y2="365.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="443.4" y1="213.1" x2="475.6" y2="157.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="183.1" x2="910.7" y2="481.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="183.1" x2="919.0" y2="445.7" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="183.1" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="455.8" y1="183.1" x2="687.6" y2="245.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="157.4" x2="841.3" y2="378.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="157.4" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="157.4" x2="563.4" y2="369.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="157.4" x2="531.2" y2="365.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="157.4" x2="455.8" y2="307.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="475.6" y1="157.4" x2="443.4" y2="213.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="137.6" x2="933.8" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="137.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="501.3" y1="137.6" x2="651.2" y2="157.4" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="125.2" x2="970.7" y2="510.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="125.2" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="125.2" x2="670.9" y2="183.1" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="125.2" x2="683.4" y2="277.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="531.2" y1="125.2" x2="501.3" y2="137.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="760.6" y1="254.7" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="760.6" y1="254.7" x2="941.6" y2="224.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="760.6" y1="254.7" x2="905.5" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="760.6" y1="254.7" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="267.0" y2="410.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="287.8" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="784.0" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="246.2" y2="446.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="773.9" y1="224.5" x2="825.2" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="796.2" y1="200.3" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="796.2" y1="200.3" x2="810.1" y2="367.5" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="825.2" y1="184.6" x2="353.6" y2="288.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="825.2" y1="184.6" x2="833.4" y2="527.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="825.2" y1="184.6" x2="890.3" y2="184.6" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="825.2" y1="184.6" x2="931.5" y2="347.2" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="825.2" y1="184.6" x2="598.8" y2="579.3" stroke="#d3ded9" stroke-width="1.1"/>
+<line x1="825.2" y1="184.6" x2="563.4" y2="121.0" stroke="#d3ded9" stroke-width="1.1"/>
+</g><g class="nodes">
+<a class="n" data-id="/" href="/" target="_top"><title>Knowledge Sidekick</title><circle cx="353.6" cy="288.0" r="14.9" fill="#2b3330" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="333.6" y="291.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge Sidekick</text></a>
+<a class="n" data-id="/a2a/" href="/a2a/" target="_top"><title>A2A</title><circle cx="267.0" cy="410.5" r="14.9" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="247.0" y="414.1" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">A2A</text></a>
+<a class="n" data-id="/about.html" href="/about.html" target="_top"><title>About</title><circle cx="857.8" cy="179.1" r="14.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="876.8" y="182.7" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">About</text></a>
+<a class="n" data-id="/adoption.html" href="/adoption.html" target="_top"><title>Adoption</title><circle cx="833.4" cy="527.2" r="14.9" fill="#b06a2c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="853.4" y="530.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Adoption</text></a>
+<a class="n" data-id="/adoption/companies-ahead/" href="/adoption/companies-ahead/" target="_top"><title>Companies ahead in…</title><circle cx="864.8" cy="550.0" r="14.9" fill="#b06a2c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="884.7" y="553.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Companies ahead in…</text></a>
+<a class="n" data-id="/adoption/domains/" href="/adoption/domains/" target="_top"><title>Knowledge…</title><circle cx="852.8" cy="586.9" r="14.9" fill="#b06a2c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="872.8" y="590.5" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge…</text></a>
+<a class="n" data-id="/adoption/domains/enterprise-business-general/" href="/adoption/domains/enterprise-business-general/" target="_top"><title>Enterprise…</title><circle cx="814.0" cy="586.9" r="13.0" fill="#b06a2c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="832.0" y="604.0" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Enterprise…</text></a>
+<a class="n" data-id="/adoption/domains/library-and-information-science/" href="/adoption/domains/library-and-information-science/" target="_top"><title>Library and…</title><circle cx="802.0" cy="550.0" r="13.0" fill="#b06a2c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="820.0" y="567.1" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Library and…</text></a>
+<a class="n" data-id="/agents/" href="/agents/" target="_top"><title>Agents</title><circle cx="287.8" cy="446.5" r="14.9" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="267.8" y="450.1" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Agents</text></a>
+<a class="n" data-id="/blogs.html" href="/blogs.html" target="_top"><title>Blogs</title><circle cx="890.3" cy="184.6" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="910.3" y="201.7" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Blogs</text></a>
+<a class="n" data-id="/blogs/2026-09-10-what-enterprise-agents-actually-need.html" href="/blogs/2026-09-10-what-enterprise-agents-actually-need.html" target="_top"><title>What enterprise…</title><circle cx="919.3" cy="200.3" r="12.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="936.3" y="217.4" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">What enterprise…</text></a>
+<a class="n" data-id="/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html" href="/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html" target="_top"><title>Grounding is the…</title><circle cx="941.6" cy="224.5" r="10.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="957.6" y="241.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Grounding is the…</text></a>
+<a class="n" data-id="/blogs/2026-09-18-context-is-not-a-bucket.html" href="/blogs/2026-09-18-context-is-not-a-bucket.html" target="_top"><title>Context is not a…</title><circle cx="954.9" cy="254.7" r="10.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="970.8" y="258.3" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Context is not a…</text></a>
+<a class="n" data-id="/blogs/2026-09-22-why-knowledge-fails-first.html" href="/blogs/2026-09-22-why-knowledge-fails-first.html" target="_top"><title>Why knowledge fails…</title><circle cx="957.6" cy="287.6" r="12.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="974.6" y="291.2" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Why knowledge fails…</text></a>
+<a class="n" data-id="/community.html" href="/community.html" target="_top"><title>Community</title><circle cx="949.5" cy="319.6" r="12.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="966.5" y="323.2" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Community</text></a>
+<a class="n" data-id="/contact.html" href="/contact.html" target="_top"><title>Contact</title><circle cx="931.5" cy="347.2" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="951.4" y="350.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Contact</text></a>
+<a class="n" data-id="/context-engineering.html" href="/context-engineering.html" target="_top"><title>Context Engineering</title><circle cx="905.5" cy="367.5" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="925.4" y="371.1" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Context Engineering</text></a>
+<a class="n" data-id="/disclaimer.html" href="/disclaimer.html" target="_top"><title>How this site is…</title><circle cx="874.3" cy="378.2" r="9.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="889.1" y="422.3" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">How this site is…</text></a>
+<a class="n" data-id="/enterprise.html" href="/enterprise.html" target="_top"><title>Enterprise</title><circle cx="841.3" cy="378.2" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="861.2" y="435.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Enterprise</text></a>
+<a class="n" data-id="/free-resources.html" href="/free-resources.html" target="_top"><title>Free resources</title><circle cx="810.1" cy="367.5" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="830.0" y="384.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Free resources</text></a>
+<a class="n" data-id="/internship.html" href="/internship.html" target="_top"><title>Internship</title><circle cx="784.0" cy="347.2" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="804.0" y="350.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Internship</text></a>
+<a class="n" data-id="/knowledge/" href="/knowledge/" target="_top"><title>Knowledge</title><circle cx="952.3" cy="429.6" r="14.9" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="972.2" y="446.7" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge</text></a>
+<a class="n" data-id="/knowledge/dikw/" href="/knowledge/dikw/" target="_top"><title>DIKW as an audit…</title><circle cx="985.6" cy="445.7" r="13.0" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="1003.6" y="462.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">DIKW as an audit…</text></a>
+<a class="n" data-id="/knowledge/knowledge-bundles/" href="/knowledge/knowledge-bundles/" target="_top"><title>Knowledge bundles</title><circle cx="993.8" cy="481.7" r="14.9" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="1013.7" y="485.3" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge bundles</text></a>
+<a class="n" data-id="/knowledge/knowledge-formats/" href="/knowledge/knowledge-formats/" target="_top"><title>Knowledge formats</title><circle cx="970.7" cy="510.6" r="14.9" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="990.7" y="514.2" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge formats</text></a>
+<a class="n" data-id="/knowledge/knowledge-graphs/" href="/knowledge/knowledge-graphs/" target="_top"><title>Knowledge graphs</title><circle cx="933.8" cy="510.6" r="14.9" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="953.7" y="527.7" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge graphs</text></a>
+<a class="n" data-id="/knowledge/ontologies/" href="/knowledge/ontologies/" target="_top"><title>Ontologies</title><circle cx="910.7" cy="481.7" r="14.9" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="930.7" y="485.3" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Ontologies</text></a>
+<a class="n" data-id="/knowledge/taxonomies/" href="/knowledge/taxonomies/" target="_top"><title>Taxonomies</title><circle cx="919.0" cy="445.7" r="14.9" fill="#2f6f8f" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="938.9" y="570.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Taxonomies</text></a>
+<a class="n" data-id="/learn/" href="/learn/" target="_top"><title>Learn</title><circle cx="364.2" cy="532.0" r="14.9" fill="#0f6b6b" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="344.2" y="535.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Learn</text></a>
+<a class="n" data-id="/learn/courses/" href="/learn/courses/" target="_top"><title>Courses</title><circle cx="392.4" cy="560.2" r="14.9" fill="#0f6b6b" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="372.4" y="563.8" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Courses</text></a>
+<a class="n" data-id="/learn/courses/terms/" href="/learn/courses/terms/" target="_top"><title>Course terms</title><circle cx="364.2" cy="588.4" r="10.9" fill="#0f6b6b" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="348.3" y="592.0" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Course terms</text></a>
+<a class="n" data-id="/learn/glossary/" href="/learn/glossary/" target="_top"><title>Glossary</title><circle cx="336.0" cy="560.2" r="14.9" fill="#0f6b6b" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="316.0" y="563.8" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Glossary</text></a>
+<a class="n" data-id="/mcp/" href="/mcp/" target="_top"><title>MCP</title><circle cx="246.2" cy="446.5" r="14.9" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="226.3" y="450.1" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">MCP</text></a>
+<a class="n" data-id="/personal-assistant.html" href="/personal-assistant.html" target="_top"><title>Personal Assistant</title><circle cx="766.0" cy="319.6" r="14.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="785.0" y="323.2" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Personal Assistant</text></a>
+<a class="n" data-id="/phd/submission-1.html" href="/phd/submission-1.html" target="_top"><title>Doctoral research</title><circle cx="757.9" cy="287.6" r="12.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="774.9" y="291.2" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Doctoral research</text></a>
+<a class="n" data-id="/research.html" href="/research.html" target="_top"><title>Research</title><circle cx="598.8" cy="579.3" r="14.9" fill="#6b5b95" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="578.8" y="582.9" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Research</text></a>
+<a class="n" data-id="/research/agentic-ai/" href="/research/agentic-ai/" target="_top"><title>Agentic AI</title><circle cx="630.2" cy="602.1" r="14.9" fill="#6b5b95" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="610.2" y="605.7" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Agentic AI</text></a>
+<a class="n" data-id="/research/memory/" href="/research/memory/" target="_top"><title>Memory for…</title><circle cx="618.2" cy="639.0" r="14.9" fill="#6b5b95" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="598.2" y="642.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Memory for…</text></a>
+<a class="n" data-id="/research/semcom/" href="/research/semcom/" target="_top"><title>Semantic…</title><circle cx="579.4" cy="639.0" r="14.9" fill="#6b5b95" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="559.4" y="656.1" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Semantic…</text></a>
+<a class="n" data-id="/research/world-models/" href="/research/world-models/" target="_top"><title>World models</title><circle cx="567.4" cy="602.1" r="13.0" fill="#6b5b95" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="549.4" y="619.2" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">World models</text></a>
+<a class="n" data-id="/standards.html" href="/standards.html" target="_top"><title>Standards</title><circle cx="563.4" cy="121.0" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl " x="543.4" y="124.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Standards</text></a>
+<a class="n" data-id="/standards/databricks/" href="/standards/databricks/" target="_top"><title>Databricks</title><circle cx="595.5" cy="125.2" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="575.6" y="142.3" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Databricks</text></a>
+<a class="n" data-id="/standards/delta-lake/" href="/standards/delta-lake/" target="_top"><title>Delta Lake</title><circle cx="625.5" cy="137.6" r="10.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="609.6" y="168.2" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Delta Lake</text></a>
+<a class="n" data-id="/standards/graphql-ld/" href="/standards/graphql-ld/" target="_top"><title>GraphQL-LD</title><circle cx="651.2" cy="157.4" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="633.2" y="188.0" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">GraphQL-LD</text></a>
+<a class="n" data-id="/standards/hdt/" href="/standards/hdt/" target="_top"><title>HDT</title><circle cx="670.9" cy="183.1" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="653.0" y="213.7" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">HDT</text></a>
+<a class="n" data-id="/standards/iceberg/" href="/standards/iceberg/" target="_top"><title>Apache Iceberg</title><circle cx="683.4" cy="213.1" r="14.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="702.4" y="216.7" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Apache Iceberg</text></a>
+<a class="n" data-id="/standards/iso-25964/" href="/standards/iso-25964/" target="_top"><title>ISO 25964</title><circle cx="687.6" cy="245.2" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="705.6" y="248.8" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">ISO 25964</text></a>
+<a class="n" data-id="/standards/json-ld/" href="/standards/json-ld/" target="_top"><title>JSON-LD</title><circle cx="683.4" cy="277.3" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="703.3" y="280.9" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">JSON-LD</text></a>
+<a class="n" data-id="/standards/llms-txt/" href="/standards/llms-txt/" target="_top"><title>llms.txt</title><circle cx="670.9" cy="307.3" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="653.0" y="310.9" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">llms.txt</text></a>
+<a class="n" data-id="/standards/mementos/" href="/standards/mementos/" target="_top"><title>Memento</title><circle cx="651.2" cy="333.0" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="631.3" y="336.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Memento</text></a>
+<a class="n" data-id="/standards/microsoft-graph/" href="/standards/microsoft-graph/" target="_top"><title>Microsoft Graph</title><circle cx="625.5" cy="352.8" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="607.5" y="356.4" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Microsoft Graph</text></a>
+<a class="n" data-id="/standards/neo4j/" href="/standards/neo4j/" target="_top"><title>Neo4j</title><circle cx="595.5" cy="365.2" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="577.5" y="382.3" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Neo4j</text></a>
+<a class="n" data-id="/standards/owl/" href="/standards/owl/" target="_top"><title>OWL 2</title><circle cx="563.4" cy="369.4" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="543.4" y="400.0" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">OWL 2</text></a>
+<a class="n" data-id="/standards/palantir/" href="/standards/palantir/" target="_top"><title>Palantir Foundry…</title><circle cx="531.2" cy="365.2" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="511.3" y="382.3" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Palantir Foundry…</text></a>
+<a class="n" data-id="/standards/parquet/" href="/standards/parquet/" target="_top"><title>Apache Parquet</title><circle cx="501.3" cy="352.8" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="481.3" y="356.4" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Apache Parquet</text></a>
+<a class="n" data-id="/standards/prov-o/" href="/standards/prov-o/" target="_top"><title>PROV-O</title><circle cx="475.6" cy="333.0" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="455.6" y="336.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">PROV-O</text></a>
+<a class="n" data-id="/standards/rdf/" href="/standards/rdf/" target="_top"><title>RDF</title><circle cx="455.8" cy="307.3" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="435.9" y="310.9" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">RDF</text></a>
+<a class="n" data-id="/standards/rdfs/" href="/standards/rdfs/" target="_top"><title>RDFS</title><circle cx="443.4" cy="277.3" r="14.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="424.4" y="280.9" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">RDFS</text></a>
+<a class="n" data-id="/standards/salesforce/" href="/standards/salesforce/" target="_top"><title>Salesforce Platform…</title><circle cx="439.2" cy="245.2" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="421.2" y="248.8" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Salesforce Platform…</text></a>
+<a class="n" data-id="/standards/servicenow/" href="/standards/servicenow/" target="_top"><title>ServiceNow CSDM and…</title><circle cx="443.4" cy="213.1" r="13.0" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="425.4" y="216.7" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">ServiceNow CSDM and…</text></a>
+<a class="n" data-id="/standards/skos/" href="/standards/skos/" target="_top"><title>W3C SKOS</title><circle cx="455.8" cy="183.1" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="435.9" y="186.7" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">W3C SKOS</text></a>
+<a class="n" data-id="/standards/snowflake/" href="/standards/snowflake/" target="_top"><title>Snowflake</title><circle cx="475.6" cy="157.4" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="455.6" y="161.0" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Snowflake</text></a>
+<a class="n" data-id="/standards/sparql/" href="/standards/sparql/" target="_top"><title>SPARQL</title><circle cx="501.3" cy="137.6" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="481.3" y="141.2" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">SPARQL</text></a>
+<a class="n" data-id="/standards/turtle/" href="/standards/turtle/" target="_top"><title>Turtle</title><circle cx="531.2" cy="125.2" r="14.9" fill="#1e6f5c" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="511.3" y="155.8" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Turtle</text></a>
+<a class="n" data-id="/token-savings.html" href="/token-savings.html" target="_top"><title>Token Savings &amp;…</title><circle cx="760.6" cy="254.7" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="780.6" y="258.3" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Token Savings &amp;…</text></a>
+<a class="n" data-id="/training.html" href="/training.html" target="_top"><title>Training</title><circle cx="773.9" cy="224.5" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="793.8" y="241.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Training</text></a>
+<a class="n" data-id="/v0.html" href="/v0.html" target="_top"><title>Knowledge Sidekick</title><circle cx="796.2" cy="200.3" r="8.0" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="809.2" y="217.4" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Knowledge Sidekick</text></a>
+<a class="n" data-id="/why-knowledge.html" href="/why-knowledge.html" target="_top"><title>Why Knowledge</title><circle cx="825.2" cy="184.6" r="14.9" fill="#6b7d78" stroke="#ffffff" stroke-width="1.7"/><text class="lbl minor" x="845.2" y="309.7" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Why Knowledge</text></a>
+<text class="clab" x="952.3" y="405.7" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6f8f" font-family="inherit">Knowledge · 7 pages</text>
+<text class="clab" x="598.8" y="555.4" text-anchor="middle" font-size="13" font-weight="700" fill="#6b5b95" font-family="inherit">Research · 5 pages</text>
+<text class="clab" x="563.4" y="97.0" text-anchor="middle" font-size="13" font-weight="700" fill="#1e6f5c" font-family="inherit">Standards · 24 pages</text>
+<text class="clab" x="267.0" y="386.6" text-anchor="middle" font-size="13" font-weight="700" fill="#8a4f7d" font-family="inherit">Agents · 3 pages</text>
+<text class="clab" x="833.4" y="503.3" text-anchor="middle" font-size="13" font-weight="700" fill="#b06a2c" font-family="inherit">Adoption · 5 pages</text>
+<text class="clab" x="364.2" y="508.1" text-anchor="middle" font-size="13" font-weight="700" fill="#0f6b6b" font-family="inherit">Learn · 4 pages</text>
+<text class="clab" x="857.8" y="155.2" text-anchor="middle" font-size="13" font-weight="700" fill="#6b7d78" font-family="inherit">Other · 19 pages</text>
+<text class="clab" x="353.6" y="264.0" text-anchor="middle" font-size="13" font-weight="700" fill="#2b3330" font-family="inherit">Home · 1 page</text></g></svg>
+    </div>
+    <figcaption>Each cluster is a section: Knowledge · Research · Standards · Agents · Adoption · Learn · Other, with the home page alone in the middle. Every mark is a page and every line an internal link between two pages; a mark is larger when more links in this figure touch it. Links from the shared header and footer are not counted, and this page is not drawn in its own figure. Position shows section, not closeness.</figcaption>
+  </figure>
+</section>
+
+<section id="every-page">
+  <h2>Every page, by section</h2>
+  <p class="lead">The same data as the figure, in text, and this page included. A count says how many other pages link to that page from inside their own body; links in the shared header and footer are not counted.</p>
+  <h3>Knowledge</h3>
+  <p class="purpose">7 pages, 21 links between them.</p>
+  <ul>
+    <li><a href="/knowledge/ontologies/">Ontologies</a> — 14 pages link here.</li>
+    <li><a href="/knowledge/taxonomies/">Taxonomies</a> — 13 pages link here.</li>
+    <li><a href="/knowledge/knowledge-formats/">Knowledge formats</a> — 12 pages link here.</li>
+    <li><a href="/knowledge/knowledge-graphs/">Knowledge graphs</a> — 11 pages link here.</li>
+    <li><a href="/knowledge/">Knowledge</a> — 7 pages link here.</li>
+    <li><a href="/knowledge/knowledge-bundles/">Knowledge bundles</a> — 5 pages link here.</li>
+    <li><a href="/knowledge/dikw/">DIKW as an audit ladder</a> — 4 pages link here.</li>
+  </ul>
+  <h3>Research</h3>
+  <p class="purpose">5 pages, 13 links between them.</p>
+  <ul>
+    <li><a href="/research.html">Research</a> — 26 pages link here.</li>
+    <li><a href="/research/agentic-ai/">Agentic AI</a> — 6 pages link here.</li>
+    <li><a href="/research/semcom/">Semantic Communication</a> — 5 pages link here.</li>
+    <li><a href="/research/memory/">Memory for Assistants and Agents</a> — 4 pages link here.</li>
+    <li><a href="/research/world-models/">World models</a> — 4 pages link here.</li>
+  </ul>
+  <h3>Standards</h3>
+  <p class="purpose">24 pages, 96 links between them.</p>
+  <ul>
+    <li><a href="/standards.html">Standards</a> — 46 pages link here.</li>
+    <li><a href="/standards/skos/">W3C SKOS</a> — 12 pages link here.</li>
+    <li><a href="/standards/rdf/">RDF</a> — 11 pages link here.</li>
+    <li><a href="/standards/prov-o/">PROV-O</a> — 9 pages link here.</li>
+    <li><a href="/standards/json-ld/">JSON-LD</a> — 8 pages link here.</li>
+    <li><a href="/standards/owl/">OWL 2</a> — 8 pages link here.</li>
+    <li><a href="/standards/sparql/">SPARQL</a> — 8 pages link here.</li>
+    <li><a href="/standards/mementos/">Memento</a> — 7 pages link here.</li>
+    <li><a href="/standards/turtle/">Turtle</a> — 7 pages link here.</li>
+    <li><a href="/standards/rdfs/">RDFS</a> — 6 pages link here.</li>
+    <li><a href="/standards/parquet/">Apache Parquet</a> — 5 pages link here.</li>
+    <li><a href="/standards/iso-25964/">ISO 25964</a> — 5 pages link here.</li>
+    <li><a href="/standards/llms-txt/">llms.txt</a> — 5 pages link here.</li>
+    <li><a href="/standards/iceberg/">Apache Iceberg</a> — 4 pages link here.</li>
+    <li><a href="/standards/graphql-ld/">GraphQL-LD</a> — 4 pages link here.</li>
+    <li><a href="/standards/hdt/">HDT</a> — 4 pages link here.</li>
+    <li><a href="/standards/palantir/">Palantir Foundry Ontology</a> — 4 pages link here.</li>
+    <li><a href="/standards/servicenow/">ServiceNow CSDM and CMDB</a> — 4 pages link here.</li>
+    <li><a href="/standards/snowflake/">Snowflake</a> — 4 pages link here.</li>
+    <li><a href="/standards/databricks/">Databricks</a> — 3 pages link here.</li>
+    <li><a href="/standards/delta-lake/">Delta Lake</a> — 3 pages link here.</li>
+    <li><a href="/standards/microsoft-graph/">Microsoft Graph</a> — 3 pages link here.</li>
+    <li><a href="/standards/neo4j/">Neo4j</a> — 3 pages link here.</li>
+    <li><a href="/standards/salesforce/">Salesforce Platform and Data Cloud</a> — 3 pages link here.</li>
+  </ul>
+  <h3>Agents</h3>
+  <p class="purpose">3 pages, 6 links between them.</p>
+  <ul>
+    <li><a href="/a2a/">A2A</a> — 21 pages link here.</li>
+    <li><a href="/agents/">Agents</a> — 19 pages link here.</li>
+    <li><a href="/mcp/">MCP</a> — 18 pages link here.</li>
+  </ul>
+  <h3>Adoption</h3>
+  <p class="purpose">5 pages, 14 links between them.</p>
+  <ul>
+    <li><a href="/adoption.html">Adoption</a> — 19 pages link here.</li>
+    <li><a href="/adoption/companies-ahead/">Companies ahead in the game</a> — 4 pages link here.</li>
+    <li><a href="/adoption/domains/">Knowledge engineering by domain</a> — 4 pages link here.</li>
+    <li><a href="/adoption/domains/library-and-information-science/">Library and information science</a> — 4 pages link here.</li>
+    <li><a href="/adoption/domains/enterprise-business-general/">Enterprise business, general</a> — 3 pages link here.</li>
+  </ul>
+  <h3>Learn</h3>
+  <p class="purpose">4 pages, 9 links between them.</p>
+  <ul>
+    <li><a href="/learn/">Learn</a> — 4 pages link here.</li>
+    <li><a href="/learn/courses/terms/">Course terms</a> — 3 pages link here.</li>
+    <li><a href="/learn/courses/">Courses</a> — 3 pages link here.</li>
+    <li><a href="/learn/glossary/">Glossary</a> — 3 pages link here.</li>
+  </ul>
+  <h3>Other</h3>
+  <p class="purpose">20 pages, 85 links between them.</p>
+  <ul>
+    <li><a href="/context-engineering.html">Context Engineering</a> — 14 pages link here.</li>
+    <li><a href="/why-knowledge.html">Why Knowledge</a> — 14 pages link here.</li>
+    <li><a href="/blogs.html">Blogs</a> — 12 pages link here.</li>
+    <li><a href="/enterprise.html">Enterprise</a> — 12 pages link here.</li>
+    <li><a href="/contact.html">Contact</a> — 9 pages link here.</li>
+    <li><a href="/token-savings.html">Token Savings & Grounding</a> — 8 pages link here.</li>
+    <li><a href="/free-resources.html">Free resources</a> — 7 pages link here.</li>
+    <li><a href="/personal-assistant.html">Personal Assistant</a> — 5 pages link here.</li>
+    <li><a href="/training.html">Training</a> — 5 pages link here.</li>
+    <li><a href="/internship.html">Internship</a> — 4 pages link here.</li>
+    <li><a href="/about.html">About</a> — 3 pages link here.</li>
+    <li><a href="/blogs/2026-09-18-context-is-not-a-bucket.html">Context is not a bucket</a> — 3 pages link here.</li>
+    <li><a href="/phd/submission-1.html">Doctoral research</a> — 3 pages link here.</li>
+    <li><a href="/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html">Grounding is the flip side of token savings</a> — 3 pages link here.</li>
+    <li><a href="/blogs/2026-09-10-what-enterprise-agents-actually-need.html">What enterprise agents actually need from knowledge</a> — 3 pages link here.</li>
+    <li><a href="/blogs/2026-09-22-why-knowledge-fails-first.html">Why knowledge fails first in agentic systems</a> — 3 pages link here.</li>
+    <li><a href="/disclaimer.html">How this site is made</a> — 2 pages link here.</li>
+    <li><a href="/community.html">Community</a> — 1 page links here.</li>
+    <li><a href="/v0.html">Knowledge Sidekick</a> — 1 page links here.</li>
+    <li><a href="/map/">Site map</a> — 1 page links here. This is the page you are reading, and it is not drawn in the figure above.</li>
+  </ul>
+  <h3>Home</h3>
+  <p class="purpose">1 page, 0 links between them.</p>
+  <ul>
+    <li><a href="/">Knowledge Sidekick</a> — 33 pages link here.</li>
+  </ul>
+</section>
+
+<section id="how-this-is-drawn">
+  <h2>How this figure is drawn</h2>
+  <p>Nothing here is placed by hand. A script reads every page in the site's files, records the links inside the page body, and lays the result out; the clusters, the list and every count on this page come from that one pass, so the figure cannot disagree with the list under it.</p>
+  <p>Links in the shared header and footer are excluded. They appear on every page, so counting them would make every page look equally connected and hide the structure that is actually there.</p>
+  <p>Position encodes section, not link density. Each section is placed as its own region so the clusters stay separable; a layout driven by link strength puts the sections on top of one another and reads worse at this size. The link counts are carried by the mark size and by the list instead.</p>
+  <p>The figure is inline SVG, not an image, so every label is real text and survives a crawler, a screen reader and print. No diagram library is loaded: the site's only external script is the navigation, and the zoom on this page is a few lines inline.</p>
+  <p>The marks are small, and WCAG 2.5.8 asks for a target of at least 24px or sufficient spacing around it. The list above is the equivalent control: every page in the figure has a full-size link there.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does this figure show?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Every page on this site and every internal link between pages, grouped by the section each page belongs to. The list underneath carries the same information, with a link and an inbound count for every page.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why is the layout grouped by section?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because the first question a map answers is where a page sits. A layout driven by link strength alone interleaves the sections and the grouping stops being readable, so each section is placed as its own region. The trade is that position shows section, not closeness.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does the figure need JavaScript?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The whole figure is inline SVG and renders with no script at all; the script on this page only adds zoom and pan. Every page in the figure is also a plain link in the list below, so the information survives if the figure is not readable at all.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why do some labels look dimmer than others?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Marks that carry more links in this figure are labelled at full strength and the rest are dimmed, rather than removed. The names stay in the file, so a crawler, a screen reader and a print engine still get every label.</p></div>
+  </div>
+</section>
+
+</div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+<script>
+(function () {
+  var fig = document.getElementById('sitemap');
+  if (!fig || !fig.querySelector('svg')) return;
+  var svg = fig.querySelector('svg');
+  // the controls are siblings of the figure, not inside it: querying them from
+  // the figure returns null and throws, which silently disables every zoom path
+  var box = fig.closest('section') || document;
+  var home = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+  var vb = home.slice();
+  var FINEST = home[2] / 12;
+  function draw() { svg.setAttribute('viewBox', vb.map(function (n) { return +n.toFixed(1); }).join(' ')); }
+  function zoomInto(f, cx, cy) {
+    var w = vb[2], k = Math.min(home[2], Math.max(FINEST, w * f)) / w;
+    vb[0] = cx - (cx - vb[0]) * k; vb[1] = cy - (cy - vb[1]) * k;
+    vb[2] = w * k; vb[3] = vb[3] * k; draw();
+  }
+  function centre() { return [vb[0] + vb[2] / 2, vb[1] + vb[3] / 2]; }
+  function fit() { vb = home.slice(); draw(); }
+  function atPage(e) {
+    var r = svg.getBoundingClientRect();
+    return [(e.clientX - r.left) / r.width * vb[2] + vb[0],
+            (e.clientY - r.top) / r.height * vb[3] + vb[1]];
+  }
+  box.querySelector('[data-zoom="in"]').addEventListener('click', function () { var c = centre(); zoomInto(0.75, c[0], c[1]); });
+  box.querySelector('[data-zoom="out"]').addEventListener('click', function () { var c = centre(); zoomInto(1/0.75, c[0], c[1]); });
+  box.querySelector('[data-zoom="fit"]').addEventListener('click', fit);
+  svg.addEventListener('wheel', function (e) {
+    if (!e.ctrlKey && Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+    e.preventDefault(); var p = atPage(e); zoomInto(e.deltaY < 0 ? 0.85 : 1/0.85, p[0], p[1]);
+  }, { passive: false });
+  var down = false, sx = 0, sy = 0, moved = 0;
+  svg.addEventListener('pointerdown', function (e) { down = true; moved = 0; sx = e.clientX; sy = e.clientY; });
+  svg.addEventListener('pointermove', function (e) {
+    if (!down) return;
+    var r = svg.getBoundingClientRect(), dx = e.clientX - sx, dy = e.clientY - sy;
+    moved += Math.abs(dx) + Math.abs(dy);
+    vb[0] -= dx / r.width * vb[2]; vb[1] -= dy / r.height * vb[3];
+    sx = e.clientX; sy = e.clientY; draw();
+  });
+  svg.addEventListener('pointerup', function () { down = false; });
+  svg.addEventListener('pointercancel', function () { down = false; });
+  svg.addEventListener('click', function (e) { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
+  fig.addEventListener('keydown', function (e) {
+    var step = vb[2] * 0.12, c;
+    if (e.key === '+' || e.key === '=') { c = centre(); zoomInto(0.8, c[0], c[1]); }
+    else if (e.key === '-' || e.key === '_') { c = centre(); zoomInto(1.25, c[0], c[1]); }
+    else if (e.key === '0' || e.key === 'Home') { fit(); }
+    else if (e.key === 'ArrowLeft') { vb[0] -= step; }
+    else if (e.key === 'ArrowRight') { vb[0] += step; }
+    else if (e.key === 'ArrowUp') { vb[1] -= step; }
+    else if (e.key === 'ArrowDown') { vb[1] += step; }
+    else { return; }
+    e.preventDefault(); draw();
+  });
+})();
+</script>
+<script src="/nav.js"></script>
+</body>
+</html>
