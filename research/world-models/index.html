@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World models — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/research/world-models/">
+<meta name="description" content="World models learn the structure of space and time rather than text. The term covers several different things, and this page separates them: renderers, simulators and planners, what the dated record shows, and what a knowledge layer still has to supply.">
+<meta property="og:title" content="World models — Knowledge Sidekick">
+<meta property="og:description" content="What a world model is, the several different things the term covers, and what it does not supply for a knowledge layer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/research/world-models/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="World models — Knowledge Sidekick">
+<meta name="twitter:description" content="What a world model is, the several different things the term covers, and what it does not supply for a knowledge layer.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://knowledgesidekick.org/research/world-models/",
+      "url": "https://knowledgesidekick.org/research/world-models/",
+      "name": "World models — Knowledge Sidekick",
+      "description": "World models learn the structure of space and time rather than text. The term covers several different things, and this page separates them: renderers, simulators and planners, what the dated record shows, and what a knowledge layer still has to supply.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/research/world-models/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a world model the same thing as a knowledge graph?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A knowledge graph states what is agreed to be true and carries the vocabulary, provenance and permissions around it. A world model learns how a state evolves and predicts what happens under an action. They answer different questions and are complements rather than substitutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a video model a world model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only in one of the senses the term covers. World Labs separates renderers, which produce what you see, from simulators, which predict how state changes under an action, and from planners, which predict in a latent space in order to choose actions. A video generator that only produces frames is a renderer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do world models replace ontologies or taxonomies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Learned representations carry no vocabulary, no owner and no statement of currency, so nothing in them can be audited the way a stated triple can. Where an agent acts on the physical world you need both: a model to predict, and a knowledge layer to decide what it may do and on whose authority."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How mature is this work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Systems exist and ship: Cosmos, V-JEPA 2, Genie 3, Marble and Atlas are all documented by the teams that built them. What is unsettled is fidelity and evaluation — there is no agreed measure of how well a world model models a world, so demonstration quality and measured performance should be kept apart."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-research">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge for Agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Research · frontier</span>
+    <h1>World models: what the term covers</h1>
+    <p class="lede">World models learn the structure of space and time rather than text, and they are the part of current AI that predicts what happens next rather than what is true. The label is heavily overloaded — computer vision, robotics, reinforcement learning and generative AI each mean something different by it — so this page separates the meanings and states plainly what a world model still leaves to a knowledge layer.</p>
+    <p class="meta"><a href="/research/">Research</a> · <a href="/research/agentic-ai/">Agentic AI</a> · <a href="/research/semcom/">Semantic communication</a> · <a href="/knowledge/knowledge-formats/">Knowledge formats</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what-it-is">
+  <h2>What a world model is</h2>
+  <p>The term comes from reinforcement learning rather than from generative AI. In the agent-and-world picture formalised as a partially observable Markov decision process — the framing Sutton and Barto use throughout the standard textbook — an agent takes actions, those actions change the state of the world, and the agent never observes that state directly. What reaches it are observations. Something inside the agent therefore has to model how the state evolves, and the original use of &ldquo;world model&rdquo; belongs to that tradition.</p>
+  <p>Google DeepMind gives a working definition: world models are &ldquo;AI systems that can use their understanding of the world to simulate aspects of it, enabling agents to predict both how an environment will evolve and how their actions will affect it&rdquo;. The substrate differs from a language model. Where a language model learns the statistical structure of text, a world model learns the statistical structure of space and time — how light falls on a surface, how an object responds to force, what is present behind a wall that no camera has seen.</p>
+  <p>That difference decides what each kind of model is good for. A language model can describe a procedure; it cannot tell you what happens when the procedure is applied to a particular object in a particular place. A world model can predict the consequence and, by itself, cannot tell you whether the action was permitted.</p>
+</section>
+
+<section id="one-term-several-things">
+  <h2>One term, several different things</h2>
+  <p>&ldquo;World model&rdquo; is one of the most overloaded terms in current AI. Computer vision, robotics, reinforcement learning and generative AI each claim to be building world models, and each means something different by it. A video model that renders beautiful but physically impossible flames, a language model improvising a playable game, and a physics engine that faithfully simulates combustion all go by the same name.</p>
+  <p>World Labs set out a functional taxonomy in June 2026 that separates the pieces by what they are for:</p>
+  <ul>
+    <li><strong>Renderers</strong> produce what you see — the pixels of a scene, generated at speed and quality.</li>
+    <li><strong>Simulators</strong> predict how state changes under an action, whether it is physically plausible, and what follows from it.</li>
+    <li><strong>Planners</strong> predict in a compressed latent representation rather than in pixels, because a planner needs to know what state an action implies, not what a frame looks like.</li>
+    <li><strong>The loop</strong> connects them: observations in, actions out, state updated.</li>
+  </ul>
+  <p>The practical consequence is that two systems both called world models may not be comparable at all. One may be a renderer optimised for visual fidelity, another a planner whose output is never meant to be looked at. The useful question is not which is better but which of the three functions a system implements, and on which substrate — pixels, or a learned representation.</p>
+</section>
+
+<section id="dated-record">
+  <h2>What the dated record shows</h2>
+  <p>The entries below are taken from each project&rsquo;s own publication, which is also the limit of the claim: these describe what the teams state about their systems, not independently measured results.</p>
+  <table>
+    <thead>
+      <tr><th>System</th><th>Date</th><th>What its own publication states</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Cosmos</td><td>January 2025</td><td>NVIDIA&rsquo;s world foundation model platform, built to generate physically plausible synthetic data for physical AI — robotics and autonomous vehicles. The product line has continued since; Cosmos 3 is current on NVIDIA&rsquo;s own product page.</td></tr>
+      <tr><td>V-JEPA 2</td><td>June 2025</td><td>An action-free joint-embedding predictive architecture, pre-trained on over one million hours of internet video plus a small amount of robot trajectory data, aimed at understanding, prediction and planning in the physical world.</td></tr>
+      <tr><td>Genie 3</td><td>August 2025</td><td>A general-purpose world model that generates interactive environments from a text prompt: navigable in real time at 24 frames per second, at 720p, holding consistency for a few minutes.</td></tr>
+      <tr><td>Marble</td><td>November 2025</td><td>A multimodal world model producing persistent 3D worlds from text, images, video or coarse 3D layouts, released for general use.</td></tr>
+      <tr><td>Functional taxonomy</td><td>June 2026</td><td>The essay separating renderers, simulators and planners, and arguing that the field needs that precision now that the label is applied to so many different things.</td></tr>
+      <tr><td>Atlas</td><td>September 2026</td><td>Described by World Labs as an omni world model for spatial intelligence, handling text, images, video and 3D in one model.</td></tr>
+    </tbody>
+  </table>
+  <p>Two bets are visible across the list. One predicts in pixels and is judged by how convincing the output looks. The other predicts in a learned representation and is judged by whether the predictions are useful for planning. The two camps disagree on compute cost, on what counts as understanding, and on which is the likelier route to general capability.</p>
+</section>
+
+<section id="what-it-does-not-supply">
+  <h2>What a world model does not supply</h2>
+  <p>A world model is a learned, non-symbolic representation of dynamics. Read that description for what is absent from it. There is no vocabulary, so nothing states what a thing is called. There is no provenance, so nothing states who asserted it or on what evidence. There is no permission model, so nothing states whether the agent may act on it. There is no currency, so nothing states whether the prediction still holds.</p>
+  <p>Those absences are the knowledge layer&rsquo;s subject matter, and they are not incidental. A system that predicts the consequence of an action still needs something outside itself to decide whether the action was allowed, to record that it happened, and to check later whether the conditions still apply. World models extend what an agent can anticipate; they do not supply what it is entitled to do.</p>
+  <p>Fidelity is the second limit. Visual plausibility is not physical correctness — World Labs&rsquo; own essay gives the example of a video model producing gorgeous but physically impossible flames — and there is no settled measure of how well a world model models a world. Treat demonstration quality as a demonstration, and keep measured performance in a separate column.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is a world model the same thing as a knowledge graph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. A knowledge graph states what is agreed to be true and carries the vocabulary, provenance and permissions around it. A world model learns how a state evolves and predicts what happens under an action. They answer different questions and are complements rather than substitutes.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is a video model a world model?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Only in one of the senses the term covers. World Labs separates renderers, which produce what you see, from simulators, which predict how state changes under an action, and from planners, which predict in a latent space in order to choose actions. A video generator that only produces frames is a renderer.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Do world models replace ontologies or taxonomies?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Learned representations carry no vocabulary, no owner and no statement of currency, so nothing in them can be audited the way a stated triple can. Where an agent acts on the physical world you need both: a model to predict, and a knowledge layer to decide what it may do and on whose authority.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How mature is this work?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Systems exist and ship: Cosmos, V-JEPA 2, Genie 3, Marble and Atlas are all documented by the teams that built them. What is unsettled is fidelity and evaluation — there is no agreed measure of how well a world model models a world, so demonstration quality and measured performance should be kept apart.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+        <li>Google DeepMind (2025). &ldquo;<a href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/">Genie 3: A new frontier for world models</a>&rdquo;. 5 August 2025.</li>
+    <li>World Labs (2026). &ldquo;<a href="https://www.worldlabs.ai/blog/taxonomy-of-world-models">A Functional Taxonomy of World Models: Renderers, Simulators, Planners, and the Loop That Connects Them</a>&rdquo;. 3 June 2026.</li>
+    <li>World Labs (2025). &ldquo;<a href="https://www.worldlabs.ai/blog/marble-world-model">Marble: A Multimodal World Model</a>&rdquo;. 12 November 2025.</li>
+    <li>World Labs (2026). &ldquo;<a href="https://www.worldlabs.ai/blog/atlas">Atlas: A World Model for Spatial Intelligence</a>&rdquo;. 1 September 2026.</li>
+    <li>Assran, M. et al. (2025). &ldquo;<a href="https://arxiv.org/abs/2506.09985">V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning</a>&rdquo;. arXiv:2506.09985, 11 June 2025.</li>
+    <li>Agarwal, N. et al., NVIDIA (2025). &ldquo;<a href="https://arxiv.org/abs/2501.03575">Cosmos World Foundation Model Platform for Physical AI</a>&rdquo;. arXiv:2501.03575, 7 January 2025.</li>
+    <li>NVIDIA. &ldquo;<a href="https://www.nvidia.com/en-us/ai/cosmos/">Physical AI with World Foundation Models</a>&rdquo; — Cosmos product page.</li>
+    <li>Sutton, R. S. and Barto, A. G. <em>Reinforcement Learning: An Introduction</em>, 2nd edition, MIT Press. The standard statement of the agent-environment loop with which the term originates. Print and web edition.</li>
+    <li>Google DeepMind. &ldquo;<a href="https://deepmind.google/discover/blog/">Research blog</a>&rdquo; — for the definition of a world model quoted above.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">.com (business side)</a> ·
+      <a href="https://meetup.com/darling-meetup">Community</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

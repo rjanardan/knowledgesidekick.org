@@ -44,7 +44,8 @@
           { label: 'Context engineering', href: '/context-engineering.html' },
           { sub: 'Frontier' },
           { label: 'Agentic AI', href: '/research/agentic-ai/' },
-          { label: 'Semantic communication', href: '/research/semcom/' }
+          { label: 'Semantic communication', href: '/research/semcom/' },
+          { label: 'World models', href: '/research/world-models/' }
         ]
       },
       {

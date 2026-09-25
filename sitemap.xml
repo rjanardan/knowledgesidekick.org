@@ -244,4 +244,8 @@
     <loc>https://knowledgesidekick.org/learn/courses/terms/</loc>
     <priority>0.50</priority>
   </url>
+  <url>
+    <loc>https://knowledgesidekick.org/research/world-models/</loc>
+    <priority>0.85</priority>
+  </url>
 </urlset>

@@ -109,6 +109,7 @@
 
   <h3>Compact and compressed forms in HDT</h3>
   <p><a href="/standards/hdt/">HDT</a> is a binary format for RDF that compresses a graph for storage and query without decompressing it into triples first. It is built for scale — large graphs that must be shipped, loaded, and queried efficiently. It is not an authoring format: nobody writes knowledge in HDT, and the tooling around it assumes the graph already exists in a normal RDF form. It is the last step in a pipeline, not the first.</p>
+  <p>One family is deliberately missing from this list: learned representations. An embedding is knowledge carried in weights rather than stated, and a <a href="/research/world-models/">world model</a> is the same idea applied to how an environment changes. Both are cheap to query and neither states anything — they carry no vocabulary, provenance or permissions — so they complement the four families above rather than replacing any of them.</p>
 </section>
 
 <section id="what-each-costs">
