@@ -64,6 +64,7 @@ knowledgePages:
   knowledge-knowledge-graphs: https://knowledgesidekick.org/knowledge/knowledge-graphs/
 
 researchPages:
+  phdResearch: https://knowledgesidekick.org/phd/
   research-memory: https://knowledgesidekick.org/research/memory/
   research-agentic-ai: https://knowledgesidekick.org/research/agentic-ai/
   research-semcom: https://knowledgesidekick.org/research/semcom/

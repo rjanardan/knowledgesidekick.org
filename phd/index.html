@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctoral research — agent-to-agent communication architectures</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/phd/">
+<meta name="description" content="A doctoral research programme on the semantic layer of agent-to-agent communication: the design space, a proposed architecture, and empirical benchmarking. Proposal as registered; results not yet available.">
+<meta property="og:title" content="Doctoral research — agent-to-agent communication architectures">
+<meta property="og:description" content="Design space, proposed architecture and benchmarking plan for the semantic layer of agent-to-agent communication.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/phd/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Doctoral research — agent-to-agent communication architectures">
+<meta name="twitter:description" content="Design space, proposed architecture and benchmarking plan for the semantic layer of agent-to-agent communication.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "dateModified": "2026-09-25",
+      "@id": "https://knowledgesidekick.org/phd/",
+      "url": "https://knowledgesidekick.org/phd/",
+      "name": "Doctoral research — agent-to-agent communication architectures",
+      "description": "A doctoral research programme on the semantic layer of agent-to-agent communication: design space, architecture, and empirical benchmarking.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://knowledgesidekick.org/#website"
+      },
+      "author": {
+        "@id": "https://knowledgesidekick.org/#person"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/phd/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the semantic layer, in one paragraph?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the part of inter-agent communication that carries what a message means rather than only what it says: the sender's intent, the goal it is pursuing, the belief state it is acting on, and any commitment it is undertaking. Transport protocols move bytes and syntax protocols move well-formed calls. Neither gives the receiving agent a mechanised way to check that it understood the sender as the sender intended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from MCP and A2A?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MCP standardises how a model host reaches tools, resources and prompts. A2A standardises how peer agents discover each other and manage a task's lifecycle. Both are transport and syntax work, and both do it well. Neither specifies a typed representation of intent, a negotiated shared vocabulary, or a check on whether a commitment was kept. That is the layer this research proposes, and it is intended to sit above them, not replace them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current state of the work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phase 0, the systematic literature mapping and prior-art differentiation, and phase 1, the design-space categorization, are both in progress. There are no benchmark results yet. Every failure mode named on this page is a hypothesised one, and the comparative table is a reading of published specifications rather than a measurement of running systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the Chomsky hierarchy matter here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the expressive power of a communication language has to match the computational class of the agents that will interpret it. Delétang et al. show empirically that different neural architectures recognise languages at different levels of the hierarchy, and that transformers fail on context-sensitive tasks without augmented memory. A semantic language designed without that constraint risks specifying guarantees its interpreters cannot deliver."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-research">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Doctoral research</span>
+    <h1>Designing and developing agent-to-agent communication architectures</h1>
+    <p class="lede">This is my doctoral research programme. It has three parts: define the design space of agent-to-agent communication, propose an architecture for the semantic layer that communication is missing, and benchmark that architecture empirically rather than argue for it. The proposal is registered and phases 0 and 1 are under way; there are no results yet.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/about.html">About</a> · <a href="/a2a/">A2A communication</a> · <a href="/research/semcom/">Semantic communication</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="scope">
+  <div class="callout">
+    <span class="label">About this page</span>
+    <h3>A doctoral proposal, kept apart from the reference pages</h3>
+    <p>This page is my own doctoral work rather than a reference note, and it is written in the first person. The rest of this site states what is known and cites where it came from; this page states what I intend to find out. Where the two differ in confidence, this page is the weaker of the two, and it should be read that way: the failure modes named below are hypothesised, the architecture is proposed, and the benchmark has not been run.</p>
+  </div>
+</section>
+
+<section id="summary">
+  <h2>What the research proposes</h2>
+  <p>This research proposes to categorize, design, and empirically benchmark novel agent-to-agent (A2A) communication architectures, with specific focus on the <strong>semantic layer</strong> of inter-agent communication in autonomous multi-agent systems.</p>
+  <p>The default choice in present multi-agent systems is a language model, because it allows user-to-agent and agent-to-agent interaction with the least friction available. That choice is not obviously the efficient one for agent-to-agent traffic. Development so far has concentrated on functional and syntactic methods of communication: Anthropic’s Model Context Protocol (MCP, 2024), Google’s Agent-to-Agent Protocol (A2A, 2025), and framework-level orchestrators such as AutoGen and CrewAI.</p>
+  <p>There is scope and opportunity for a semantic layer able to transmit, validate, and audit agent intent, goal states, and inter-agent commitments. With such a layer in place, failure modes become measurable rather than anecdotal: semantic drift, broken commitments, and non-deterministic multi-step reasoning chains.</p>
+  <figure class="ks-figure" data-fig="domains">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1000 352" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Agent-to-agent communication across three domains</title><desc>Three domains of agents, each with its own vocabulary, connected by cross-domain traffic.</desc>
+<rect width="1000" height="352" rx="12" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a948f"/></marker></defs>
+<polygon points="140,52 46,268 234,268" fill="none" stroke="#d3ded9" stroke-width="1.8"/>
+<line x1="140" y1="104" x2="98" y2="190" stroke="#2f6f8f" stroke-width="1.4"/>
+<line x1="140" y1="104" x2="182" y2="190" stroke="#2f6f8f" stroke-width="1.4"/>
+<circle cx="140" cy="100" r="10" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="140" y="104" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="98" cy="190" r="10" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="98" y="194" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="182" cy="190" r="10" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="182" y="194" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="132" cy="238" r="10" fill="#9a6a09" fill-opacity="0.16" stroke="#9a6a09" stroke-width="2"/><text x="132" y="242" font-size="10" font-weight="700" fill="#9a6a09" text-anchor="middle" font-family="inherit">H</text>
+<circle cx="168" cy="238" r="10" fill="#9a6a09" fill-opacity="0.16" stroke="#9a6a09" stroke-width="2"/><text x="168" y="242" font-size="10" font-weight="700" fill="#9a6a09" text-anchor="middle" font-family="inherit">H</text>
+<text x="140" y="296" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Domain A</text>
+<circle cx="480" cy="160" r="108" fill="none" stroke="#d3ded9" stroke-width="1.8"/>
+<line x1="452" y1="116" x2="524" y2="122" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="452" y1="116" x2="410" y2="202" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="452" y1="116" x2="498" y2="214" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="452" y1="116" x2="546" y2="176" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="524" y1="122" x2="410" y2="202" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="524" y1="122" x2="498" y2="214" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="524" y1="122" x2="546" y2="176" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="410" y1="202" x2="498" y2="214" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="410" y1="202" x2="546" y2="176" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<line x1="498" y1="214" x2="546" y2="176" stroke="#c4d2cc" stroke-width="1.1" stroke-dasharray="5 4"/>
+<rect x="448" y="228" width="44" height="20" rx="4" fill="#2f6f8f" fill-opacity="0.12" stroke="#2f6f8f" stroke-width="1.5"/><text x="470" y="242" font-size="9" fill="#2f6f8f" text-anchor="middle" font-weight="700" font-family="inherit">store</text>
+<circle cx="452" cy="116" r="9" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="452" y="120" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="524" cy="122" r="9" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="524" y="126" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="410" cy="202" r="9" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="410" y="206" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="498" cy="214" r="9" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="498" y="218" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="546" cy="176" r="9" fill="#2f6f8f" fill-opacity="0.16" stroke="#2f6f8f" stroke-width="2"/><text x="546" y="180" font-size="10" font-weight="700" fill="#2f6f8f" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="560" cy="244" r="9" fill="#9a6a09" fill-opacity="0.16" stroke="#9a6a09" stroke-width="2"/><text x="560" y="248" font-size="10" font-weight="700" fill="#9a6a09" text-anchor="middle" font-family="inherit">H</text>
+<text x="480" y="296" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Domain B</text>
+<rect x="700" y="58" width="240" height="212" rx="8" fill="none" stroke="#d3ded9" stroke-width="1.8"/>
+<line x1="752" y1="116" x2="822" y2="126" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="752" y1="116" x2="888" y2="172" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="752" y1="116" x2="766" y2="216" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="752" y1="116" x2="838" y2="228" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="822" y1="126" x2="888" y2="172" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="822" y1="126" x2="766" y2="216" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="822" y1="126" x2="838" y2="228" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="888" y1="172" x2="766" y2="216" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="888" y1="172" x2="838" y2="228" stroke="#bcd8cd" stroke-width="1.1"/>
+<line x1="766" y1="216" x2="838" y2="228" stroke="#bcd8cd" stroke-width="1.1"/>
+<rect x="878" y="98" width="44" height="20" rx="4" fill="#1e6f5c" fill-opacity="0.12" stroke="#1e6f5c" stroke-width="1.5"/><text x="900" y="112" font-size="9" fill="#1e6f5c" text-anchor="middle" font-weight="700" font-family="inherit">store</text>
+<circle cx="752" cy="116" r="9" fill="#1e6f5c" fill-opacity="0.16" stroke="#1e6f5c" stroke-width="2"/><text x="752" y="120" font-size="10" font-weight="700" fill="#1e6f5c" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="822" cy="126" r="9" fill="#1e6f5c" fill-opacity="0.16" stroke="#1e6f5c" stroke-width="2"/><text x="822" y="130" font-size="10" font-weight="700" fill="#1e6f5c" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="888" cy="172" r="9" fill="#1e6f5c" fill-opacity="0.16" stroke="#1e6f5c" stroke-width="2"/><text x="888" y="176" font-size="10" font-weight="700" fill="#1e6f5c" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="766" cy="216" r="9" fill="#1e6f5c" fill-opacity="0.16" stroke="#1e6f5c" stroke-width="2"/><text x="766" y="220" font-size="10" font-weight="700" fill="#1e6f5c" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="838" cy="228" r="9" fill="#1e6f5c" fill-opacity="0.16" stroke="#1e6f5c" stroke-width="2"/><text x="838" y="232" font-size="10" font-weight="700" fill="#1e6f5c" text-anchor="middle" font-family="inherit">A</text>
+<circle cx="722" cy="100" r="9" fill="#9a6a09" fill-opacity="0.16" stroke="#9a6a09" stroke-width="2"/><text x="722" y="104" font-size="10" font-weight="700" fill="#9a6a09" text-anchor="middle" font-family="inherit">H</text>
+<text x="820" y="296" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Domain C</text>
+<line x1="236" y1="250" x2="368" y2="206" stroke="#9a6a09" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<line x1="590" y1="206" x2="696" y2="190" stroke="#1e6f5c" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="500" y="330" font-size="12.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">Cross-domain traffic: different industry, geography, language, compute class, interests, trust, capabilities, and internal or external languages of communication.</text>
+<text x="140" y="22" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">autonomous agents</text>
+<text x="480" y="22" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">agent network with shared store</text>
+<text x="820" y="22" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">agent group with external tools</text>
+</svg>
+    </div>
+    <figcaption>Agents that must coordinate rarely share a vocabulary. <strong>A</strong> marks an autonomous agent, <strong>H</strong> a human in the loop. Reliable, secure, intentional and verifiable communication is the requirement; today it is carried by messages that assume a shared understanding of terms.</figcaption>
+</figure>
+
+</section>
+
+<section id="background">
+  <h2>Background</h2>
+  <p>Multi-agent systems are not a recent development. They date to the 1990s, and agent communication was treated from the beginning as a problem of formal semantics rather than one of plumbing.</p>
+  <p>The Knowledge Query and Manipulation Language (KQML) was developed under the DARPA Knowledge Sharing Effort, and introduced <em>performatives</em>: structured speech acts that encode communicative intent alongside the message content (Finin et al., 1994). Its vocabulary — <code>ask-if</code>, <code>tell</code>, <code>achieve</code>, <code>subscribe</code> — came directly from Austin’s and Searle’s speech act theory, which had formalized the position that a message can be an intentional action and not only a data transfer. KQML kept its outer envelope and inner content language separable, which was its strongest feature. Its weakness is equally clear: the performatives were never given documented formal semantics, so an agent could send syntactically correct KQML with no guarantee that the receiver interpreted it as intended (Labrou and Finin, 1997).</p>
+  <p>FIPA-ACL addressed that by grounding performative semantics in a modal logic of feasibility preconditions and rational effects tied to the agent’s mental states — belief, desire and intention (FIPA, 2002). Its 22 performatives, including INFORM, REQUEST, AGREE, REFUSE, PROPOSE and FAILURE, remain the most complete taxonomy of agent communicative acts, and reference implementations such as JADE showed they were workable in academic and defence simulation. Two limitations decided its fate. First, reliance on pre-shared formal ontologies (KIF, SL) imposed rigidity that open-world deployment could not absorb. Second, the <code>:ontology</code> slot in a message header was a label, not a mechanism: FIPA specified no protocol-level way to negotiate alignment between agents whose vocabularies differed. The semantic layer was described but never implemented.</p>
+  <p>Most attention since has been at the transport and syntactic level. The semantic layer — agent intent, goal representations, belief states, and verifiable commitments — has less literature and remains architecturally absent. Fleming et al. (2026) make the gap visible from the network side, observing that well-formed messages do not guarantee a shared understanding of terms, concepts, or task parameters. That is the gap this research addresses.</p>
+  <figure class="ks-figure" data-fig="interdisciplinary">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1000 396" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The interdisciplinary nature of agent communication</title><desc>Computer science at the centre, with telecom, philosophy of mind, cognitive science and knowledge representation around it.</desc>
+<rect width="1000" height="396" rx="12" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a948f"/></marker></defs>
+<line x1="500" y1="190" x2="214" y2="84" stroke="#d3ded9" stroke-width="1.6"/>
+<line x1="500" y1="190" x2="786" y2="84" stroke="#d3ded9" stroke-width="1.6"/>
+<line x1="500" y1="190" x2="214" y2="300" stroke="#d3ded9" stroke-width="1.6"/>
+<line x1="500" y1="190" x2="786" y2="300" stroke="#d3ded9" stroke-width="1.6"/>
+<circle cx="500" cy="190" r="112" fill="#5b3a8e" fill-opacity="0.08" stroke="#5b3a8e" stroke-width="2"/>
+<text x="500" y="168" font-size="15" fill="#5b3a8e" text-anchor="middle" font-weight="700" font-family="inherit">Computer science</text>
+<text x="500" y="190" font-size="12.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">protocols, syntax, messages</text>
+<text x="500" y="226" font-size="10.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit" font-style="italic">formal grammar, automata theory,</text>
+<text x="500" y="242" font-size="10.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit" font-style="italic">formal language theory, information theory</text>
+<circle cx="214" cy="84" r="88" fill="#2f6f8f" fill-opacity="0.06" stroke="#2f6f8f" stroke-width="1.5"/>
+<text x="214" y="72" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Telecom and 6G</text>
+<text x="214" y="110" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">semantic networking</text>
+<circle cx="786" cy="84" r="88" fill="#2f6f8f" fill-opacity="0.06" stroke="#2f6f8f" stroke-width="1.5"/>
+<text x="786" y="72" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Philosophy</text>
+<text x="786" y="91" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">of</text>
+<text x="786" y="110" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">mind</text>
+<text x="786" y="110" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">intent, speech acts</text>
+<circle cx="214" cy="300" r="88" fill="#2f6f8f" fill-opacity="0.06" stroke="#2f6f8f" stroke-width="1.5"/>
+<text x="214" y="288" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Cognitive science</text>
+<text x="214" y="326" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">belief, desire, intent</text>
+<circle cx="786" cy="300" r="88" fill="#2f6f8f" fill-opacity="0.06" stroke="#2f6f8f" stroke-width="1.5"/>
+<text x="786" y="288" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Knowledge</text>
+<text x="786" y="307" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">representation</text>
+<text x="786" y="326" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">ontology, negotiation</text>
+<text x="500" y="372" font-size="12.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">The problem is technical at the transport and syntax layer, and philosophical at the intent and commitment layer.</text>
+</svg>
+    </div>
+    <figcaption>The four surrounding disciplines each supply something the protocol work does not: a channel model, a theory of intent, a theory of mental state, and a discipline for shared vocabularies.</figcaption>
+</figure>
+
+</section>
+
+<section id="literature">
+  <h2>Critical review of the literature</h2>
+  <p>The work falls into four categories, which is also roughly the order in which the field produced them.</p>
+
+  <div class="pattern">
+    <h3>Classical agent communication languages</h3>
+    <p class="purpose">KQML and FIPA-ACL: the first attempt to type inter-agent messages, and the first to specify what the types mean.</p>
+    <p>KQML separated envelope from content and gave the field performatives. FIPA-ACL added modal-logic semantics and standardized interaction protocols such as Contract Net (FIPA, 2002). Together they established that assertions, requests, commitments and declarations can be distinguished at the protocol layer. The design they settled on requires an ontology agreed in advance, which is what makes it unusable for agents that meet without one.</p>
+  </div>
+
+  <div class="pattern">
+    <h3>Modern LLM-native agent frameworks</h3>
+    <p class="purpose">ReAct, AutoGen, Generative Agents and the benchmark literature that followed them.</p>
+    <p>The transformer architecture and instruction-tuned foundation models enabled a qualitatively different agent paradigm. ReAct showed that interleaving chain-of-thought reasoning with tool invocation outperformed either component alone (Yao et al., 2022). AutoGen introduced the <code>ConversableAgent</code> abstraction, letting heterogeneous agents hold multi-turn natural-language dialogue with no ontology specified in advance (Wu et al., 2023). Generative Agents demonstrated emergent social behaviour from LLM-powered agents with persistent memory and reflection (Park et al., 2023).</p>
+    <p>The evidence about what this costs is now substantial. Ferrag, Tihanyi and Debbah (2026) survey roughly 60 benchmarks and agent frameworks and find no unified taxonomy, with most frameworks prioritizing task performance over communication verifiability. Pan et al. (2024) catalogued 14 failure categories across 140 tasks and identified inter-agent misalignment and flawed verification as two of the three primary failure clusters — both attributable to the absence of a semantic layer. AgentBench established cross-environment evaluation and revealed large capability gaps, but did not address semantic fidelity between agents.</p>
+  </div>
+
+  <div class="pattern">
+    <h3>Infrastructure protocols: MCP, A2A, ACP, ANP</h3>
+    <p class="purpose">What is standardised today, and precisely how far it reaches.</p>
+    <p>Anthropic’s Model Context Protocol (November 2024) standardises the interface between an LLM host and external tools, resources and prompts over JSON-RPC, and has been adopted widely across vendors. Google’s A2A protocol (April 2025) extended the same instinct to peer coordination, adding Agent Cards for capability discovery, structured Task objects with lifecycle management, and HTTP/SSE transport with OAuth 2.0 authentication; it was submitted to the Linux Foundation in June 2025 with 150-plus supporting organizations. IBM Research’s ACP targeted BeeAI-style orchestration, and ANP added decentralized identity through JSON-LD and decentralized identifiers.</p>
+    <p>The independent assessments agree. A systematic survey of four protocols (Ehtesham et al., 2025) and a formal audit reaching across 18 protocols (Yuan et al., 2026) both find that current protocols address the syntactic and transport layers well and score low or zero on semantic mechanisms — clarification capability, context alignment, verifiability. The Internet of Agents survey reaches the same conclusion from the networking side (Wang et al., 2025).</p>
+    <p>The closest architectural precursor to this research is Fleming et al. (2026), who propose a two-layer extension: L8, an agent communication layer, and L9, an agent semantic layer, arguing that the Internet of Agents needs protocol-level semantic negotiation in the way HTTP extended TCP/IP for the Web. Their gap is specific and useful: L9 is put forward as a theoretical framework with no grounding in the BDI mental-state formalism, no typed language for expressing intent, and no empirical benchmark of a prototype. The present thesis takes those three as its targets.</p>
+  </div>
+
+  <div class="pattern">
+    <h3>Neuro-symbolic AI and formal verification</h3>
+    <p class="purpose">The half of the literature that already knows how to make a claim checkable.</p>
+    <p>The neuro-symbolic programme proposes hybrid architectures that combine the pattern-recognition flexibility of neural networks with the verifiability and compositionality of symbolic reasoning (d’Avila Garcez et al., 2022). DeepProbLog integrates probabilistic logic with neural predicates, enabling learnable inference over structured knowledge (Manhaeve et al., 2018), and neural theorem provers demonstrated end-to-end learning of logical proof strategies (Rocktäschel and Riedel, 2017). Applied to A2A communication, the paradigm offers a resolution to the core tension: the LLM provides flexible interpretation, and a symbolic layer provides constraint checking that can be inspected.</p>
+    <p>A second thread constrains what any such language can promise. Delétang et al. (2023) show empirically that different neural architectures recognize languages at different levels of the Chomsky hierarchy, and that transformers handle regular and counter languages but fail at context-sensitive tasks without augmented memory. If that holds, the expressive power of an A2A semantic language must be matched to the computational class of the agents that will interpret it — a formal constraint absent from every current protocol specification.</p>
+  </div>
+  <figure class="ks-figure" data-fig="dikw">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1000 372" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Communication layers mapped to the DIKW ladder</title><desc>Two agents with data, information, knowledge and wisdom levels, and the band of technology that carries each level.</desc>
+<rect width="1000" height="372" rx="12" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a948f"/></marker></defs>
+<rect x="168" y="52" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="244" y="80" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Wisdom</text>
+<rect x="640" y="52" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="716" y="80" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Wisdom</text>
+<rect x="330" y="62" width="300" height="24" rx="5" fill="#6b7d78" fill-opacity="0.13" stroke="#6b7d78" stroke-width="1.6"/>
+<text x="480" y="81" font-size="12.5" fill="#6b7d78" text-anchor="middle" font-weight="700" font-family="inherit">AGI</text>
+<text x="480" y="97" font-size="10.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">not in scope</text>
+<line x1="320" y1="74.0" x2="330" y2="74.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="630" y1="74.0" x2="640" y2="74.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="632" y1="74.0" x2="640" y2="74.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="168" y="108" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="244" y="136" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Knowledge</text>
+<rect x="640" y="108" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="716" y="136" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Knowledge</text>
+<rect x="330" y="118" width="300" height="24" rx="5" fill="#1e6f5c" fill-opacity="0.13" stroke="#1e6f5c" stroke-width="1.6"/>
+<text x="480" y="137" font-size="12.5" fill="#1e6f5c" text-anchor="middle" font-weight="700" font-family="inherit">Agentic AI</text>
+<text x="480" y="153" font-size="10.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">research focus</text>
+<line x1="320" y1="130.0" x2="330" y2="130.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="630" y1="130.0" x2="640" y2="130.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="632" y1="130.0" x2="640" y2="130.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="168" y="164" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="244" y="192" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Information</text>
+<rect x="640" y="164" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="716" y="192" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Information</text>
+<rect x="330" y="174" width="300" height="24" rx="5" fill="#9a6a09" fill-opacity="0.13" stroke="#9a6a09" stroke-width="1.6"/>
+<text x="480" y="193" font-size="12.5" fill="#9a6a09" text-anchor="middle" font-weight="700" font-family="inherit">Web</text>
+<line x1="320" y1="186.0" x2="330" y2="186.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="630" y1="186.0" x2="640" y2="186.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="632" y1="186.0" x2="640" y2="186.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="168" y="220" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="244" y="248" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Data</text>
+<rect x="640" y="220" width="152" height="44" rx="6" fill="#ffffff" stroke="#d3ded9" stroke-width="1.6"/>
+<text x="716" y="248" font-size="13.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Data</text>
+<rect x="330" y="230" width="300" height="24" rx="5" fill="#9a6a09" fill-opacity="0.13" stroke="#9a6a09" stroke-width="1.6"/>
+<text x="480" y="249" font-size="12.5" fill="#9a6a09" text-anchor="middle" font-weight="700" font-family="inherit">Internet</text>
+<line x1="320" y1="242.0" x2="330" y2="242.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="630" y1="242.0" x2="640" y2="242.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="632" y1="242.0" x2="640" y2="242.0" stroke="#b9c6c0" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="84" y1="66" x2="84" y2="252" stroke="#d3ded9" stroke-width="1.6"/>
+<path d="M 84 66 L 79 78 L 89 78 z" fill="#5b3a8e"/>
+<path d="M 84 252 L 79 240 L 89 240 z" fill="#2f6f8f"/>
+<text x="84" y="44" font-size="11.5" fill="#5b3a8e" text-anchor="middle" font-weight="700" font-family="inherit">Philosophy</text>
+<text x="84" y="276" font-size="11.5" fill="#2f6f8f" text-anchor="middle" font-weight="700" font-family="inherit">Technology</text>
+<text x="244" y="300" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Agent 1</text>
+<text x="716" y="300" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Agent 2</text>
+<text x="480" y="336" font-size="13" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Communication has to catch up with computation and intelligence.</text>
+<text x="480" y="356" font-size="11.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">The proposed work sits at the knowledge level; reasoning about wisdom-level goals is outside its scope.</text>
+</svg>
+    </div>
+    <figcaption>The lower rungs are carried well today: the Web and the Internet move data and information between agents. The proposed research targets the knowledge rung, where intent, goals and commitments have to be exchanged and checked.</figcaption>
+</figure>
+
+</section>
+
+<section id="comparative">
+  <h2>Consolidated view</h2>
+  <p>Read across the four categories, the same three columns come up empty in every case. This is the table that defines the work.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>System or framework</th><th>BDI mental-state model</th><th>Speech-act force typing</th><th>Ontology grounding</th><th>Verifiability</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FIPA-ACL (2002)</td><td>Theoretical</td><td>Full — 22 performatives</td><td>Label only, no negotiation</td><td>Runtime assertion only</td></tr>
+        <tr><td>MCP, Anthropic (2024)</td><td>None</td><td>Untyped JSON-RPC</td><td>Schema-typed only</td><td>None</td></tr>
+        <tr><td>A2A, Google (2025)</td><td>None</td><td>Weak — task type only</td><td>Agent Card, no negotiation</td><td>Partial (task lifecycle)</td></tr>
+        <tr><td>AutoGen, CrewAI (2023–24)</td><td>None</td><td>Untyped natural language</td><td>None</td><td>None</td></tr>
+        <tr><td>Fleming et al., L8/L9 (2026)</td><td>Mentioned, not formalized</td><td>L8 performatives proposed</td><td>L9 handshake proposed</td><td>Proposed, not benchmarked</td></tr>
+        <tr><td><strong>This research</strong></td><td>Explicit BDI with theory of mind</td><td>Full, speech-act typed DSL</td><td>Runtime, negotiated</td><td>Neuro-symbolic formal verification</td></tr>
+      </tbody>
+    </table>
+    <div class="foot">Compiled from the published specifications and papers cited in Sources. It is a reading of those documents, not a measurement of running systems.</div>
+  </div>
+</section>
+
+<section id="gaps">
+  <h2>Research gaps</h2>
+  <p>Four, and they are separable: closing one does not close the others.</p>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Gap 1</span>
+      <h3>Semantic grounding</h3>
+      <p><strong>Classical and modern protocols:</strong> grounding is either assumed through an ontology negotiated offline, or left to the natural language itself.</p>
+      <p><strong>This research:</strong> formalized knowledge representation, with retrieval.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Gap 2</span>
+      <h3>Speech-act structure</h3>
+      <p><strong>Classical and modern protocols:</strong> messages are typed but not scalable, or scalable but untyped. No system offers both.</p>
+      <p><strong>This research:</strong> a fully typed speech-act DSL with intent-level guarantees.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Gap 3</span>
+      <h3>Ontology negotiation</h3>
+      <p><strong>Classical and modern protocols:</strong> no current protocol supports negotiation at runtime.</p>
+      <p><strong>This research:</strong> a runtime negotiated protocol between heterogeneous agents.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Gap 4</span>
+      <h3>Verifiability</h3>
+      <p><strong>Classical and modern protocols:</strong> no benchmarked mechanism exists for checking whether an agent kept its commitments.</p>
+      <p><strong>This research:</strong> neuro-symbolic formal verification, implemented and benchmarked.</p>
+    </div>
+  </div>
+</section>
+
+<section id="objectives">
+  <h2>Objectives</h2>
+  <p>Three objectives, with two sub-objectives that follow from them.</p>
+  <ol>
+    <li><strong>Agent-to-agent communication architecture design space.</strong> Define a taxonomy, identify the axes, and produce a classification scheme for agents.</li>
+    <li><strong>Novel A2A communication architecture design, in the semantic layer.</strong> Architecture specifications, a typed interaction vocabulary, a minimum knowledge-representation schema, a sufficiency criterion, the effect of capability asymmetry, and the representational forms required.</li>
+    <li><strong>Prototype implementations of the architectures developed, and benchmarking.</strong> Empirical validation of what the semantic layer is worth, under a capability-asymmetry test condition and a typed-intermediate-language test.</li>
+  </ol>
+  <p><strong>Sub-objectives.</strong> A fourth objective is an open-source architecture prototype; a fifth is publications and preprints.</p>
+  <figure class="ks-figure" data-fig="axes">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1000 296" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The five axes of the A2A communication design space</title><desc>Mental-state model depth, communicative force typing, conceptual grounding richness, interpretation mechanism and verifiability strength.</desc>
+<rect width="1000" height="296" rx="12" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a948f"/></marker></defs>
+<rect x="46" y="30" width="172" height="34" rx="6" fill="#5b3a8e" fill-opacity="0.10" stroke="#5b3a8e" stroke-width="1.5"/>
+<text x="60" y="52" font-size="14" fill="#5b3a8e" text-anchor="start" font-weight="700" font-family="inherit">M</text>
+<text x="80" y="52" font-size="11" fill="#2b3330" text-anchor="start" font-weight="700" font-family="inherit">Mental-state model depth</text>
+<text x="48" y="92" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">How much of belief,</text>
+<text x="48" y="109" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">desire and intention does</text>
+<text x="48" y="126" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">the message carry?</text>
+<line x1="50" y1="176" x2="210" y2="176" stroke="#d3ded9" stroke-width="2"/>
+<circle cx="50" cy="176" r="4.5" fill="#ffffff" stroke="#5b6663" stroke-width="1.6"/>
+<circle cx="210" cy="176" r="4.5" fill="#5b3a8e"/>
+<text x="50" y="200" font-size="10.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">none</text>
+<text x="210" y="200" font-size="10.5" fill="#5b3a8e" text-anchor="end" font-weight="700" font-family="inherit">full BDI</text>
+<rect x="236" y="30" width="172" height="34" rx="6" fill="#5b3a8e" fill-opacity="0.10" stroke="#5b3a8e" stroke-width="1.5"/>
+<text x="250" y="52" font-size="14" fill="#5b3a8e" text-anchor="start" font-weight="700" font-family="inherit">F</text>
+<text x="270" y="52" font-size="11" fill="#2b3330" text-anchor="start" font-weight="700" font-family="inherit">Communicative force typing</text>
+<text x="238" y="92" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">Is the act typed —</text>
+<text x="238" y="109" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">assert, request, commit,</text>
+<text x="238" y="126" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">declare — or raw text?</text>
+<line x1="240" y1="176" x2="400" y2="176" stroke="#d3ded9" stroke-width="2"/>
+<circle cx="240" cy="176" r="4.5" fill="#ffffff" stroke="#5b6663" stroke-width="1.6"/>
+<circle cx="400" cy="176" r="4.5" fill="#5b3a8e"/>
+<text x="240" y="200" font-size="10.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">untyped</text>
+<text x="400" y="200" font-size="10.5" fill="#5b3a8e" text-anchor="end" font-weight="700" font-family="inherit">typed</text>
+<rect x="426" y="30" width="172" height="34" rx="6" fill="#5b3a8e" fill-opacity="0.10" stroke="#5b3a8e" stroke-width="1.5"/>
+<text x="440" y="52" font-size="14" fill="#5b3a8e" text-anchor="start" font-weight="700" font-family="inherit">O</text>
+<text x="460" y="52" font-size="11" fill="#2b3330" text-anchor="start" font-weight="700" font-family="inherit">Conceptual grounding richness</text>
+<text x="428" y="92" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">How are terms fixed</text>
+<text x="428" y="109" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">between agents whose</text>
+<text x="428" y="126" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">vocabularies differ?</text>
+<line x1="430" y1="176" x2="590" y2="176" stroke="#d3ded9" stroke-width="2"/>
+<circle cx="430" cy="176" r="4.5" fill="#ffffff" stroke="#5b6663" stroke-width="1.6"/>
+<circle cx="590" cy="176" r="4.5" fill="#5b3a8e"/>
+<text x="430" y="200" font-size="10.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">assumed</text>
+<text x="590" y="200" font-size="10.5" fill="#5b3a8e" text-anchor="end" font-weight="700" font-family="inherit">negotiated</text>
+<rect x="616" y="30" width="172" height="34" rx="6" fill="#5b3a8e" fill-opacity="0.10" stroke="#5b3a8e" stroke-width="1.5"/>
+<text x="630" y="52" font-size="14" fill="#5b3a8e" text-anchor="start" font-weight="700" font-family="inherit">I</text>
+<text x="650" y="52" font-size="11" fill="#2b3330" text-anchor="start" font-weight="700" font-family="inherit">Interpretation mechanism</text>
+<text x="618" y="92" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">What resolves the</text>
+<text x="618" y="109" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">message into meaning</text>
+<text x="618" y="126" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">at the receiver?</text>
+<line x1="620" y1="176" x2="780" y2="176" stroke="#d3ded9" stroke-width="2"/>
+<circle cx="620" cy="176" r="4.5" fill="#ffffff" stroke="#5b6663" stroke-width="1.6"/>
+<circle cx="780" cy="176" r="4.5" fill="#5b3a8e"/>
+<text x="620" y="200" font-size="10.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">model only</text>
+<text x="780" y="200" font-size="10.5" fill="#5b3a8e" text-anchor="end" font-weight="700" font-family="inherit">model + logic</text>
+<rect x="806" y="30" width="172" height="34" rx="6" fill="#5b3a8e" fill-opacity="0.10" stroke="#5b3a8e" stroke-width="1.5"/>
+<text x="820" y="52" font-size="14" fill="#5b3a8e" text-anchor="start" font-weight="700" font-family="inherit">V</text>
+<text x="840" y="52" font-size="11" fill="#2b3330" text-anchor="start" font-weight="700" font-family="inherit">Verifiability strength</text>
+<text x="808" y="92" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">Can a commitment be</text>
+<text x="808" y="109" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">checked after the</text>
+<text x="808" y="126" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">fact, mechanically?</text>
+<line x1="810" y1="176" x2="970" y2="176" stroke="#d3ded9" stroke-width="2"/>
+<circle cx="810" cy="176" r="4.5" fill="#ffffff" stroke="#5b6663" stroke-width="1.6"/>
+<circle cx="970" cy="176" r="4.5" fill="#5b3a8e"/>
+<text x="810" y="200" font-size="10.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">asserted</text>
+<text x="970" y="200" font-size="10.5" fill="#5b3a8e" text-anchor="end" font-weight="700" font-family="inherit">proved</text>
+<text x="500" y="246" font-size="12.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">Five orthogonal axes. Together they describe an architecture without ranking it: a system can sit high on one and low on another.</text>
+<text x="500" y="272" font-size="12.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Objective 1 is to validate this taxonomy empirically rather than assert it.</text>
+</svg>
+    </div>
+    <figcaption>The axes come from the proposal and are the organising device for phase 1. They are orthogonal by construction: typing a message does not by itself ground its terms, and grounding its terms does not make its commitments checkable.</figcaption>
+</figure>
+
+</section>
+
+<section id="questions">
+  <h2>Research questions</h2>
+  <ul>
+    <li><strong>RQ1.</strong> What architectural patterns characterize existing agent-to-agent communication systems?</li>
+    <li><strong>RQ2.</strong> What conditions require an explicit semantic (knowledge) layer for reliable agent-to-agent communication?</li>
+    <li><strong>RQ3.</strong> What minimal knowledge-representation schema is sufficient for two heterogeneous agents to reach a verifiable shared understanding of a task?</li>
+    <li><strong>RQ4.</strong> How does effective communication differ when a high-capability agent coordinates with a resource-constrained one?</li>
+    <li><strong>RQ5.</strong> Should human-agent and agent-agent communication share a single common language, or do their requirements need separate representational forms?</li>
+    <li><strong>RQ6.</strong> Does a typed intermediate language between human-facing natural language and machine-facing agent communication improve token efficiency and reduce semantic drift?</li>
+  </ul>
+
+  <h2>Hypotheses</h2>
+  <ol>
+    <li><strong>Semantic alignment.</strong> Agents communicating through the proposed BDI-typed goal objects and speech-act-typed message envelopes will show statistically significant higher semantic alignment — a greater match between the sending and receiving agent’s stated intent — than agents communicating in untyped natural language.</li>
+    <li><strong>Commitment verification.</strong> The proposed neuro-symbolic verification layer will detect broken commissive acts, meaning unfulfilled agent commitments, at a rate exceeding that of unaugmented LLM-based monitoring, without human intervention.</li>
+    <li><strong>Ontology negotiation.</strong> Heterogeneous agents with initially mismatched domain vocabularies will converge on a shared conceptual grounding faster through the proposed runtime negotiation protocol than through iterative natural-language clarification alone, measured as turns-to-convergence on a controlled semantic-mismatch benchmark.</li>
+  </ol>
+</section>
+
+<section id="problem">
+  <h2>Problem formulation</h2>
+  <p><strong>Problem identification.</strong> As agents become autonomous and take over a high number of activities performed by humans, communication has to be more than message exchange and action invocation. There are many failure modes that follow from misalignment.</p>
+  <p><strong>Problem definition.</strong> Agents may be built from LLMs and from other variants — small models, action models, reasoning models. Not all of these are capable at the same level, and they were not trained on the same data to share a common understanding of the world. How can the semantic layer be made robust across that spread?</p>
+  <p><strong>Problem statement.</strong> How can agent-to-agent communication be made more efficient, robust, safe and reliable?</p>
+</section>
+
+<section id="method">
+  <h2>Method</h2>
+  <p>Five phases. The first two are in progress.</p>
+
+  <h3>Phase 0 — Research consolidation and prior-art differentiation</h3>
+  <p>Systematic PRISMA-style literature mapping across ACM Digital Library, IEEE Xplore and arXiv, with full reading and a differentiation memo against the most closely related papers, plus a deep dive through research-gap findings, experimentation, and empirical validation.</p>
+  <p class="small">Output: annotated bibliography of 20–30 papers, differentiation memo, modelling and experimentation results.</p>
+
+  <h3>Phase 1 — Design space categorization (objective 1)</h3>
+  <p>A formal, empirically validated taxonomy of A2A communication architectures along five orthogonal axes: mental-state model depth, communicative force typing, conceptual grounding richness, interpretation mechanism, and verifiability strength. A Chomsky-hierarchy-based compute-class separation of agents is started alongside it.</p>
+  <p class="small">Output: characterization paper submission.</p>
+
+  <h3>Phase 2 — A2A architecture design (objective 2)</h3>
+  <p>Formalize the architecture specification: a BDI goal-object schema in JSON-LD with BDI type annotations, a speech-act message envelope grammar, an ontology negotiation handshake protocol (SL-HELLO, SL-SELECT, SL-LOCK, adapted for BDI-typed contexts from the L9 handshake), and a neuro-symbolic verification pipeline pairing an LLM grounding step with a Prolog symbolic constraint checker. Design choices are evaluated against the white-space regions identified in phase 1.</p>
+  <p class="small">Output: formal architecture specification document, architecture design paper.</p>
+
+  <h3>Phase 3 — Prototype development and empirical benchmarking (objective 3)</h3>
+  <p>Implement the architecture as a working semantic middleware layer over AutoGen or LangGraph, in Python and Node.js. Develop a benchmark task suite across three domains — information retrieval, multi-step reasoning, and enterprise workflow coordination. Measure semantic fidelity, commitment honour rate, ontology alignment convergence, and verification overhead, comparing against untyped baselines with paired statistical tests (Wilcoxon signed rank). The code is released as an open-source repository.</p>
+  <p class="small">Output: benchmarking paper submission, public GitHub repository.</p>
+
+  <h3>Phase 4 — Synthesis, thesis writing, and dissemination</h3>
+  <p>Integrate the findings from all three objectives into the thesis, consolidate papers into chapters, address committee feedback, submit, and defend at viva voce.</p>
+  <p class="small">Output: submitted thesis, conference presentation, at least two peer-reviewed publications.</p>
+  <figure class="ks-figure" data-fig="stack">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1000 452" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Where the proposed semantic layer sits</title><desc>Four bands: application and orchestration, the proposed semantic layer, transport and syntax, and models.</desc>
+<rect width="1000" height="452" rx="12" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a948f"/></marker></defs>
+<rect x="52" y="26" width="896" height="60" rx="7" fill="#2f6f8f" fill-opacity="0.10" stroke="#2f6f8f" stroke-width="1.5"/><text x="66" y="50" font-size="13" fill="#2f6f8f" text-anchor="start" font-weight="700" font-family="inherit">Application and orchestration</text><text x="66" y="69" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">AutoGen · LangGraph · CrewAI — coordination by natural-language dialogue</text>
+<rect x="52" y="98" width="896" height="164" rx="8" fill="#5b3a8e" fill-opacity="0.07" stroke="#5b3a8e" stroke-width="2"/>
+<text x="68" y="124" font-size="15" fill="#5b3a8e" text-anchor="start" font-weight="700" font-family="inherit">Proposed semantic layer</text>
+<text x="292" y="124" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">the object of this research — proposed, not built</text>
+<circle cx="76" cy="148" r="3.4" fill="#5b3a8e"/>
+<text x="90" y="152" font-size="12.5" fill="#2b3330" text-anchor="start" font-weight="400" font-family="inherit">BDI goal-object schema — JSON-LD with BDI type annotations</text>
+<circle cx="76" cy="174" r="3.4" fill="#5b3a8e"/>
+<text x="90" y="178" font-size="12.5" fill="#2b3330" text-anchor="start" font-weight="400" font-family="inherit">Speech-act message envelope grammar — typed communicative acts</text>
+<circle cx="76" cy="200" r="3.4" fill="#5b3a8e"/>
+<text x="90" y="204" font-size="12.5" fill="#2b3330" text-anchor="start" font-weight="400" font-family="inherit">Ontology negotiation handshake — SL-HELLO · SL-SELECT · SL-LOCK</text>
+<circle cx="76" cy="226" r="3.4" fill="#5b3a8e"/>
+<text x="90" y="230" font-size="12.5" fill="#2b3330" text-anchor="start" font-weight="400" font-family="inherit">Neuro-symbolic verification — LLM grounding + Prolog constraint checker</text>
+<rect x="52" y="274" width="896" height="60" rx="7" fill="#1e6f5c" fill-opacity="0.10" stroke="#1e6f5c" stroke-width="1.5"/><text x="66" y="298" font-size="13" fill="#1e6f5c" text-anchor="start" font-weight="700" font-family="inherit">Transport and syntax</text><text x="66" y="317" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">MCP · A2A · ACP · ANP — JSON-RPC, HTTP/SSE, agent cards, task lifecycle</text>
+<rect x="52" y="346" width="896" height="60" rx="7" fill="#6b7d78" fill-opacity="0.10" stroke="#6b7d78" stroke-width="1.5"/><text x="66" y="370" font-size="13" fill="#4d5c58" text-anchor="start" font-weight="700" font-family="inherit">Models</text><text x="66" y="389" font-size="11.5" fill="#5b6663" text-anchor="start" font-weight="400" font-family="inherit">LLMs, small models, action models, reasoning models — heterogeneous capability</text>
+<text x="500" y="430" font-size="12.5" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">The lower three bands exist. The fourth is what the thesis adds, and what it has to show is worth its overhead.</text>
+</svg>
+    </div>
+    <figcaption>The gap this research addresses is between coordination and transport. The bands below it are standardised and widely deployed; the band in purple has no implementation in any current protocol.</figcaption>
+</figure>
+
+  <figure class="ks-figure" data-fig="phases">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1000 320" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Method phases and their dependencies</title><desc>Phase 0 branches into phases 1 and 2, which both feed phase 3, which feeds phase 4.</desc>
+<rect width="1000" height="320" rx="12" fill="#ffffff"/>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a948f"/></marker></defs>
+<rect x="22" y="116" width="168" height="62" rx="7" fill="#5b3a8e" fill-opacity="0.09" stroke="#5b3a8e" stroke-width="1.7"/>
+<text x="106.0" y="142" font-size="12.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Phase 0</text>
+<text x="106.0" y="160" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">research consolidation</text>
+<rect x="252" y="44" width="186" height="62" rx="7" fill="#5b3a8e" fill-opacity="0.09" stroke="#5b3a8e" stroke-width="1.7"/>
+<text x="345.0" y="70" font-size="12.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Phase 1</text>
+<text x="345.0" y="88" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">design space categorization</text>
+<rect x="252" y="188" width="186" height="62" rx="7" fill="#5b3a8e" fill-opacity="0.09" stroke="#5b3a8e" stroke-width="1.7"/>
+<text x="345.0" y="214" font-size="12.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Phase 2</text>
+<text x="345.0" y="232" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">architecture design</text>
+<rect x="504" y="116" width="200" height="62" rx="7" fill="#5b3a8e" fill-opacity="0.09" stroke="#5b3a8e" stroke-width="1.7"/>
+<text x="604.0" y="142" font-size="12.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Phase 3</text>
+<text x="604.0" y="160" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">development and benchmarking</text>
+<rect x="770" y="116" width="200" height="62" rx="7" fill="#5b3a8e" fill-opacity="0.09" stroke="#5b3a8e" stroke-width="1.7"/>
+<text x="870.0" y="142" font-size="12.5" fill="#2b3330" text-anchor="middle" font-weight="700" font-family="inherit">Phase 4</text>
+<text x="870.0" y="160" font-size="11" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">synthesis and writing</text>
+<line x1="190" y1="132" x2="252" y2="92" stroke="#8a948f" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="190" y1="162" x2="252" y2="208" stroke="#8a948f" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="438" y1="76" x2="504" y2="130" stroke="#8a948f" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="438" y1="218" x2="504" y2="164" stroke="#8a948f" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="704" y1="147" x2="770" y2="147" stroke="#8a948f" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="22" y="196" width="336" height="26" rx="5" fill="#1e6f5c" fill-opacity="0.10" stroke="#1e6f5c" stroke-width="1.2"/>
+<text x="190" y="213" font-size="11.5" fill="#1e6f5c" text-anchor="middle" font-weight="700" font-family="inherit">Phases 0 and 1 are in progress</text>
+<text x="500" y="296" font-size="12" fill="#5b6663" text-anchor="middle" font-weight="400" font-family="inherit">Milestone dates are held in the registered proposal and are not reproduced here; the sequence and the dependency structure are.</text>
+</svg>
+    </div>
+    <figcaption>Phase 1 fixes the vocabulary; phase 2 builds against it in parallel. Phase 3 is where the architecture has to survive contact with a benchmark rather than an argument.</figcaption>
+</figure>
+
+</section>
+
+<section id="outcomes">
+  <h2>Expected outcomes</h2>
+  <ul class="checklist">
+    <li>An A2A design space taxonomy</li>
+    <li>An A2A architectural formal specification</li>
+    <li>Empirical benchmark results</li>
+    <li>An open-source architecture prototype</li>
+    <li>Publications and preprints</li>
+  </ul>
+  <p class="small">These are the intended outputs. As of the current phase, none of the first four exists yet.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the semantic layer, in one paragraph?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It is the part of inter-agent communication that carries what a message <em>means</em> rather than only what it says: the sender's intent, the goal it is pursuing, the belief state it is acting on, and any commitment it is undertaking. Transport protocols move bytes and syntax protocols move well-formed calls. Neither gives the receiving agent a mechanised way to check that it understood the sender as the sender intended.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is this different from MCP and A2A?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>MCP standardises how a model host reaches tools, resources and prompts. A2A standardises how peer agents discover each other and manage a task's lifecycle. Both are transport and syntax work, and both do it well. Neither specifies a typed representation of intent, a negotiated shared vocabulary, or a check on whether a commitment was kept. That is the layer this research proposes, and it is intended to sit above them, not replace them.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the current state of the work?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Phase 0, the systematic literature mapping and prior-art differentiation, and phase 1, the design-space categorization, are both in progress. There are no benchmark results yet. Every failure mode named on this page is a hypothesised one, and the comparative table is a reading of published specifications rather than a measurement of running systems.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does the Chomsky hierarchy matter here?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because the expressive power of a communication language has to match the computational class of the agents that will interpret it. Delétang et al. show empirically that different neural architectures recognise languages at different levels of the hierarchy, and that transformers fail on context-sensitive tasks without augmented memory. A semantic language designed without that constraint risks specifying guarantees its interpreters cannot deliver.</p></div>
+  </div>
+</section>
+
+<section class="sources" id="sources">
+  <h2>Sources</h2>
+  <p style="margin:0 0 10px;color:#5b6663;font-size:12.5px">Cited as in the registered proposal. arXiv links were resolved and their titles and authors checked before being placed here; works whose publisher pages do not serve a stable public link are cited by venue and DOI as text.</p>
+  <ol>
+    <li>[1] T. Finin, R. Fritzson, D. McKay and R. McEntire, “KQML as an Agent Communication Language,” <em>Proceedings of the 3rd International Conference on Information and Knowledge Management (CIKM ’94)</em>, Gaithersburg, MD, pp. 456–463, Nov. 1994.</li>
+    <li>[2] Foundation for Intelligent Physical Agents (FIPA), “FIPA ACL Message Structure Specification,” Document SC00061G, FIPA TC Communication, Dec. 2002.</li>
+    <li>[3] M. Wooldridge and N. R. Jennings, “Intelligent Agents: Theory and Practice,” <em>The Knowledge Engineering Review</em> 10(2), pp. 115–152, 1995.</li>
+    <li>[4] A. S. Rao and M. P. Georgeff, “Modeling Rational Agents within a BDI-Architecture,” <em>Proceedings of the 2nd International Conference on Knowledge Representation and Reasoning (KR ’91)</em>, Cambridge, MA, pp. 473–484, 1991.</li>
+    <li>[5] J. R. Searle, <em>Speech Acts: An Essay in the Philosophy of Language</em>, Cambridge University Press, 1969.</li>
+    <li>[6] J. L. Austin, <em>How to Do Things with Words</em>, Oxford University Press, 1962.</li>
+    <li>[7] T. R. Besold, A. d’Avila Garcez, S. Bader et al., “Neural-Symbolic Learning and Reasoning: A Survey and Interpretation,” in <em>Neuro-Symbolic Artificial Intelligence: The State of the Art</em>, IOS Press, pp. 1–51, 2022.</li>
+    <li>[8] S. Yao, J. Zhao, D. Yu et al., “ReAct: Synergizing Reasoning and Acting in Language Models,” <em>ICLR</em>, 2023. <a href="https://arxiv.org/abs/2210.03629">arxiv.org/abs/2210.03629</a></li>
+    <li>[9] Q. Wu, G. Bansal, J. Zhang et al., “AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation,” 2023. <a href="https://arxiv.org/abs/2308.08155">arxiv.org/abs/2308.08155</a></li>
+    <li>[10] J. S. Park, J. C. O’Brien, C. J. Cai et al., “Generative Agents: Interactive Simulacra of Human Behavior,” <em>UIST ’23</em>, Article 234, pp. 1–22. DOI: 10.1145/3586183.3606763. <a href="https://arxiv.org/abs/2304.03442">arxiv.org/abs/2304.03442</a></li>
+    <li>[11] C. Fleming, L. Muscariello, V. Pandey and R. Kompella, “A Layered Protocol Architecture for the Internet of Agents,” arXiv:2511.19699v3, Cisco Research, Jan. 2026. <a href="https://arxiv.org/abs/2511.19699">arxiv.org/abs/2511.19699</a></li>
+    <li>[12] M. A. Ferrag, N. Tihanyi and M. Debbah, “From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review,” <em>IEEE Access</em> 14, pp. 84238–84295, Jun. 2026. DOI: 10.1109/ACCESS.2026.3698694.</li>
+    <li>[13] Y. Wang, S. Guo, Y. Pan et al., “Internet of Agents: Fundamentals, Applications, and Challenges,” <em>IEEE Transactions on Cognitive Communications and Networking</em>, accepted Oct. 2025. DOI: 10.1109/TCCN.2025.3623369. <a href="https://arxiv.org/abs/2505.07176">arxiv.org/abs/2505.07176</a></li>
+    <li>[14] S. Guo, Y. Wang, N. Zhang et al., “A Survey on Semantic Communication Networks: Architecture, Security, and Privacy,” <em>IEEE Communications Surveys and Tutorials</em> 27(5), pp. 2860–2909, Fourth Quarter 2025. DOI: 10.1109/COMST.2024.3516819.</li>
+    <li>[15] G. Delétang, A. Ruoss, J. Grau-Moya et al., “Neural Networks and the Chomsky Hierarchy,” <em>ICLR</em>, 2023. <a href="https://arxiv.org/abs/2207.02098">arxiv.org/abs/2207.02098</a></li>
+    <li>[16] R. Manhaeve, S. Dumančić, A. Kimmig, T. Demeester and L. De Raedt, “DeepProbLog: Neural Probabilistic Logic Programming,” <em>NeurIPS</em> 31, pp. 3753–3763, 2018. <a href="https://arxiv.org/abs/1805.10872">arxiv.org/abs/1805.10872</a></li>
+    <li>[17] T. Rocktäschel and S. Riedel, “End-to-End Differentiable Proving,” <em>NeurIPS</em> 30, pp. 3788–3800, 2017. <a href="https://arxiv.org/abs/1705.11040">arxiv.org/abs/1705.11040</a></li>
+    <li>[18] A. Ehtesham, A. Singh, G. K. Gupta and S. Kumar, “A survey of agent interoperability protocols: MCP, ACP, A2A and ANP,” May 2025. <a href="https://arxiv.org/abs/2505.02279">arxiv.org/abs/2505.02279</a></li>
+    <li>[19] Y. Labrou and T. Finin, “A Proposal for a New KQML Specification,” Technical Report TR-CS-97-03, University of Maryland Baltimore County, Feb. 1997.</li>
+    <li>[20] S. J. Russell and P. Norvig, <em>Artificial Intelligence: A Modern Approach</em>, 4th ed., Pearson, 2022. ISBN 978-1-292-40113-3.</li>
+    <li>[21] D. Yuan, F. Lyu, Y. Yuan et al., “Beyond Message Passing: A Semantic View of Agent Communication Protocols,” Mar. 2026. <a href="https://arxiv.org/abs/2604.02369">arxiv.org/abs/2604.02369</a></li>
+    <li>[22] X. Hou, Y. Zhao, S. Wang and H. Wang, “Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions,” preprint, Oct. 2025.</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+
+<p class="src-line">Page updated <time datetime="2026-09-25">25 Sep 2026</time>.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>
