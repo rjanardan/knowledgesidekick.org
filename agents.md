@@ -85,6 +85,9 @@ standardsPages:
 
 adoptionPages:
   adoption-companies-ahead: https://knowledgesidekick.org/adoption/companies-ahead/
+  adoption-domains: https://knowledgesidekick.org/adoption/domains/
+  adoption-domains-lis: https://knowledgesidekick.org/adoption/domains/library-and-information-science/
+  adoption-domains-enterprise: https://knowledgesidekick.org/adoption/domains/enterprise-business-general/
 
 learnPages:
   learn-index: https://knowledgesidekick.org/learn/

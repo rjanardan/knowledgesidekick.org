@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge engineering by domain — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/adoption/domains/">
+<meta name="description" content="Domain playbooks for starting a knowledge engineering effort: which published backbone to reuse, which questions to agree first, what the smallest artifact is, and the failure each domain is prone to.">
+<meta property="og:title" content="Knowledge engineering by domain — Knowledge Sidekick">
+<meta property="og:description" content="Ten domain playbooks for knowledge engineering, with the published backbone each one reuses.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/adoption/domains/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge engineering by domain — Knowledge Sidekick">
+<meta name="twitter:description" content="Ten domain playbooks for knowledge engineering, with the published backbone each one reuses.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "dateModified": "2026-09-25",
+      "@id": "https://knowledgesidekick.org/adoption/domains/",
+      "url": "https://knowledgesidekick.org/adoption/domains/",
+      "name": "Knowledge engineering by domain — Knowledge Sidekick",
+      "description": "Ten domain playbooks for knowledge engineering, with the published backbone each one reuses.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/adoption/domains/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many domains are covered on this page, and how many are written?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ten are listed. Two are written in full — library and information science, and enterprise business general — because between them they hold the method the other eight pages point back to. The remaining eight are marked in preparation and are not linked, so nothing here leads to a missing page." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why reuse a published backbone instead of modelling the domain yourself?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because for most domains the reusable work already exists: FIBO for financial instruments, SNOMED CT and LOINC for clinical terms, MITRE ATT&CK for adversary behavior, GS1 for supply-chain items. The ontology task is alignment and extension, not construction. Build from scratch only for the genuinely organization-specific slice." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the evidence that domain grounding improves agent accuracy independent?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The clearest quantitative result is a preprint from April 2026 reporting 600 controlled runs across four sectors, and it is self-reported by the platform's own authors. It is cited here as a preprint with a date, not as an established result. The reuse argument above does not depend on it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are some standards named but not linked?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because they cannot be verified from an automated client. The W3C, the Library of Congress, IFLA and ISNI answer such requests with a Cloudflare challenge rather than the page, and ISO is not linkable at all. Those are cited by name, number and year, following the convention already used for ISO on this site." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-adoption">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Adoption · domains</span>
+    <h1>Knowledge engineering by domain</h1>
+    <p class="lede">A bounded domain is the only scope that finishes. These pages give one way in per domain: the published backbone to reuse, the questions to agree first, the smallest artifact worth building, and the failure the domain is prone to.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/adoption.html">Adoption</a> · <a href="/knowledge/taxonomies/">Taxonomies</a> · <a href="/standards/skos/">W3C SKOS</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="why-a-domain">
+  <h2>Why a domain, and not the whole organization</h2>
+  <p>Knowledge engineering fails more often from scope than from tooling. A programme that sets out to model the enterprise before proving value on one use case tends to stall at the specification stage, having produced a document nothing runs on. A bounded domain is the only scope that finishes.</p>
+  <p>There is a structural reason beyond project management. The April 2026 preprint cited below organizes its domain layer <em>hierarchically</em> — an agent working in fintech.payments inherits the concepts of fintech and adds the payment-specific ones — and uses that hierarchy to decide which tools an agent may even see. Model a bounded domain and the inheritance works. Model everything and there is nothing to inherit from.</p>
+  <p>This is also where a staged approach pays. The ontology pipeline set out by Jessica Talisman in the talk cited below is explicit that each stage is usable on its own: an organization with a controlled vocabulary and private metadata schemas may have all the context it needs for now. A domain playbook is a way into that ladder, not a commitment to climb it all.</p>
+</section>
+
+<section id="the-method">
+  <h2>The method, the same on every page</h2>
+  <p>Each domain page answers six questions in the same order, so the pages can be compared rather than merely collected.</p>
+  <ol>
+    <li><strong>What to reuse.</strong> The published standard, vocabulary or model that covers most of the domain, named with its number and year where it has one.</li>
+    <li><strong>What to scope to</strong> for a first attempt — one reporting line, one clinical pathway, one repository — rather than the whole domain.</li>
+    <li><strong>Which questions to agree first</strong>: ten to twenty concrete questions the knowledge must be able to answer, settled with domain experts before any modelling begins.</li>
+    <li><strong>The smallest artifact worth building</strong>, which is almost always a vocabulary of terms with definitions and stewards, plus a small set of hard constraints.</li>
+    <li><strong>How to validate it</strong>, against a system of record or against the domain experts themselves rather than against a demonstration.</li>
+    <li><strong>The failure the domain is prone to</strong> — the specific way an agent goes wrong here without raising an error.</li>
+  </ol>
+</section>
+
+<section id="the-ten">
+  <h2>The ten</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>The domain set, with the backbone each page reuses</caption>
+      <thead>
+        <tr>
+          <th style="width:26%">Domain</th>
+          <th style="width:44%">Backbone to reuse</th>
+          <th>Kind</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/adoption/domains/library-and-information-science/">Library and information science</a></td>
+          <td>Z39.19, ISO 25964, SKOS, IFLA LRM, BIBFRAME, VIAF, OAI-PMH</td>
+          <td>Horizontal, origins — written</td>
+        </tr>
+        <tr>
+          <td>Finance and insurance</td>
+          <td>FIBO, ISO 20022, XBRL, Basel III and IV terminology</td>
+          <td>Vertical — in preparation</td>
+        </tr>
+        <tr>
+          <td>Healthcare and life sciences</td>
+          <td>SNOMED CT, LOINC, HL7 FHIR, ICD, DICOM, OMOP CDM</td>
+          <td>Vertical — in preparation</td>
+        </tr>
+        <tr>
+          <td>Security</td>
+          <td>MITRE ATT&amp;CK, CVE and CVSS, CWE, STIX/TAXII, NIST CSF</td>
+          <td>Vertical — in preparation</td>
+        </tr>
+        <tr>
+          <td>Aerospace and aviation</td>
+          <td>S1000D, AIXM, ATA iSpec 2200</td>
+          <td>Vertical, effectivity-hard — in preparation</td>
+        </tr>
+        <tr>
+          <td>Software engineering</td>
+          <td>SPDX, CycloneDX, OSV, SLSA, CWE, OpenAPI and AsyncAPI</td>
+          <td>Vertical, freshness-hard — in preparation</td>
+        </tr>
+        <tr>
+          <td>HR and workforce</td>
+          <td>ESCO, O*NET, ISCO-08, HR Open Standards</td>
+          <td>Vertical — in preparation</td>
+        </tr>
+        <tr>
+          <td>Industrial: supply chain, manufacturing, energy</td>
+          <td>GS1 and EPCIS, IEC 62264, Asset Administration Shell, AutomationML, IEC CIM</td>
+          <td>Vertical, clustered — in preparation</td>
+        </tr>
+        <tr>
+          <td>Legal and regulatory</td>
+          <td>Akoma Ntoso, LegalRuleML, jurisdiction models</td>
+          <td>Vertical, versioning-hard — in preparation</td>
+        </tr>
+        <tr>
+          <td><a href="/adoption/domains/enterprise-business-general/">Enterprise business, general</a></td>
+          <td>schema.org, gist, BORO, REA, upper ontologies</td>
+          <td>Horizontal — written</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Two of the ten are written. The other eight are named with their backbone so the shape of the set is visible, and no link is published until the page behind it exists.</p>
+</section>
+
+<section id="which-first">
+  <h2>Which one to start with</h2>
+  <p>Not the domain the model already handles well. The preprint cited below reports that the gain from ontological grounding is largest where the model's pretrained knowledge is weakest, which it calls the inverse parametric knowledge effect. That inverts the usual instinct: a general-purpose domain is the worst first choice, because the model sounds competent there and the errors are quiet.</p>
+  <p>Two practical tests for a first domain. Is there a published backbone to align to? That decides the cost. And is there a system of record to validate against? That decides whether you can tell whether you succeeded.</p>
+</section>
+
+<section id="what-these-pages-do-not-do">
+  <h2>What these pages do not do</h2>
+  <ul>
+    <li>They do not rank vendors, and they do not score an organization's maturity. A score that nobody acts on is a report, not a result.</li>
+    <li>They do not link a standard they could not verify from an automated client. The W3C, the Library of Congress, IFLA and ISNI answer such requests with a Cloudflare challenge; those are cited by name, number and year instead.</li>
+    <li>They do not present the preprint's numbers as settled. It is one preprint, self-reported, and it is labelled as such every time it is cited.</li>
+  </ul>
+</section>
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How many domains are covered on this page, and how many are written?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Ten are listed. Two are written in full — library and information science, and enterprise business general — because between them they hold the method the other eight pages point back to. The remaining eight are marked in preparation and are not linked, so nothing here leads to a missing page.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why reuse a published backbone instead of modelling the domain yourself?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because for most domains the reusable work already exists: FIBO for financial instruments, SNOMED CT and LOINC for clinical terms, MITRE ATT&CK for adversary behavior, GS1 for supply-chain items. The ontology task is alignment and extension, not construction. Build from scratch only for the genuinely organization-specific slice.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is the evidence that domain grounding improves agent accuracy independent?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. The clearest quantitative result is a preprint from April 2026 reporting 600 controlled runs across four sectors, and it is self-reported by the platform's own authors. It is cited here as a preprint with a date, not as an established result. The reuse argument above does not depend on it.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why are some standards named but not linked?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because they cannot be verified from an automated client. The W3C, the Library of Congress, IFLA and ISNI answer such requests with a Cloudflare challenge rather than the page, and ISO is not linkable at all. Those are cited by name, number and year, following the convention already used for ISO on this site.</p></div>
+  </div>
+</section>
+<section class="sources">
+  <h2>Sources</h2>
+  <p>Standards published by the W3C, the Library of Congress, IFLA, NLM and ISNI are cited by name and date rather than linked: those hosts answer automated clients with a challenge page or a redirect stub rather than the document, so a link could not be verified. ISO standards are cited by number for the same reason. Every link above was fetched and its body inspected before publication.</p>
+  <ol>
+    <li><a href="https://www.niso.org/publications/ansiniso-z3919-2005-r2010">ANSI/NISO Z39.19-2005 (R2010), Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies</a></li>
+    <li>W3C, SKOS Simple Knowledge Organization System Reference, W3C Recommendation, 18 August 2009 (cited by name and date: w3.org answers automated clients with a Cloudflare challenge)</li>
+    <li>ISO 25964-1:2011, Information and documentation — Thesauri and interoperability with other vocabularies, Part 1 (cited by number; ISO pages are not linkable)</li>
+    <li>IFLA, Library Reference Model (IFLA LRM), 2017 (cited by name and date; ifla.org is not reachable from an automated client)</li>
+    <li>Library of Congress, BIBFRAME 2.0 (cited by name; loc.gov is not reachable from an automated client)</li>
+    <li>NLM, Medical Subject Headings (MeSH) (cited by name; the MeSH home path answers automated clients with a redirect stub)</li>
+    <li><a href="https://www.getty.edu/research/tools/vocabularies/aat/">Getty Research Institute, Art &amp; Architecture Thesaurus</a></li>
+    <li><a href="https://www.openarchives.org/OAI/openarchivesprotocol.html">Open Archives Initiative, Protocol for Metadata Harvesting, version 2.0</a></li>
+    <li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a></li>
+    <li><a href="https://www.cidoc-crm.org/">CIDOC CRM, the cultural-heritage reference model, published as ISO 21127</a></li>
+    <li><a href="https://orcid.org/">ORCID, researcher identifiers</a></li>
+    <li><a href="https://www.doi.org/">DOI Foundation, the DOI system</a></li>
+    <li><a href="https://www.semanticarts.com/gist/">Semantic Arts, gist — an upper ontology for business</a></li>
+    <li><a href="https://schema.org/">schema.org, a shared vocabulary for describing things</a></li>
+    <li><a href="https://www.nature.com/articles/sdata201618">Wilkinson et al., The FAIR Guiding Principles for scientific data management and stewardship, Scientific Data 3, 2016</a></li>
+    <li><a href="https://arxiv.org/abs/2604.00555">Tuan, Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems, arXiv 2604.00555, April 2026 — a preprint, self-reported by the platform's own authors</a></li>
+    <li>Jessica Talisman, Knowledge Infrastructures and the Ontology Pipeline for AI Systems (O'Reilly Data Superstream, video), transcript of 0:00-18:56</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+<p class="src-line">Page updated <time datetime="2026-09-25">25 Sep 2026</time>.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

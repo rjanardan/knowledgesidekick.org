@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise business, general — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/adoption/domains/enterprise-business-general/">
+<meta name="description" content="The horizontal layer of enterprise knowledge: entity and ownership vocabulary, role and handoff models, the proposed coupling ladder, and the playbook for modelling who decides what.">
+<meta property="og:title" content="Enterprise business, general — Knowledge Sidekick">
+<meta property="og:description" content="The horizontal enterprise layer: roles, handoffs and the vocabulary of ownership and decisions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/adoption/domains/enterprise-business-general/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Enterprise business, general — Knowledge Sidekick">
+<meta name="twitter:description" content="The horizontal enterprise layer: roles, handoffs and the vocabulary of ownership and decisions.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "dateModified": "2026-09-25",
+      "@id": "https://knowledgesidekick.org/adoption/domains/enterprise-business-general/",
+      "url": "https://knowledgesidekick.org/adoption/domains/enterprise-business-general/",
+      "name": "Enterprise business, general — Knowledge Sidekick",
+      "description": "The horizontal enterprise layer: roles, handoffs and the vocabulary of ownership and decisions.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/adoption/domains/enterprise-business-general/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is horizontal about this page?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It carries no industry vocabulary. It covers how work itself is described — what an entity is, who owns it, which role decides, which approvals a handoff requires — and those questions are the same in a bank, a hospital and an airline." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the layer enterprises most often skip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Roles and handoffs. Teams usually model the domain and stop, leaving approval chains, trigger conditions and escalation paths in a process document nobody's agent can read. Without them an agent can compute the right answer and route it to the wrong approver." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the six-level maturity model on this page validated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It is proposed in the April 2026 preprint cited below, which is self-reported by the platform's own authors. It is useful as a checklist for stating which level a team is claiming, which is all this page uses it for." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are schema.org, gist, BORO and REA standards?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, and the difference matters. schema.org is a broadly adopted vocabulary with a steering group; gist is maintained by a consultancy; BORO and REA are modelling methods from practice. They are useful, and they are not consensus standards in the sense that ISO 25964 is." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-adoption">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Adoption · domains · horizontal</span>
+    <h1>Enterprise business, general</h1>
+    <p class="lede">The layer that is not industry-specific: how work is described, who owns a definition, which role decides, and what has to exist before a handoff. It is the thinnest reuse layer in the set and the one most often skipped.</p>
+    <p class="meta"><a href="/adoption/domains/">Domains</a> · <a href="/adoption.html">Adoption</a> · <a href="/standards/skos/">W3C SKOS</a> · <a href="/knowledge/ontologies/">Ontologies</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="why-horizontal">
+  <h2>Why this page is horizontal</h2>
+  <p>Every other domain page in this set reuses an industry vocabulary. This one does not have one, because the questions it answers are not industry questions: what is an entity, what is it called, who owns the definition, who decides, what has to exist before work moves on.</p>
+  <p>The reuse layer here is thinner and should be described honestly. <strong>schema.org</strong> is a shared vocabulary for describing things, widely embedded in web markup and useful as a lowest common denominator. <strong>gist</strong> is an upper ontology for business concepts maintained by a consultancy. <strong>BORO</strong> and <strong>REA</strong> are modelling methods from practice — BORO for business objects, REA for resources, events and agents in accounting. None of these is a consensus standard of the kind ISO 25964 is, and a team adopting one is adopting a house style, not a norm. Where the vocabulary work itself needs a published rulebase, that comes from <a href="/adoption/domains/library-and-information-science/">library and information science</a>.</p>
+</section>
+
+<section id="roles-and-handoffs">
+  <h2>The layer most organizations skip: roles and handoffs</h2>
+  <p>The April 2026 preprint cited below separates its model into three parts: a role layer, a domain layer and an interaction layer. The domain layer is where most projects stop. The interaction layer is where the preprint puts handoff patterns, approval chains and escalation paths — a directed edge from one role to another, with a trigger condition, the artifacts that must exist, and whether approval is required.</p>
+  <p>Set out plainly, a handoff is small: a design-to-development handoff, triggered on design complete, requiring the interface designs and specifications, with the product manager as the escalation path. Held as a typed edge, it is something an agent can follow. Held as a paragraph in a process document, it is not.</p>
+  <p>This is the same argument as the rest of the site, applied one layer up. An agent that can compute the right answer but cannot tell who authorizes it has not been given enough context to act, and will route the decision to whoever it likes.</p>
+</section>
+
+<section id="maturity-checklist">
+  <h2>The coupling ladder, as a checklist</h2>
+  <p>The same preprint proposes six levels of coupling between a formal model and a model's reasoning. The levels are not validated, and they are useful for one purpose: making a team state which level it is actually claiming.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Levels of coupling between an ontology and an agent, as proposed</caption>
+      <thead>
+        <tr>
+          <th style="width:12%">Level</th>
+          <th style="width:26%">Name</th>
+          <th>What it means</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>L0</td><td>Ungrounded</td><td>The model operates without a formal model behind it.</td></tr>
+        <tr><td>L1</td><td>Context-injected</td><td>Definitions and relationships are placed in the prompt. Most teams that believe they are finished are here.</td></tr>
+        <tr><td>L2</td><td>Discovery-constrained</td><td>The model's hierarchy decides which tools and skills an agent can even see.</td></tr>
+        <tr><td>L3</td><td>Process-gated</td><td>Approval gates and escalation are enforced during execution, not described afterwards.</td></tr>
+        <tr><td>L4</td><td>Output-validated</td><td>Output is checked against constraints before it is used.</td></tr>
+        <tr><td>L5</td><td>Closed loop</td><td>The model constrains input, guides reasoning, validates output, and changes as a result.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Two things are worth lifting out. The first is that L1 to L2 is the step from giving an agent better text to giving it fewer wrong options, and it is cheaper than it sounds. The second is that the ladder's top rungs need the constraint layer this site describes under <a href="/standards/skos/">SKOS</a> and its neighbours: without shape validation, L4 is a claim rather than a mechanism.</p>
+</section>
+
+<section id="playbook">
+  <h2>The playbook</h2>
+  <dl>
+    <dt>Reuse</dt>
+    <dd>schema.org for broad interchange, gist or BORO for upper-level business concepts as a house style, REA where accounting semantics matter, and ISO 25964 and SKOS for the vocabulary method behind all of them.</dd>
+    <dt>Scope</dt>
+    <dd>One role's decision surface, not the org chart. Pick the role whose decisions are most often routed to the wrong place.</dd>
+    <dt>Competency questions</dt>
+    <dd>Who approves this class of decision? What artifact must exist before the handoff? At what threshold does it escalate, and to whom? Which role sees this data, and which must not?</dd>
+    <dt>Smallest artifact</dt>
+    <dd>A role and handoff model: roles as entities, handoffs as typed edges carrying trigger, required artifacts and approval. Add the vocabulary of decision types so that &ldquo;approve&rdquo; means one thing.</dd>
+    <dt>Validation</dt>
+    <dd>Replay real decisions from the past and check whether the model routes them to the approver who actually signed. Where it disagrees, the model is wrong or the documented process was.</dd>
+    <dt>Characteristic failure</dt>
+    <dd>Role blindness: the same correct data framed for the wrong reader. A finance answer handed to an engineer and an engineering answer handed to a finance controller are both wrong in the same way, and neither looks like an error.</dd>
+  </dl>
+</section>
+
+<section id="limits">
+  <h2>Limits of this page</h2>
+  <ul>
+    <li>The architecture and the ladder both come from a single April 2026 preprint, self-reported by its platform's authors. The role-and-handoff argument does not depend on its numbers, and the numbers should not be quoted as settled.</li>
+    <li>The reuse layer here is the weakest in the set. Where library science, finance and healthcare have published norms to align to, this page has practice artifacts and judgment, which makes it the most expensive of the ten per unit of scope.</li>
+    <li>Nothing here addresses permissions and access control, which most organizations solve in an identity system rather than in a knowledge model, often with consequences.</li>
+  </ul>
+</section>
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is horizontal about this page?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>It carries no industry vocabulary. It covers how work itself is described — what an entity is, who owns it, which role decides, which approvals a handoff requires — and those questions are the same in a bank, a hospital and an airline.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the layer enterprises most often skip?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Roles and handoffs. Teams usually model the domain and stop, leaving approval chains, trigger conditions and escalation paths in a process document nobody's agent can read. Without them an agent can compute the right answer and route it to the wrong approver.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is the six-level maturity model on this page validated?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. It is proposed in the April 2026 preprint cited below, which is self-reported by the platform's own authors. It is useful as a checklist for stating which level a team is claiming, which is all this page uses it for.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Are schema.org, gist, BORO and REA standards?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No, and the difference matters. schema.org is a broadly adopted vocabulary with a steering group; gist is maintained by a consultancy; BORO and REA are modelling methods from practice. They are useful, and they are not consensus standards in the sense that ISO 25964 is.</p></div>
+  </div>
+</section>
+<section class="sources">
+  <h2>Sources</h2>
+  <p>Links were fetched with a browser user agent and their bodies inspected before publication. Standards whose publishers answer automated clients with a challenge page are cited by name and date instead of linked. The preprint cited below is a preprint: treat it as a dated claim from its authors, not as an established result.</p>
+  <ol>
+    <li><a href="https://schema.org/">schema.org, a shared vocabulary for describing things</a></li>
+    <li><a href="https://www.semanticarts.com/gist/">Semantic Arts, gist — an upper ontology for business</a></li>
+    <li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms — Dublin Core</a></li>
+    <li><a href="https://www.cidoc-crm.org/">CIDOC CRM, the cultural-heritage reference model, published as ISO 21127</a></li>
+    <li><a href="https://www.niso.org/publications/ansiniso-z3919-2005-r2010">ANSI/NISO Z39.19-2005 (R2010), Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies</a></li>
+    <li>ISO 25964-1:2011, Information and documentation — Thesauri and interoperability with other vocabularies, Part 1 (cited by number; ISO pages are not linkable)</li>
+    <li>W3C, SKOS Simple Knowledge Organization System Reference, W3C Recommendation, 18 August 2009 (cited by name and date; w3.org is not reachable from an automated client)</li>
+    <li>W3C, Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017 (cited by name and date; w3.org is not reachable from an automated client)</li>
+    <li>BORO (Business Object Reference Ontology), a modelling method originating in the work of Chris Partridge (cited by name; BORO has no single canonical published URL)</li>
+    <li>REA (Resources, Events, Agents), an accounting and business-process modelling approach originating in the work of William McCarthy (cited by name; no single canonical published URL)</li>
+    <li><a href="https://arxiv.org/abs/2604.00555">Tuan, Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems, arXiv 2604.00555, April 2026 — a preprint, self-reported by the platform's own authors</a></li>
+    <li>Jessica Talisman, Knowledge Infrastructures and the Ontology Pipeline for AI Systems (O'Reilly Data Superstream, video), transcript of 0:00-18:56 — source of the metadata-schema and tacit-knowledge framing at 11:36 and 18:48</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+<p class="src-line">Page updated <time datetime="2026-09-25">25 Sep 2026</time>.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

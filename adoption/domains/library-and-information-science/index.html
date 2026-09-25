@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library and information science — Knowledge Sidekick</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/adoption/domains/library-and-information-science/">
+<meta name="description" content="Library and information science as the origin of the vocabulary method: Z39.19, ISO 25964, SKOS, authority control, persistent identifiers and metadata interchange, and the playbook for reusing them.">
+<meta property="og:title" content="Library and information science — Knowledge Sidekick">
+<meta property="og:description" content="The origin of the method: controlled vocabulary construction, thesauri, authority control and metadata interchange.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/adoption/domains/library-and-information-science/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Library and information science — Knowledge Sidekick">
+<meta name="twitter:description" content="The origin of the method: controlled vocabulary construction, thesauri, authority control and metadata interchange.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "dateModified": "2026-09-25",
+      "@id": "https://knowledgesidekick.org/adoption/domains/library-and-information-science/",
+      "url": "https://knowledgesidekick.org/adoption/domains/library-and-information-science/",
+      "name": "Library and information science — Knowledge Sidekick",
+      "description": "The origin of the method: controlled vocabulary construction, thesauri, authority control and metadata interchange.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://knowledgesidekick.org/#website" },
+      "author": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://knowledgesidekick.org/adoption/domains/library-and-information-science/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does a site about agentic AI start with library science?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because the problem is older than the field solving it. Libraries were building machine-readable catalogues for worldwide lending before the web existed, and had to solve identifier ambiguity, record reconciliation and metadata interchange to do it. The vocabulary method agentic systems are now rediscovering is a solved discipline in library and information science." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which single standard should a team read first?",
+          "acceptedAnswer": { "@type": "Answer", "text": "ANSI/NISO Z39.19, Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies. It is the construction rulebook behind the vocabulary stage: preferred terms, aliases, definitions, scope notes and the relationships between concepts. It is the one cited in the talk this page draws on." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this page claim libraries already solved agent grounding?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Library science solved vocabulary construction, identity resolution and metadata interchange — the first half of the problem. It did not solve validation, permission, currentness or agent coupling, which is where most of the remaining work sits." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are VIAF, BIBFRAME and LCSH named but not linked?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because loc.gov and viaf.org do not serve these pages to an automated client reliably, so a link could not be verified. On this site an unverifiable link is dropped rather than published, and the standard is cited by name instead." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-adoption">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Adoption · domains · origins</span>
+    <h1>Library and information science</h1>
+    <p class="lede">Not a vertical but the discipline the other nine pages borrow from. Vocabulary construction, identity resolution and metadata interchange were solved here first, and the rulebooks are published.</p>
+    <p class="meta"><a href="/adoption/domains/">Domains</a> · <a href="/adoption.html">Adoption</a> · <a href="/standards/skos/">W3C SKOS</a> · <a href="/standards/iso-25964/">ISO 25964</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="why-this-page-leads">
+  <h2>Why this page leads the set</h2>
+  <p>Library and information science is not a vertical. It is the discipline the other nine pages borrow from, which is why it is the first entry rather than a peer of the rest.</p>
+  <p>The case for that position is not sentimental. In the talk cited below, Jessica Talisman puts it at 3:22: as the 1990s big-data movement optimised for storage first and query layers second, library and information science was already building metadata ecosystems threaded through machine-readable records for governance, reliability and consistency. Libraries went online in the 1960s, before the web, because worldwide catalogues had to be searchable and their records reconcilable. Those systems are still in service, connecting libraries for lending and access.</p>
+  <p>The practical consequence for an agentic programme is a sourcing rule. When a team starts modelling a domain and reaches for a bespoke vocabulary, it is usually about to re-solve a problem with a published rulebook. The vocabulary stage of the pipeline is a library-science stage, and the rulebook it cites is a library-science standard.</p>
+</section>
+
+<section id="where-the-method-comes-from">
+  <h2>Where the method comes from</h2>
+  <p>At 9:04 the pipeline's first stage is handed a construction standard rather than a modelling preference: a guideline for the construction, format and management of monolingual controlled vocabularies, to be read alongside the W3C's SKOS documentation. Stated aims, in the same passage: eliminate ambiguity, control synonyms, test and validate, and establish relationships between concepts.</p>
+  <p>That is <strong>ANSI/NISO Z39.19</strong>, and it is the document that turns a glossary into a controlled vocabulary. Three references carry the stage:</p>
+  <ul>
+    <li><strong>ANSI/NISO Z39.19</strong> — the construction rulebook: preferred terms, aliases, definitions, scope notes, and the discipline of deciding what is one concept and what is two.</li>
+    <li><strong>ISO 25964-1 and -2</strong> — the thesaurus standard, and the standard for interoperability and mapping between vocabularies. Part 2 is the one to read if the plan involves aligning a local vocabulary to a published one.</li>
+    <li><strong>W3C SKOS</strong> — the encoding that makes a vocabulary machine-readable, with preferred, alternative and hidden labels, definitions, and broader, narrower and related relations.</li>
+  </ul>
+  <p>Two of these already have pages on this site, at <a href="/standards/skos/">W3C SKOS</a> and <a href="/standards/iso-25964/">ISO 25964</a>. This page covers what the rest of the domain set does with them.</p>
+</section>
+
+<section id="what-is-reusable">
+  <h2>What is reusable, by layer</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>Library and information science standards, by what they buy an agent</caption>
+      <thead>
+        <tr>
+          <th style="width:24%">Layer</th>
+          <th style="width:40%">Standards</th>
+          <th>What it gives an agent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vocabulary construction</td>
+          <td>ANSI/NISO Z39.19; ISO 25964-1 and -2; W3C SKOS</td>
+          <td>Ambiguity and synonym control by rule rather than by taste</td>
+        </tr>
+        <tr>
+          <td>Thesauri in service</td>
+          <td>MeSH; AGROVOC; UNESCO and EuroVoc; NASA Thesaurus; LCSH; Getty AAT, ULAN and TGN</td>
+          <td>Concepts that were curated by people and have been maintained for decades</td>
+        </tr>
+        <tr>
+          <td>Identity resolution</td>
+          <td>ISNI (ISO 27729); ORCID (ISO 27716); VIAF; LC/NACO authority files; ISIL (ISO 15511)</td>
+          <td>Answering &ldquo;which one is this&rdquo; for people and organizations, a problem authority control has handled since the 1970s</td>
+        </tr>
+        <tr>
+          <td>Persistent identifiers</td>
+          <td>DOI (ISO 26324); ARK; URN (RFC 8141); ISBN (ISO 2108); ISSN (ISO 3297)</td>
+          <td>References an agent can resolve and rely on over time</td>
+        </tr>
+        <tr>
+          <td>Bibliographic models</td>
+          <td>IFLA LRM, consolidating FRBR, FRAD and FRSAD; RDA; ISBD</td>
+          <td>The work, expression, manifestation and item distinction that most enterprise data models never make</td>
+        </tr>
+        <tr>
+          <td>Record formats</td>
+          <td>MARC 21; UNIMARC; MARCXML; MODS; METS; EAD; BIBFRAME 2.0</td>
+          <td>MARC is the legacy format and BIBFRAME is its linked-data successor; the migration is itself the lesson</td>
+        </tr>
+        <tr>
+          <td>Interchange protocols</td>
+          <td>Z39.50 (ISO 23950); SRU and SRW with CQL; OAI-PMH; ResourceSync; OpenURL and KBART</td>
+          <td>Moving metadata between systems that never agreed on a schema — the original interoperability problem</td>
+        </tr>
+        <tr>
+          <td>Provenance and preservation</td>
+          <td>PREMIS; OAIS (ISO 14721); ISO 16363; W3C PROV-O; CIDOC CRM (ISO 21127)</td>
+          <td>An audit trail for a record: who changed it, when, and on what authority</td>
+        </tr>
+        <tr>
+          <td>Metadata schemas</td>
+          <td>Dublin Core / DCMI Terms (ISO 15836)</td>
+          <td>The second pipeline stage, specified and in wide use since 1995</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Read as a whole, the table is an argument. Every layer in it corresponds to something an agent now needs, and almost every one of them predates the agent.</p>
+</section>
+
+<section id="playbook">
+  <h2>The playbook</h2>
+  <dl>
+    <dt>Reuse</dt>
+    <dd>Align to ANSI/NISO Z39.19 for construction, ISO 25964 for thesaurus structure and mapping, and SKOS for encoding. Do not write your own vocabulary rules, and do not reach for OWL before a concept scheme has been tested.</dd>
+    <dt>Scope</dt>
+    <dd>One bounded term space with a visible boundary: one product catalogue, one internal function, one reporting vocabulary. Not the organization's vocabulary.</dd>
+    <dt>Competency questions</dt>
+    <dd>Is this one concept or two? Which label is preferred and which are aliases? Who owns this definition? Which published vocabulary should this local term map to?</dd>
+    <dt>Smallest artifact</dt>
+    <dd>A concept scheme: preferred label, alternative labels, definition, scope note, owner, source. Publish it as SKOS, and keep it in version control.</dd>
+    <dt>Validation</dt>
+    <dd>Have the domain experts adjudicate a sample of mappings and definitions, and record their disagreements. The disagreements are the requirements; the agreements are usually already known.</dd>
+    <dt>Characteristic failure</dt>
+    <dd>Synonym collapse and silent duplication — two terms that mean the same thing, or one term that means two. Neither raises an error, and both degrade retrieval for as long as they persist.</dd>
+  </dl>
+</section>
+
+<section id="limits">
+  <h2>Limits of this page</h2>
+  <ul>
+    <li>The domain is standards-rich, which makes reuse cheap, and adoption-poor inside AI teams, which makes the work unfamiliar. Standing behind a vocabulary nobody curates is worse than having none, because it implies a check that is not happening.</li>
+    <li>The pipeline described below stops at the semantic structures. Library science does not supply validation, permission, currentness or agent coupling; those have to come from elsewhere in this set.</li>
+    <li>Several of the sources are cited by name only, because their publishers do not serve the pages to automated clients. The links that are published here were fetched and their bodies inspected.</li>
+  </ul>
+</section>
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does a site about agentic AI start with library science?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because the problem is older than the field solving it. Libraries were building machine-readable catalogues for worldwide lending before the web existed, and had to solve identifier ambiguity, record reconciliation and metadata interchange to do it. The vocabulary method agentic systems are now rediscovering is a solved discipline in library and information science.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Which single standard should a team read first?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>ANSI/NISO Z39.19, Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies. It is the construction rulebook behind the vocabulary stage: preferred terms, aliases, definitions, scope notes and the relationships between concepts. It is the one cited in the talk this page draws on.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does this page claim libraries already solved agent grounding?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. Library science solved vocabulary construction, identity resolution and metadata interchange — the first half of the problem. It did not solve validation, permission, currentness or agent coupling, which is where most of the remaining work sits.</p></div>
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why are VIAF, BIBFRAME and LCSH named but not linked?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because loc.gov and viaf.org do not serve these pages to an automated client reliably, so a link could not be verified. On this site an unverifiable link is dropped rather than published, and the standard is cited by name instead.</p></div>
+  </div>
+</section>
+<section class="sources">
+  <h2>Sources</h2>
+  <p>Links were fetched with a browser user agent and their bodies inspected. Standards whose publishers answer automated clients with a challenge page or a redirect stub are cited by name, number and year instead of linked, following the convention already used for ISO on this site.</p>
+  <ol>
+    <li><a href="https://www.niso.org/publications/ansiniso-z3919-2005-r2010">ANSI/NISO Z39.19-2005 (R2010), Guidelines for the Construction, Format, and Management of Monolingual Controlled Vocabularies — NISO</a></li>
+    <li>ISO 25964-1:2011 and ISO 25964-2:2013, Information and documentation — Thesauri and interoperability with other vocabularies (cited by number; ISO pages are not linkable). See also this site's page on ISO 25964: https://knowledgesidekick.org/standards/iso-25964/</li>
+    <li>W3C, SKOS Simple Knowledge Organization System Reference, W3C Recommendation, 18 August 2009; and the SKOS Primer, W3C Working Group Note, 18 August 2009 (cited by name and date; w3.org answers automated clients with a Cloudflare challenge). See also this site's page on SKOS: https://knowledgesidekick.org/standards/skos/</li>
+    <li>IFLA, Library Reference Model (IFLA LRM), 2017, consolidating FRBR, FRAD and FRSAD (cited by name and date)</li>
+    <li>IFLA, ISBD Consolidated Edition, 2011 (cited by name and date)</li>
+    <li>Library of Congress, BIBFRAME 2.0; MARC 21 formats; MARCXML; MODS; METS; PREMIS; LCSH; Z39.50 (ISO 23950); SRU (cited by name; loc.gov is not reachable from an automated client)</li>
+    <li>Library of Congress, Virtual International Authority File (VIAF), and the LC/NACO authority file (cited by name)</li>
+    <li><a href="https://www.niso.org/standards-committees/resourcesync">National Information Standards Organization, ResourceSync</a></li>
+    <li><a href="https://www.openarchives.org/OAI/openarchivesprotocol.html">Open Archives Initiative, Protocol for Metadata Harvesting, version 2.0</a></li>
+    <li>NLM, Medical Subject Headings (MeSH) (cited by name: the MeSH home path answers automated clients with a redirect stub rather than the vocabulary)</li>
+    <li><a href="https://www.getty.edu/research/tools/vocabularies/aat/">Getty Research Institute, Art &amp; Architecture Thesaurus; also ULAN and TGN</a></li>
+    <li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms — Dublin Core</a></li>
+    <li><a href="https://www.cidoc-crm.org/">CIDOC CRM, the cultural-heritage reference model, published as ISO 21127</a></li>
+    <li><a href="https://orcid.org/">ORCID, researcher identifiers</a></li>
+    <li><a href="https://www.doi.org/">DOI Foundation, the DOI system</a></li>
+    <li>ISNI, International Standard Name Identifier, ISO 27729 (cited by name: isni.org answers automated clients with a Cloudflare challenge)</li>
+    <li><a href="https://www.nature.com/articles/sdata201618">Wilkinson et al., The FAIR Guiding Principles for scientific data management and stewardship, Scientific Data 3, 2016</a></li>
+    <li>Jessica Talisman, Knowledge Infrastructures and the Ontology Pipeline for AI Systems (O'Reilly Data Superstream, video), transcript of 0:00-18:56 — the source of the pipeline stages, the Z39.19 reference at 9:04, and the library-science framing at 3:22</li>
+  </ol>
+</section>
+
+</div>
+</div>
+
+<p class="src-line">Page updated <time datetime="2026-09-25">25 Sep 2026</time>.</p>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+<script>
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const a = q.nextElementSibling;
+    const btn = q.querySelector('.open');
+    const toggle = () => {
+      const open = a.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+</script>
+</body>
+</html>

@@ -256,4 +256,16 @@
     <loc>https://knowledgesidekick.org/disclaimer.html</loc>
     <priority>0.4</priority>
   </url>
+  <url>
+    <loc>https://knowledgesidekick.org/adoption/domains/</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://knowledgesidekick.org/adoption/domains/library-and-information-science/</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://knowledgesidekick.org/adoption/domains/enterprise-business-general/</loc>
+    <priority>0.80</priority>
+  </url>
 </urlset>

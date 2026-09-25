@@ -95,7 +95,11 @@
           { label: 'llms.txt', href: '/standards/llms-txt/' },
           { label: 'A2A communication', href: '/a2a/' },
           { sub: 'Evidence' },
-          { label: 'Companies ahead in the game', href: '/adoption/companies-ahead/' }
+          { label: 'Companies ahead in the game', href: '/adoption/companies-ahead/' },
+          { sub: 'Domains' },
+          { label: 'Knowledge engineering by domain', href: '/adoption/domains/' },
+          { label: 'Library and information science', href: '/adoption/domains/library-and-information-science/' },
+          { label: 'Enterprise business, general', href: '/adoption/domains/enterprise-business-general/' }
         ]
       },
       {

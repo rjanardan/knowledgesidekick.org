@@ -69,6 +69,9 @@ elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
 - Mementos — RFC 7089, versioning and deprecation for web resources: https://knowledgesidekick.org/standards/mementos/
 ### Adoption
 - Companies ahead in the game — knowledge infrastructure, from cited sources: https://knowledgesidekick.org/adoption/companies-ahead/
+- Knowledge engineering by domain — ten domain playbooks and the method they share: https://knowledgesidekick.org/adoption/domains/
+- Library and information science — the origin of the controlled-vocabulary method (Z39.19, thesauri, authority control): https://knowledgesidekick.org/adoption/domains/library-and-information-science/
+- Enterprise business, general — the horizontal layer: roles, handoffs, ownership vocabulary: https://knowledgesidekick.org/adoption/domains/enterprise-business-general/
 ### Learn
 - Glossary — the site's terms in one place, each linked to the page that develops it: https://knowledgesidekick.org/learn/glossary/
 
