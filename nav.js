@@ -39,7 +39,6 @@
           { label: 'AI agents', href: '/agents/' },
           { label: 'A2A communication', href: '/a2a/' },
           { label: 'MCP', href: '/mcp/' },
-          { label: 'Doctoral research (A2A)', href: '/phd/submission-1.html' },
           { sub: 'Knowledge at work' },
           { label: 'Enterprise knowledge', href: '/enterprise.html' },
           { label: 'Memory', href: '/research/memory/' },
