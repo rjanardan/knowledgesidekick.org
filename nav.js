@@ -3,8 +3,9 @@
 
   // ============================================================
   // knowledgesidekick.org — shared nav builder
-  // Six top-level items: Knowledge, Research, Standards, Adoption,
-  // Learn (dropdowns) and Contact (plain link).
+  // Six top-level items: Knowledge, Research, Standards, Adoption and
+  // Learn (dropdowns), plus About as a plain link. Contact is not in the
+  // nav — it and the disclaimer sit in the footer of every page.
   // Long groups carry .grp-label subheadings; an entry with only a
   // `sub` key renders as a heading, not a link.
   // ============================================================
@@ -114,11 +115,10 @@
           { label: 'Internship', href: '/internship.html' },
           { label: 'Training', href: '/training.html' },
           { label: 'Courses', href: '/learn/courses/' },
-          { label: 'Free resources', href: '/free-resources.html' },
-          { label: 'About', href: '/about.html' }
+          { label: 'Free resources', href: '/free-resources.html' }
         ]
       },
-      { label: 'Contact', href: '/contact.html', plain: true, local: true }
+      { label: 'About', href: '/about.html', plain: true, local: true }
     ]
   };
 
