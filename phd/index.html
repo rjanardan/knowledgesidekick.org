@@ -121,7 +121,7 @@
   <p>There is scope and opportunity for a semantic layer able to transmit, validate, and audit agent intent, goal states, and inter-agent commitments. With such a layer in place, failure modes become measurable rather than anecdotal: semantic drift, broken commitments, and non-deterministic multi-step reasoning chains.</p>
   <figure class="fig-img" data-fig="domains">
   <img src="/phd/images/agent-to-agent-communication-complexities.png" alt="Three domains of agents, each with its own vocabulary, connected by cross-domain traffic." loading="lazy">
-  <figcaption>Agents that must coordinate rarely share a vocabulary. <strong>A</strong> marks an autonomous agent, <strong>H</strong> a human in the loop. Reliable, secure, intentional and verifiable communication is the requirement; today it is carried by messages that assume a shared understanding of terms.</figcaption>
+  <figcaption>Vocabulary, capability level and trust boundary differ on each side of every arrow, and the exchange has to survive the difference. The narrowing this research makes is that an agent infers the other's intent from natural language, with nothing in the message that can be checked afterwards.</figcaption>
 </figure>
 
 </section>
@@ -288,7 +288,7 @@
   <p class="small">Output: formal architecture specification document, architecture design paper.</p>
   <figure class="fig-img" data-fig="stack">
   <img src="/phd/images/semantic-layer-in-the-stack.png" alt="Four bands: application and orchestration, the proposed semantic layer, transport and syntax, and models." loading="lazy">
-  <figcaption>The gap this research addresses is between coordination and transport. The bands below it are standardised and widely deployed; the band in purple has no implementation in any current protocol.</figcaption>
+  <figcaption>The gap this research addresses sits between coordination and transport. The bands on either side of it are standardised and widely deployed; the proposed semantic layer has no implementation in any current protocol.</figcaption>
 </figure>
 
 
