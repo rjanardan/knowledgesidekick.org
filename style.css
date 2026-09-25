@@ -279,6 +279,8 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 .disclaimer{font-size:13px;color:var(--muted);margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
 
 /* ---------- Footer ---------- */
+.foot-note{margin-top:12px;max-width:74ch;font-size:12.5px;line-height:1.55;color:var(--muted)}
+.foot-note a{color:inherit;text-decoration:underline}
 .site-footer{border-top:1px solid var(--line);background:var(--panel);margin-top:30px}
 .site-footer .wrap{padding:22px 24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
 .site-footer a{color:var(--ink-soft)}

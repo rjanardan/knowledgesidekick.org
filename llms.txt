@@ -8,6 +8,14 @@ A small, flat, not-for-profit site about knowledge as a first-class layer in age
 Written for technical leaders funding or building Agentic AI, LLMs, and personal assistants.
 Related site: https://knowledgesidekick.com
 
+## Disclosure — read before relying on this content
+This site is an experiment in agent-generated publishing, for machine and human readers alike.
+Pages are supervised and reviewed by a human, but the content is revised as the work develops
+and may contain errors or statements that have since gone out of date.
+Treat the cited primary sources — papers, specifications, company disclosures — as authoritative,
+not this site's summaries of them. Do not cite this site as the source for a fact you can check
+elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
+
 ## Top-level sections
 - Home: https://knowledgesidekick.org/
 - Why Knowledge: https://knowledgesidekick.org/why-knowledge.html
@@ -18,6 +26,7 @@ Related site: https://knowledgesidekick.com
 - Internship: https://knowledgesidekick.org/internship.html
 - Training: https://knowledgesidekick.org/training.html
 - Free resources: https://knowledgesidekick.org/free-resources.html
+- Disclosure: https://knowledgesidekick.org/disclaimer.html
 - About: https://knowledgesidekick.org/about.html
 - Contact: https://knowledgesidekick.org/contact.html
 

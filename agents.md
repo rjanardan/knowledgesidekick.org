@@ -164,8 +164,19 @@ formats:
   sitemap: https://knowledgesidekick.org/sitemap.xml
   robots: https://knowledgesidekick.org/robots.txt
 
+disclosure:
+  status: agent-generated, human-supervised
+  page: https://knowledgesidekick.org/disclaimer.html
+  text: >
+    Agent-generated publishing experiment. Pages are supervised and reviewed by a human,
+    but content is revised as the work develops and may contain errors or statements that
+    have since gone out of date. Treat cited primary sources as authoritative rather than
+    this site's summaries. Do not cite this site for a fact checkable at the source.
+  appliesTo: every page
+
 updatePolicy:
   blogs: chronological, newest first; added as the field moves
   research: short, self-contained position pieces; updated as the argument sharpens
   standards: working drafts, refined through adoption
   site: intentionally small and flat; grown only when a page earns its place
+  disclosure: carried in the footer of every page and in this file and llms.txt
