@@ -61,7 +61,7 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 /* ---------- Skip link + header ---------- */
 .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:8px 14px;border-radius:0 0 8px 0;z-index:100}
 .skip:focus{left:0}
-.site-header{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:3px solid var(--ks-color)}
 .site-bar{display:flex;align-items:center;gap:14px;max-width:var(--maxw);margin:0 auto;padding:0 24px;height:62px}
 .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .ks-badge{display:inline-block;color:var(--ks-color,#1e6f5c);vertical-align:middle;transition:color .15s;width:40px;height:40px;flex-shrink:0}
@@ -308,3 +308,8 @@ body.page-internship{--accent:#045c46;--accent-ink:#034336}
 body.page-training{--accent:#1e6f5c;--accent-ink:#145247}
 body.page-free-resources{--accent:#0f6b6b;--accent-ink:#0b4d4d}
 body.page-contact{--accent:#1f1d1a;--accent-ink:#1f1d1a}
+
+/* ---------- Site identity chip + accent band ---------- */
+.chip{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;font-weight:600;
+      letter-spacing:.02em;padding:3px 8px;border-radius:999px;margin-left:9px;align-self:center;
+      color:var(--ks-color);background:#e6f2ef;border:1px solid rgba(30,111,92,.34);white-space:nowrap}
