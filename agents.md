@@ -6,7 +6,7 @@ site:
   name: Knowledge Sidekick
   url: https://knowledgesidekick.org/
   description: >
-    Not-for-profit, free-to-read site about knowledge as a first-class layer in agentic AI,
+    Not-for-profit, free-to-read site about knowledge as a first-class layer in Agentic AI,
     LLMs, and personal assistants. Research, standards, and adoption practice, and courses.
   canonical: https://knowledgesidekick.org/
   language: en

@@ -1,11 +1,11 @@
 # knowledgesidekick.org
 
-Not-for-profit, no-fee, no-ads, free-to-read side of Knowledge Sidekick: research, standards, and adoption of knowledge-first practice for agentic AI, LLMs, and personal assistants.
+Not-for-profit, no-fee, no-ads, free-to-read side of Knowledge Sidekick: research, standards, and adoption of knowledge-first practice for Agentic AI, LLMs, and personal assistants.
 
 ## Sections
 
 - Home — the front door.
-- Why Knowledge — why knowledge matters for agentic AI.
+- Why Knowledge — why knowledge matters for Agentic AI.
 - Research — research positions.
 - Standards — open standards, and a commercial and proprietary group (Parquet, Delta Lake, Iceberg, Snowflake, Databricks, Palantir, ServiceNow, Salesforce, Microsoft Graph, Neo4j).
 - Adoption — practice, not theory.

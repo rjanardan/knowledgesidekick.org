@@ -1,11 +1,11 @@
 # knowledgesidekick.org — agent index
 # Not-for-profit, no-fee, no-ads, free to read — forever. Research, standards, adoption.
-# for agentic AI, LLMs, and personal assistants.
+# for Agentic AI, LLMs, and personal assistants.
 # Updated: 2026-09-25.
 
 ## What this site is
 A small, flat, not-for-profit site about knowledge as a first-class layer in agentic systems.
-Written for technical leaders funding or building agentic AI, LLMs, and personal assistants.
+Written for technical leaders funding or building Agentic AI, LLMs, and personal assistants.
 Related site: https://knowledgesidekick.com
 
 ## Top-level sections
@@ -60,7 +60,7 @@ Related site: https://knowledgesidekick.com
 - Glossary — the site's terms in one place, each linked to the page that develops it: https://knowledgesidekick.org/learn/glossary/
 
 ## Research deep-dives
-- Why knowledge matters for agentic AI: https://knowledgesidekick.org/why-knowledge.html
+- Why knowledge matters for Agentic AI: https://knowledgesidekick.org/why-knowledge.html
 - Knowledge in enterprise context: https://knowledgesidekick.org/enterprise.html
 - Knowledge in personal assistant context: https://knowledgesidekick.org/personal-assistant.html
 - Context engineering: https://knowledgesidekick.org/context-engineering.html
