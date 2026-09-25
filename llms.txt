@@ -21,6 +21,7 @@ elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
 ## Top-level sections
 - Home: https://knowledgesidekick.org/
 - Why Knowledge: https://knowledgesidekick.org/why-knowledge.html
+- Knowledge: https://knowledgesidekick.org/knowledge/
 - Research: https://knowledgesidekick.org/research.html
 - Standards: https://knowledgesidekick.org/standards.html
 - Adoption: https://knowledgesidekick.org/adoption.html
@@ -29,6 +30,7 @@ elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
 - Training: https://knowledgesidekick.org/training.html
 - Free resources: https://knowledgesidekick.org/free-resources.html
 - Disclosure: https://knowledgesidekick.org/disclaimer.html
+- Learn: https://knowledgesidekick.org/learn/
 - About: https://knowledgesidekick.org/about.html
 - Contact: https://knowledgesidekick.org/contact.html
 

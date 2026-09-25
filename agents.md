@@ -28,6 +28,7 @@ identity:
 sections:
   home: https://knowledgesidekick.org/
   whyKnowledge: https://knowledgesidekick.org/why-knowledge.html
+  knowledge: https://knowledgesidekick.org/knowledge/
   research: https://knowledgesidekick.org/research.html
   standards: https://knowledgesidekick.org/standards.html
   adoption: https://knowledgesidekick.org/adoption.html
@@ -35,6 +36,7 @@ sections:
   internship: https://knowledgesidekick.org/internship.html
   training: https://knowledgesidekick.org/training.html
   freeResources: https://knowledgesidekick.org/free-resources.html
+  learn: https://knowledgesidekick.org/learn/
   about: https://knowledgesidekick.org/about.html
   contact: https://knowledgesidekick.org/contact.html
 
@@ -53,6 +55,7 @@ research:
   tokenSavings: https://knowledgesidekick.org/token-savings.html
 
 knowledgePages:
+  knowledge-index: https://knowledgesidekick.org/knowledge/
   knowledge-dikw: https://knowledgesidekick.org/knowledge/dikw/
   knowledge-knowledge-bundles: https://knowledgesidekick.org/knowledge/knowledge-bundles/
   knowledge-knowledge-formats: https://knowledgesidekick.org/knowledge/knowledge-formats/
@@ -84,6 +87,7 @@ adoptionPages:
   adoption-companies-ahead: https://knowledgesidekick.org/adoption/companies-ahead/
 
 learnPages:
+  learn-index: https://knowledgesidekick.org/learn/
   learn-glossary: https://knowledgesidekick.org/learn/glossary/
 
 blogs:

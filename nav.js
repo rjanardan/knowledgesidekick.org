@@ -18,6 +18,7 @@
         label: 'Knowledge',
         open: false,
         items: [
+          { label: 'Knowledge at a glance', href: '/knowledge/' },
           { label: 'Why knowledge?', href: '/why-knowledge.html' },
           { label: 'DIKW', href: '/knowledge/dikw/' },
           { label: 'Context engineering', href: '/context-engineering.html' },
@@ -101,6 +102,7 @@
         label: 'Learn',
         open: false,
         items: [
+          { label: 'Learn at a glance', href: '/learn/' },
           { label: 'Blogs', href: '/blogs.html' },
           { label: 'Glossary', href: '/learn/glossary/' },
           { label: 'Token savings', href: '/token-savings.html' },

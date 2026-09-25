@@ -353,5 +353,5 @@ body.page-contact{--accent:#1f1d1a;--accent-ink:#1f1d1a}
 /* ---------- Inline figures (author-time SVG, one scrolling strip) ---------- */
 figure.ks-figure{margin:20px 0 0}
 .fig-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e8ecea;border-radius:10px;background:#fff;padding:10px 12px}
-.fig-scroll svg{display:block;width:100%;min-width:1180px;height:auto}
+.fig-scroll svg{display:block;width:100%;min-width:1000px;height:auto}
 figure.ks-figure figcaption{margin-top:9px;font-size:12.5px;color:#5b6663;line-height:1.5}
