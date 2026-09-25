@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Sidekick — homepage draft V2 (argument-first)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<link rel="canonical" href="https://knowledgesidekick.org/">
+<meta property="og:title" content="Knowledge Sidekick — homepage draft V2 (argument-first)">
+<meta property="og:description" content="Draft alternative homepage: the current copy kept, with every claim defensible as written. Not published.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.org/drafts/homepage-v2.html">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge Sidekick — homepage draft V2 (argument-first)">
+<meta name="twitter:description" content="Draft alternative homepage. Not published.">
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@graph": [
+  { "@type": "WebPage",
+    "@id": "https://knowledgesidekick.org/drafts/homepage-v2.html",
+    "url": "https://knowledgesidekick.org/drafts/homepage-v2.html",
+    "name": "Knowledge Sidekick — homepage draft V2 (argument-first)",
+    "description": "Draft alternative homepage, not published. Canonical version is the site homepage.",
+    "inLanguage": "en",
+    "isBasedOn": { "@id": "https://knowledgesidekick.org/" },
+    "isPartOf": { "@id": "https://knowledgesidekick.org/#website" } }
+] }
+</script>
+</head>
+<body class="page-home">
+<style>
+  .draftbar{background:#1e6f5c;color:#fff;font-size:12.5px;letter-spacing:.04em;padding:7px 0;text-transform:uppercase}
+  .draftbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .rests-on{margin-top:14px;padding:13px 15px;border-left:3px solid var(--ks-color,#1e6f5c);background:#f7faf9;font-size:13.5px;line-height:1.55}
+  .rests-on b{display:block;margin-bottom:6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#1e6f5c}
+  .rests-on ul{margin:0;padding-left:18px}
+  .rests-on li{margin:5px 0}
+  .limits{border:1px solid #e2e6e4;border-radius:10px;padding:16px 18px;background:#fcfdfd}
+  .limits h3{margin-top:0}
+  .srclist{font-size:13.5px;line-height:1.6}
+  .srclist li{margin:7px 0}
+</style>
+<a class="skip" href="#main">Skip to content</a>
+<div class="draftbar"><div class="wrap"><span>Draft V2 — argument-first · not published</span><span>Current copy preserved; every claim now defensible as written</span></div></div>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">No-fee · no-ads · free to read, forever</span>
+    <h1>Knowledge is the layer that makes Agentic AI dependable</h1>
+    <p class="lede">Knowledge Sidekick is a practical knowledge layer for organizations building or using Agentic AI, LLMs, and personal assistants. This org site is the free-to-read side of that work: not-for-profit, no fee, no ads. It covers research, standards and adoption practice — open and proprietary alike — and the courses.</p>
+    <p class="meta"><a href="/contact.html">Contact</a> · <a href="https://knowledgesidekick.com">knowledgesidekick.com</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="what">
+  <h2>What Knowledge Sidekick is</h2>
+  <p class="lead">Most accounts of failure in agentic systems blame the model. The published record points somewhere more specific: a large share of those failures are knowledge failures. The content is stale, the representation is too coarse to carry the distinction that matters, the extraction misses the places the knowledge actually lives, the updates lag behind the change, and nothing deprecates what is no longer true.</p>
+  <p>That is a claim about where failures concentrate, not a claim that the model is good enough. The evidence for it is set out below, and its limits are stated alongside it.</p>
+  <div class="rests-on">
+    <b>What this rests on</b>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2307.03172">Liu et al., <i>Lost in the Middle: How Language Models Use Long Contexts</i></a> (TACL 2023) — accuracy falls when the needed passage sits in the middle of a long context, “even for explicitly long-context models”. A larger window does not solve delivery.</li>
+      <li><a href="https://arxiv.org/abs/2403.08319">Xu et al., <i>Knowledge Conflicts for LLMs: A Survey</i></a> — models carry stale and mutually conflicting knowledge, and resolve the conflict inconsistently when context contradicts it.</li>
+      <li><a href="https://arxiv.org/abs/2609.29075">CRISS</a> (25 Sep 2026) — a retrieval-augmented assistant for cancer registrars reached mean grounding scores of 0.62 / 0.56 / 0.59 across easy, medium and hard questions, against 0.29 / 0.26 / 0.29 for the same models without retrieval.</li>
+      <li><a href="https://arxiv.org/abs/2609.29167">IndicBankBench</a> (25 Sep 2026) — across eleven models on 799 Indian retail-banking cases, strict reliability was 43.7–58.2%; among the named failure modes is reliance on stale context.</li>
+    </ul>
+  </div>
+  <p>Knowledge Sidekick helps you treat knowledge as a first-class layer: how you create it, how you represent it, how you extract it from the places it actually lives, how you keep it current, how you deprecate what is no longer true, and how you evaluate whether your knowledge maturity is good enough for the systems you are building.</p>
+  <p>This site is where those ideas are developed openly: research positions, standards and conventions, adoption playbooks, internships, training, and free resources.</p>
+</section>
+
+<section id="pillars">
+  <h2>The open work, three pillars</h2>
+  <p class="lead">The three pillars are also three different kinds of evidence: research is what is possible, standards are what an industry has agreed, and adoption is what is actually happening. Each can be checked, and each is checked here.</p>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Research</span>
+      <h3>Where the ideas are developed</h3>
+      <p>Short, self-contained position pieces on why knowledge matters for Agentic AI, how it behaves in enterprise and personal contexts, and what it means to engineer context as a knowledge-delivery problem. This is the research arm, written to be read by a technical leader.</p>
+      <div class="rests-on">
+        <b>Rests on</b>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2005.11401">Lewis et al., <i>Retrieval-Augmented Generation</i></a> — the pattern this site argues past, and the baseline it starts from.</li>
+          <li><a href="https://arxiv.org/abs/2310.11511">Asai et al., <i>Self-RAG</i></a> — retrieval with self-critique; grounding as architecture rather than a prompt instruction.</li>
+          <li><a href="https://arxiv.org/abs/2202.03629">Ji et al., <i>Survey of Hallucination in Natural Language Generation</i></a> — the grounding problem, surveyed.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="challenge">
+      <span class="tag">Standards</span>
+      <h3>Conventions anyone can adopt</h3>
+      <p>Open conventions for knowledge representation, formats, lifecycle, grounding, and the agent interface — including things like <a href="/free-resources.html">llms.txt</a> and a clean, documented surface that agent engines can rely on. The goal is a small, usable set of standards, not a catalogue.</p>
+      <div class="rests-on">
+        <b>Rests on</b>
+        <ul>
+          <li>Specifications with a defined status and an open process: <a href="/standards/rdf/">RDF 1.1</a>, <a href="/standards/rdfs/">RDFS</a>, <a href="/standards/owl/">OWL 2</a>, <a href="/standards/skos/">SKOS</a>, <a href="/standards/prov-o/">PROV-O</a>, <a href="/standards/json-ld/">JSON-LD 1.1</a>, <a href="/standards/sparql/">SPARQL 1.1</a>, <a href="/standards/turtle/">Turtle</a> (all W3C Recommendations), and <a href="/standards/mementos/">RFC 7089 (Memento)</a>.</li>
+          <li><a href="/standards/iso-25964/">ISO 25964</a> — thesauri and interoperability with other vocabularies.</li>
+          <li><b>Stated plainly:</b> <a href="/standards/llms-txt/">llms.txt</a> is a proposal, not a standard. It has no standards body behind it, and this site does not present it as one.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="challenge">
+      <span class="tag">Adoption</span>
+      <h3>Practice, not theory</h3>
+      <p>How teams actually put knowledge-first practice into place: maturity evaluation, lifecycle adoption, knowledge audits and benchmarks, advisory, and training. Adoption is where the ideas meet the messy middle.</p>
+      <div class="rests-on">
+        <b>Rests on</b>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2609.28919">Control the Harness, Control the Cost</a> (25 Sep 2026) — enterprises are buying agent harnesses at ten-thousand-seat scale; in an emulated 10,000-seat organisation the paper’s router recovers 14–21% of model spend, $3.3M–$5.0M a year at list prices of 21 September 2026.</li>
+          <li><a href="https://arxiv.org/abs/2609.29144">Scope Before You Persist</a> (25 Sep 2026) — memory that is retrieved too broadly scored 0.713 against 0.816 for scoped retrieval, and fell <i>below</i> the no-memory agent at 0.775. Bad knowledge can cost more than no knowledge.</li>
+          <li><a href="/adoption/companies-ahead/">Companies ahead</a> — what named organisations have actually put in place.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <h2>What this page does not claim</h2>
+  <div class="limits">
+    <p>Three limits, stated because the rest of this page asks you to trust its sources:</p>
+    <ul>
+      <li><b>The benchmark results above are benchmarks.</b> They are measured on constructed tasks and emulations, not on field studies of production systems. They establish that the effect exists and is large enough to measure; they do not establish its size in your organisation.</li>
+      <li><b>Adoption evidence is largely self-reported.</b> Where a vendor or an employer publishes a number, that number is evidence of what they chose to publish. It is not independent measurement.</li>
+      <li><b>A retrieval advantage is not a business case.</b> That grounding improves on a benchmark does not show that a knowledge programme will pay for itself at a given company. The cost side has to be argued separately, and is.</li>
+    </ul>
+    <p style="margin-bottom:0">Where the evidence is thin, this site says so rather than hedging the sentence into something unfalsifiable. When a claim here cannot be traced to a retrievable source, it does not belong on the page.</p>
+  </div>
+</section>
+
+<section id="audience">
+  <h2>Who this is for</h2>
+  <p>This site is written for two moments in an organization's knowledge journey:</p>
+  <ul>
+    <li><strong>Earlier, proactive.</strong> You are planning an agentic system, an LLM-based product, or a personal assistant, and you want the knowledge layer designed before it becomes the thing that fails in production.</li>
+    <li><strong>Later, reactive.</strong> The system is live, and you are now discovering that the hard part is not the model but the knowledge — stale content, weak formats, missing updates, no deprecation, poor grounding.</li>
+  </ul>
+  <p>Readers tend to be AI-native business CIOs and founders who are funding or directing this work, often with an engineering leader or architect executing it. The site is written so both can read it: business-case enough for the person signing off, technical enough for the person building.</p>
+</section>
+
+<section id="sidekick-use-cases">
+  <h2>Where Knowledge Sidekick shows up</h2>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Business</span>
+      <h3>Sidekick to your primary business</h3>
+      <p>Helping companies evaluate knowledge maturity and improve the full lifecycle — creation, representation, extraction, updates, deprecation — so agentic systems and LLM products are built on dependable knowledge rather than whatever is easy to scrape.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">LLMs</span>
+      <h3>Sidekick for LLMs</h3>
+      <p>Two related but separate goals: token savings — spending less on moving and re-reading the wrong knowledge — and grounding — tying what the system says or does to knowledge it can point to, so it is more dependable and more auditable. The cost claim is measurable rather than rhetorical: <a href="https://arxiv.org/abs/2609.28919">one 2026 study</a> recovers 14–21% of model spend by routing work against a taxonomy of the requests an agent receives.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Personal assistants</span>
+      <h3>Sidekick for personal assistants</h3>
+      <p>The knowledge layer for assistants that see email, calendar, messages, and habits: memory across short, medium, and long term, plus privacy, control, and compliance under regimes such as the DPDP Act in India (<a href="https://www.meity.gov.in/">MeitY</a>) and the GDPR in the EU (<a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">Regulation 2016/679</a>).</p>
+    </div>
+  </div>
+  <p class="small">A fourth sidekick — <a href="/free-resources.html">AEO / Agent Engine Optimization</a> — sits across these: making the knowledge layer discoverable and usable by agent engines through <a href="/standards/llms-txt/">llms.txt</a> (a proposal, not a standard) and a clean agent interface.</p>
+</section>
+
+<section id="about-site">
+  <h2>About this site</h2>
+  <p>This site is intentionally small and flat. The core argument — that knowledge is a cross-cutting layer in agentic systems, not a single module — does not need a large site to make its case. The pages here are written as short, self-contained position pieces. Each one opens with the direct answer to why the topic matters, then goes into enough substance to be useful on its own.</p>
+  <p>They are not marketing copy and they are not a textbook. They are meant to be read by a technical leader who is funding or building agentic work and wants a clearer vocabulary for the knowledge layer.</p>
+  <p>Everything here is free to read: not-for-profit, no-fee and no-ads, and that is intended to hold permanently. The pages are written to be used directly — read them, quote them, adopt the conventions, and run the practice in your own team.</p>
+</section>
+
+<section id="sources">
+  <h2>Sources cited on this page</h2>
+  <ul class="srclist">
+    <li>Liu, N. F., et al. <i>Lost in the Middle: How Language Models Use Long Contexts.</i> TACL, 2023. <a href="https://arxiv.org/abs/2307.03172">arXiv:2307.03172</a></li>
+    <li>Lewis, P., et al. <i>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.</i> 2020. <a href="https://arxiv.org/abs/2005.11401">arXiv:2005.11401</a></li>
+    <li>Meng, K., et al. <i>Locating and Editing Factual Associations in GPT.</i> 2022. <a href="https://arxiv.org/abs/2202.05262">arXiv:2202.05262</a></li>
+    <li>Ji, Z., et al. <i>Survey of Hallucination in Natural Language Generation.</i> ACM Computing Surveys. <a href="https://arxiv.org/abs/2202.03629">arXiv:2202.03629</a></li>
+    <li>Asai, A., et al. <i>Self-RAG: Learning to Retrieve, Generate and Critique through Self-Reflection.</i> 2023. <a href="https://arxiv.org/abs/2310.11511">arXiv:2310.11511</a></li>
+    <li>Xu, R., et al. <i>Knowledge Conflicts for LLMs: A Survey.</i> 2024. <a href="https://arxiv.org/abs/2403.08319">arXiv:2403.08319</a></li>
+    <li><i>CRISS: A Retrieval-Augmented AI Chatbot for Assisting Cancer Registrars.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.29075">arXiv:2609.29075</a></li>
+    <li><i>Scope Before You Persist: Preventing Cross-Family Interference in Agent Memory.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.29144">arXiv:2609.29144</a></li>
+    <li><i>IndicBankBench: Evaluating Safety and Reliability of Language Model Assistants in Indian Retail Banking.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.29167">arXiv:2609.29167</a></li>
+    <li><i>Control the Harness, Control the Cost: Routing and Governing AI Coding Agents in the Enterprise.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.28919">arXiv:2609.28919</a></li>
+    <li>Specifications: RDF 1.1, RDFS, OWL 2, SKOS, PROV-O, JSON-LD 1.1, SPARQL 1.1, Turtle (W3C Recommendations); RFC 7089 (Memento); ISO 25964. Linked individually from <a href="/standards.html">Standards</a>.</li>
+    <li>llms.txt — a proposal, linked from <a href="/standards/llms-txt/">Standards → llms.txt</a>.</li>
+  </ul>
+</section>
+
+</div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script src="/nav.js"></script>
+</body>
+</html>
