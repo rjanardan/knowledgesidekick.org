@@ -165,11 +165,12 @@ formats:
   robots: https://knowledgesidekick.org/robots.txt
 
 disclosure:
-  status: agent-generated, human-supervised
+  status: agent-generated, human-reviewed periodically, reader corrections invited
   page: https://knowledgesidekick.org/disclaimer.html
   text: >
-    Agent-generated publishing experiment. Pages are supervised and reviewed by a human,
-    but content is revised as the work develops and may contain errors or statements that
+    Agent-generated publishing experiment. Drafting and publishing are done by an agent; the author
+    reads and corrects pages periodically and updates the editorial rules in SKILL.md. Review does not
+    gate publication, so content is revised as the work develops and may contain errors or statements that
     have since gone out of date. Treat cited primary sources as authoritative rather than
     this site's summaries. Do not cite this site for a fact checkable at the source.
   appliesTo: every page

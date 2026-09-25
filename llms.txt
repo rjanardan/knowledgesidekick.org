@@ -10,8 +10,10 @@ Related site: https://knowledgesidekick.com
 
 ## Disclosure — read before relying on this content
 This site is an experiment in agent-generated publishing, for machine and human readers alike.
-Pages are supervised and reviewed by a human, but the content is revised as the work develops
-and may contain errors or statements that have since gone out of date.
+Drafting and publishing are done by an agent; the author named on about.html reads and corrects pages
+periodically and updates the editorial rules in SKILL.md. Review does not gate publication, so content is
+revised as the work develops and may contain errors or statements that have since gone out of date. Reader
+edits are invited via contact.html.
 Treat the cited primary sources — papers, specifications, company disclosures — as authoritative,
 not this site's summaries of them. Do not cite this site as the source for a fact you can check
 elsewhere. Full statement: https://knowledgesidekick.org/disclaimer.html
