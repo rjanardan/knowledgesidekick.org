@@ -80,7 +80,7 @@
     <div class="challenge">
       <span class="tag">Free to read</span>
       <h3>Free to read, not gated</h3>
-      <p>Anyone can read and use these pages — teams, open-source projects, non-profits, personal assistants — with nothing gated. A vendor's proprietary platform gets the same treatment as a W3C Recommendation. The org side exists so this work is free to read: not-for-profit, no fee, no ads. It carries commercial and proprietary material alongside open standards, because the commitment here is free reading, not an open licence for everything.</p>
+      <p>Anyone can read and use these pages — teams, open-source projects, non-profits, personal assistants — with nothing gated. A vendor's proprietary platform gets the same treatment as a W3C Recommendation. The org side exists so this work is free to read: not-for-profit, no fee, no ads. It carries platform material alongside open standards, because the commitment here is free reading, not an open licence for everything.</p>
     </div>
     <div class="challenge">
       <span class="tag">Usable first</span>
@@ -91,7 +91,7 @@
 </section>
 
 <section id="standards-list">
-  <h2>The standards and conventions</h2>
+  <h2>Standards &amp; platforms</h2>
 
   <div class="pattern">
     <h3>Knowledge representation</h3>
@@ -208,12 +208,15 @@
     </ul>
   </div>
   <div class="pattern">
-    <h3>Serialisation</h3>
-    <p class="purpose">How the model is written down, for people and for machines.</p>
+    <h3>Serialisation and storage</h3>
+    <p class="purpose">How the model is written down, and the open file and table formats it lands in.</p>
     <ul>
       <li><a href="/standards/turtle/">Turtle</a> — the compact RDF syntax people actually write.</li>
       <li><a href="/standards/json-ld/">JSON-LD</a> — linked data in the format web developers already use.</li>
       <li><a href="/standards/hdt/">HDT</a> — compressed RDF for publishing and archiving at size.</li>
+      <li><a href="/standards/parquet/">Parquet</a> — the columnar file format, openly licensed, and the substrate most platforms read.</li>
+      <li><a href="/standards/delta-lake/">Delta Lake</a> — transactions and time travel over Parquet, open source.</li>
+      <li><a href="/standards/iceberg/">Iceberg</a> — the open table format competing platforms adopted.</li>
     </ul>
   </div>
   <div class="pattern">
@@ -233,12 +236,9 @@
     </ul>
   </div>
   <div class="pattern">
-    <h3>Commercial and proprietary</h3>
-    <p class="purpose">The platforms and formats enterprise knowledge actually sits in, whether or not they are openly licensed.</p>
+    <h3>Platforms</h3>
+    <p class="purpose">The proprietary platforms enterprise knowledge actually sits in. Who controls the schema is the axis here, not whether the code is open.</p>
     <ul>
-      <li><a href="/standards/parquet/">Parquet</a> — the columnar file format commercial platforms standardised on.</li>
-      <li><a href="/standards/delta-lake/">Delta Lake</a> — transactions and time travel over Parquet.</li>
-      <li><a href="/standards/iceberg/">Iceberg</a> — the open table format competing platforms adopted.</li>
       <li><a href="/standards/databricks/">Databricks</a> — a proprietary lakehouse and its catalogue.</li>
       <li><a href="/standards/snowflake/">Snowflake</a> — a proprietary warehouse, and where permissions are enforced.</li>
       <li><a href="/standards/palantir/">Palantir</a> — the Foundry Ontology, the closest commercial analogue to an ontology layer.</li>

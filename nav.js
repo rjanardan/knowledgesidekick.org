@@ -62,20 +62,20 @@
           { label: 'RDF', href: '/standards/rdf/' },
           { label: 'RDFS', href: '/standards/rdfs/' },
           { label: 'OWL', href: '/standards/owl/' },
-          { sub: 'Serialisation' },
+          { sub: 'Serialisation and storage' },
           { label: 'Turtle', href: '/standards/turtle/' },
           { label: 'JSON-LD', href: '/standards/json-ld/' },
           { label: 'HDT', href: '/standards/hdt/' },
+          { label: 'Parquet', href: '/standards/parquet/' },
+          { label: 'Delta Lake', href: '/standards/delta-lake/' },
+          { label: 'Iceberg', href: '/standards/iceberg/' },
           { sub: 'Query' },
           { label: 'SPARQL', href: '/standards/sparql/' },
           { label: 'GraphQL-LD', href: '/standards/graphql-ld/' },
           { sub: 'Provenance and persistence' },
           { label: 'PROV-O', href: '/standards/prov-o/' },
           { label: 'Mementos (RFC 7089)', href: '/standards/mementos/' },
-          { sub: 'Commercial and proprietary' },
-          { label: 'Parquet', href: '/standards/parquet/' },
-          { label: 'Delta Lake', href: '/standards/delta-lake/' },
-          { label: 'Iceberg', href: '/standards/iceberg/' },
+          { sub: 'Platforms' },
           { label: 'Snowflake', href: '/standards/snowflake/' },
           { label: 'Databricks', href: '/standards/databricks/' },
           { label: 'Palantir', href: '/standards/palantir/' },
@@ -128,6 +128,8 @@
 
   function dropdownHTML(group) {
     const id = 'nav-dropdown-' + group.label.replace(/\s+/g, '-');
+    // wide groups get a multi-column panel — the CSS does the layout, no JS
+    const dense = group.items.length >= 20 ? ' dense' : '';
     let rows = '';
     group.items.forEach(it => {
       // a heading, not a link
@@ -140,7 +142,7 @@
       const tAttr = target ? ` target="${escAttr(target)}" rel="noopener"` : '';
       rows += `<a href="${escAttr(it.href)}"${tAttr}${ext}>${escAttr(it.label)}</a>`;
     });
-    return `<div class="nav-dropdown" id="${escAttr(id)}" role="menu" aria-labelledby="${escAttr('nav-toggle-' + group.label.replace(/\s+/g, '-'))}">${rows}</div>`;
+    return `<div class="nav-dropdown${dense}" id="${escAttr(id)}" role="menu" aria-labelledby="${escAttr('nav-toggle-' + group.label.replace(/\s+/g, '-'))}">${rows}</div>`;
   }
 
   function buildNav() {
