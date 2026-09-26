@@ -126,9 +126,14 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 .menu-toggle:hover{background:var(--panel-2)}
 .menu-toggle[aria-expanded="true"]{background:var(--panel-2)}
 
+/* ---------- Homepage tagline band: only the homepage, only below 1100px (the header shows it on desktop) ---------- */
+.tagband{display:none;padding:10px 16px 9px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.tagband .wk{max-width:var(--maxw);margin:0 auto}
+
 /* ---------- Tagline needs room: below this the nav loses its last item ---------- */
 @media (max-width:1099px){
   .brand-text span{display:none}
+  .tagband{display:block}
 }
 
 /* ---------- Mobile hamburger drawer ---------- */
