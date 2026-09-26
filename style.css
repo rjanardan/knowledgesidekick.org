@@ -190,7 +190,7 @@ section{scroll-margin-top:84px}
 .challenge p:last-child{margin-bottom:0}
 
 /* ---------- Sources table ---------- */
-.table-wrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.table-wrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line)}
 th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
