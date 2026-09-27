@@ -196,4 +196,28 @@
     buildNav();
     highlightCurrent();
   }
+
+  // Tagline band: pins under the sticky header, slides away on scroll-down,
+  // returns on scroll-up. The logo and header chrome are never touched.
+  try {
+    const tagband = document.querySelector('.tagband');
+    if (tagband && getComputedStyle(tagband).display !== 'none') {
+      let lastY = Math.max(window.scrollY || 0, document.documentElement.scrollTop || 0);
+      let hidden = false;
+      const posY = () =>
+        Math.max(window.scrollY || 0, document.documentElement.scrollTop || 0, document.body.scrollTop || 0);
+      const onScroll = () => {
+        const y = posY();
+        if (y < 4) {
+          if (hidden) { tagband.classList.remove('hid'); hidden = false; }
+        } else if (y > lastY && !hidden) {
+          tagband.classList.add('hid'); hidden = true;
+        } else if (y < lastY && hidden) {
+          tagband.classList.remove('hid'); hidden = false;
+        }
+        lastY = y;
+      };
+      document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    }
+  } catch (e) {}
 })();
