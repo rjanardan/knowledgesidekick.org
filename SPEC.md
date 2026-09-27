@@ -96,6 +96,10 @@ border sits at margin-top 18px; .sources at 32px (its deliberate labelled block)
 ## 7. Voice and editorial rules
 
 - First-person, direct, plain. No marketing voice and no AI-slop phrasing.
+- The site is for education and reference, not marketing. No hype, no
+  sensational pull messages, no attention-grabbing false claims.
+- Claims should be research-backed and data-backed where possible, with primary
+  sources cited.
 - Headings never end with a period.
 - No em dashes, en dashes, or tildes anywhere (use commas, colons, or spaced
   hyphens where a range reads naturally).
