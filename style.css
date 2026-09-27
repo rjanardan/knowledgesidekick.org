@@ -126,9 +126,8 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 .menu-toggle:hover{background:var(--panel-2)}
 .menu-toggle[aria-expanded="true"]{background:var(--panel-2)}
 
-/* ---------- Tagline band: every page, below 1100px; pins under the header and auto-hides on scroll-down ---------- */
-.tagband{display:none;padding:10px 16px 9px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);position:sticky;top:65px;z-index:30;transition:transform .22s ease,opacity .22s ease}
-.tagband.hid{transform:translateY(-115%);opacity:0;pointer-events:none}
+/* ---------- Tagline band: every page, below 1100px; plain flow, scrolls away with the page ---------- */
+.tagband{display:none;padding:10px 16px 9px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
 .tagband .wk{max-width:var(--maxw);margin:0 auto}
 
 /* ---------- Tagline needs room: below this the nav loses its last item ---------- */
