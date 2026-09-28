@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120">
+  <defs>
+    <symbol id="main" viewBox="0 0 460 120">
+      <!-- Open-book / knowledge mark, org palette -->
+      <g fill="none" stroke="#1e6f5c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- left page -->
+        <path d="M30 22 h150 v76 H30 Z" fill="#e6f2ef" stroke="#1e6f5c"/>
+        <path d="M30 34 h150 M30 50 h150 M30 66 h150 M30 82 h150" stroke="#145247" stroke-width="1.4"/>
+        <!-- right page -->
+        <path d="M280 22 h150 v76 H280 Z" fill="#e6f2ef" stroke="#1e6f5c"/>
+        <path d="M280 34 h150 M280 50 h150 M280 66 h150 M280 82 h150" stroke="#145247" stroke-width="1.4"/>
+        <!-- spine -->
+        <path d="M185 22 v76" stroke="#145247" stroke-width="3.4"/>
+        <!-- small mark on right page: a sidekick dot / agentic hint -->
+        <circle cx="410" cy="40" r="4" fill="#145247" stroke="none"/>
+      </g>
+    </symbol>
+  </defs>
+  <use href="#main" width="460" height="120"/>
+</svg>

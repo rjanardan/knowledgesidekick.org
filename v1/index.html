@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Sidekick — research · standards · adoption · v1 preview</title>
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="text/markdown" href="/agents.md" title="agents.md (machine index)">
+<link rel="canonical" href="https://knowledgesidekick.org/v1/">
+<meta name="description" content="Not-for-profit, no-fee, no-ads, free to read — forever. Research, standards and adoption practice for knowledge in Agentic AI, LLMs and personal assistants. Agent-oriented pages: A2A, Agents, MCP.">
+<meta property="og:title" content="Knowledge Sidekick — research · standards · adoption">
+<meta property="og:description" content="Not-for-profit, no-fee, no-ads, free to read — forever. Research, standards and adoption practice for knowledge in Agentic AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.org/v1/">
+<meta property="og:image" content="https://knowledgesidekick.org/logo.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge Sidekick — research · standards · adoption">
+<meta name="twitter:description" content="Not-for-profit, no-fee, no-ads, free to read — forever. Research, standards and adoption practice for knowledge in Agentic AI.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.org/#website",
+      "url": "https://knowledgesidekick.org/",
+      "name": "Knowledge Sidekick — research · standards · adoption",
+      "description": "Not-for-profit, no-fee, no-ads, free to read — forever. Research, standards and adoption practice for knowledge in Agentic AI, LLMs and personal assistants. Agent-oriented pages: A2A, Agents, MCP.",
+      "publisher": { "@id": "https://knowledgesidekick.org/#person" },
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://knowledgesidekick.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.org/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.org/about.html",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://knowledgesidekick.org/#agentPlatform",
+      "name": "Knowledge Sidekick — not-for-profit, free to read",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "url": "https://knowledgesidekick.org/",
+      "description": "Open standards and conventions for knowledge-first Agentic AI — A2A, agents, and MCP knowledge resources.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "provider": { "@id": "https://knowledgesidekick.org/#person" }
+    },
+    {
+      "@type": "APIReference",
+      "@id": "https://knowledgesidekick.org/#api-a2a",
+      "name": "A2A knowledge exchange — conventions",
+      "description": "Conventions for how agents negotiate, share, and verify knowledge with other agents.",
+      "provider": { "@id": "https://knowledgesidekick.org/#agentPlatform" },
+      "documentation": "https://knowledgesidekick.org/a2a/"
+    },
+    {
+      "@type": "APIReference",
+      "@id": "https://knowledgesidekick.org/#api-agents",
+      "name": "Agents knowledge layer — conventions",
+      "description": "The knowledge layer an agentic system needs to act dependably: forms, lifecycle, grounding, currentness, ownership, permission.",
+      "provider": { "@id": "https://knowledgesidekick.org/#agentPlatform" },
+      "documentation": "https://knowledgesidekick.org/agents/"
+    },
+    {
+      "@type": "APIReference",
+      "@id": "https://knowledgesidekick.org/#api-mcp",
+      "name": "MCP knowledge resources — conventions",
+      "description": "Knowledge as a Model Context Protocol resource — knowledge servers, tool-backed knowledge, and dependable exposure to agents.",
+      "provider": { "@id": "https://knowledgesidekick.org/#agentPlatform" },
+      "documentation": "https://knowledgesidekick.org/mcp/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick org home">
+      <svg class="ks-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick" width="40" height="40"><rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/><text x="27" y="34" text-anchor="middle" dominant-baseline="central" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text></svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>Knowledge Engineering for the AI-Native Organisation</span></span>
+      <span class="chip">.org · v1</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<div class="tagband"><div class="wk">Knowledge Engineering for the AI-Native Organisation</div></div>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">No-fee · no-ads · free to read, forever</span>
+    <h1>Knowledge is the layer that makes Agentic AI dependable</h1>
+    <p class="lede">Knowledge Sidekick is a practical knowledge layer for organizations building or using Agentic AI, LLMs, and personal assistants. This org site is the free-to-read side of that work: not-for-profit, no fee, no ads. It covers research, standards and adoption practice — open and proprietary alike — and the courses.</p>
+    <p class="meta"><a href="/contact.html">Contact</a> · <a href="https://knowledgesidekick.com">knowledgesidekick.com</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="start-here" class="pathfinder">
+  <h2>Start here, depending on where you are</h2>
+  <p class="pf-intro">Three situations bring people to this site. Pick the one that is yours and follow two or three pages; each path is a short route, not a curriculum.</p>
+  <div class="pf-tabs" role="tablist" aria-label="Reading paths">
+    <button class="pf-tab" role="tab" id="pf-tab-plan" aria-selected="true" aria-controls="pf-panel-plan">You are planning</button>
+    <button class="pf-tab" role="tab" id="pf-tab-build" aria-selected="false" aria-controls="pf-panel-build" tabindex="-1">You are building</button>
+    <button class="pf-tab" role="tab" id="pf-tab-debug" aria-selected="false" aria-controls="pf-panel-debug" tabindex="-1">It is live and failing</button>
+  </div>
+
+  <div class="pf-panel" role="tabpanel" id="pf-panel-plan" aria-labelledby="pf-tab-plan">
+    <p class="pf-note">Nothing is broken yet. You want the knowledge layer designed before it becomes the thing that fails in production.</p>
+    <ol class="pf-steps">
+      <li>
+        <span class="pf-n">1</span>
+        <div><a href="/why-knowledge.html">Why knowledge fails first in agentic systems</a>
+        <p>The core argument, with the published evidence for it. Twenty minutes, and it sets the vocabulary for everything else.</p></div>
+      </li>
+      <li>
+        <span class="pf-n">2</span>
+        <div><a href="/knowledge/dikw/">DIKW: the shape of the layer</a>
+        <p>What the knowledge layer actually contains, from data to wisdom, and where agentic systems usually stop too early.</p></div>
+      </li>
+      <li>
+        <span class="pf-n">3</span>
+        <div><a href="/context-engineering.html">Context engineering</a>
+        <p>Context as a knowledge-delivery problem rather than a bucket. The design constraint most teams discover too late.</p></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="pf-panel" role="tabpanel" id="pf-panel-build" aria-labelledby="pf-tab-build" hidden>
+    <p class="pf-note">You are mid-project and need conventions that hold: formats, standards, and an interface agents can rely on.</p>
+    <ol class="pf-steps">
+      <li>
+        <span class="pf-n">1</span>
+        <div><a href="/knowledge/knowledge-formats/">Knowledge formats</a>
+        <p>How to shape knowledge so agents can use it: entities, facts, procedures, policies. Consistent enough to trust.</p></div>
+      </li>
+      <li>
+        <span class="pf-n">2</span>
+        <div><a href="/standards.html">Standards index</a>
+        <p>RDF, SKOS, JSON-LD, PROV-O and the rest, each with its real status stated plainly. llms.txt is labelled a proposal, not a standard.</p></div>
+      </li>
+      <li>
+        <span class="pf-n">3</span>
+        <div><a href="/mcp/">MCP knowledge resources</a>
+        <p>Exposing the knowledge layer to agents through the Model Context Protocol: servers, tool-backed knowledge, and what dependable means.</p></div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="pf-panel" role="tabpanel" id="pf-panel-debug" aria-labelledby="pf-tab-debug" hidden>
+    <p class="pf-note">The system is live and the hard part is not the model. These three pages map directly onto the three ways knowledge fails: stale, ungrounded, too broad.</p>
+    <ol class="pf-steps">
+      <li>
+        <span class="pf-n">1</span>
+        <div><a href="/blogs/2026-09-22-why-knowledge-fails-first.html">Why knowledge fails first</a>
+        <p>Deprecation and staleness: the system quotes what used to be true. The failure mode that looks like a model problem.</p></div>
+      </li>
+      <li>
+        <span class="pf-n">2</span>
+        <div><a href="/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html">Grounding is the flip side of token savings</a>
+        <p>The claim and the receipt: tying what the agent says to knowledge it can point to, and what that costs or saves.</p></div>
+      </li>
+      <li>
+        <span class="pf-n">3</span>
+        <div><a href="/research/memory/">Memory research</a>
+        <p>Scoped versus broad retrieval, with the measurement: 0.713 against 0.816, and broad retrieval falling below no memory at all.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<section id="what">
+  <h2>What Knowledge Sidekick is</h2>
+  <p class="lead">Most accounts of failure in agentic systems blame the model. The published record points somewhere more specific: a large share of those failures are knowledge failures. The content is stale, the representation is too coarse to carry the distinction that matters, the extraction misses the places the knowledge actually lives, the updates lag behind the change, and nothing deprecates what is no longer true.</p>
+  <p>That is a claim about where failures concentrate, not a claim that the model is good enough. The evidence for it is set out below, and its limits are stated alongside it.</p>
+  <div class="rests-on">
+    <b>What this rests on</b>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2307.03172">Liu et al., <i>Lost in the Middle: How Language Models Use Long Contexts</i></a> (TACL 2023) — accuracy falls when the needed passage sits in the middle of a long context, “even for explicitly long-context models”. A larger window does not solve delivery.</li>
+      <li><a href="https://arxiv.org/abs/2403.08319">Xu et al., <i>Knowledge Conflicts for LLMs: A Survey</i></a> — models carry stale and mutually conflicting knowledge, and resolve the conflict inconsistently when context contradicts it.</li>
+      <li><a href="https://arxiv.org/abs/2609.29075">CRISS</a> (25 Sep 2026) — a retrieval-augmented assistant for cancer registrars reached mean grounding scores of 0.62 / 0.56 / 0.59 across easy, medium and hard questions, against 0.29 / 0.26 / 0.29 for the same models without retrieval.</li>
+      <li><a href="https://arxiv.org/abs/2609.29167">IndicBankBench</a> (25 Sep 2026) — across eleven models on 799 Indian retail-banking cases, strict reliability was 43.7–58.2%; among the named failure modes is reliance on stale context.</li>
+    </ul>
+  </div>
+  <p>Knowledge Sidekick helps you treat knowledge as a first-class layer: how you create it, how you represent it, how you extract it from the places it actually lives, how you keep it current, how you deprecate what is no longer true, and how you evaluate whether your knowledge maturity is good enough for the systems you are building.</p>
+  <p>This site is where those ideas are developed openly: research positions, standards and conventions, adoption playbooks, internships, training, and free resources.</p>
+</section>
+
+<section id="shape">
+  <h2>The shape of this site</h2>
+  <p>Every page here is a file, and every line between two pages is a link a reader can follow. This figure is drawn from those links, so it shows the site as it is rather than as it is described.</p>
+
+
+  <p style="margin-top:14px">Every page on this site, and every internal link between pages, is on one page: <a href="/map/">the site map</a>.</p>
+  <figure class="ks-figure" data-fig="home-hubs">
+    <div class="fig-scroll">
+<svg class="kg" viewBox="0 0 1180 364" width="100%" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>The pages other pages depend on most</title><desc>The pages other pages depend on most — drawn from the site&#x27;s own internal links.</desc>
+<rect width="1180" height="364" rx="12" fill="#ffffff"/>
+<g class="edges">
+<line data-from="n0" data-to="n2" x1="590.0" y1="30.0" x2="1001.7" y2="135.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n0" data-to="n3" x1="590.0" y1="30.0" x2="1001.7" y2="229.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n0" data-to="n4" x1="590.0" y1="30.0" x2="844.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n0" data-to="n5" x1="590.0" y1="30.0" x2="590.0" y2="334.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n0" data-to="n1" x1="590.0" y1="30.0" x2="844.5" y2="59.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n1" data-to="n2" x1="844.5" y1="59.0" x2="1001.7" y2="135.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n1" data-to="n3" x1="844.5" y1="59.0" x2="1001.7" y2="229.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n1" data-to="n4" x1="844.5" y1="59.0" x2="844.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n1" data-to="n7" x1="844.5" y1="59.0" x2="178.3" y2="229.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n1" data-to="n5" x1="844.5" y1="59.0" x2="590.0" y2="334.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n1" data-to="n6" x1="844.5" y1="59.0" x2="335.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n2" data-to="n4" x1="1001.7" y1="135.0" x2="844.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n2" data-to="n5" x1="1001.7" y1="135.0" x2="590.0" y2="334.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n3" data-to="n2" x1="1001.7" y1="229.0" x2="1001.7" y2="135.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n3" data-to="n4" x1="1001.7" y1="229.0" x2="844.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n3" data-to="n5" x1="1001.7" y1="229.0" x2="590.0" y2="334.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n3" data-to="n6" x1="1001.7" y1="229.0" x2="335.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n4" data-to="n7" x1="844.5" y1="305.0" x2="178.3" y2="229.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n4" data-to="n5" x1="844.5" y1="305.0" x2="590.0" y2="334.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n4" data-to="n6" x1="844.5" y1="305.0" x2="335.5" y2="305.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n6" data-to="n0" x1="335.5" y1="305.0" x2="590.0" y2="30.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n7" data-to="n0" x1="178.3" y1="229.0" x2="590.0" y2="30.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n8" data-to="n9" x1="178.3" y1="135.0" x2="335.5" y2="59.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n8" data-to="n0" x1="178.3" y1="135.0" x2="590.0" y2="30.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n9" data-to="n1" x1="335.5" y1="59.0" x2="844.5" y2="59.0" stroke="#d3ded9" stroke-width="1.1"/>
+<line data-from="n9" data-to="n0" x1="335.5" y1="59.0" x2="590.0" y2="30.0" stroke="#d3ded9" stroke-width="1.1"/>
+</g><g class="nodes">
+<a class="n" data-id="n0" href="/standards.html" target="_top"><title>Standards</title><polygon points="590.0,11.9 608.1,30.0 590.0,48.1 571.9,30.0" fill="#1e6f5c" fill-opacity="0.2" stroke="#1e6f5c" stroke-width="2.4"/><text x="590.0" y="33.9" text-anchor="middle" font-size="11.0" font-weight="700" fill="#1e6f5c" font-family="inherit">S</text><text class="lbl " x="609.5" y="33.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Standards</text></a>
+<a class="n" data-id="n1" href="/research.html" target="_top"><title>Research</title><rect x="831.1" y="45.6" width="26.8" height="26.8" rx="2" fill="#6b5b95" fill-opacity="0.2" stroke="#6b5b95" stroke-width="2.4"/><text x="844.5" y="62.9" text-anchor="middle" font-size="11.0" font-weight="700" fill="#6b5b95" font-family="inherit">R</text><text class="lbl " x="862.9" y="62.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Research</text></a>
+<a class="n" data-id="n2" href="/a2a/" target="_top"><title>A2A</title><polygon points="1013.5,135.0 1007.6,145.2 995.8,145.2 989.9,135.0 995.8,124.8 1007.6,124.8" fill="#8a4f7d" fill-opacity="0.2" stroke="#8a4f7d" stroke-width="2.4"/><text x="1001.7" y="138.9" text-anchor="middle" font-size="11.0" font-weight="700" fill="#8a4f7d" font-family="inherit">A</text><text class="lbl " x="1017.0" y="138.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">A2A</text></a>
+<a class="n" data-id="n3" href="/adoption.html" target="_top"><title>Adoption</title><polygon points="1001.7,213.7 1016.4,239.7 987.0,239.7" fill="#b06a2c" fill-opacity="0.2" stroke="#b06a2c" stroke-width="2.4"/><text x="1001.7" y="232.5" text-anchor="middle" font-size="10.1" font-weight="700" fill="#b06a2c" font-family="inherit">D</text><text class="lbl " x="1018.0" y="232.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Adoption</text></a>
+<a class="n" data-id="n4" href="/agents/" target="_top"><title>Agents</title><polygon points="858.7,305.0 851.6,317.3 837.4,317.3 830.2,305.0 837.4,292.7 851.6,292.7" fill="#8a4f7d" fill-opacity="0.2" stroke="#8a4f7d" stroke-width="2.4"/><text x="844.5" y="308.8" text-anchor="middle" font-size="11.0" font-weight="700" fill="#8a4f7d" font-family="inherit">A</text><text class="lbl " x="861.8" y="308.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Agents</text></a>
+<a class="n" data-id="n5" href="/mcp/" target="_top"><title>MCP</title><polygon points="601.8,334.0 595.9,344.2 584.1,344.2 578.2,334.0 584.1,323.8 595.9,323.8" fill="#8a4f7d" fill-opacity="0.2" stroke="#8a4f7d" stroke-width="2.4"/><text x="590.0" y="337.9" text-anchor="middle" font-size="11.0" font-weight="700" fill="#8a4f7d" font-family="inherit">A</text><text class="lbl " x="605.2" y="337.6" text-anchor="start" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">MCP</text></a>
+<a class="n" data-id="n6" href="/why-knowledge.html" target="_top"><title>Why Knowledge</title><circle cx="335.5" cy="305.0" r="9.2" fill="#6b7d78" fill-opacity="0.2" stroke="#6b7d78" stroke-width="2.4"/><text x="335.5" y="308.8" text-anchor="middle" font-size="10.9" font-weight="700" fill="#6b7d78" font-family="inherit">O</text><text class="lbl " x="321.3" y="308.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Why Knowledge</text></a>
+<a class="n" data-id="n7" href="/context-engineering.html" target="_top"><title>Context Engineering</title><circle cx="178.3" cy="229.0" r="8.2" fill="#6b7d78" fill-opacity="0.2" stroke="#6b7d78" stroke-width="2.4"/><text x="178.3" y="232.3" text-anchor="middle" font-size="9.6" font-weight="700" fill="#6b7d78" font-family="inherit">O</text><text class="lbl minor" x="165.1" y="232.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Context Engineering</text></a>
+<a class="n" data-id="n8" href="/knowledge/ontologies/" target="_top"><title>Ontologies</title><circle cx="178.3" cy="135.0" r="7.1" fill="#2f6f8f" fill-opacity="0.2" stroke="#2f6f8f" stroke-width="2.4"/><text x="178.3" y="138.0" text-anchor="middle" font-size="8.4" font-weight="700" fill="#2f6f8f" font-family="inherit">K</text><text class="lbl minor" x="166.2" y="138.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Ontologies</text></a>
+<a class="n" data-id="n9" href="/knowledge/taxonomies/" target="_top"><title>Taxonomies</title><circle cx="335.5" cy="59.0" r="8.2" fill="#2f6f8f" fill-opacity="0.2" stroke="#2f6f8f" stroke-width="2.4"/><text x="335.5" y="62.4" text-anchor="middle" font-size="9.6" font-weight="700" fill="#2f6f8f" font-family="inherit">K</text><text class="lbl minor" x="322.4" y="62.6" text-anchor="end" font-size="11.3" font-family="inherit" fill="#2b3330" style="paint-order:stroke" stroke="#ffffff" stroke-width="2.6">Taxonomies</text></a></g></svg>
+    </div>
+
+    <figcaption>Letters mark the section: K Knowledge · R Research · S Standards · A Agents · D Adoption · O Other. The ten pages other pages link to most. A page is larger when more links inside this figure touch it. Links from the shared header and footer are not counted. Hover or tab to a node to see what it is and which pages it touches.</figcaption>
+<div class="kgp-slot">
+<div class="kg-preview" id="kg-preview" role="status" aria-live="polite" hidden>
+      <a class="kgp-title" href="#"></a>
+      <p class="kgp-lede"></p>
+      <span class="kgp-hint">click the node to open the page</span>
+    </div></div>
+  </figure>
+</section>
+
+<section id="pillars">
+  <h2>The open work, three pillars</h2>
+  <p class="lead">The three pillars are also three different kinds of evidence: research is what is possible, standards are what an industry has agreed, and adoption is what is actually happening. Each can be checked, and each is checked here.</p>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Research</span>
+      <h3>Where the ideas are developed</h3>
+      <p>Short, self-contained position pieces on why knowledge matters for Agentic AI, how it behaves in enterprise and personal contexts, and what it means to engineer context as a knowledge-delivery problem. This is the research arm, written to be read by a technical leader.</p>
+      <div class="rests-on">
+        <b>Rests on</b>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2005.11401">Lewis et al., <i>Retrieval-Augmented Generation</i></a> — the pattern this site argues past, and the baseline it starts from.</li>
+          <li><a href="https://arxiv.org/abs/2310.11511">Asai et al., <i>Self-RAG</i></a> — retrieval with self-critique; grounding as architecture rather than a prompt instruction.</li>
+          <li><a href="https://arxiv.org/abs/2202.03629">Ji et al., <i>Survey of Hallucination in Natural Language Generation</i></a> — the grounding problem, surveyed.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="challenge">
+      <span class="tag">Standards</span>
+      <h3>Conventions anyone can adopt</h3>
+      <p>Open conventions for knowledge representation, formats, lifecycle, grounding, and the agent interface — including things like <a href="/free-resources.html">llms.txt</a> and a clean, documented surface that agent engines can rely on. The goal is a small, usable set of standards, not a catalogue.</p>
+      <div class="rests-on">
+        <b>Rests on</b>
+        <ul>
+          <li>Specifications with a defined status and an open process: <a href="/standards/rdf/">RDF 1.1</a>, <a href="/standards/rdfs/">RDFS</a>, <a href="/standards/owl/">OWL 2</a>, <a href="/standards/skos/">SKOS</a>, <a href="/standards/prov-o/">PROV-O</a>, <a href="/standards/json-ld/">JSON-LD 1.1</a>, <a href="/standards/sparql/">SPARQL 1.1</a>, <a href="/standards/turtle/">Turtle</a> (all W3C Recommendations), and <a href="/standards/mementos/">RFC 7089 (Memento)</a>.</li>
+          <li><a href="/standards/iso-25964/">ISO 25964</a> — thesauri and interoperability with other vocabularies.</li>
+          <li><b>Stated plainly:</b> <a href="/standards/llms-txt/">llms.txt</a> is a proposal, not a standard. It has no standards body behind it, and this site does not present it as one.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="challenge">
+      <span class="tag">Adoption</span>
+      <h3>Practice, not theory</h3>
+      <p>How teams actually put knowledge-first practice into place: maturity evaluation, lifecycle adoption, knowledge audits and benchmarks, advisory, and training. Adoption is where the ideas meet the messy middle.</p>
+      <div class="rests-on">
+        <b>Rests on</b>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2609.28919">Control the Harness, Control the Cost</a> (25 Sep 2026) — enterprises are buying agent harnesses at ten-thousand-seat scale; in an emulated 10,000-seat organisation the paper’s router recovers 14–21% of model spend, $3.3M–$5.0M a year at list prices of 21 September 2026.</li>
+          <li><a href="https://arxiv.org/abs/2609.29144">Scope Before You Persist</a> (25 Sep 2026) — memory that is retrieved too broadly scored 0.713 against 0.816 for scoped retrieval, and fell <i>below</i> the no-memory agent at 0.775. Bad knowledge can cost more than no knowledge.</li>
+          <li><a href="/adoption/companies-ahead/">Companies ahead</a> — what named organisations have actually put in place.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="limits">
+  <h2>What this page does not claim</h2>
+  <div class="limits">
+    <p>Three limits, stated because the rest of this page asks you to trust its sources:</p>
+    <ul>
+      <li><b>The benchmark results above are benchmarks.</b> They are measured on constructed tasks and emulations, not on field studies of production systems. They establish that the effect exists and is large enough to measure; they do not establish its size in your organisation.</li>
+      <li><b>Adoption evidence is largely self-reported.</b> Where a vendor or an employer publishes a number, that number is evidence of what they chose to publish. It is not independent measurement.</li>
+      <li><b>A retrieval advantage is not a business case.</b> That grounding improves on a benchmark does not show that a knowledge programme will pay for itself at a given company. The cost side has to be argued separately, and is.</li>
+    </ul>
+    <p style="margin-bottom:0">Where the evidence is thin, this site says so rather than hedging the sentence into something unfalsifiable. When a claim here cannot be traced to a retrievable source, it does not belong on the page.</p>
+  </div>
+</section>
+
+<section id="audience">
+  <h2>Who this is for</h2>
+  <p>This site is written for two moments in an organization's knowledge journey:</p>
+  <ul>
+    <li><strong>Earlier, proactive.</strong> You are planning an agentic system, an LLM-based product, or a personal assistant, and you want the knowledge layer designed before it becomes the thing that fails in production.</li>
+    <li><strong>Later, reactive.</strong> The system is live, and you are now discovering that the hard part is not the model but the knowledge — stale content, weak formats, missing updates, no deprecation, poor grounding.</li>
+  </ul>
+  <p>Readers tend to be AI-native business CIOs and founders who are funding or directing this work, often with an engineering leader or architect executing it. The site is written so both can read it: business-case enough for the person signing off, technical enough for the person building.</p>
+</section>
+
+<section id="sidekick-use-cases">
+  <h2>Where Knowledge Sidekick shows up</h2>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Business</span>
+      <h3>Sidekick to your primary business</h3>
+      <p>Helping companies evaluate knowledge maturity and improve the full lifecycle — creation, representation, extraction, updates, deprecation — so agentic systems and LLM products are built on dependable knowledge rather than whatever is easy to scrape.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">LLMs</span>
+      <h3>Sidekick for LLMs</h3>
+      <p>Two related but separate goals: token savings — spending less on moving and re-reading the wrong knowledge — and grounding — tying what the system says or does to knowledge it can point to, so it is more dependable and more auditable. The cost claim is measurable rather than rhetorical: <a href="https://arxiv.org/abs/2609.28919">one 2026 study</a> recovers 14–21% of model spend by routing work against a taxonomy of the requests an agent receives.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Personal assistants</span>
+      <h3>Sidekick for personal assistants</h3>
+      <p>The knowledge layer for assistants that see email, calendar, messages, and habits: memory across short, medium, and long term, plus privacy, control, and compliance under regimes such as the DPDP Act in India (<a href="https://www.meity.gov.in/">MeitY</a>) and the GDPR in the EU (<a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">Regulation 2016/679</a>).</p>
+    </div>
+  </div>
+  <p class="small">A fourth sidekick — <a href="/free-resources.html">AEO / Agent Engine Optimization</a> — sits across these: making the knowledge layer discoverable and usable by agent engines through <a href="/standards/llms-txt/">llms.txt</a> (a proposal, not a standard) and a clean agent interface.</p>
+</section>
+
+<section id="about-site">
+  <h2>About this site</h2>
+  <p>This site is intentionally small and flat. The core argument — that knowledge is a cross-cutting layer in agentic systems, not a single module — does not need a large site to make its case. The pages here are written as short, self-contained position pieces. Each one opens with the direct answer to why the topic matters, then goes into enough substance to be useful on its own.</p>
+  <p>The topics are meant to be read by a technical leader who is funding or building agentic work and wants a clearer vocabulary for the knowledge layer.</p>
+  <p>Everything here is free to read: not-for-profit, no-fee and no-ads, and that is intended to hold permanently. The pages are written to be used directly — read them, quote them, adopt the conventions, and run the practice in your own team.</p>
+</section>
+
+<section id="sources" class="sources">
+  <h2>Sources cited on this page</h2>
+  <ul class="srclist">
+    <li>Liu, N. F., et al. <i>Lost in the Middle: How Language Models Use Long Contexts.</i> TACL, 2023. <a href="https://arxiv.org/abs/2307.03172">arXiv:2307.03172</a></li>
+    <li>Lewis, P., et al. <i>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.</i> 2020. <a href="https://arxiv.org/abs/2005.11401">arXiv:2005.11401</a></li>
+    <li>Meng, K., et al. <i>Locating and Editing Factual Associations in GPT.</i> 2022. <a href="https://arxiv.org/abs/2202.05262">arXiv:2202.05262</a></li>
+    <li>Ji, Z., et al. <i>Survey of Hallucination in Natural Language Generation.</i> ACM Computing Surveys. <a href="https://arxiv.org/abs/2202.03629">arXiv:2202.03629</a></li>
+    <li>Asai, A., et al. <i>Self-RAG: Learning to Retrieve, Generate and Critique through Self-Reflection.</i> 2023. <a href="https://arxiv.org/abs/2310.11511">arXiv:2310.11511</a></li>
+    <li>Xu, R., et al. <i>Knowledge Conflicts for LLMs: A Survey.</i> 2024. <a href="https://arxiv.org/abs/2403.08319">arXiv:2403.08319</a></li>
+    <li><i>CRISS: A Retrieval-Augmented AI Chatbot for Assisting Cancer Registrars.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.29075">arXiv:2609.29075</a></li>
+    <li><i>Scope Before You Persist: Preventing Cross-Family Interference in Agent Memory.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.29144">arXiv:2609.29144</a></li>
+    <li><i>IndicBankBench: Evaluating Safety and Reliability of Language Model Assistants in Indian Retail Banking.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.29167">arXiv:2609.29167</a></li>
+    <li><i>Control the Harness, Control the Cost: Routing and Governing AI Coding Agents in the Enterprise.</i> 25 Sep 2026. <a href="https://arxiv.org/abs/2609.28919">arXiv:2609.28919</a></li>
+    <li>Specifications: RDF 1.1, RDFS, OWL 2, SKOS, PROV-O, JSON-LD 1.1, SPARQL 1.1, Turtle (W3C Recommendations); RFC 7089 (Memento); ISO 25964. Linked individually from <a href="/standards.html">Standards</a>.</li>
+    <li>llms.txt — a proposal, linked from <a href="/standards/llms-txt/">Standards → llms.txt</a>.</li>
+  </ul>
+</section>
+
+</div>
+</div>
+
+<div class="wrap"><p class="src-line">Page updated <time datetime="2026-09-26">26 Sep 2026</time>.</p></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — research · standards · adoption. Not-for-profit, no-fee, no-ads, no tracking. Free to read, forever.</div>
+    <div class="reach-links">
+      <a href="https://knowledgesidekick.com">knowledgesidekick.com</a> ·
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="foot-note">This site is an experiment in agent-generated publishing, written for machine and human readers alike. The author reads and corrects pages periodically and readers are invited to send edits; content is revised as the work develops and may contain errors or statements since overtaken. Check the cited sources before relying on it. <a href="/disclaimer.html">How this site is made</a></div>
+  </div>
+</footer>
+<script>
+(() => {
+  'use strict';
+  const els = document.querySelectorAll('.page .wrap > section');
+  if (!('IntersectionObserver' in window)) return;
+  els.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+})();
+</script>
+<script>
+(() => {
+  'use strict';
+  // v1 pathfinder tabs: click or arrow keys, ARIA-selected state, no storage.
+  const tabs = Array.from(document.querySelectorAll('.pf-tab'));
+  if (!tabs.length) return;
+  const panels = id => document.getElementById('pf-panel-' + id.split('-').pop());
+  const select = (tab, focus) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      const p = panels(t.id);
+      if (p) p.hidden = !on;
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const d = e.key === 'ArrowRight' ? 1 : -1;
+        select(tabs[(i + d + tabs.length) % tabs.length], true);
+      }
+    });
+  });
+})();
+</script>
+    <script>
+(() => {
+  'use strict';
+  // v1 Option B: site-graph hover/focus interaction.
+  // Highlights the touched edges, dims the rest, shows a one-line preview.
+  // Nodes stay real links; without JS the figure is exactly as before.
+  const META = {"n0": ["Standards", "/standards.html", "Open standards and conventions for knowledge representation, lifecycle, grounding, the agent interface, and the discoverability layer that lets agent engines find and use knowledge reliably."], "n1": ["Research", "/research.html", "Short, self-contained position pieces on why knowledge is a cross-cutting layer in agentic systems, why it tends to fail first, and what it means to engineer for it."], "n2": ["A2A", "/a2a/", "How agents negotiate, share, and verify knowledge with other agents, and the knowledge layer an agent needs before it can talk to another agent without lying, leaking, or guessing."], "n3": ["Adoption", "/adoption.html", "How teams actually put knowledge-first practice into place: maturity evaluation, lifecycle adoption, knowledge audits and benchmarks, advisory, and training."], "n4": ["Agents", "/agents/", "What an agentic system needs from knowledge to act dependably: the forms knowledge takes, the lifecycle that keeps it current, the grounding that makes action auditable."], "n5": ["MCP", "/mcp/", "How knowledge is exposed to agents through MCP: knowledge servers, tool-backed knowledge, and making the knowledge layer discoverable and dependable rather than just visible."], "n6": ["Why Knowledge", "/why-knowledge.html", "An agent is only as dependable as the knowledge it can rely on. This page explains why knowledge fails first and what it means to design for it rather than bolt it on."], "n7": ["Context Engineering", "/context-engineering.html", "A context window is not a brain. It is a delivery mechanism for the right knowledge at the right moment, treated as something you design for."], "n8": ["Ontologies", "/knowledge/ontologies/", "A formal specification of the concepts and relations in a domain, written so a machine can reason over them. It buys inference and consistency, and costs the discipline of formal modelling."], "n9": ["Taxonomies", "/knowledge/taxonomies/", "A controlled vocabulary arranged into a hierarchy, and the cheapest structure that makes an agent\u2019s knowledge navigable. Keeping labels, identifiers and aliases stable is the hard part."]};
+  const fig = document.querySelector('figure[data-fig="home-hubs"]');
+  if (!fig) return;
+  const svg = fig.querySelector('svg.kg');
+  const edges = Array.from(svg.querySelectorAll('line[data-from]'));
+  const nodes = Array.from(svg.querySelectorAll('a.n'));
+  const card = fig.querySelector('.kg-preview');
+  const cardTitle = card.querySelector('.kgp-title');
+  const cardLede = card.querySelector('.kgp-lede');
+
+  const neighboursOf = id => {
+    const set = new Set([id]);
+    edges.forEach(l => {
+      if (l.dataset.from === id) set.add(l.dataset.to);
+      if (l.dataset.to === id) set.add(l.dataset.from);
+    });
+    return set;
+  };
+
+  const focusNode = id => {
+    const keep = neighboursOf(id);
+    svg.classList.add('kg-active');
+    nodes.forEach(a => a.classList.toggle('kg-dim', !keep.has(a.dataset.id)));
+    nodes.forEach(a => a.classList.toggle('kg-hl', a.dataset.id === id));
+    edges.forEach(l => {
+      const on = l.dataset.from === id || l.dataset.to === id;
+      l.classList.toggle('kg-hl', on);
+      l.classList.toggle('kg-dim', !on);
+    });
+    const m = META[id];
+    if (m) {
+      cardTitle.textContent = m[0];
+      cardTitle.href = m[1];
+      cardLede.textContent = m[2];
+      card.hidden = false;
+    }
+  };
+  const clear = () => {
+    svg.classList.remove('kg-active');
+    nodes.forEach(a => a.classList.remove('kg-dim','kg-hl'));
+    edges.forEach(l => l.classList.remove('kg-dim','kg-hl'));
+    card.hidden = true;
+  };
+
+  nodes.forEach(a => {
+    a.addEventListener('mouseenter', () => focusNode(a.dataset.id));
+    a.addEventListener('focus', () => focusNode(a.dataset.id));
+    a.addEventListener('mouseleave', clear);
+    a.addEventListener('blur', clear);
+    // touch devices have no hover: first tap selects and shows the card,
+    // tapping the selected node again (or the card) follows the link.
+    a.addEventListener('click', e => {
+      if (!matchMedia('(hover: none)').matches) return;
+      if (a.classList.contains('kg-hl')) { clear(); return; } // second tap: navigate
+      e.preventDefault();
+      focusNode(a.dataset.id);
+    });
+  });
+})();
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

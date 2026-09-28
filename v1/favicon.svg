@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <!-- Favicon: same shape as knowledgesidekick.com, recolored to org palette -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#1e6f5c"/>
+  <path d="M44 18c0-4.418-5.25-8-12-8S20 13.582 20 18v3c0 1.657 1.343 3 3 3h6v9h-3c-3.314 0-6 2.686-6 6v13h18v-13c0-3.314-2.686-6-6-6h-3v-9h6c1.657 0 3-1.343 3-3v-3z" fill="#ffffff"/>
+  <circle cx="31" cy="14" r="3" fill="#145247"/>
+</svg>
