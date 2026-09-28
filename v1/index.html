@@ -119,74 +119,88 @@
 
 <section id="start-here" class="pathfinder">
   <h2>Start here, depending on where you are</h2>
-  <p class="pf-intro">Three situations bring people to this site. Pick the one that is yours and follow two or three pages; each path is a short route, not a curriculum.</p>
-  <div class="pf-tabs" role="tablist" aria-label="Reading paths">
-    <button class="pf-tab" role="tab" id="pf-tab-plan" aria-selected="true" aria-controls="pf-panel-plan">You are planning</button>
-    <button class="pf-tab" role="tab" id="pf-tab-build" aria-selected="false" aria-controls="pf-panel-build" tabindex="-1">You are building</button>
-    <button class="pf-tab" role="tab" id="pf-tab-debug" aria-selected="false" aria-controls="pf-panel-debug" tabindex="-1">It is live and failing</button>
-  </div>
-
+  <p class="pf-intro">Four situations bring people to this site. Pick the one that is yours and follow two or three pages; each path is a short route, not a curriculum.</p>
+  <div class="pf-paths" role="tablist" aria-label="Reading paths">
+    <div class="pf-item"><button class="pf-tab" role="tab" id="pf-tab-plan" title="You are planning" aria-selected="true" aria-controls="pf-panel-plan"><span class="pf-lbl">You are planning</span><span class="pf-sub">Nothing is broken yet</span></button>
   <div class="pf-panel" role="tabpanel" id="pf-panel-plan" aria-labelledby="pf-tab-plan">
     <p class="pf-note">Nothing is broken yet. You want the knowledge layer designed before it becomes the thing that fails in production.</p>
+    <figure class="pf-map"><svg viewBox="0 0 660 92" width="100%" role="img" xmlns="http://www.w3.org/2000/svg"><title>Reading path: why knowledge, DIKW, context engineering</title><desc>Three numbered stations connected by arrows, in reading order.</desc><line x1="92" y1="34" x2="304" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 304 30 L 310 34 L 304 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><line x1="352" y1="34" x2="564" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 564 30 L 570 34 L 564 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><circle cx="70" cy="34" r="17" fill="#e9edec" stroke="#6b7d78" stroke-width="2.4"/><text x="70" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#6b7d78" font-family="inherit">1</text><text x="70" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Why knowledge</text><circle cx="330" cy="34" r="17" fill="#e5edf2" stroke="#2f6f8f" stroke-width="2.4"/><text x="330" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#2f6f8f" font-family="inherit">2</text><text x="330" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">DIKW</text><circle cx="590" cy="34" r="17" fill="#e9edec" stroke="#6b7d78" stroke-width="2.4"/><text x="590" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#6b7d78" font-family="inherit">3</text><text x="590" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Context engineering</text></svg></figure>
     <ol class="pf-steps">
       <li>
-        <span class="pf-n">1</span>
+        <span class="pf-n c-o">1</span>
         <div><a href="/why-knowledge.html">Why knowledge fails first in agentic systems</a>
         <p>The core argument, with the published evidence for it. Twenty minutes, and it sets the vocabulary for everything else.</p></div>
       </li>
       <li>
-        <span class="pf-n">2</span>
+        <span class="pf-n c-k">2</span>
         <div><a href="/knowledge/dikw/">DIKW: the shape of the layer</a>
         <p>What the knowledge layer actually contains, from data to wisdom, and where agentic systems usually stop too early.</p></div>
       </li>
       <li>
-        <span class="pf-n">3</span>
+        <span class="pf-n c-o">3</span>
         <div><a href="/context-engineering.html">Context engineering</a>
         <p>Context as a knowledge-delivery problem rather than a bucket. The design constraint most teams discover too late.</p></div>
       </li>
     </ol>
   </div>
-
+    </div>
+    <div class="pf-item"><button class="pf-tab" role="tab" id="pf-tab-build" title="You are building" aria-selected="false" aria-controls="pf-panel-build" tabindex="-1"><span class="pf-lbl">You are building</span><span class="pf-sub">Mid-project, choosing conventions</span></button>
   <div class="pf-panel" role="tabpanel" id="pf-panel-build" aria-labelledby="pf-tab-build" hidden>
     <p class="pf-note">You are mid-project and need conventions that hold: formats, standards, and an interface agents can rely on.</p>
+    <figure class="pf-map"><svg viewBox="0 0 660 92" width="100%" role="img" xmlns="http://www.w3.org/2000/svg"><title>Reading path: knowledge formats, standards, MCP</title><desc>Three numbered stations connected by arrows, in reading order.</desc><line x1="92" y1="34" x2="304" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 304 30 L 310 34 L 304 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><line x1="352" y1="34" x2="564" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 564 30 L 570 34 L 564 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><circle cx="70" cy="34" r="17" fill="#e5edf2" stroke="#2f6f8f" stroke-width="2.4"/><text x="70" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#2f6f8f" font-family="inherit">1</text><text x="70" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Formats</text><circle cx="330" cy="34" r="17" fill="#e2efe9" stroke="#1e6f5c" stroke-width="2.4"/><text x="330" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#1e6f5c" font-family="inherit">2</text><text x="330" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Standards</text><circle cx="590" cy="34" r="17" fill="#f2eaef" stroke="#8a4f7d" stroke-width="2.4"/><text x="590" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#8a4f7d" font-family="inherit">3</text><text x="590" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">MCP</text></svg></figure>
     <ol class="pf-steps">
       <li>
-        <span class="pf-n">1</span>
+        <span class="pf-n c-k">1</span>
         <div><a href="/knowledge/knowledge-formats/">Knowledge formats</a>
         <p>How to shape knowledge so agents can use it: entities, facts, procedures, policies. Consistent enough to trust.</p></div>
       </li>
       <li>
-        <span class="pf-n">2</span>
+        <span class="pf-n c-s">2</span>
         <div><a href="/standards.html">Standards index</a>
         <p>RDF, SKOS, JSON-LD, PROV-O and the rest, each with its real status stated plainly. llms.txt is labelled a proposal, not a standard.</p></div>
       </li>
       <li>
-        <span class="pf-n">3</span>
+        <span class="pf-n c-a">3</span>
         <div><a href="/mcp/">MCP knowledge resources</a>
         <p>Exposing the knowledge layer to agents through the Model Context Protocol: servers, tool-backed knowledge, and what dependable means.</p></div>
       </li>
     </ol>
   </div>
-
+    </div>
+    <div class="pf-item"><button class="pf-tab" role="tab" id="pf-tab-debug" title="It is live and failing" aria-selected="false" aria-controls="pf-panel-debug" tabindex="-1"><span class="pf-lbl">It is live and failing</span><span class="pf-sub">Live, and knowledge is the problem</span></button>
   <div class="pf-panel" role="tabpanel" id="pf-panel-debug" aria-labelledby="pf-tab-debug" hidden>
     <p class="pf-note">The system is live and the hard part is not the model. These three pages map directly onto the three ways knowledge fails: stale, ungrounded, too broad.</p>
+    <figure class="pf-map"><svg viewBox="0 0 660 92" width="100%" role="img" xmlns="http://www.w3.org/2000/svg"><title>Reading path: why knowledge fails first, grounding, memory</title><desc>Three numbered stations connected by arrows, in reading order.</desc><line x1="92" y1="34" x2="304" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 304 30 L 310 34 L 304 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><line x1="352" y1="34" x2="564" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 564 30 L 570 34 L 564 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><circle cx="70" cy="34" r="17" fill="#e9edec" stroke="#6b7d78" stroke-width="2.4"/><text x="70" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#6b7d78" font-family="inherit">1</text><text x="70" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Fails first</text><circle cx="330" cy="34" r="17" fill="#e9edec" stroke="#6b7d78" stroke-width="2.4"/><text x="330" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#6b7d78" font-family="inherit">2</text><text x="330" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Grounding</text><circle cx="590" cy="34" r="17" fill="#eeeaf4" stroke="#6b5b95" stroke-width="2.4"/><text x="590" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#6b5b95" font-family="inherit">3</text><text x="590" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Memory</text></svg></figure>
     <ol class="pf-steps">
       <li>
-        <span class="pf-n">1</span>
+        <span class="pf-n c-o">1</span>
         <div><a href="/blogs/2026-09-22-why-knowledge-fails-first.html">Why knowledge fails first</a>
         <p>Deprecation and staleness: the system quotes what used to be true. The failure mode that looks like a model problem.</p></div>
       </li>
       <li>
-        <span class="pf-n">2</span>
+        <span class="pf-n c-o">2</span>
         <div><a href="/blogs/2026-09-14-grounding-is-the-flip-side-of-savings.html">Grounding is the flip side of token savings</a>
         <p>The claim and the receipt: tying what the agent says to knowledge it can point to, and what that costs or saves.</p></div>
       </li>
       <li>
-        <span class="pf-n">3</span>
+        <span class="pf-n c-r">3</span>
         <div><a href="/research/memory/">Memory research</a>
         <p>Scoped versus broad retrieval, with the measurement: 0.713 against 0.816, and broad retrieval falling below no memory at all.</p></div>
       </li>
     </ol>
+  </div>
+    </div>
+    <div class="pf-item"><button class="pf-tab" role="tab" id="pf-tab-aeo" title="You are publishing" aria-selected="false" aria-controls="pf-panel-aeo" tabindex="-1"><span class="pf-lbl">You are publishing</span><span class="pf-sub">Publishing for agents, not only readers</span></button>
+  <div class="pf-panel" role="tabpanel" id="pf-panel-aeo" aria-labelledby="pf-tab-aeo" hidden>
+    <p class="pf-note">You publish knowledge so agents can use it, not only so people can read it. This site calls the work AEO (agent engine optimization); the term is this site’s own shorthand, and llms.txt is a proposal, not a standard.</p>
+    <figure class="pf-map"><svg viewBox="0 0 660 92" width="100%" role="img" xmlns="http://www.w3.org/2000/svg"><title>Reading path: llms.txt, agent interface, free resources</title><desc>Three numbered stations connected by arrows, in reading order.</desc><line x1="92" y1="34" x2="304" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 304 30 L 310 34 L 304 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><line x1="352" y1="34" x2="564" y2="34" stroke="#d3ded9" stroke-width="1.6"/><path d="M 564 30 L 570 34 L 564 38" fill="none" stroke="#b9c8c1" stroke-width="1.6"/><circle cx="70" cy="34" r="17" fill="#e2efe9" stroke="#1e6f5c" stroke-width="2.4"/><text x="70" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#1e6f5c" font-family="inherit">1</text><text x="70" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">llms.txt</text><circle cx="330" cy="34" r="17" fill="#f2eaef" stroke="#8a4f7d" stroke-width="2.4"/><text x="330" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#8a4f7d" font-family="inherit">2</text><text x="330" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Agent interface</text><circle cx="590" cy="34" r="17" fill="#e9edec" stroke="#6b7d78" stroke-width="2.4"/><text x="590" y="39.5" text-anchor="middle" font-size="15" font-weight="700" fill="#6b7d78" font-family="inherit">3</text><text x="590" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="#2b3330" font-family="inherit">Free resources</text></svg></figure>
+    <ol class="pf-steps">
+      <li><span class="pf-n c-s">1</span><div><a href="/standards/llms-txt/">llms.txt</a><p>The file that hands an agent engine a map of your knowledge layer: what it does, what it does not do, and its status as a proposal.</p></div></li>
+      <li><span class="pf-n c-a">2</span><div><a href="/agents/">Agent interface conventions</a><p>The documented surface an agent relies on: metadata, structure, and the disciplines that make a page machine-usable without flattening it.</p></div></li>
+      <li><span class="pf-n c-o">3</span><div><a href="/free-resources.html">Free resources</a><p>Templates and checklists from this site’s own setup: the agents.md and llms.txt this page is served with, as working examples.</p></div></li>
+    </ol>
+  </div>
+    </div>
   </div>
 </section>
 
@@ -601,7 +615,17 @@
     if (focus) tab.focus();
   };
   tabs.forEach((t, i) => {
-    t.addEventListener('click', () => select(t));
+    t.addEventListener('click', () => {
+      // accordion mode (< 700px): tapping the open row closes it, like the FAQ.
+      if (t.getAttribute('aria-selected') === 'true' &&
+          window.matchMedia('(max-width:699px)').matches) {
+        t.setAttribute('aria-selected', 'false');
+        const pn = panels(t.id);
+        if (pn) pn.hidden = true;
+        return;
+      }
+      select(t);
+    });
     t.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
         e.preventDefault();

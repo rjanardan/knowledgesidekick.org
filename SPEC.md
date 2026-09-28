@@ -203,9 +203,10 @@ prefers-reduced-motion. No tracking, no storage, no framework.
 | Hero treatment | At 900px and above a two-column hero (kicker and heading left, lede and contact pills right, top aligned) over a faint dot grid | §6 sizes and spacing unchanged; below 900px the hero is the original stack |
 | Hubs list for small screens | Below 700px the pannable graph figure is hidden and the same ten hubs appear as a numbered list ranked by links received inside the figure | The list stays in the DOM at every width, so agent readers always get it |
 
-In dev, not yet staged: trail figures inside the pathfinder tabs, and the nav
-rework (pill toggles, shadowed dropdowns, a mobile drawer capped to the
-viewport with one-open-at-a-time groups).
+In dev, not yet staged: trail figures inside the pathfinder tabs, the fourth
+reader path ("You are publishing", the AEO path: llms.txt, agent interface,
+free resources), and the tab-to-accordion swap below 700px (accordion mode is
+the site's §8 disclosure pattern with §11 role-colour badges).
 
 Breakpoints introduced by this layer: 700px (hubs list versus figure), 900px
 (two-column hero), 1520px (rail versus chip bar). All are viewport widths;

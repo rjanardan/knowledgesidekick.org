@@ -618,3 +618,115 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .hubs-note{font-size:12.5px;line-height:1.55;color:var(--muted)}
   figure[data-fig="home-hubs"]{display:none}
 }
+
+
+/* ------------------------------------------------------------
+   v1: pathfinder trail map (one figure per tab, same node
+   language as the site graph) + nav look and feel.
+   ------------------------------------------------------------ */
+.pf-map{margin:14px 0 4px}
+.pf-map svg{display:block;width:100%;height:auto}
+.pf-map{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:8px 10px 2px}
+
+/* nav: soft-shadowed rounded panels, pill toggles, accent current item */
+.nav-toggle{border-radius:8px;font-weight:600;letter-spacing:.01em}
+.nav-dropdown{border:1px solid var(--line-2);border-radius:10px;box-shadow:var(--shadow-lg);padding:6px 0}
+.nav-dropdown a{padding:8px 14px}
+.nav-dropdown a.current{background:var(--accent-soft);color:var(--accent-ink);font-weight:650}
+.nav-dropdown .grp-label{padding:9px 14px 3px}
+
+/* small-screen drawer: scrollable, capped height, sectioned, grouped toggles */
+@media (max-width:980px){
+  .nav-wrap{top:60px;max-height:calc(100vh - 116px);overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;padding:8px 16px 18px}
+  .nav-wrap .grp-label{padding-left:6px}
+  .nav-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px 14px;
+    font-size:14.5px;font-weight:650;color:var(--ink)}
+  .nav-toggle .arrow{transition:transform .15s ease}
+  .nav-group.open .nav-toggle{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+  .nav-group.open .nav-toggle .arrow{transform:rotate(180deg)}
+  .nav-group.open > .nav-dropdown{margin:2px 0 10px;padding:2px 4px 6px}
+  .nav-dropdown a{padding:11px 10px;border-radius:8px}
+  .nav-dropdown a:active{background:var(--panel-2)}
+  .nav-link{border-radius:9px;text-align:left}
+}
+
+
+/* ------------------------------------------------------------
+   v1 M1: mobile-first pathfinder. Below 700px the trail figure
+   (660-unit SVG, ~6px labels at phone width) is hidden; the step
+   list IS the trail: role-coloured stations joined by a vertical
+   rail, text at normal reading size. Desktop keeps the figure.
+   Badge colours mirror the site-graph node colours (§11).
+   ------------------------------------------------------------ */
+.pf-n{position:relative;z-index:1}
+.pf-n.c-o{background:#e9edec;color:#6b7d78}
+.pf-n.c-k{background:#e5edf2;color:#2f6f8f}
+.pf-n.c-s{background:#e2efe9;color:#1e6f5c}
+.pf-n.c-a{background:#f2eaef;color:#8a4f7d}
+.pf-n.c-r{background:#eeeaf4;color:#6b5b95}
+.pf-n.c-d{background:#f4ecdf;color:#b06a2c}
+@media (max-width:699px){
+  .pf-map{display:none}
+  .pf-steps li{border-bottom:none;padding-bottom:10px;position:relative}
+  .pf-steps li:not(:last-child)::before{content:"";position:absolute;left:14px;top:34px;bottom:-16px;
+    width:2px;background:var(--line-2);z-index:0}
+  .pf-steps .pf-n{width:30px;height:30px}
+}
+
+
+/* ------------------------------------------------------------
+   v1 pathfinder v2: four reader paths, tabs on wide, accordion
+   on small. Same markup and ARIA; presentation swaps at 700px.
+   Sublabels make the rows informative before opening (accordion)
+   and are aria-hidden duplicates of the note on wide (tabs).
+   ------------------------------------------------------------ */
+.pf-paths{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0 2px;
+  align-items:end;margin:16px 0 0}
+.pf-item{display:contents}
+.pf-tab{grid-row:1;appearance:none;background:none;border:1px solid var(--line);border-bottom:none;
+  border-radius:var(--radius) var(--radius) 0 0;padding:9px 16px;font:inherit;font-size:13.5px;font-weight:600;
+  color:var(--ink-soft);cursor:pointer;transition:color .18s ease, background .18s ease;text-align:left}
+.pf-tab:hover{color:var(--accent-ink)}
+.pf-tab[aria-selected="true"]{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--line-2)}
+.pf-tab .pf-sub{display:none}
+.pf-panel{grid-row:2;grid-column:1/-1;border:1px solid var(--line);border-top:none;border-radius:0 0 var(--radius) var(--radius);
+  background:var(--panel);padding:18px 20px 6px;box-shadow:var(--shadow)}
+
+@media (max-width:699px){
+  .pf-paths{display:block;border-bottom:none;margin:16px 0 0}
+  .pf-item{display:block;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--panel);margin:0 0 10px;box-shadow:var(--shadow);overflow:hidden}
+  .pf-tab{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;
+    border:none;border-radius:0;padding:13px 16px;font-size:15px;color:var(--ink);position:relative}
+  .pf-tab::after{content:"";width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);transition:transform .15s ease;flex:0 0 auto}
+  .pf-tab[aria-selected="true"]{background:var(--accent-soft);color:var(--accent-ink)}
+  .pf-tab[aria-selected="true"]::after{transform:rotate(225deg);border-color:var(--accent)}
+  .pf-tab .pf-sub{display:block;font-weight:500;font-size:12px;color:var(--muted);margin-top:2px}
+  .pf-tab .pf-lbl{display:block}
+  .pf-panel{border:none;border-top:1px solid var(--line);border-radius:0;box-shadow:none;padding:14px 16px 4px}
+  .pf-panel .pf-note{margin-bottom:10px}
+}
+@media (prefers-reduced-motion: reduce){.pf-tab{transition:none}.pf-tab::after{transition:none}}
+
+
+/* ------------------------------------------------------------
+   v1: tab label truncation. Tabs share the path width equally;
+   a label that does not fit is cut with an ellipsis instead of
+   wrapping (uneven heights were the long-label symptom). Hover
+   and keyboard focus reveal the full text. Same rule for the
+   mobile accordion rows. Truncation is presentation only: the
+   tab keeps its full accessible name.
+   ------------------------------------------------------------ */
+@media (min-width:700px){
+  .pf-paths{grid-template-columns:repeat(4,1fr)}
+  .pf-tab .pf-lbl{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pf-tab[aria-selected="true"] .pf-lbl{white-space:normal;overflow:visible}
+}
+.pf-tab .pf-lbl{min-width:0}
+.pf-tab{min-width:0}
+@media (min-width:700px){
+  .pf-tab:hover .pf-lbl, .pf-tab:focus-visible .pf-lbl{white-space:normal;overflow:visible}
+}
