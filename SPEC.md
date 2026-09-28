@@ -2,7 +2,7 @@
 
 Canonical style guide for knowledgesidekick.org (and its .com twin).
 Read this file before creating or editing any page, and use the QA checklist
-(§13) to test that a page follows it.
+(§15) to test that a page follows it.
 
 ## 1. Purpose and use
 
@@ -27,6 +27,10 @@ and a cosmetic background tint. All rules here apply to both.
 The run of colours above is the only difference between the two style.css
 files. When authoring for .com, reuse the .org page and swap these tokens and
 the chip.
+
+A third variant exists for staging: the v1 site under /v1/. It is not a style
+fork of the system; it is the same system plus an enhancement layer, described
+in §13 and §14.
 
 ## 3. Stack and build
 
@@ -150,7 +154,64 @@ not paste decorative or unrelated imagery.
 4. Remind the user to PUSH after 3 to 5 accumulated changes. Nothing reaches the
    live site until the user pushes.
 
-## 13. QA / conformance checklist
+For v1 work the pipeline has three areas and nothing skips a stage:
+
+1. Dev. Experiments live in ~/.hermes/cache/scratch/ks-dev/, served at
+   http://localhost:8091 with the repo mirrored by symlinks so internal links
+   resolve. The repo is not touched.
+2. Staging. Dev files are copied to v1/ in the repo and verified over
+   http://localhost:8080. The user reviews the staged site, then a local commit
+   is made.
+3. Production. A push to GitHub Pages publishes
+   https://knowledgesidekick.org/v1/.
+
+Commits and pushes happen only on explicit user instruction.
+
+## 13. The v1 staging site
+
+knowledgesidekick.org/v1/ is a staged copy of the landing page carrying the
+enhancements of §14. It is self-contained: v1/index.html plus its own copies of
+style.css, nav.js, logo.svg, and favicon.svg. The copies diverge from the root
+files only through the appended v1 enhancement layer; editing v1 never touches
+root site files.
+
+Rules:
+- Asset links inside v1 are relative (style.css, nav.js, favicon.svg), so the
+  folder works whatever path it is served from.
+- canonical and og:url point at https://knowledgesidekick.org/v1/; the title
+  ends with "v1 preview" and the header chip reads ".org · v1".
+- Content links point at the live root pages. v1 is a new front door, not a
+  fork of the site.
+- §6, §7, §10, and §11 apply unchanged. The enhancement layer may restyle and
+  reorder presentation; it may not enlarge the type scale, add claims, or use
+  colours outside the :root tokens.
+
+## 14. v1 enhancement inventory
+
+Everything here ships in v1 only and is progressive: with JS disabled the page
+still reads as a complete document (tabs stack, stats and lists stay, only the
+dynamic wayfinding disappears). All motion is switched off under
+prefers-reduced-motion. No tracking, no storage, no framework.
+
+| Item | Adds | Behaviour notes |
+|---|---|---|
+| Pathfinder section | "Start here" under the hero: three tabs, planning / building / live and failing, each a three-step reading path to existing pages | ARIA tablist with arrow-key support; no JS: panels stack in full |
+| Graph interaction | Hover, keyboard focus, or tap on a hub node dims unrelated links and fills a preview card below the figure | Touch: first tap selects, second tap or the card opens the page; card text copies the target page's own opening sentence |
+| Pull stats section | Four benchmark cards (grounding, reliability, spend recovery, memory scoring), each linked to its arXiv source | Numbers repeat citations already on the page; the section states plainly that these are benchmarks |
+| In-page wayfinding | After the Start-here section passes: a left rail at viewports 1520px and above, a sticky chip bar under the header below that | Built from the section ids present in the DOM; chips are plain anchors; the strip re-centres only when the active section changes, never mid-pan or right after a tap |
+| Next-read chain | Closing section with three exits and one-line reasons, mirroring the pathfinder paths | Static links |
+| Hero treatment | At 900px and above a two-column hero (kicker and heading left, lede and contact pills right, top aligned) over a faint dot grid | §6 sizes and spacing unchanged; below 900px the hero is the original stack |
+| Hubs list for small screens | Below 700px the pannable graph figure is hidden and the same ten hubs appear as a numbered list ranked by links received inside the figure | The list stays in the DOM at every width, so agent readers always get it |
+
+In dev, not yet staged: trail figures inside the pathfinder tabs, and the nav
+rework (pill toggles, shadowed dropdowns, a mobile drawer capped to the
+viewport with one-open-at-a-time groups).
+
+Breakpoints introduced by this layer: 700px (hubs list versus figure), 900px
+(two-column hero), 1520px (rail versus chip bar). All are viewport widths;
+none alter the root site.
+
+## 15. QA / conformance checklist
 
 Run this before calling a page done:
 
@@ -166,3 +227,9 @@ Run this before calling a page done:
 - [ ] Sources are real, cited, reachable links; the figure has title/desc/caption.
 - [ ] Renders with a hard refresh (Ctrl+Shift+R); spacing compact at 1140px and
       on a narrow window. No layout regressions in landscape or on a phone.
+
+v1 pages additionally:
+- [ ] Enhancement classes exist only in v1/style.css; root style.css and
+      nav.js untouched.
+- [ ] Page reads correctly with JavaScript disabled.
+- [ ] Every new interaction has a touch path and honours reduced motion.
