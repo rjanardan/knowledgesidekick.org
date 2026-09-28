@@ -466,6 +466,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* slot reserves the space so showing the card never shifts the layout */
 .kgp-slot{position:relative;min-height:96px;margin:10px 0 0}
+.kgp-rest{margin:0;height:96px;display:flex;align-items:center;font-size:12.5px;line-height:1.55;
+  color:var(--muted);padding:0 16px 0 13px;border-left:3px solid var(--line-2)}
+.kgp-slot:has(.kg-preview:not([hidden])) .kgp-rest{display:none}
 .kg-preview{position:absolute;inset:0 auto auto 0;width:min(100%,640px);background:var(--panel);border:1px solid var(--line-2);border-left:3px solid var(--accent);
   border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:12px 16px 10px;
   animation:kgp-in .18s ease}
@@ -497,7 +500,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* ------------------------------------------------------------
    v1 Option D: on-page wayfinding (built by JS; hidden until the
-   reader passes the intro; rail >=1400px, chip bar below it).
+   reader passes the intro; rail >=1520px, chip bar below it).
    ------------------------------------------------------------ */
 .ks-toc-rail,.ks-toc-bar{display:none}
 .ks-toc-rail ul,.ks-toc-bar ul{list-style:none;margin:0;padding:0}
@@ -520,10 +523,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .ks-toc-bar a.ks-on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
 
 /* the bar lives between header and main: give it a body-level slot */
-@media (min-width:1400px){
+@media (min-width:1520px){
   .ks-wayfind .ks-toc-bar{display:none}
 }
-@media (max-width:1399px){
+@media (max-width:1519px){
   .ks-wayfind .ks-toc-rail{display:none}
 }
 @media (prefers-reduced-motion: reduce){
@@ -546,3 +549,72 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 /* chip-tap lands the section Title in view, not under the sticky bar */
 .page > .wrap > section{scroll-margin-top:calc(var(--ks-h,64px) + var(--ks-barh,0px) + 10px)}
+
+
+/* ------------------------------------------------------------
+   v1 Option E: next-read chain. A short route out of the page;
+   three real destinations with the reason to choose each.
+   ------------------------------------------------------------ */
+.nextreads{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.nextreads li{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  padding:16px 18px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease}
+.nextreads li:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.nextreads a{font-weight:700;font-size:15.5px;display:block;margin-bottom:6px}
+.nextreads a::after{content:" \2192";font-weight:600;color:var(--accent)}
+.nextreads p{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+@media (prefers-reduced-motion: reduce){ .nextreads li,.nextreads li:hover{transition:none;transform:none} }
+
+
+/* ------------------------------------------------------------
+   v1 Option F: hero treatment. Two-column on wide screens
+   (headline left, lede + contact right), faint dot-grid paper
+   texture, pill meta links. Padding and type sizes follow §6;
+   nothing here enlarges the compact model.
+   ------------------------------------------------------------ */
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--line-2) 1px, transparent 1px);
+  background-size:20px 20px;opacity:.35;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);
+          mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);
+}
+.hero > .wrap{position:relative}
+@media (min-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:40px;align-items:start}
+  .hero-left{display:grid;gap:0}
+  .hero-right{display:grid;gap:14px}
+  .hero .meta{margin-top:0}
+}
+.hero .meta a{display:inline-block;padding:5px 13px;border:1px solid var(--line-2);
+  border-radius:999px;background:var(--panel);font-size:13px;color:var(--accent-ink);
+  box-shadow:var(--shadow)}
+.hero .meta a:hover{text-decoration:none;border-color:var(--accent)}
+
+
+/* ------------------------------------------------------------
+   v1: hubs list, the mobile reading of the same figure data.
+   Under 700px the pannable SVG is replaced by the ranked list;
+   above it the list is display:none (content stays in the DOM
+   for agents and no-JS readers either way).
+   ------------------------------------------------------------ */
+.hubs-list{display:none;list-style:none;margin:16px 0 0;padding:0;counter-reset:hub}
+.hubs-list li{display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid var(--line);counter-increment:hub}
+.hubs-list li:last-child{border-bottom:none}
+.hubs-list li::before{content:counter(hub);font-size:12px;color:var(--muted);width:16px;flex:0 0 auto;font-weight:600}
+.hubs-list a{font-weight:650;flex:1 1 auto;min-width:0}
+.hubs-list .deg{font-size:12px;color:var(--muted);white-space:nowrap}
+.hb{flex:0 0 auto;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700}
+.hb-s{background:#e2efe9;color:#1e6f5c}
+.hb-r{background:#eeeaf4;color:#6b5b95}
+.hb-a{background:#f2eaef;color:#8a4f7d}
+.hb-d{background:#f4ecdf;color:#b06a2c}
+.hb-o{background:#e9edec;color:#6b7d78}
+.hb-k{background:#e5edf2;color:#2f6f8f}
+.hubs-note{display:none;margin:12px 0 0}
+@media (max-width:699px){
+  .hubs-list,.hubs-note{display:block}
+  .hubs-note{font-size:12.5px;line-height:1.55;color:var(--muted)}
+  figure[data-fig="home-hubs"]{display:none}
+}
