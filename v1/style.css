@@ -493,3 +493,56 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .stat p{margin:0;font-size:13px;line-height:1.55;color:var(--ink-soft)}
 .stat a{font-weight:650}
 @media (prefers-reduced-motion: reduce){ .stat,.stat:hover{transition:none;transform:none} }
+
+
+/* ------------------------------------------------------------
+   v1 Option D: on-page wayfinding (built by JS; hidden until the
+   reader passes the intro; rail >=1400px, chip bar below it).
+   ------------------------------------------------------------ */
+.ks-toc-rail,.ks-toc-bar{display:none}
+.ks-toc-rail ul,.ks-toc-bar ul{list-style:none;margin:0;padding:0}
+
+.ks-wayfind .ks-toc-rail{position:fixed;left:calc(50% - var(--maxw)/2 - 178px);top:calc(var(--ks-h) + 24px);
+  width:150px;z-index:40;display:block;font-size:12.5px}
+.ks-toc-rail li{margin:0 0 2px}
+.ks-toc-rail a{display:block;padding:4px 10px;color:var(--muted);border-left:2px solid var(--line);
+  text-decoration:none;transition:color .15s ease, border-color .15s ease}
+.ks-toc-rail a:hover{color:var(--accent-ink)}
+.ks-toc-rail a.ks-on{color:var(--accent-ink);font-weight:650;border-left-color:var(--accent)}
+
+.ks-wayfind .ks-toc-bar{position:sticky;top:var(--ks-h);z-index:40;display:block;
+  background:var(--bg);border-bottom:1px solid var(--line);margin:0}
+.ks-toc-bar ul{display:flex;gap:6px;overflow-x:auto;padding:8px 16px;max-width:var(--maxw);margin:0 auto;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ks-toc-bar ul::-webkit-scrollbar{display:none}
+.ks-toc-bar a{flex:0 0 auto;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--panel);font-size:12.5px;font-weight:600;color:var(--ink-soft);text-decoration:none;white-space:nowrap}
+.ks-toc-bar a.ks-on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+
+/* the bar lives between header and main: give it a body-level slot */
+@media (min-width:1400px){
+  .ks-wayfind .ks-toc-bar{display:none}
+}
+@media (max-width:1399px){
+  .ks-wayfind .ks-toc-rail{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .ks-toc-rail a{transition:none}
+}
+
+/* edge fades: affordance that the chip strip continues off-screen */
+.ks-toc-bar{position:sticky}
+.ks-toc-bar::before,.ks-toc-bar::after{content:"";position:absolute;top:0;bottom:0;width:30px;
+  pointer-events:none;z-index:1;opacity:0;transition:opacity .15s ease}
+.ks-toc-bar::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.ks-toc-bar::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.ks-toc-bar.ks-fade-l::before{opacity:1}
+.ks-toc-bar.ks-fade-r::after{opacity:1}
+.ks-toc-bar ul{scroll-snap-type:x proximity}
+.ks-toc-bar a{scroll-snap-align:center}
+@media (prefers-reduced-motion: reduce){.ks-toc-bar::before,.ks-toc-bar::after{transition:none}}
+/* coarse pointers: chip height to a ~44px tap target */
+@media (pointer:coarse){.ks-toc-bar a{padding:12px 16px;font-size:13px}}
+
+/* chip-tap lands the section Title in view, not under the sticky bar */
+.page > .wrap > section{scroll-margin-top:calc(var(--ks-h,64px) + var(--ks-barh,0px) + 10px)}

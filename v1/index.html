@@ -436,6 +436,118 @@
 <script>
 (() => {
   'use strict';
+  // v1 Option D: on-page wayfinding. Wide screens get a left rail; below 1400px
+  // the same list becomes a sticky chip bar under the header. Built by JS from
+  // the sections present in the DOM; without JS there is no TOC and no loss.
+  const SECTIONS = [
+    ['start-here','Start here'],
+    ['what','The argument'],
+    ['measured','Numbers'],
+    ['shape','Site shape'],
+    ['pillars','Three pillars'],
+    ['limits','Limits'],
+    ['audience','Who for'],
+    ['sidekick-use-cases','Use cases'],
+    ['about-site','About'],
+    ['sources','Sources']
+  ];
+  const page = document.querySelector('div.page > .wrap');
+  if (!page) return;
+  const items = SECTIONS.map(([id,label]) => {
+    const el = document.getElementById(id);
+    return el ? {id, label, el} : null;
+  }).filter(Boolean);
+  if (items.length < 4) return;
+
+  const mk = (cls, where) => {
+    const nav = document.createElement('nav');
+    nav.className = cls;
+    nav.setAttribute('aria-label','On this page');
+    nav.innerHTML = '<ul>' + items.map(i =>
+      '<li><a href="#' + i.id + '">' + i.label + '</a></li>').join('') + '</ul>';
+    where(nav);
+    return Array.from(nav.querySelectorAll('a'));
+  };
+  // rail: fixed, appended last (position is out of flow anyway).
+  // bar: sticky, so it must sit in flow before <main>, after the header.
+  const main = document.getElementById('main');
+  const links = [
+    ...mk('ks-toc-rail', n => document.body.appendChild(n)),
+    ...mk('ks-toc-bar', n => main.parentNode.insertBefore(n, main))
+  ];
+
+  const header = document.querySelector('.site-header');
+  const setH = () => document.documentElement.style.setProperty('--ks-h', (header.offsetHeight || 64) + 'px');
+  setH(); addEventListener('resize', setH);
+
+  let ticking = false;
+  let lastActive = null, suppressUntil = 0, lastPan = 0;
+  const centerChip = (bar, on) => {
+    // ul.scrollTo only ever moves the strip itself. scrollIntoView was the bug:
+    // on WebKit it can also scroll the page, which hijacked anchor jumps.
+    const ul = bar.querySelector('ul');
+    const target = ul.scrollLeft + (on.getBoundingClientRect().left - ul.getBoundingClientRect().left)
+                   - (ul.clientWidth - on.offsetWidth) / 2;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    ul.scrollTo({left: Math.max(0, target), behavior: reduce ? 'auto' : 'smooth'});
+  };
+  const spy = () => {
+    ticking = false;
+    const bar = document.querySelector('.ks-toc-bar');
+    const y = (header ? header.offsetHeight : 64) + (bar ? bar.offsetHeight + 8 : 0) + 4;
+    let active = items[0].id;
+    for (const i of items) {
+      if (i.el.getBoundingClientRect().top <= y) active = i.id;
+    }
+    links.forEach(a => {
+      const on = a.getAttribute('href') === '#' + active;
+      a.classList.toggle('ks-on', on);
+      if (on) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');
+    });
+    const intro = document.getElementById('start-here');
+    const past = intro ? intro.getBoundingClientRect().top < (window.innerHeight * 0.6) : true;
+    document.body.classList.toggle('ks-wayfind', past);
+    if (bar) {
+      // Re-centre the strip ONLY when the active section changes, never on
+      // every scroll tick, never after a tap (suppressUntil), and never while
+      // the reader is mid-pan (lastPan). The strip answers section changes, not
+      // every pixel of scroll: that re-centre-every-tick was the gravity.
+      if (active !== lastActive) {
+        lastActive = active;
+        const now = Date.now();
+        if (!matchMedia('(min-width:1400px)').matches && now > suppressUntil && now > lastPan + 900) {
+          const on = bar.querySelector('a.ks-on');
+          if (on) centerChip(bar, on);
+        }
+      }
+      updateFades(bar);
+    }
+  };
+  const updateFades = (bar) => {
+    const ul = bar.querySelector('ul');
+    bar.classList.toggle('ks-fade-l', ul.scrollLeft > 4);
+    bar.classList.toggle('ks-fade-r', ul.scrollLeft < ul.scrollWidth - ul.clientWidth - 4);
+    // keep the anchor-jump offset honest: header + current bar height
+    document.documentElement.style.setProperty('--ks-barh', bar.offsetHeight + 'px');
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, {passive:true});
+  const barUl = document.querySelector('.ks-toc-bar ul');
+  if (barUl) barUl.addEventListener('scroll', () => {
+    lastPan = Date.now();
+    const b = document.querySelector('.ks-toc-bar');
+    if (b) updateFades(b);   // fades only; no re-centring, no spy
+  }, {passive:true});
+  // a chip tap means the reader chose: let the page jump stand, and do not
+  // re-centre the strip through the jump's scroll animation
+  links.filter(a => a.closest('.ks-toc-bar')).forEach(a => {
+    a.addEventListener('pointerdown', () => { suppressUntil = Date.now() + 1500; });
+  });
+  spy();
+})();
+</script>
+<script>
+(() => {
+  'use strict';
   // v1 pathfinder tabs: click or arrow keys, ARIA-selected state, no storage.
   const tabs = Array.from(document.querySelectorAll('.pf-tab'));
   if (!tabs.length) return;
