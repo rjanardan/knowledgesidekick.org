@@ -378,3 +378,362 @@ figure.fig-img figcaption{margin-top:9px;font-size:12.5px;color:#5b6663;line-hei
 figure#sitemap svg{cursor:grab}
 figure#sitemap svg:active{cursor:grabbing}
 figure#sitemap:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+
+
+/* ============================================================
+   v1 enhancement layer (staging copy only)
+   Restrained "bling": depth, motion, and micro-interactions.
+   All values come from the :root tokens above. Respects
+   prefers-reduced-motion. The root site is untouched.
+   ============================================================ */
+
+/* Depth on cards: lift with the existing shadow tokens */
+.challenge{transition:transform .18s ease, box-shadow .18s ease}
+.challenge:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+
+/* Hero accent: a thin gradient rule under the kicker */
+.kicker{position:relative}
+.kicker::after{content:"";display:block;width:44px;height:2px;margin-top:6px;
+  background:linear-gradient(90deg,var(--accent),transparent);border-radius:2px}
+
+/* Section reveal on scroll (class added by the inline script) */
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Animated underline for content links (excludes cards/nav/footer) */
+main .wrap a{text-decoration-thickness:1px;text-underline-offset:2px;background-image:linear-gradient(var(--accent-ink),var(--accent-ink));
+  background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;
+  transition:background-size .22s ease}
+main .wrap a:hover{background-size:100% 1px;text-decoration:none}
+
+/* Tag chips get a subtle ring on hover */
+.challenge .tag{transition:box-shadow .18s ease}
+.challenge:hover .tag{box-shadow:0 0 0 3px var(--accent-soft)}
+
+/* rests-on blocks: keep the left rule, add a soft left gradient wash */
+.rests-on{background:linear-gradient(90deg,var(--accent-soft),#f7faf9 40%)}
+
+/* Focus visibility consistent with accent */
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+@media (prefers-reduced-motion: reduce){
+  .challenge,.challenge:hover{transition:none;transform:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  main .wrap a{transition:none}
+}
+
+
+/* ------------------------------------------------------------
+   v1 pathfinder (Option A): reading-path signpost
+   Tabs restyle existing tokens only; type follows the §6 rhythm.
+   ------------------------------------------------------------ */
+.pathfinder{scroll-margin-top:84px}
+.pf-intro{max-width:70ch}
+.pf-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;border-bottom:1px solid var(--line);padding-bottom:0}
+.pf-tab{appearance:none;background:var(--panel);border:1px solid var(--line);border-bottom:none;
+  border-radius:var(--radius) var(--radius) 0 0;padding:9px 16px;font:inherit;font-size:13.5px;font-weight:600;
+  color:var(--ink-soft);cursor:pointer;position:relative;top:1px;transition:color .18s ease, background .18s ease}
+.pf-tab:hover{color:var(--accent-ink)}
+.pf-tab[aria-selected="true"]{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--line-2)}
+.pf-tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent)}
+.pf-panel{border:1px solid var(--line);border-top:none;border-radius:0 0 var(--radius) var(--radius);
+  background:var(--panel);padding:18px 20px 6px;box-shadow:var(--shadow)}
+.pf-note{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.pf-steps{list-style:none;margin:0;padding:0}
+.pf-steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;margin:0 0 14px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.pf-steps li:last-child{border-bottom:none}
+.pf-n{grid-row:span 2;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent-ink);
+  font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.pf-steps a{font-weight:650;font-size:15.5px}
+.pf-steps p{margin:2px 0 0;font-size:13.5px;color:var(--ink-soft);line-height:1.55}
+@media (prefers-reduced-motion: reduce){ .pf-tab{transition:none} }
+
+
+/* ------------------------------------------------------------
+   v1 Option B: interactive site graph (figure[data-fig=home-hubs])
+   Hover/focus dims everything the node does not touch.
+   Preview card is part of the figure, token-styled only.
+   ------------------------------------------------------------ */
+.kg .edges line{transition:stroke .16s ease, opacity .16s ease}
+.kg .nodes .n{transition:opacity .16s ease}
+.kg .n{outline:none}
+.kg-active .nodes .n{cursor:pointer}
+.kg line.kg-hl{stroke:var(--accent);stroke-width:2.1;opacity:1}
+.kg line.kg-dim{opacity:.18}
+.kg .n.kg-dim{opacity:.28}
+.kg .n.kg-hl{filter:drop-shadow(0 1px 3px rgba(30,111,92,.35))}
+.kg .n:focus-visible polygon,.kg .n:focus-visible rect,.kg .n:focus-visible circle{stroke:var(--accent);stroke-width:3}
+
+/* slot reserves the space so showing the card never shifts the layout */
+.kgp-slot{position:relative;min-height:96px;margin:10px 0 0}
+.kgp-rest{margin:0;height:96px;display:flex;align-items:center;font-size:12.5px;line-height:1.55;
+  color:var(--muted);padding:0 16px 0 13px;border-left:3px solid var(--line-2)}
+.kgp-slot:has(.kg-preview:not([hidden])) .kgp-rest{display:none}
+.kg-preview{position:absolute;inset:0 auto auto 0;width:min(100%,640px);background:var(--panel);border:1px solid var(--line-2);border-left:3px solid var(--accent);
+  border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:12px 16px 10px;
+  animation:kgp-in .18s ease}
+.kgp-title{font-weight:700;font-size:14.5px;color:var(--accent-ink)}
+.kgp-lede{margin:4px 0 6px;font-size:13px;line-height:1.55;color:var(--ink-soft)}
+.kgp-hint{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+@keyframes kgp-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  .kg .edges line,.kg .nodes .n{transition:none}
+  .kg-preview{animation:none}
+}
+
+
+/* ------------------------------------------------------------
+   v1 Option C: pull stats. Display size only; tokens only.
+   ------------------------------------------------------------ */
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:18px 0 0}
+.stat{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  padding:16px 18px 12px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease}
+.stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.stat b{display:block;font-size:clamp(26px,3.4vw,36px);font-weight:700;line-height:1.15;
+  color:var(--accent-ink);letter-spacing:-.01em;margin-bottom:8px}
+.stat-vs{font-size:14px;font-weight:600;color:var(--ink-soft);letter-spacing:0;display:block;margin-top:2px}
+.stat-unit{font-size:.62em;font-weight:700}
+.stat p{margin:0;font-size:13px;line-height:1.55;color:var(--ink-soft)}
+.stat a{font-weight:650}
+@media (prefers-reduced-motion: reduce){ .stat,.stat:hover{transition:none;transform:none} }
+
+
+/* ------------------------------------------------------------
+   v1 Option D: on-page wayfinding (built by JS; hidden until the
+   reader passes the intro; rail >=1520px, chip bar below it).
+   ------------------------------------------------------------ */
+.ks-toc-rail,.ks-toc-bar{display:none}
+.ks-toc-rail ul,.ks-toc-bar ul{list-style:none;margin:0;padding:0}
+
+.ks-wayfind .ks-toc-rail{position:fixed;left:calc(50% - var(--maxw)/2 - 178px);top:calc(var(--ks-h) + 24px);
+  width:150px;z-index:40;display:block;font-size:12.5px}
+.ks-toc-rail li{margin:0 0 2px}
+.ks-toc-rail a{display:block;padding:4px 10px;color:var(--muted);border-left:2px solid var(--line);
+  text-decoration:none;transition:color .15s ease, border-color .15s ease}
+.ks-toc-rail a:hover{color:var(--accent-ink)}
+.ks-toc-rail a.ks-on{color:var(--accent-ink);font-weight:650;border-left-color:var(--accent)}
+
+.ks-wayfind .ks-toc-bar{position:sticky;top:var(--ks-h);z-index:40;display:block;
+  background:var(--bg);border-bottom:1px solid var(--line);margin:0}
+.ks-toc-bar ul{display:flex;gap:6px;overflow-x:auto;padding:8px 16px;max-width:var(--maxw);margin:0 auto;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ks-toc-bar ul::-webkit-scrollbar{display:none}
+.ks-toc-bar a{flex:0 0 auto;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--panel);font-size:12.5px;font-weight:600;color:var(--ink-soft);text-decoration:none;white-space:nowrap}
+.ks-toc-bar a.ks-on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+
+/* the bar lives between header and main: give it a body-level slot */
+@media (min-width:1520px){
+  .ks-wayfind .ks-toc-bar{display:none}
+}
+@media (max-width:1519px){
+  .ks-wayfind .ks-toc-rail{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .ks-toc-rail a{transition:none}
+}
+
+/* edge fades: affordance that the chip strip continues off-screen */
+.ks-toc-bar{position:sticky}
+.ks-toc-bar::before,.ks-toc-bar::after{content:"";position:absolute;top:0;bottom:0;width:30px;
+  pointer-events:none;z-index:1;opacity:0;transition:opacity .15s ease}
+.ks-toc-bar::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.ks-toc-bar::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.ks-toc-bar.ks-fade-l::before{opacity:1}
+.ks-toc-bar.ks-fade-r::after{opacity:1}
+.ks-toc-bar ul{scroll-snap-type:x proximity}
+.ks-toc-bar a{scroll-snap-align:center}
+@media (prefers-reduced-motion: reduce){.ks-toc-bar::before,.ks-toc-bar::after{transition:none}}
+/* coarse pointers: chip height to a ~44px tap target */
+@media (pointer:coarse){.ks-toc-bar a{padding:12px 16px;font-size:13px}}
+
+/* chip-tap lands the section Title in view, not under the sticky bar */
+.page > .wrap > section,main#main > section[id]{scroll-margin-top:calc(var(--ks-h,64px) + var(--ks-barh,0px) + 10px)}
+
+
+/* ------------------------------------------------------------
+   v1 Option E: next-read chain. A short route out of the page;
+   three real destinations with the reason to choose each.
+   ------------------------------------------------------------ */
+.nextreads{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.nextreads li{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  padding:16px 18px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease}
+.nextreads li:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.nextreads a{font-weight:700;font-size:15.5px;display:block;margin-bottom:6px}
+.nextreads a::after{content:" \2192";font-weight:600;color:var(--accent)}
+.nextreads p{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+@media (prefers-reduced-motion: reduce){ .nextreads li,.nextreads li:hover{transition:none;transform:none} }
+
+
+/* ------------------------------------------------------------
+   v1 Option F: hero treatment. Two-column on wide screens
+   (headline left, lede + contact right), faint dot-grid paper
+   texture, pill meta links. Padding and type sizes follow §6;
+   nothing here enlarges the compact model.
+   ------------------------------------------------------------ */
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--line-2) 1px, transparent 1px);
+  background-size:20px 20px;opacity:.35;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);
+          mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);
+}
+.hero > .wrap{position:relative}
+@media (min-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:40px;align-items:start}
+  .hero-left{display:grid;gap:0}
+  .hero-right{display:grid;gap:14px}
+  .hero .meta{margin-top:0}
+  /* heroes without hero-left/right wrappers (all interior pages): place
+     kicker+h1 left, lede+meta right. Browsers without :has() keep the
+     single-column hero, which is the original design. */
+  .hero .wrap:not(:has(.hero-left)) > .kicker{grid-column:1;grid-row:1}
+  .hero .wrap:not(:has(.hero-left)) > h1{grid-column:1;grid-row:2}
+  .hero .wrap:not(:has(.hero-left)) > .lede{grid-column:2;grid-row:1/span 2}
+  .hero .wrap:not(:has(.hero-left)) > .meta{grid-column:2;grid-row:3}
+}
+.hero .meta a{display:inline-block;padding:5px 13px;border:1px solid var(--line-2);
+  border-radius:999px;background:var(--panel);font-size:13px;color:var(--accent-ink);
+  box-shadow:var(--shadow)}
+.hero .meta a:hover{text-decoration:none;border-color:var(--accent)}
+
+
+/* ------------------------------------------------------------
+   v1: hubs list, the mobile reading of the same figure data.
+   Under 700px the pannable SVG is replaced by the ranked list;
+   above it the list is display:none (content stays in the DOM
+   for agents and no-JS readers either way).
+   ------------------------------------------------------------ */
+.hubs-list{display:none;list-style:none;margin:16px 0 0;padding:0;counter-reset:hub}
+.hubs-list li{display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid var(--line);counter-increment:hub}
+.hubs-list li:last-child{border-bottom:none}
+.hubs-list li::before{content:counter(hub);font-size:12px;color:var(--muted);width:16px;flex:0 0 auto;font-weight:600}
+.hubs-list a{font-weight:650;flex:1 1 auto;min-width:0}
+.hubs-list .deg{font-size:12px;color:var(--muted);white-space:nowrap}
+.hb{flex:0 0 auto;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700}
+.hb-s{background:#e2efe9;color:#1e6f5c}
+.hb-r{background:#eeeaf4;color:#6b5b95}
+.hb-a{background:#f2eaef;color:#8a4f7d}
+.hb-d{background:#f4ecdf;color:#b06a2c}
+.hb-o{background:#e9edec;color:#6b7d78}
+.hb-k{background:#e5edf2;color:#2f6f8f}
+.hubs-note{display:none;margin:12px 0 0}
+@media (max-width:699px){
+  .hubs-list,.hubs-note{display:block}
+  .hubs-note{font-size:12.5px;line-height:1.55;color:var(--muted)}
+  figure[data-fig="home-hubs"]{display:none}
+}
+
+
+/* ------------------------------------------------------------
+   v1: pathfinder trail map (one figure per tab, same node
+   language as the site graph) + nav look and feel.
+   ------------------------------------------------------------ */
+.pf-map{margin:14px 0 4px}
+.pf-map svg{display:block;width:100%;height:auto}
+.pf-map{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:8px 10px 2px}
+
+/* nav: soft-shadowed rounded panels, pill toggles, accent current item */
+.nav-toggle{border-radius:8px;font-weight:600;letter-spacing:.01em}
+.nav-dropdown{border:1px solid var(--line-2);border-radius:10px;box-shadow:var(--shadow-lg);padding:6px 0}
+.nav-dropdown a{padding:8px 14px}
+.nav-dropdown a.current{background:var(--accent-soft);color:var(--accent-ink);font-weight:650}
+.nav-dropdown .grp-label{padding:9px 14px 3px}
+
+/* small-screen drawer: scrollable, capped height, sectioned, grouped toggles */
+@media (max-width:980px){
+  .nav-wrap{top:60px;max-height:calc(100vh - 116px);overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;padding:8px 16px 18px}
+  .nav-wrap .grp-label{padding-left:6px}
+  .nav-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;
+    background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:11px 14px;
+    font-size:14.5px;font-weight:650;color:var(--ink)}
+  .nav-toggle .arrow{transition:transform .15s ease}
+  .nav-group.open .nav-toggle{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+  .nav-group.open .nav-toggle .arrow{transform:rotate(180deg)}
+  .nav-group.open > .nav-dropdown{margin:2px 0 10px;padding:2px 4px 6px}
+  .nav-dropdown a{padding:11px 10px;border-radius:8px}
+  .nav-dropdown a:active{background:var(--panel-2)}
+  .nav-link{border-radius:9px;text-align:left}
+}
+
+
+/* ------------------------------------------------------------
+   v1 M1: mobile-first pathfinder. Below 700px the trail figure
+   (660-unit SVG, ~6px labels at phone width) is hidden; the step
+   list IS the trail: role-coloured stations joined by a vertical
+   rail, text at normal reading size. Desktop keeps the figure.
+   Badge colours mirror the site-graph node colours (§11).
+   ------------------------------------------------------------ */
+.pf-n{position:relative;z-index:1}
+.pf-n.c-o{background:#e9edec;color:#6b7d78}
+.pf-n.c-k{background:#e5edf2;color:#2f6f8f}
+.pf-n.c-s{background:#e2efe9;color:#1e6f5c}
+.pf-n.c-a{background:#f2eaef;color:#8a4f7d}
+.pf-n.c-r{background:#eeeaf4;color:#6b5b95}
+.pf-n.c-d{background:#f4ecdf;color:#b06a2c}
+@media (max-width:699px){
+  .pf-map{display:none}
+  .pf-steps li{border-bottom:none;padding-bottom:10px;position:relative}
+  .pf-steps li:not(:last-child)::before{content:"";position:absolute;left:14px;top:34px;bottom:-16px;
+    width:2px;background:var(--line-2);z-index:0}
+  .pf-steps .pf-n{width:30px;height:30px}
+}
+
+
+/* ------------------------------------------------------------
+   v1 pathfinder v2: four reader paths, tabs on wide, accordion
+   on small. Same markup and ARIA; presentation swaps at 700px.
+   Sublabels make the rows informative before opening (accordion)
+   and are aria-hidden duplicates of the note on wide (tabs).
+   ------------------------------------------------------------ */
+.pf-paths{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0 2px;
+  align-items:end;margin:16px 0 0}
+.pf-item{display:contents}
+.pf-tab{grid-row:1;appearance:none;background:none;border:1px solid var(--line);border-bottom:none;
+  border-radius:var(--radius) var(--radius) 0 0;padding:9px 16px;font:inherit;font-size:13.5px;font-weight:600;
+  color:var(--ink-soft);cursor:pointer;transition:color .18s ease, background .18s ease;text-align:left}
+.pf-tab:hover{color:var(--accent-ink)}
+.pf-tab[aria-selected="true"]{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--line-2)}
+.pf-tab .pf-sub{display:none}
+.pf-panel{grid-row:2;grid-column:1/-1;border:1px solid var(--line);border-top:none;border-radius:0 0 var(--radius) var(--radius);
+  background:var(--panel);padding:18px 20px 6px;box-shadow:var(--shadow)}
+
+@media (max-width:699px){
+  .pf-paths{display:block;border-bottom:none;margin:16px 0 0}
+  .pf-item{display:block;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--panel);margin:0 0 10px;box-shadow:var(--shadow);overflow:hidden}
+  .pf-tab{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;
+    border:none;border-radius:0;padding:13px 16px;font-size:15px;color:var(--ink);position:relative}
+  .pf-tab::after{content:"";width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);transition:transform .15s ease;flex:0 0 auto}
+  .pf-tab[aria-selected="true"]{background:var(--accent-soft);color:var(--accent-ink)}
+  .pf-tab[aria-selected="true"]::after{transform:rotate(225deg);border-color:var(--accent)}
+  .pf-tab .pf-sub{display:block;font-weight:500;font-size:12px;color:var(--muted);margin-top:2px}
+  .pf-tab .pf-lbl{display:block}
+  .pf-panel{border:none;border-top:1px solid var(--line);border-radius:0;box-shadow:none;padding:14px 16px 4px}
+  .pf-panel .pf-note{margin-bottom:10px}
+}
+@media (prefers-reduced-motion: reduce){.pf-tab{transition:none}.pf-tab::after{transition:none}}
+
+
+/* ------------------------------------------------------------
+   v1: tab label truncation. Tabs share the path width equally;
+   a label that does not fit is cut with an ellipsis instead of
+   wrapping (uneven heights were the long-label symptom). Hover
+   and keyboard focus reveal the full text. Same rule for the
+   mobile accordion rows. Truncation is presentation only: the
+   tab keeps its full accessible name.
+   ------------------------------------------------------------ */
+@media (min-width:700px){
+  .pf-paths{grid-template-columns:repeat(4,1fr)}
+  .pf-tab .pf-lbl{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pf-tab[aria-selected="true"] .pf-lbl{white-space:normal;overflow:visible}
+}
+.pf-tab .pf-lbl{min-width:0}
+.pf-tab{min-width:0}
+@media (min-width:700px){
+  .pf-tab:hover .pf-lbl, .pf-tab:focus-visible .pf-lbl{white-space:normal;overflow:visible}
+}

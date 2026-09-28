@@ -188,9 +188,15 @@ Rules:
 
 ## 14. v1 enhancement inventory
 
-Everything here ships in v1 only and is progressive: with JS disabled the page
-still reads as a complete document (tabs stack, stats and lists stay, only the
-dynamic wayfinding disappears). All motion is switched off under
+As of the site-wide promotion, the enhancement layer in style.css (root and v1
+copies are identical) and the behaviour in /site.js ship on every .org page,
+not only the landing page. The landing page additionally carries the
+pathfinder, the site-graph hover card, the pull stats, and the next-read chain;
+interior pages get the reveal, wayfinding, hero treatment, nav rework, and
+pills. Wayfinding builds itself from each page's own sections and headings
+(pages with fewer than four labelled sections get no rail or chip bar, which
+is the original design). Everything stays progressive: with JS disabled every
+page reads as a complete document. All motion is switched off under
 prefers-reduced-motion. No tracking, no storage, no framework.
 
 | Item | Adds | Behaviour notes |

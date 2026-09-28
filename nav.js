@@ -178,6 +178,16 @@
         if (!group) return;
         const open = group.classList.toggle('open');
         btn.setAttribute('aria-expanded', String(open));
+        // On small screens the drawer is in flow, so more than one open group
+        // pushes the page down: opening one closes the others.
+        if (open && matchMedia('(max-width:980px)').matches) {
+          document.querySelectorAll('.nav-group.open').forEach(g => {
+            if (g === group) return;
+            g.classList.remove('open');
+            const t = g.querySelector('.nav-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          });
+        }
       });
     });
   }
