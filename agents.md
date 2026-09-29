@@ -20,7 +20,7 @@ identity:
       - https://janalogy.com
       - https://www.linkedin.com/in/rjanardan
       - https://meetup.com/darling-meetup
-  email: mailto:janardan.revuru@gmail.com
+  email: mailto:janardan@knowledgesidekick.com
   relatedSite:
     name: Knowledge Sidekick (.com)
     url: https://knowledgesidekick.com

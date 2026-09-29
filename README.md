@@ -26,4 +26,4 @@ This org site is the same ideas, not-for-profit and free to read: research, stan
 Janardan Revuru — M.Tech Data Science (BITS Pilani, 2024); PhD in progress on multi-agent communication; three patents; AI CoE 0→50 engineers / 15 models; organizer of DARLing Meetup.
 
 Portfolio: https://janalogy.com
-Email: janardan.revuru@gmail.com
+Email: janardan@knowledgesidekick.com
